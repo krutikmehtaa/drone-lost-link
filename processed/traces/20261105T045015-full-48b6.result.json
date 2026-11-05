@@ -1,0 +1,409 @@
+{
+ "run_id": "20261105T045015-full-48b6",
+ "mode": "full",
+ "question": "What does the Matrice 30T manual say about altitude and obstacles during Failsafe RTH?",
+ "status": "completed_with_gaps",
+ "stop_reason": "verified claims; gaps listed",
+ "error": null,
+ "intake": {
+  "intent": "in_scope",
+  "models": [
+   "DJI Matrice 30T"
+  ],
+  "focus": "Matrice 30T Failsafe RTH altitude and obstacle behavior",
+  "flight_phase": null,
+  "reason": "Question about guidance in the manual regarding Failsafe Return-to-Home (RTH) behavior, specifically altitude handling and obstacle avoidance during RTH.",
+  "decided_by": "model",
+  "unsupported_named": []
+ },
+ "brief": {
+  "short_answer": "From the claims, the manual says RTH altitude must be higher than any obstacle, tied to the Home Point. It also states that during failsafe RTH the aircraft cannot avoid obstacles if there is insufficient light. There is no explicit link in the claims between lighting and obstacle avoidance or how vision vs non-vision sensing affects Failsafe RTH under low light; those are open questions. The passages do not provide additional, confirmed guidance beyond those two points.",
+  "sections": [
+   {
+    "section": "manual:DJI Matrice 30T",
+    "label": "DJI Matrice 30T manual",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "The manual states that the RTH altitude is related to the Home Point. Make sure the RTH altitude is higher than any obstacle in the area.",
+      "citations": [
+       "dji_m30t_manual_v22_c0070"
+      ],
+      "quote": "The RTH altitude is related to the Home Point. Make sure the RTH altitude is higher than any obstacle in the area.",
+      "conditions": [],
+      "assessment": "supported_with_conditions",
+      "claim_id": "C001",
+      "section": "manual:DJI Matrice 30T",
+      "tier": "manufacturer",
+      "incident_label": null
+     },
+     {
+      "text": "During failsafe RTH, the aircraft cannot avoid obstacles if there is insufficient light.",
+      "citations": [
+       "dji_m30t_manual_v22_c0035"
+      ],
+      "quote": "The aircraft cannot bypass obstacles during RTH if the lighting and environment conditions are unsuitable for the vision systems.",
+      "conditions": [
+       "lighting conditions unsuitable for vision systems",
+       "RTH in failsafe mode"
+      ],
+      "assessment": "supported",
+      "claim_id": "C002",
+      "section": "manual:DJI Matrice 30T",
+      "tier": "manufacturer",
+      "incident_label": null
+     }
+    ]
+   }
+  ],
+  "gaps": [
+   {
+    "kind": "missing",
+    "origin": "revision",
+    "related_claim_ids": [],
+    "text": "The passages do not explicitly link lighting suitability to whether obstacles can be bypassed during RTH; gap remains."
+   },
+   {
+    "kind": "missing",
+    "origin": "synthesis",
+    "text": "Unclear how obstacle sensing modes (vision vs non-vision) affect Failsafe RTH obstacle avoidance under low light.",
+    "related_claim_ids": [
+     "C001",
+     "C002"
+    ]
+   }
+  ],
+  "removed_claims": [
+   {
+    "text": "The aircraft cannot bypass obstacles during RTH if the lighting and environment conditions are unsuitable for the vision systems.",
+    "citations": [
+     "dji_m30t_manual_v22_c0038"
+    ],
+    "quote": "The aircraft cannot bypass obstacles during RTH if the lighting and environment conditions are unsuitable for the vision systems.",
+    "conditions": [
+     "lighting conditions unsuitable for vision systems",
+     "RTH in progress"
+    ],
+    "assessment": "supported",
+    "claim_id": "C003",
+    "section": "manual:DJI Matrice 30T",
+    "tier": "manufacturer",
+    "incident_label": null
+   }
+  ]
+ },
+ "brief_stats": {
+  "words": 150,
+  "claims": 2,
+  "gaps": 2
+ },
+ "searches": [
+  {
+   "search_id": "S001",
+   "section": "manual:DJI Matrice 30T",
+   "origin": "base",
+   "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect Matrice 30T Failsafe RTH altitude and obstacle behavior",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect Matrice 30T Failsafe RTH altitude and obstacle behavior",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "DJI Matrice 30T"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "dji_m30t_manual_v22_c0033",
+    "dji_m30t_manual_v22_c0070",
+    "dji_m30t_manual_v22_c0032",
+    "dji_m30t_manual_v22_c0069",
+    "dji_m30t_manual_v22_c0035",
+    "dji_m30t_manual_v22_c0028",
+    "dji_m30t_manual_v22_c0044",
+    "dji_m30t_manual_v22_c0040",
+    "dji_m30t_manual_v22_c0179",
+    "dji_m30t_manual_v22_c0067"
+   ],
+   "kept_ids": [
+    "dji_m30t_manual_v22_c0033",
+    "dji_m30t_manual_v22_c0070",
+    "dji_m30t_manual_v22_c0032",
+    "dji_m30t_manual_v22_c0069",
+    "dji_m30t_manual_v22_c0035"
+   ],
+   "new_ids": [
+    "dji_m30t_manual_v22_c0033",
+    "dji_m30t_manual_v22_c0070",
+    "dji_m30t_manual_v22_c0032",
+    "dji_m30t_manual_v22_c0069",
+    "dji_m30t_manual_v22_c0035"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S002",
+   "section": "manual:DJI Matrice 30T",
+   "origin": "agent",
+   "query": "Matrice 30T failsafe RTH altitude obstacle avoidance",
+   "alternate_queries": [
+    "M200/M30T signal lost RTH obstacle during failsafe",
+    "RTH altitude should be higher than obstacles Matrice 30T"
+   ],
+   "phrasing_stats": [
+    {
+     "query": "Matrice 30T failsafe RTH altitude obstacle avoidance",
+     "returned": 10,
+     "kept": 5,
+     "new": 3
+    },
+    {
+     "query": "M200/M30T signal lost RTH obstacle during failsafe",
+     "returned": 10,
+     "kept": 4,
+     "new": 2
+    },
+    {
+     "query": "RTH altitude should be higher than obstacles Matrice 30T",
+     "returned": 10,
+     "kept": 5,
+     "new": 3
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "DJI Matrice 30T"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "to confirm official DJI guidance on RTH altitude and obstacle handling during failsafe for Matrice 30T",
+   "follows_from": null,
+   "returned_ids": [
+    "dji_m30t_manual_v22_c0070",
+    "dji_m30t_manual_v22_c0044",
+    "dji_m30t_manual_v22_c0038",
+    "dji_m30t_manual_v22_c0035",
+    "dji_m30t_manual_v22_c0037",
+    "dji_m30t_manual_v22_c0042",
+    "dji_m30t_manual_v22_c0210",
+    "dji_m30t_manual_v22_c0039",
+    "dji_m30t_manual_v22_c0025",
+    "dji_m30t_manual_v22_c0033",
+    "dji_m30t_manual_v22_c0069",
+    "dji_m30t_manual_v22_c0028",
+    "dji_m30t_manual_v22_c0169",
+    "dji_m30t_manual_v22_c0041",
+    "dji_m30t_manual_v22_c0040",
+    "dji_m30t_manual_v22_c0067",
+    "dji_m30t_manual_v22_c0036"
+   ],
+   "kept_ids": [
+    "dji_m30t_manual_v22_c0070",
+    "dji_m30t_manual_v22_c0044",
+    "dji_m30t_manual_v22_c0038",
+    "dji_m30t_manual_v22_c0035",
+    "dji_m30t_manual_v22_c0037"
+   ],
+   "new_ids": [
+    "dji_m30t_manual_v22_c0044",
+    "dji_m30t_manual_v22_c0038",
+    "dji_m30t_manual_v22_c0037"
+   ],
+   "below_cutoff_ids": [
+    "dji_m30t_manual_v22_c0042",
+    "dji_m30t_manual_v22_c0210",
+    "dji_m30t_manual_v22_c0039",
+    "dji_m30t_manual_v22_c0025",
+    "dji_m30t_manual_v22_c0028"
+   ],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null,
+   "earned": true
+  }
+ ],
+ "decisions": [
+  {
+   "decision_id": "D001",
+   "section": "manual:DJI Matrice 30T",
+   "action": "search",
+   "continue_or_stop": "continue",
+   "reason": "to confirm official DJI guidance on RTH altitude and obstacle handling during failsafe for Matrice 30T",
+   "tool": "document_search",
+   "searched_section": "manual:DJI Matrice 30T",
+   "query": "Matrice 30T failsafe RTH altitude obstacle avoidance",
+   "alternate_queries": [
+    "M200/M30T signal lost RTH obstacle during failsafe",
+    "RTH altitude should be higher than obstacles Matrice 30T"
+   ],
+   "follows_from": null,
+   "search_id": "S002",
+   "new_passages": 3,
+   "below_cutoff": 5,
+   "earned_search": true
+  },
+  {
+   "decision_id": "D002",
+   "section": "manual:DJI Matrice 30T",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "Manual passages cover RTH altitude requirement, obstacle avoidance during RTH under lighting, and potential ATTI/landing outcomes; no conflicts detected.",
+   "tool": "finish_assessment",
+   "coverage": "sufficient",
+   "missing": [
+    "None identified beyond available manual statements; ensure to note different obstacle sensing states (vision vs non-vision) and Advanced RTH behavior from new sections."
+   ],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D003",
+   "section": "manual:DJI Matrice 30T",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "The exact match of the RTH relation and obstacle requirement is stated in the manual; no extra interpretation is added.",
+   "claim_id": "C001",
+   "round": 1,
+   "new_text": "The RTH altitude is related to the Home Point. Make sure the RTH altitude is higher than any obstacle in the area."
+  },
+  {
+   "decision_id": "D004",
+   "section": "manual:DJI Matrice 30T",
+   "action": "to_gap",
+   "continue_or_stop": "stop",
+   "reason": "The passages do not explicitly link lighting suitability to whether obstacles can be bypassed during RTH; gap remains.",
+   "claim_id": "C003",
+   "round": 1
+  },
+  {
+   "decision_id": "D005",
+   "section": "manual:DJI Matrice 30T",
+   "action": "rewrite_quote_only",
+   "continue_or_stop": "continue",
+   "reason": "removed an unsupported added condition; kept the cited manual sentence",
+   "claim_id": "C001",
+   "round": 2
+  }
+ ],
+ "assessments": {
+  "manual:DJI Matrice 30T": {
+   "coverage": "sufficient",
+   "missing": [
+    "None identified beyond available manual statements; ensure to note different obstacle sensing states (vision vs non-vision) and Advanced RTH behavior from new sections."
+   ],
+   "conflicts_noticed": [],
+   "reason": "Manual passages cover RTH altitude requirement, obstacle avoidance during RTH under lighting, and potential ATTI/landing outcomes; no conflicts detected.",
+   "stop_reason": "model_finished",
+   "section": "manual:DJI Matrice 30T",
+   "turns": 3,
+   "tool_calls": 1,
+   "searches": 1,
+   "searches_allowed": 3
+  }
+ },
+ "gate_results": {
+  "C001": {
+   "claim_id": "C001",
+   "passed": true,
+   "failures": []
+  },
+  "C002": {
+   "claim_id": "C002",
+   "passed": true,
+   "failures": []
+  }
+ },
+ "verifications": {
+  "C001": {
+   "claim_id": "C001",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited manual passage explicitly states that the RTH altitude is related to the Home Point and that the RTH altitude should be higher than any obstacle in the area, which matches the claim.",
+   "supporting_ids": [
+    "dji_m30t_manual_v22_c0070"
+   ]
+  },
+  "C002": {
+   "claim_id": "C002",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states: 'The aircraft cannot bypass obstacles during failsafe RTH when there is insufficient light.' which directly matches the claim, tying obstacle avoidance inability to insufficient light during failsafe RTH.",
+   "supporting_ids": [
+    "dji_m30t_manual_v22_c0035"
+   ]
+  }
+ },
+ "first_draft_results": [
+  {
+   "claim_id": "C001",
+   "passes": false,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C002",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C003",
+   "passes": false,
+   "gate_failures": [
+    "quote_in_source"
+   ],
+   "verifier": "partial"
+  }
+ ],
+ "revisions_used": 2,
+ "reopens": 0,
+ "cost": {
+  "model_calls": 11,
+  "tokens_in": 18916,
+  "tokens_out": 9035,
+  "searches": 2,
+  "agent_searches": 1,
+  "agent_tool_calls": 2,
+  "seconds": 66.6
+ },
+ "corpus_snapshot": "4d0e3c83c9425371",
+ "chunks_sha256": "3aff778d5475cd877ed6cef54834cdaa960ccce15ebda1442215c7ca258274c6",
+ "retrieval": "hybrid_rrf",
+ "model": "@30875-fall26-openai/gpt-5-nano",
+ "reasoning_effort": "low",
+ "config": {
+  "mode": "full",
+  "source_kinds": [
+   "manual"
+  ],
+  "max_revisions": 2,
+  "agent_base_searches_per_section": 2,
+  "agent_max_searches_per_section": 4,
+  "agent_max_tool_calls_per_section": 7,
+  "agent_max_turns_per_section": 8,
+  "agent_results_shown": 10,
+  "agent_max_searches_per_run": 8,
+  "agent_max_turns_per_run": 40,
+  "max_reopens_per_run": 1,
+  "max_searches": 40,
+  "max_model_calls": 40,
+  "top_k": 5,
+  "max_claims_per_section": 5,
+  "max_claim_words": 40,
+  "max_gaps": 6,
+  "max_short_answer_words": 90
+ },
+ "trace_path": "C:\\Important\\Master's\\drone-lost-link\\processed\\traces\\20261105T045015-full-48b6.jsonl"
+}
