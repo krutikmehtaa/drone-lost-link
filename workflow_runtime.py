@@ -1203,7 +1203,9 @@ out), too_long (over 40 words).
 Use only what the passages say; do not add people, roles or details they do not state.
 If a claim already failed in an earlier round, do not resubmit the same quote: find the exact wording in the
 passages, or choose drop or to_gap. If a claim adds an unsupported condition but its quoted sentence is
-supported, remove the extra condition and keep the narrower quoted statement before choosing to_gap."""
+supported, remove the extra condition and keep the narrower quoted statement before choosing to_gap.
+verified_claims are this section's claims that already passed. If a failing claim repeats one of them, choose
+drop. A to_gap reason must never contradict a verified claim."""
 
 HOW_TO_ATTRIBUTE = {
     'faa': 'Write it as what AC 107-2A (FAA guidance) states. Never call it a manual or mention a reporter.',
@@ -1227,6 +1229,8 @@ def revise_section(state: RunState, section: str, failing: list[Claim], round_no
                'passages': [{'chunk_id': p['chunk_id'], 'locator': p['locator'], 'source_type': p['source_type'],
                              'incident_label': p.get('incident_label'), 'text': p['text']}
                             for p in state.pools.get(section, {}).values()],
+               'verified_claims': [{'claim_id': c.claim_id, 'text': c.text}
+                                   for c in state.drafts.get(section, {}).get('claims', []) if passes(state, c)],
                'failing_claims': [{'claim_id': c.claim_id, 'text': c.text, 'citations': c.citations, 'quote': c.quote,
                                    'conditions': c.conditions,
                                    'problems': ['too_long' if f == 'within_length' else f
@@ -1386,7 +1390,9 @@ sections, and both claim ids go in related_claim_ids. Never list a possible or h
 SHORT_ANSWER_INSTRUCTIONS = """Write the short answer of a drone lost-link evidence brief from the verified claims only.
 2 to 4 plain-language sentences, at most 90 words. Answer the question directly; lead with the model behavior and its conditions.
 Mention FAA guidance or incident accounts only when they answer the question; label incident accounts unverified. Every fact must come from a claim; the gaps are
-open questions, not facts. If part of the question has no supported claim, say so plainly. No citations."""
+open questions, not facts. If part of the question has no supported claim, say so plainly. No citations.
+Write for the reader: never mention claims, passages, sections or the brief (no "from the claims"), and never
+present a gap as open when a claim already answers it."""
 
 NO_EVIDENCE_ANSWER = ('No claim in this brief passed citation verification. The approved collection may not cover '
                       'this question, or its evidence was too thin to state safely. See the gaps for what is missing.')

@@ -70,5 +70,37 @@ class QuoteRevisionTests(unittest.TestCase):
         self.assertIn("rewrite_quote_only", [decision["action"] for decision in state.decisions])
 
 
+    def test_reviser_sees_claims_that_already_passed(self):
+        section = "manual:DJI Matrice 30T"
+        chunk_id = "dji_m30t_manual_v22_c0070"
+        quote = "The aircraft cannot avoid obstacles during failsafe RTH when there is insufficient light."
+        make = lambda cid, text: workflow.Claim(text=text, citations=[chunk_id], quote=quote, conditions=[],
+                                                assessment="supported", claim_id=cid, section=section,
+                                                tier="manufacturer")
+        good, repeat = make("C001", f"The manual states that {quote}"), make("C002", "It cannot avoid obstacles.")
+        seen = {}
+
+        def revise(payload):
+            seen.update(payload)
+            return {"decisions": [{"claim_id": "C002", "action": "drop", "reason": "repeats C001",
+                                   "new_claim": None}]}
+
+        state = workflow.RunState("What happens in low light?", workflow.Config(), workflow.FakeLLM({"revise": revise}))
+        state.sections = [section]
+        state.pools[section] = {chunk_id: workflow.SEARCH.by_id[chunk_id]}
+        state.drafts[section] = {"status": "drafted", "claims": [good, repeat], "abstain_reason": None}
+        for claim_, status in ((good, "supported"), (repeat, "partial")):
+            state.gate_results[claim_.claim_id] = {"passed": True, "failures": []}
+            state.verifications[claim_.claim_id] = workflow.Verification(
+                claim_id=claim_.claim_id, status=status, missing_conditions=[], rationale="scripted",
+                supporting_ids=[chunk_id])
+        with tempfile.TemporaryDirectory() as temp:
+            state.trace_path = Path(temp) / "trace.jsonl"
+            workflow.revise_section(state, section, [repeat], 1, allow_reopen=False)
+        self.assertEqual(seen["verified_claims"], [{"claim_id": "C001", "text": good.text}])
+        self.assertEqual([c.claim_id for c in state.all_claims()], ["C001"])
+        self.assertFalse(state.gaps)
+
+
 if __name__ == "__main__":
     unittest.main()

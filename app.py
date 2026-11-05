@@ -12,7 +12,7 @@ import streamlit as st
 
 from ui_data import (
     DEMO_QUESTIONS, MODE_LABELS, SOURCE_LABELS, STATUS_LABELS,
-    brief_markdown, cited_passages, find_saved_run, load_corpus,
+    brief_markdown, cited_passages, find_saved_run, load_corpus, verified_claims,
 )
 from ui_presenter import answer_text, contextualize_question, followup_question, review_note, source_scope
 
@@ -64,6 +64,8 @@ hr {border-color:#d7dbd7;}
 .status-failed {background:#fae9e7; border-color:#bf8580;}
 .answer {font-size:1.12rem; line-height:1.6; border-left:3px solid #182721; padding:.1rem 0 .1rem 1rem;}
 .note {color:#5e6964; font-size:.87rem; line-height:1.45;}
+.claim {font-size:.95rem; line-height:1.5; padding:.45rem 0 .5rem; border-bottom:1px solid #e2e6e1;}
+.claim .meta {margin-top:.2rem;}
 .step {border-left:1px solid #a8b7ae; padding:.2rem .15rem .75rem .9rem; margin-left:.2rem;}
 .step-title {font-family:'IBM Plex Mono',monospace; font-size:.73rem; text-transform:uppercase; letter-spacing:.05em;}
 [data-testid="stChatMessage"] {background:#fff; border:1px solid #e2e6e1; border-radius:0;}
@@ -133,6 +135,12 @@ def show_brief(run: dict, chunks: dict[str, dict], chat_id: str, run_index: int,
         st.caption("The answer is based on supported claims; some other parts of the collection remain incomplete.")
     elif status == "abstained":
         st.caption("The available collection does not support this request.")
+
+    claims = verified_claims(run, chunks, source_scope(run.get("question", "")))
+    if claims:
+        st.markdown('<div class="eyebrow">Verified claims</div>', unsafe_allow_html=True)
+        st.markdown("".join(f'<div class="claim">{escape_html(item["text"])}<div class="meta">{escape_html(item["meta"])}</div></div>'
+                            for item in claims), unsafe_allow_html=True)
 
     rate_question = "failure rate" in run.get("question", "").lower()
     st.markdown('<div class="eyebrow">Background sources checked</div>' if rate_question

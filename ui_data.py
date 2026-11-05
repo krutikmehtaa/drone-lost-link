@@ -75,6 +75,20 @@ def cited_passages(run: dict, chunks: dict[str, dict]) -> list[dict]:
     return passages
 
 
+def verified_claims(run: dict, chunks: dict[str, dict], kinds: tuple[str, ...] | None = None) -> list[dict]:
+    """Each claim left in the brief, with its section and the locators it cites (optionally only some section kinds)."""
+    items = []
+    for section in run.get("brief", {}).get("sections", []):
+        if kinds and section.get("section", "").split(":")[0] not in kinds:
+            continue
+        for claim in section.get("claims", []):
+            locators = list(dict.fromkeys(chunks[c]["locator"] for c in claim.get("citations", []) if c in chunks))
+            meta = " · ".join([section.get("label", "")] + locators
+                              + (["unverified account"] if claim.get("tier") == "unverified" else []))
+            items.append({"text": claim.get("text", ""), "meta": meta})
+    return items
+
+
 def brief_markdown(run: dict, chunks: dict[str, dict]) -> str:
     """Make a readable export with source locators and links."""
     lines = [f"# Drone lost-link evidence brief", "", f"Question: {run.get('question', '')}", "",
