@@ -28,6 +28,8 @@ class SavedRunTests(unittest.TestCase):
         run = find_saved_run(self.root, DEMO_QUESTIONS[2], "full", self.report["corpus_snapshot"], self.index_hash)
         all_claims = verified_claims(run, self.chunks)
         self.assertEqual(len(all_claims), run["brief_stats"]["claims"])
+        self.assertTrue(all_claims[0]["meta"].startswith("DJI Matrice 30T manual"))   # manual first, FAA last
+        self.assertTrue(all_claims[-1]["meta"].startswith("FAA guidance"))
         manual_only = verified_claims(run, self.chunks, source_scope(run["question"]))
         self.assertTrue(manual_only)
         self.assertLess(len(manual_only), len(all_claims))      # the saved run also has FAA and incident claims

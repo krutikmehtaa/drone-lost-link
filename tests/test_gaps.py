@@ -44,10 +44,11 @@ class GapStepTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp:
             state.trace_path = Path(temp) / "trace.jsonl"
             workflow.synthesize_gaps(state)
-        return state.gaps[0]["kind"]
+        return state.gaps[0]["kind"] if state.gaps else None
 
     def test_only_manual_against_incident_is_a_conflict(self):
-        self.assertEqual(self.conflict_kind(["faa", "manual:DJI Matrice 4T"]), "unclear")
+        self.assertIsNone(self.conflict_kind(["faa", "manual:DJI Matrice 4T"]))              # dropped, not listed
+        self.assertEqual(self.conflict_kind(["manual:DJI Matrice 4T", "manual:DJI Matrice 30T"]), "unclear")
         self.assertEqual(self.conflict_kind(["manual:DJI Matrice 4T", "incident:DJI Matrice 4T"]), "conflict")
 
     def test_screened_out_report_is_named_and_leads_the_answer(self):

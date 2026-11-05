@@ -76,9 +76,13 @@ def cited_passages(run: dict, chunks: dict[str, dict]) -> list[dict]:
 
 
 def verified_claims(run: dict, chunks: dict[str, dict], kinds: tuple[str, ...] | None = None) -> list[dict]:
-    """Each claim left in the brief, with its section and the locators it cites (optionally only some section kinds)."""
+    """Each claim left in the brief, with its section and the locators it cites (optionally only some section kinds).
+    Manual claims come first, then incident reports, then FAA guidance, the same order as the Sources list."""
     items = []
-    for section in run.get("brief", {}).get("sections", []):
+    order = {"manual": 0, "incident": 1, "faa": 2}
+    sections = sorted(run.get("brief", {}).get("sections", []),
+                      key=lambda s: order.get(s.get("section", "").split(":")[0], 3))
+    for section in sections:
         if kinds and section.get("section", "").split(":")[0] not in kinds:
             continue
         for claim in section.get("claims", []):

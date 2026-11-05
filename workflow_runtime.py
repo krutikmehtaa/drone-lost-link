@@ -995,9 +995,10 @@ DRAFT_INSTRUCTIONS = """You draft ONE section of a drone lost-link evidence brie
   "If the connection is lost."). At most 5 claims. Keep the facts most directly about lost-link behavior;
   prefer conditions over background; merge closely related facts from the same passage.
 - Every claim cites chunk_ids from the passages. Each passage's text is split into numbered sentences [1], [2], ...
-  For quote, give the id of the sentence(s) that state the claim as chunk_id#n, e.g. "dji_m30t_manual_v22_c0070#4"
-  (for consecutive sentences: "dji_m30t_manual_v22_c0070#4 dji_m30t_manual_v22_c0070#5"). Never copy the words
-  yourself: code copies the exact sentence. citations lists chunk_ids only, without #n.
+  For quote, give the id of the sentence(s) that state the claim as chunk_id#n, e.g. "dji_m30t_manual_v22_c0070#4",
+  or for FAA guidance "faa_ac_107_2a_2022_c0228#4" (for consecutive sentences: "dji_m30t_manual_v22_c0070#4
+  dji_m30t_manual_v22_c0070#5"). Every claim in every section needs a quote id; an empty quote fails. Never copy
+  the words yourself: code copies the exact sentence. citations lists chunk_ids only, without #n.
 - List every condition the quote states (e.g. "if the Signal Lost Action is set to RTH") in conditions,
   and keep those conditions in the claim text.
 - Attribute every claim: FAA -> "AC 107-2A states ..."; manuals -> "The manual states ...";
@@ -1531,6 +1532,10 @@ def synthesize_gaps(state: RunState):
                 # A conflict sets a manual's claim against an incident report's, or rests on a conflict the evidence
                 # agent recorded. FAA pilot guidance and a manual's automatic behavior describe different things.
                 if kind == 'conflict' and not ({'manual', 'incident'} <= kinds or (agent_saw_conflict and 'faa' not in kinds)):
+                    if 'faa' in kinds:            # pilot guidance vs. aircraft behavior is not a gap at all
+                        state.decide('gaps', 'rejected_by_code', 'FAA pilot guidance and a manual or report describe '
+                                     'different things; not listed', 'continue', text=g.text)
+                        continue
                     kind = 'unclear'
                     state.decide('gaps', 'rejected_by_code', 'conflict does not set a manual against an incident report; '
                                  'kept as unclear', 'continue', text=g.text)
