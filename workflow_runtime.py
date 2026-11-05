@@ -1428,7 +1428,9 @@ def synthesize_gaps(state: RunState):
     notes = {s: {'missing': a['missing'], 'conflicts_noticed': a['conflicts_noticed']}
              for s, a in state.assessments.items() if a.get('missing') or a.get('conflicts_noticed')}
     slots = cfg.max_gaps - len(state.gaps)
-    if slots > 0 and (claims or notes):
+    # No agent notes and claims from one section leave nothing real to report: a conflict needs two sections and
+    # missing evidence comes from the agent's notes. (gpt-5-nano invented gaps here, some contradicting claims.)
+    if slots > 0 and (notes or len({c.section for c in claims}) > 1):
         payload = {'question': state.question, 'slots': slots, 'already_listed': [g['text'] for g in state.gaps],
                    'claims': [{'claim_id': c.claim_id, 'section': section_label(c.section), 'tier': c.tier,
                                'text': c.text} for c in claims],
