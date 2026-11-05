@@ -1017,11 +1017,28 @@ def section_label(section: str) -> str:
     kind, model = section_kind(section), section_model(section)
     return {'faa': 'FAA guidance', 'manual': f'{model} manual', 'incident': f'{model} incident reports'}[kind]
 
+def screened_out_reports(state: RunState, section: str) -> list[dict]:
+    """Incident reports this section's searches found but left out because they do not describe a lost link."""
+    if section_kind(section) != 'incident':
+        return []
+    found = dict.fromkeys(i for r in state.searches if r['section'] == section for i in r['returned_ids'])
+    return [SEARCH.by_id[i] for i in found if not is_relevant(SEARCH.by_id[i], 1, section, False)]
+
 def no_evidence(state: RunState, section: str, reason: str):
-    """The section abstains: nothing is drafted, and the brief says so in its gaps."""
+    """The section abstains: nothing is drafted, and the brief says so in its gaps. If the only reports found were
+    screened out for not describing a lost link, the gap says so, which corrects a question built on such a report."""
     state.drafts[section] = {'status': 'no_evidence', 'claims': [], 'abstain_reason': reason}
-    state.gaps.append({'kind': 'missing', 'origin': 'section_abstained', 'related_claim_ids': [],
-                       'text': f'No usable evidence found in the approved collection for {section_label(section)}.'})
+    screened = [] if state.pools.get(section) else screened_out_reports(state, section)
+    model = section_model(section)
+    if len(screened) == 1:
+        text = f'The {model} incident report found in the collection does not describe a lost link, so it is not used as evidence.'
+    elif screened:
+        text = (f'The {len(screened)} {model} incident reports found in the collection do not describe a lost link, '
+                'so none is used as evidence.')
+    else:
+        text = f'No usable evidence found in the approved collection for {section_label(section)}.'
+    state.gaps.append({'kind': 'missing', 'origin': 'reports_screened_out' if screened else 'section_abstained',
+                       'related_claim_ids': [], 'text': text})
     state.log('draft', section=section, status='no_evidence', reason=reason)
 
 SENTENCE_BREAK_RE = re.compile(r'(?<=[.!?])\s+|\s*\u2022\s*')   # after . ! ? and at bullets
@@ -1469,6 +1486,12 @@ NO_EVIDENCE_ANSWER = ('No claim in this brief passed citation verification. The 
 
 GAP_PRIORITY = {'conflict': 0, 'missing': 1, 'unclear': 2}
 
+MANUAL_QUESTION_RE = re.compile(r'\bmanuals?\b', re.IGNORECASE)
+
+FAA_QUESTION_RE = re.compile(r'\b(faa|ac\s*107|part\s*107|guidance|regulat\w*|pilots?)\b', re.IGNORECASE)
+
+REPORT_QUESTION_RE = re.compile(r'\b(report\w*|incident\w*|asrs|aaib|forum|crash\w*|accident\w*)\b', re.IGNORECASE)
+
 def split_sentences(text: str) -> list[str]:
     return [s for s in re.split(r'(?<=[.!?])\s+', text.strip()) if s]
 
@@ -1504,11 +1527,13 @@ def synthesize_gaps(state: RunState):
             for g in out.gaps:
                 related = [i for i in g.related_claim_ids if i in section_of]
                 kind = g.kind
-                # A conflict must rest on claims from two sections, or on a conflict the evidence agent recorded.
-                if kind == 'conflict' and len({section_of[i] for i in related}) < 2 and not agent_saw_conflict:
+                kinds = {section_kind(section_of[i]) for i in related}
+                # A conflict sets a manual's claim against an incident report's, or rests on a conflict the evidence
+                # agent recorded. FAA pilot guidance and a manual's automatic behavior describe different things.
+                if kind == 'conflict' and not ({'manual', 'incident'} <= kinds or (agent_saw_conflict and 'faa' not in kinds)):
                     kind = 'unclear'
-                    state.decide('gaps', 'rejected_by_code', 'conflict without claims on both sides; kept as unclear',
-                                 'continue', text=g.text)
+                    state.decide('gaps', 'rejected_by_code', 'conflict does not set a manual against an incident report; '
+                                 'kept as unclear', 'continue', text=g.text)
                 state.gaps.append({'kind': kind, 'origin': 'synthesis',
                                    'text': ' '.join(g.text.split()[: cfg.max_claim_words]),
                                    'related_claim_ids': related})
@@ -1518,12 +1543,17 @@ def synthesize_gaps(state: RunState):
     state.log('gaps', gaps=state.gaps)
 
 def write_short_answer(state: RunState):
-    """3-5 sentences, at most 120 words, from the claims left after verification and revision."""
+    """2-4 sentences, at most 90 words, from the claims left after verification and revision. A question about a
+    report or incident first gets the code's note on any reports that do not describe a lost link."""
     cfg = state.config
     claims = state.all_claims()
     if not claims:
         state.short_answer = NO_EVIDENCE_ANSWER
         return
+    # A question about what the manual says is answered from the manual (and any incident claims): FAA pilot
+    # guidance stays in the brief, but gpt-5-nano tended to write it up as what the aircraft does.
+    if MANUAL_QUESTION_RE.search(state.question) and not FAA_QUESTION_RE.search(state.question):
+        claims = [c for c in claims if section_kind(c.section) != 'faa'] or claims
     payload = {'question': state.question,
                'claims': [{'section': section_label(c.section), 'tier': c.tier, 'text': c.text} for c in claims],
                'gaps': [g['text'] for g in state.gaps]}
@@ -1551,6 +1581,8 @@ def write_short_answer(state: RunState):
         state.log('short_answer_error', error=str(exc))
         text = (f'This brief has {len(claims)} verified claim(s). See the sections for FAA guidance, the manuals '
                 'and unverified incident reports. See the gaps for what the sources leave open.')
+    if REPORT_QUESTION_RE.search(state.question):
+        text = ' '.join([g['text'] for g in state.gaps if g.get('origin') == 'reports_screened_out'] + [text])
     state.short_answer = text
     state.log('short_answer', text=text)
 
