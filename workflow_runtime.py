@@ -1116,7 +1116,7 @@ def gate(state: RunState, claim: Claim) -> dict:
                            and any(clean_quote(claim.quote) in normalize(c['text']) for c in found),
         'source_matches': len(found) > 0 and all(c['source_type'] in SECTION_SOURCE[kind]
                                                  and (c['model'] == section_model(section) or (section_model(section) == 'DJI Matrice 210 V1' and c['source_id'] == 'asrs_m210_1918661' and c['model'] == 'DJI Matrice 210')) for c in found),
-        'attributed': ('report' in claim.text.lower()) if kind == 'incident'
+        'attributed': any(w in claim.text.lower() for w in ('report', 'asrs', 'aaib', 'forum')) if kind == 'incident'
                       else ('reporter' not in claim.text.lower()
                             and (kind != 'faa' or 'manual' not in claim.text.lower())),
         'incident_labeled': kind != 'incident' or claim.incident_label is not None,
@@ -1208,7 +1208,9 @@ supported, remove the extra condition and keep the narrower quoted statement bef
 HOW_TO_ATTRIBUTE = {
     'faa': 'Write it as what AC 107-2A (FAA guidance) states. Never call it a manual or mention a reporter.',
     'manual': 'Write it as what the manual states. Never mention a reporter.',
-    'incident': 'Start with "The reporter states": this is an unverified personal account.',
+    'incident': ('Name the source of the cited passage: "AAIB found ..." for the full investigation, "AAIB records ..." '
+                 'for a record-only entry, "The ASRS reporter says ..." or "A forum participant says ...". '
+                 'Only the full AAIB investigation is a verified finding.'),
 }
 
 def replace_claim(state: RunState, claim_id: str, new: Optional[Claim] = None):
@@ -1222,8 +1224,9 @@ def revise_section(state: RunState, section: str, failing: list[Claim], round_no
     actions = ['rewrite', 'drop', 'to_gap'] + (['reopen_section'] if allow_reopen else [])
     payload = {'section': section_label(section), 'tier': SECTION_TIER[section_kind(section)], 'round': round_no,
                'how_to_attribute': HOW_TO_ATTRIBUTE[section_kind(section)], 'allowed_actions': actions,
-               'passages': [{'chunk_id': p['chunk_id'], 'locator': p['locator'], 'incident_label': p.get('incident_label'),
-                             'text': p['text']} for p in state.pools.get(section, {}).values()],
+               'passages': [{'chunk_id': p['chunk_id'], 'locator': p['locator'], 'source_type': p['source_type'],
+                             'incident_label': p.get('incident_label'), 'text': p['text']}
+                            for p in state.pools.get(section, {}).values()],
                'failing_claims': [{'claim_id': c.claim_id, 'text': c.text, 'citations': c.citations, 'quote': c.quote,
                                    'conditions': c.conditions,
                                    'problems': ['too_long' if f == 'within_length' else f
