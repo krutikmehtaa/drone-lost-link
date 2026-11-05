@@ -1,0 +1,18 @@
+# Local credentials and caches
+.env
+.env.*
+.streamlit/secrets.toml
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Temporary editor and operating-system files
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+
+# Runs produced while testing the extracted workflow locally
+test_traces/

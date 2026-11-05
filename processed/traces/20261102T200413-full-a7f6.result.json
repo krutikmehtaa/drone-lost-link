@@ -1,0 +1,640 @@
+{
+ "run_id": "20261102T200413-full-a7f6",
+ "mode": "full",
+ "question": "During an automated mission, when does the Autel EVO Max 4N start RTH after losing signal?",
+ "status": "completed_with_gaps",
+ "stop_reason": "verified claims; gaps listed",
+ "error": null,
+ "intake": {
+  "intent": "in_scope",
+  "models": [
+   "Autel EVO Max 4N"
+  ],
+  "focus": "RTH trigger after loss of signal (Autel EVO Max 4N)",
+  "flight_phase": null,
+  "reason": "Inquiry about RTH behavior during automated missions after signal loss",
+  "decided_by": "model",
+  "unsupported_named": []
+ },
+ "brief": {
+  "short_answer": "FAA guidance states that when the control link cannot be reestablished, emergency or contingency procedures should start, and if the remote PIC cannot regain VLOS, they should follow pre-determined procedures; the remote PIC may need to land, hover, or perform RTH. Autel EVO Max 4N manual: During automated flights, if Signal Loss Action is Auto RTH, the drone triggers RTH after the app displays 'Aircraft disconnected'. Unverified incident reports: loss of control shortly after takeoff, platform continued to fly away; all RTH attempts failed; platform not located or recovered. Gap: conflicting claims on RTH timing and reliability\u2014the manual says RTH triggers on disconnection, while reports describe failed or unrecovered RTH.",
+  "sections": [
+   {
+    "section": "faa",
+    "label": "FAA guidance",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "When the connection cannot be reestablished, start emergency or contingency procedures for loss of control link.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0228"
+      ],
+      "quote": "If connection cannot be reestablished, start emergency or contingency procedures for loss of control link.",
+      "conditions": [
+       "If connection cannot be reestablished",
+       "loss of control link"
+      ],
+      "assessment": "supported",
+      "claim_id": "C001",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "If the remote PIC cannot regain VLOS, the remote PIC or person manipulating the controls should follow pre-determined procedures for the loss of VLOS.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0049"
+      ],
+      "quote": "If the remote PIC cannot regain VLOS, the remote PIC or person manipulating the controls should follow pre-determined procedures for the loss of VLOS.",
+      "conditions": [
+       "cannot regain VLOS"
+      ],
+      "assessment": "supported",
+      "claim_id": "C002",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "The remote PIC may need to land the small unmanned aircraft immediately, enter hover mode, or employ a return-to-home sequence.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0049"
+      ],
+      "quote": "The remote PIC may need to land the small unmanned aircraft immediately, enter hover mode, or employ a return-to-home sequence.",
+      "conditions": [
+       "capabilities of the small UAS will govern the remote PIC\u2019s determination as to the appropriate course of action"
+      ],
+      "assessment": "supported",
+      "claim_id": "C003",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     }
+    ]
+   },
+   {
+    "section": "manual:Autel EVO Max 4N",
+    "label": "Autel EVO Max 4N manual",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "During automated flight missions, if Signal Loss Action is set to Auto RTH, the drone will trigger RTH after the Autel Enterprise App displays the warning message: Aircraft disconnected.",
+      "citations": [
+       "autel_evo_max_manual_v130_c0106"
+      ],
+      "quote": "If Signal Loss Action is set to Auto RTH, the drone will trigger RTH after the Autel Enterprise App displays the warning message: Aircraft disconnected.",
+      "conditions": [
+       "During automated flight missions",
+       "Signal Loss Action is set to Auto RTH",
+       "Autel Enterprise App displays the warning message: Aircraft disconnected."
+      ],
+      "assessment": "supported",
+      "claim_id": "C004",
+      "section": "manual:Autel EVO Max 4N",
+      "tier": "manufacturer",
+      "incident_label": null
+     }
+    ]
+   },
+   {
+    "section": "incident:Autel EVO Max 4N",
+    "label": "Autel EVO Max 4N incident reports",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "ASRS reporter says, 'Shortly after takeoff I completely lost control of the UAS,' and the platform continued to fly away while input into the controls to return.",
+      "citations": [
+       "asrs_autel_evo_max_4n_selected_c0001"
+      ],
+      "quote": "Shortly after takeoff I completely lost control of the UAS",
+      "conditions": [
+       "after takeoff",
+       "lost control"
+      ],
+      "assessment": "supported",
+      "claim_id": "C005",
+      "section": "incident:Autel EVO Max 4N",
+      "tier": "unverified",
+      "incident_label": "summary_only"
+     },
+     {
+      "text": "ASRS reporter says, 'All attempts of Return To Home features failed.'",
+      "citations": [
+       "asrs_autel_evo_max_4n_selected_c0001"
+      ],
+      "quote": "All attempts of Return To Home features failed",
+      "conditions": [
+       "RTH features attempted",
+       "RTH failure"
+      ],
+      "assessment": "supported",
+      "claim_id": "C006",
+      "section": "incident:Autel EVO Max 4N",
+      "tier": "unverified",
+      "incident_label": "summary_only"
+     },
+     {
+      "text": "ASRS reporter says, 'UAS Platform has not been located or recovered.'",
+      "citations": [
+       "asrs_autel_evo_max_4n_selected_c0001"
+      ],
+      "quote": "UAS Platform has not been located or recovered",
+      "conditions": [
+       "no locate",
+       "not recovered"
+      ],
+      "assessment": "supported",
+      "claim_id": "C007",
+      "section": "incident:Autel EVO Max 4N",
+      "tier": "unverified",
+      "incident_label": "summary_only"
+     }
+    ]
+   }
+  ],
+  "gaps": [
+   {
+    "kind": "conflict",
+    "origin": "synthesis",
+    "text": "Manual says RTH triggers after disconnection warning; incident reports claim all Return-To-Home attempts failed.",
+    "related_claim_ids": [
+     "C004",
+     "C006"
+    ]
+   },
+   {
+    "kind": "conflict",
+    "origin": "synthesis",
+    "text": "FAA guidance allows RTH or landing after loss of control; incident reports indicate loss of control with no recoverable RTH.",
+    "related_claim_ids": [
+     "C003",
+     "C005"
+    ]
+   },
+   {
+    "kind": "missing",
+    "origin": "synthesis",
+    "text": "Explicit step-by-step controller actions when control link is lost are not specified in FAA guidance.",
+    "related_claim_ids": [
+     "C001"
+    ]
+   },
+   {
+    "kind": "missing",
+    "origin": "synthesis",
+    "text": "Specific timing details under varying autonomous modes are not provided.",
+    "related_claim_ids": [
+     "C005"
+    ]
+   },
+   {
+    "kind": "missing",
+    "origin": "synthesis",
+    "text": "Exact trigger conditions for Signal Loss Action may vary by model version.",
+    "related_claim_ids": [
+     "C005"
+    ]
+   },
+   {
+    "kind": "unclear",
+    "origin": "synthesis",
+    "text": "Unverified reports suggest the platform continued to fly away after loss of control input.",
+    "related_claim_ids": [
+     "C005"
+    ]
+   }
+  ],
+  "removed_claims": []
+ },
+ "brief_stats": {
+  "words": 333,
+  "claims": 7,
+  "gaps": 6
+ },
+ "searches": [
+  {
+   "search_id": "S001",
+   "section": "faa",
+   "origin": "base",
+   "query": "lost link loss of control link communication remote pilot contingency procedures RTH trigger after loss of signal (Autel EVO Max 4N)",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link loss of control link communication remote pilot contingency procedures RTH trigger after loss of signal (Autel EVO Max 4N)",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "faa_guidance"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0062",
+    "faa_ac_107_2a_2022_c0223",
+    "faa_ac_107_2a_2022_c0049",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0096",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0274",
+    "faa_ac_107_2a_2022_c0107"
+   ],
+   "kept_ids": [
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0049",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0254"
+   ],
+   "new_ids": [
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0049",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0254"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S002",
+   "section": "manual:Autel EVO Max 4N",
+   "origin": "base",
+   "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect RTH trigger after loss of signal (Autel EVO Max 4N)",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect RTH trigger after loss of signal (Autel EVO Max 4N)",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "Autel EVO Max 4N"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "autel_evo_max_manual_v130_c0107",
+    "autel_evo_max_manual_v130_c0118",
+    "autel_evo_max_manual_v130_c0106",
+    "autel_evo_max_manual_v130_c0183",
+    "autel_evo_max_manual_v130_c0117",
+    "autel_evo_max_manual_v130_c0104",
+    "autel_evo_max_manual_v130_c0101",
+    "autel_evo_max_manual_v130_c0166",
+    "autel_evo_max_manual_v130_c0105",
+    "autel_evo_max_manual_v130_c0025"
+   ],
+   "kept_ids": [
+    "autel_evo_max_manual_v130_c0107",
+    "autel_evo_max_manual_v130_c0118",
+    "autel_evo_max_manual_v130_c0106",
+    "autel_evo_max_manual_v130_c0183",
+    "autel_evo_max_manual_v130_c0117"
+   ],
+   "new_ids": [
+    "autel_evo_max_manual_v130_c0107",
+    "autel_evo_max_manual_v130_c0118",
+    "autel_evo_max_manual_v130_c0106",
+    "autel_evo_max_manual_v130_c0183",
+    "autel_evo_max_manual_v130_c0117"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S003",
+   "section": "incident:Autel EVO Max 4N",
+   "origin": "base",
+   "query": "lost link lost control signal lost return to home flyaway RTH trigger after loss of signal (Autel EVO Max 4N)",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link lost control signal lost return to home flyaway RTH trigger after loss of signal (Autel EVO Max 4N)",
+     "returned": 1,
+     "kept": 1,
+     "new": 1
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "aaib",
+     "model": "Autel EVO Max 4N"
+    },
+    {
+     "source_type": "asrs",
+     "model": "Autel EVO Max 4N"
+    },
+    {
+     "source_type": "forum",
+     "model": "Autel EVO Max 4N"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "asrs_autel_evo_max_4n_selected_c0001"
+   ],
+   "kept_ids": [
+    "asrs_autel_evo_max_4n_selected_c0001"
+   ],
+   "new_ids": [
+    "asrs_autel_evo_max_4n_selected_c0001"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  }
+ ],
+ "decisions": [
+  {
+   "decision_id": "D001",
+   "section": "faa",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "FAA passages provided discuss loss of control link procedures in general terms but do not provide a clear, step-by-step pilot action guide or model-specific requirements. Some relevant items are present (reestablish connection, contingency procedures), but the section lacks a complete, actionable protocol.",
+   "tool": "finish_assessment",
+   "coverage": "partial",
+   "missing": [
+    "Explicit step-by-step controller actions when control link is lost (e.g., immediate reestablishment attempts, RTH or landing procedures, altitude and speed limits during contingency), definitions of when to initiate loss-of-control procedures, whether there are model-agnostic vs. model-specific instructions, and any FAA-required reporting or documentation related to a lost-link event."
+   ],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D002",
+   "section": "manual:Autel EVO Max 4N",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "Manual Autel EVO Max 4N passages describe RTH triggering after loss of C2: upon disconnection message, and after 10s of C2 loss triggering the configured Signal Loss Action.",
+   "tool": "finish_assessment",
+   "coverage": "sufficient",
+   "missing": [
+    "None detected; manual section covers when RTH can be triggered after loss of C2/link in automated flights: post-disconnection message, or after >10s loss triggering configured Signal Loss Action (which may be RTH)."
+   ],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D003",
+   "section": "incident:Autel EVO Max 4N",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "Passages describe that RTH is triggered by signal loss when the Signal Loss Action is set to RTH and that during automated missions the drone continues current state until reconnection; the incident report notes loss of control with failed RTH, which could be due to settings not matching the described behavior but no explicit conflict found in the provided sources.",
+   "tool": "finish_assessment",
+   "coverage": "sufficient",
+   "missing": [
+    "specific timing details under varying modes not provided",
+    "exact trigger conditions for Signal Loss Action in autonomous missions may vary by model version"
+   ],
+   "conflicts_noticed": []
+  }
+ ],
+ "assessments": {
+  "faa": {
+   "coverage": "partial",
+   "missing": [
+    "Explicit step-by-step controller actions when control link is lost (e.g., immediate reestablishment attempts, RTH or landing procedures, altitude and speed limits during contingency), definitions of when to initiate loss-of-control procedures, whether there are model-agnostic vs. model-specific instructions, and any FAA-required reporting or documentation related to a lost-link event."
+   ],
+   "conflicts_noticed": [],
+   "reason": "FAA passages provided discuss loss of control link procedures in general terms but do not provide a clear, step-by-step pilot action guide or model-specific requirements. Some relevant items are present (reestablish connection, contingency procedures), but the section lacks a complete, actionable protocol.",
+   "stop_reason": "model_finished",
+   "section": "faa",
+   "turns": 1,
+   "tool_calls": 0,
+   "searches": 0,
+   "searches_allowed": 2
+  },
+  "manual:Autel EVO Max 4N": {
+   "coverage": "sufficient",
+   "missing": [
+    "None detected; manual section covers when RTH can be triggered after loss of C2/link in automated flights: post-disconnection message, or after >10s loss triggering configured Signal Loss Action (which may be RTH)."
+   ],
+   "conflicts_noticed": [],
+   "reason": "Manual Autel EVO Max 4N passages describe RTH triggering after loss of C2: upon disconnection message, and after 10s of C2 loss triggering the configured Signal Loss Action.",
+   "stop_reason": "model_finished",
+   "section": "manual:Autel EVO Max 4N",
+   "turns": 2,
+   "tool_calls": 0,
+   "searches": 0,
+   "searches_allowed": 2
+  },
+  "incident:Autel EVO Max 4N": {
+   "coverage": "sufficient",
+   "missing": [
+    "specific timing details under varying modes not provided",
+    "exact trigger conditions for Signal Loss Action in autonomous missions may vary by model version"
+   ],
+   "conflicts_noticed": [],
+   "reason": "Passages describe that RTH is triggered by signal loss when the Signal Loss Action is set to RTH and that during automated missions the drone continues current state until reconnection; the incident report notes loss of control with failed RTH, which could be due to settings not matching the described behavior but no explicit conflict found in the provided sources.",
+   "stop_reason": "model_finished",
+   "section": "incident:Autel EVO Max 4N",
+   "turns": 1,
+   "tool_calls": 0,
+   "searches": 0,
+   "searches_allowed": 2
+  }
+ },
+ "gate_results": {
+  "C001": {
+   "claim_id": "C001",
+   "passed": true,
+   "failures": []
+  },
+  "C002": {
+   "claim_id": "C002",
+   "passed": true,
+   "failures": []
+  },
+  "C003": {
+   "claim_id": "C003",
+   "passed": true,
+   "failures": []
+  },
+  "C004": {
+   "claim_id": "C004",
+   "passed": true,
+   "failures": []
+  },
+  "C005": {
+   "claim_id": "C005",
+   "passed": true,
+   "failures": []
+  },
+  "C006": {
+   "claim_id": "C006",
+   "passed": true,
+   "failures": []
+  },
+  "C007": {
+   "claim_id": "C007",
+   "passed": true,
+   "failures": []
+  }
+ },
+ "verifications": {
+  "C001": {
+   "claim_id": "C001",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states that if the connection cannot be reestablished, emergency or contingency procedures for loss of control link should be started.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0228"
+   ]
+  },
+  "C002": {
+   "claim_id": "C002",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage says that if the remote PIC cannot regain VLOS, the remote PIC or person manipulating the controls should follow pre-determined procedures for the loss of VLOS.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0049"
+   ]
+  },
+  "C003": {
+   "claim_id": "C003",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage notes that the remote PIC may need to land immediately, enter hover mode, or use a return-to-home sequence, with the action governed by the small UAS capabilities.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0049"
+   ]
+  },
+  "C004": {
+   "claim_id": "C004",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The passage states that during automated flight missions, if Signal Loss Action is set to Auto RTH, the drone will trigger RTH after the Autel Enterprise App displays the warning message: Aircraft disconnected.",
+   "supporting_ids": [
+    "autel_evo_max_manual_v130_c0106"
+   ]
+  },
+  "C005": {
+   "claim_id": "C005",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states: 'Shortly after takeoff I completely lost control of the UAS' and 'Platform continued to fly away from me while input into the controls to return.' which match 'after takeoff' and 'lost control'.",
+   "supporting_ids": [
+    "asrs_autel_evo_max_4n_selected_c0001"
+   ]
+  },
+  "C006": {
+   "claim_id": "C006",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states: 'All attempts of Return To Home features failed.' matching 'RTH features attempted' and 'RTH failure'.",
+   "supporting_ids": [
+    "asrs_autel_evo_max_4n_selected_c0001"
+   ]
+  },
+  "C007": {
+   "claim_id": "C007",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states: 'UAS Platform has not been located or recovered.' matching 'no locate' and 'not recovered'.",
+   "supporting_ids": [
+    "asrs_autel_evo_max_4n_selected_c0001"
+   ]
+  }
+ },
+ "first_draft_results": [
+  {
+   "claim_id": "C001",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C002",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C003",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C004",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C005",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C006",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C007",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  }
+ ],
+ "revisions_used": 0,
+ "reopens": 0,
+ "cost": {
+  "model_calls": 15,
+  "tokens_in": 21188,
+  "tokens_out": 13121,
+  "searches": 3,
+  "agent_searches": 0,
+  "agent_tool_calls": 3,
+  "seconds": 111.3
+ },
+ "corpus_snapshot": "4d0e3c83c9425371",
+ "chunks_sha256": "3aff778d5475cd877ed6cef54834cdaa960ccce15ebda1442215c7ca258274c6",
+ "retrieval": "hybrid_rrf",
+ "model": "@30875-fall26-openai/gpt-5-nano",
+ "reasoning_effort": "low",
+ "config": {
+  "mode": "full",
+  "max_revisions": 2,
+  "agent_base_searches_per_section": 2,
+  "agent_max_searches_per_section": 4,
+  "agent_max_tool_calls_per_section": 7,
+  "agent_max_turns_per_section": 8,
+  "agent_results_shown": 10,
+  "agent_max_searches_per_run": 8,
+  "agent_max_turns_per_run": 40,
+  "max_reopens_per_run": 1,
+  "max_searches": 40,
+  "max_model_calls": 120,
+  "top_k": 5,
+  "max_claims_per_section": 5,
+  "max_claim_words": 40,
+  "max_gaps": 6,
+  "max_short_answer_words": 120
+ },
+ "trace_path": "/content/drive/MyDrive/Agentic Unlearning Group/Project 1/processed/traces/20261102T200413-full-a7f6.jsonl"
+}

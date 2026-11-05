@@ -1,0 +1,602 @@
+{
+ "run_id": "20261102T185153-fixed-79ef",
+ "mode": "fixed",
+ "question": "What caused the Matrice 210 V1 fly-away that the AAIB investigated at Poole?",
+ "status": "completed_with_gaps",
+ "stop_reason": "verified claims; gaps listed",
+ "error": null,
+ "intake": {
+  "intent": "in_scope",
+  "models": [
+   "DJI Matrice 210 V1"
+  ],
+  "focus": "AAIB Poole Matrice 210 V1 fly-away cause",
+  "flight_phase": "in_flight",
+  "reason": "Request for the cause of a Matrice 210 V1 fly-away investigated by AAIB at Poole",
+  "decided_by": "model",
+  "unsupported_named": [
+   "Matrice 210"
+  ]
+ },
+ "brief": {
+  "short_answer": "FAA guidance stresses reestablishing the control link and, if unsuccessful, discontinuing flight until inspection. There are no usable manual sources available in the claimed collection. Incident reports (unverified accounts) state: battery 1 disconnected after takeoff, UA powered by battery 2; the manufacturer suggested a physical loss of connection between the battery and terminal; both controllers then lost contact with the aircraft. Main gap or conflict: it is unclear whether a battery-terminal fault contributed to loss of control, and FAA guidance addresses control links rather than power-path failures; the Matrice 210 V1 is not in the approved collection, and there is no evidence about positive transfer of operational control between remote PICs in the operation.",
+  "sections": [
+   {
+    "section": "faa",
+    "label": "FAA guidance",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "When the connection cannot be reestablished, start emergency or contingency procedures for loss of control link.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0228"
+      ],
+      "quote": "If connection cannot be reestablished, start emergency or contingency procedures for loss of control link.",
+      "conditions": [
+       "If connection cannot be reestablished."
+      ],
+      "assessment": "supported",
+      "claim_id": "C001",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "If the hazard occurs, the procedure includes trying to reestablish control link connection with the small unmanned aircraft.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0228"
+      ],
+      "quote": "Describe what will be done if the hazard occurs. Example: Try to reestablish control link connection with the small unmanned aircraft.",
+      "conditions": [
+       "Describe what will be done if the hazard occurs.",
+       "Try to reestablish control link connection with the small unmanned aircraft."
+      ],
+      "assessment": "supported",
+      "claim_id": "C002",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "If the link cannot be reestablished, discontinue flight and/or avoid further flight operations until further inspection and testing of the control link between the ground control unit and the aircraft.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0254"
+      ],
+      "quote": "Discontinue flight and/or avoid further flight operations until further inspection and testing of the control link between the ground control unit and the aircraft.",
+      "conditions": [
+       "Discontinue flight and/or avoid further flight operations until further inspection and testing of the control link between the ground control unit and the aircraft."
+      ],
+      "assessment": "supported",
+      "claim_id": "C003",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "The remote PIC can transfer operational control to another remote PIC during the operation by positively communicating the transfer of control.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0033"
+      ],
+      "quote": "another remote pilot may take over as remote PIC by positively communicating the transfer of control.",
+      "conditions": [
+       "The transfer of control is positively communicated."
+      ],
+      "assessment": "supported",
+      "claim_id": "C004",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     }
+    ]
+   },
+   {
+    "section": "manual:DJI Matrice 210 V1",
+    "label": "DJI Matrice 210 V1 manual",
+    "status": "no_evidence",
+    "abstain_reason": "No passages describe the AAIB Poole Matrice 210 V1 fly-away or its cause; the available passages only cover general failsafe RTH behavior and GPS/signal conditions.",
+    "claims": []
+   },
+   {
+    "section": "incident:DJI Matrice 210 V1",
+    "label": "DJI Matrice 210 V1 incident reports",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "The reporter states: 'Battery 1 became disconnected shortly after takeoff which resulted in the UA being powered by Battery 2 alone'.",
+      "citations": [
+       "aaib_m210_v1_poole_c0028"
+      ],
+      "quote": "Battery 1 became disconnected shortly after takeoff which resulted in the UA being powered by Battery 2 alone.",
+      "conditions": [
+       "shortly after takeoff"
+      ],
+      "assessment": "supported",
+      "claim_id": "C005",
+      "section": "incident:DJI Matrice 210 V1",
+      "tier": "official",
+      "incident_label": "investigated"
+     },
+     {
+      "text": "The reporter states: 'The manufacturer stated that this was probably caused by a physical loss of connection between the battery and battery terminal'.",
+      "citations": [
+       "aaib_m210_v1_poole_c0008"
+      ],
+      "quote": "The manufacturer stated that this was probably caused by a physical loss of connection between the battery and battery terminal.",
+      "conditions": [],
+      "assessment": "supported",
+      "claim_id": "C006",
+      "section": "incident:DJI Matrice 210 V1",
+      "tier": "official",
+      "incident_label": "investigated"
+     },
+     {
+      "text": "The reporter states: 'Both controllers then lost communication with the aircraft'.",
+      "citations": [
+       "aaib_m210_v1_poole_c0006"
+      ],
+      "quote": "Both controllers then lost communication with the aircraft.",
+      "conditions": [],
+      "assessment": "supported",
+      "claim_id": "C007",
+      "section": "incident:DJI Matrice 210 V1",
+      "tier": "official",
+      "incident_label": "investigated"
+     }
+    ]
+   }
+  ],
+  "gaps": [
+   {
+    "kind": "conflict",
+    "origin": "synthesis",
+    "text": "FAA guidance emphasizes reestablishing the control link; incident reports show both controllers losing communication with the aircraft.",
+    "related_claim_ids": [
+     "C002",
+     "C007"
+    ]
+   },
+   {
+    "kind": "conflict",
+    "origin": "synthesis",
+    "text": "Battery disconnect scenario implies power issue; FAA guidance focuses on control link reestablishment rather than power-path failures.",
+    "related_claim_ids": [
+     "C005",
+     "C003"
+    ]
+   },
+   {
+    "kind": "missing",
+    "origin": "intake",
+    "related_claim_ids": [],
+    "text": "Matrice 210 is not in the approved collection, so the brief does not cover it."
+   },
+   {
+    "kind": "missing",
+    "origin": "section_abstained",
+    "related_claim_ids": [],
+    "text": "No usable evidence found in the approved collection for DJI Matrice 210 V1 manual."
+   },
+   {
+    "kind": "missing",
+    "origin": "synthesis",
+    "text": "No evidence in the collection about positive transfer of operational control between remote PICs during the operation.",
+    "related_claim_ids": [
+     "C004"
+    ]
+   },
+   {
+    "kind": "unclear",
+    "origin": "synthesis",
+    "text": "Unclear whether a battery-terminal fault contributed to the loss of control link.",
+    "related_claim_ids": [
+     "C006"
+    ]
+   }
+  ],
+  "removed_claims": []
+ },
+ "brief_stats": {
+  "words": 346,
+  "claims": 7,
+  "gaps": 6
+ },
+ "searches": [
+  {
+   "search_id": "S001",
+   "section": "faa",
+   "origin": "base",
+   "query": "lost link loss of control link communication remote pilot contingency procedures AAIB Poole Matrice 210 V1 fly-away cause",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link loss of control link communication remote pilot contingency procedures AAIB Poole Matrice 210 V1 fly-away cause",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "faa_guidance"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0062",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0223",
+    "faa_ac_107_2a_2022_c0269",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0231",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0274"
+   ],
+   "kept_ids": [
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0032"
+   ],
+   "new_ids": [
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0032"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S002",
+   "section": "manual:DJI Matrice 210 V1",
+   "origin": "base",
+   "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect AAIB Poole Matrice 210 V1 fly-away cause",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect AAIB Poole Matrice 210 V1 fly-away cause",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "DJI Matrice 210 V1"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "dji_m210_v1_manual_v14_c0039",
+    "dji_m210_v1_manual_v14_c0037",
+    "dji_m210_v1_manual_v14_c0049",
+    "dji_m210_v1_manual_v14_c0036",
+    "dji_m210_v1_manual_v14_c0134",
+    "dji_m210_v1_manual_v14_c0034",
+    "dji_m210_v1_manual_v14_c0099",
+    "dji_m210_v1_manual_v14_c0045",
+    "dji_m210_v1_manual_v14_c0054",
+    "dji_m210_v1_manual_v14_c0101"
+   ],
+   "kept_ids": [
+    "dji_m210_v1_manual_v14_c0039",
+    "dji_m210_v1_manual_v14_c0037",
+    "dji_m210_v1_manual_v14_c0049",
+    "dji_m210_v1_manual_v14_c0134",
+    "dji_m210_v1_manual_v14_c0034"
+   ],
+   "new_ids": [
+    "dji_m210_v1_manual_v14_c0039",
+    "dji_m210_v1_manual_v14_c0037",
+    "dji_m210_v1_manual_v14_c0049",
+    "dji_m210_v1_manual_v14_c0134",
+    "dji_m210_v1_manual_v14_c0034"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S003",
+   "section": "incident:DJI Matrice 210 V1",
+   "origin": "base",
+   "query": "lost link lost control signal lost return to home flyaway AAIB Poole Matrice 210 V1 fly-away cause",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link lost control signal lost return to home flyaway AAIB Poole Matrice 210 V1 fly-away cause",
+     "returned": 11,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "aaib",
+     "model": "DJI Matrice 210 V1"
+    },
+    {
+     "source_type": "asrs",
+     "model": "DJI Matrice 210 V1"
+    },
+    {
+     "source_type": "forum",
+     "model": "DJI Matrice 210 V1"
+    },
+    {
+     "source_type": "asrs",
+     "model": "DJI Matrice 210"
+    }
+   ],
+   "backend_calls": 4,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "aaib_m210_v1_poole_c0028",
+    "aaib_m210_v1_poole_c0008",
+    "aaib_m210_v1_poole_c0003",
+    "aaib_m210_v1_poole_c0006",
+    "aaib_m210_v1_poole_c0005",
+    "aaib_m210_v1_poole_c0001",
+    "aaib_m210_v1_poole_c0013",
+    "aaib_m210_v1_poole_c0034",
+    "aaib_m210_v1_poole_c0014",
+    "aaib_m210_v1_poole_c0020",
+    "asrs_m210_1918661_c0001"
+   ],
+   "kept_ids": [
+    "aaib_m210_v1_poole_c0028",
+    "aaib_m210_v1_poole_c0008",
+    "aaib_m210_v1_poole_c0003",
+    "aaib_m210_v1_poole_c0006",
+    "aaib_m210_v1_poole_c0005"
+   ],
+   "new_ids": [
+    "aaib_m210_v1_poole_c0028",
+    "aaib_m210_v1_poole_c0008",
+    "aaib_m210_v1_poole_c0003",
+    "aaib_m210_v1_poole_c0006",
+    "aaib_m210_v1_poole_c0005"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  }
+ ],
+ "decisions": [
+  {
+   "decision_id": "D001",
+   "section": "incident:DJI Matrice 210 V1",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "attributed; fix by using the reporter as the source and keep verbatim quote",
+   "claim_id": "C005",
+   "round": 1,
+   "new_text": "The reporter states: 'Battery 1 became disconnected shortly after takeoff which resulted in the UA being powered by Battery 2 alone'."
+  },
+  {
+   "decision_id": "D002",
+   "section": "incident:DJI Matrice 210 V1",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "attributed; fix by using the reporter as the source and keep verbatim quote",
+   "claim_id": "C006",
+   "round": 1,
+   "new_text": "The reporter states: 'The manufacturer stated that this was probably caused by a physical loss of connection between the battery and battery terminal'."
+  },
+  {
+   "decision_id": "D003",
+   "section": "incident:DJI Matrice 210 V1",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "attributed; fix by using the reporter as the source and keep verbatim quote",
+   "claim_id": "C007",
+   "round": 1,
+   "new_text": "The reporter states: 'Both controllers then lost communication with the aircraft'."
+  }
+ ],
+ "assessments": {},
+ "gate_results": {
+  "C001": {
+   "claim_id": "C001",
+   "passed": true,
+   "failures": []
+  },
+  "C002": {
+   "claim_id": "C002",
+   "passed": true,
+   "failures": []
+  },
+  "C003": {
+   "claim_id": "C003",
+   "passed": true,
+   "failures": []
+  },
+  "C004": {
+   "claim_id": "C004",
+   "passed": true,
+   "failures": []
+  },
+  "C005": {
+   "claim_id": "C005",
+   "passed": true,
+   "failures": []
+  },
+  "C006": {
+   "claim_id": "C006",
+   "passed": true,
+   "failures": []
+  },
+  "C007": {
+   "claim_id": "C007",
+   "passed": true,
+   "failures": []
+  }
+ },
+ "verifications": {
+  "C001": {
+   "claim_id": "C001",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states that if the connection cannot be reestablished, start emergency or contingency procedures for loss of control link.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0228"
+   ]
+  },
+  "C002": {
+   "claim_id": "C002",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage provides an example to try to reestablish the control link when a hazard occurs, i.e., reestablish control link connection with the small unmanned aircraft.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0228"
+   ]
+  },
+  "C003": {
+   "claim_id": "C003",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage explicitly states to discontinue flight and/or avoid further flight operations until further inspection and testing of the control link between the ground control unit and the aircraft.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0254"
+   ]
+  },
+  "C004": {
+   "claim_id": "C004",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states that the remote PIC may transfer control to another remote PIC by positively communicating the transfer of control.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0033"
+   ]
+  },
+  "C005": {
+   "claim_id": "C005",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states: Battery 1 became disconnected shortly after takeoff which resulted in the UA being powered by Battery 2 alone.",
+   "supporting_ids": [
+    "aaib_m210_v1_poole_c0028"
+   ]
+  },
+  "C006": {
+   "claim_id": "C006",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states: The manufacturer stated that this was probably caused by a physical loss of connection between the battery and battery terminal.",
+   "supporting_ids": [
+    "aaib_m210_v1_poole_c0008"
+   ]
+  },
+  "C007": {
+   "claim_id": "C007",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states: Both controllers then lost communication with the aircraft.",
+   "supporting_ids": [
+    "aaib_m210_v1_poole_c0006"
+   ]
+  }
+ },
+ "first_draft_results": [
+  {
+   "claim_id": "C001",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C002",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C003",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C004",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C005",
+   "passes": false,
+   "gate_failures": [
+    "attributed"
+   ],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C006",
+   "passes": false,
+   "gate_failures": [
+    "attributed"
+   ],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C007",
+   "passes": false,
+   "gate_failures": [
+    "attributed"
+   ],
+   "verifier": "supported"
+  }
+ ],
+ "revisions_used": 1,
+ "reopens": 0,
+ "cost": {
+  "model_calls": 10,
+  "tokens_in": 14661,
+  "tokens_out": 10525,
+  "searches": 3,
+  "agent_searches": 0,
+  "agent_tool_calls": 0,
+  "seconds": 76.6
+ },
+ "corpus_snapshot": "4d0e3c83c9425371",
+ "chunks_sha256": "3aff778d5475cd877ed6cef54834cdaa960ccce15ebda1442215c7ca258274c6",
+ "retrieval": "hybrid_rrf",
+ "model": "@30875-fall26-openai/gpt-5-nano",
+ "reasoning_effort": "low",
+ "config": {
+  "mode": "fixed",
+  "max_revisions": 2,
+  "agent_base_searches_per_section": 2,
+  "agent_max_searches_per_section": 4,
+  "agent_max_tool_calls_per_section": 7,
+  "agent_max_turns_per_section": 8,
+  "agent_results_shown": 10,
+  "agent_max_searches_per_run": 8,
+  "agent_max_turns_per_run": 40,
+  "max_reopens_per_run": 1,
+  "max_searches": 40,
+  "max_model_calls": 120,
+  "top_k": 5,
+  "max_claims_per_section": 5,
+  "max_claim_words": 40,
+  "max_gaps": 6,
+  "max_short_answer_words": 120
+ },
+ "trace_path": "/content/drive/MyDrive/Agentic Unlearning Group/Project 1/processed/traces/20261102T185153-fixed-79ef.jsonl"
+}

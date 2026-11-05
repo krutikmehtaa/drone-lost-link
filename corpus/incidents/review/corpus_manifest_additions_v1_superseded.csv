@@ -1,0 +1,4 @@
+source_id,source_type,title,publisher,model,version_or_date,status,url,retrieved_at,local_path
+asrs_dji_m4t_selected,asrs,Selected ASRS account: DJI M4T,NASA ASRS,DJI Matrice 4T,ASRS UAS report set update 23 (2026-07-15),unknown,https://asrs.arc.nasa.gov/docs/rpsts/uas.pdf,2026-10-30,incidents/selected/asrs_dji_m4t.csv
+aaib_dji_m30t_selected,aaib,Selected AAIB record-only occurrences: DJI M30T,UK AAIB,DJI Matrice 30T,record-only lists 2024-05 to 2026-03,unknown,https://www.gov.uk/government/collections/aaib-record-only-investigations,2026-10-30,incidents/selected/aaib_dji_m30t.csv
+aaib_dji_m30_selected,aaib,Selected AAIB record-only occurrence: DJI M30,UK AAIB,DJI Matrice 30,record-only list 2025-07,unknown,https://www.gov.uk/government/collections/aaib-record-only-investigations,2026-10-30,incidents/selected/aaib_dji_m30.csv

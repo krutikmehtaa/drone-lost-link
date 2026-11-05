@@ -1,0 +1,370 @@
+{
+ "run_id": "20261102T173157-single_pass-21ca",
+ "mode": "single_pass",
+ "question": "What caused the Matrice 210 V1 fly-away that the AAIB investigated at Poole?",
+ "status": "completed_with_gaps",
+ "stop_reason": "verified claims; gaps listed",
+ "error": null,
+ "intake": {
+  "intent": "in_scope",
+  "models": [
+   "DJI Matrice 210 V1"
+  ],
+  "focus": "",
+  "unsupported_named": [],
+  "decided_by": "code (single pass has no intake call)"
+ },
+ "brief": {
+  "short_answer": "The AAIB report points to a combination of wind, loss of communication, RTH failure, and battery issues as causes of the Matrice 210 V1 fly-away at Poole.",
+  "sections": [
+   {
+    "section": "faa",
+    "label": "FAA guidance",
+    "status": "no_evidence",
+    "abstain_reason": "no claims in the single-pass brief",
+    "claims": []
+   },
+   {
+    "section": "manual:DJI Matrice 210 V1",
+    "label": "DJI Matrice 210 V1 manual",
+    "status": "no_evidence",
+    "abstain_reason": "no claims in the single-pass brief",
+    "claims": []
+   },
+   {
+    "section": "incident:DJI Matrice 210 V1",
+    "label": "DJI Matrice 210 V1 incident reports",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "Loss of communications occurred after takeoff, with the UA drifting because it could not overcome the wind with its limited pitch attitude, leading toward a fly-away scenario.",
+      "citations": [
+       "aaib_m210_v1_poole_c0013"
+      ],
+      "quote": "communication between the controller and UA was lost. At this time the UA was drifting south-east at 3 mph.",
+      "conditions": [],
+      "assessment": "supported",
+      "claim_id": "C001",
+      "section": "incident:DJI Matrice 210 V1",
+      "tier": "official",
+      "incident_label": "investigated"
+     },
+     {
+      "text": "Wind exceeded the aircraft\u2019s operational limits and forecast wind stronger than expected, contributing to loss of control and inability to return to home.",
+      "citations": [
+       "aaib_m210_v1_poole_c0039",
+       "aaib_m210_v1_poole_c0013"
+      ],
+      "quote": "When the wind measured by the UA exceeded the manufacturer\u2019s wind limit the alert message to the pilot advised him to \u2018fly with caution\u2019... The wind at 400 ft was stronger than forecast and at times above the UA\u2019s restricted maximum speed",
+      "conditions": [],
+      "assessment": "supported",
+      "claim_id": "C002",
+      "section": "incident:DJI Matrice 210 V1",
+      "tier": "official",
+      "incident_label": "investigated"
+     },
+     {
+      "text": "Return-to-Home (RTH) did not engage when commanded, preventing recovery as the aircraft could not reach home due to wind and other constraints.",
+      "citations": [
+       "aaib_m210_v1_poole_c0005"
+      ],
+      "quote": "The pilot activated the \u2018Return to home (RTH)\u2019 feature on the controller, but it did not appear to engage despite being operated multiple times. RTH then appeared to activate but the aircraft did not move any closer.",
+      "conditions": [],
+      "assessment": "supported",
+      "claim_id": "C003",
+      "section": "incident:DJI Matrice 210 V1",
+      "tier": "official",
+      "incident_label": "investigated"
+     },
+     {
+      "text": "Battery communication errors and fluctuating state-of-charge between the two batteries coincided with the failure to regain control and return, indicating a potential contributory fault.",
+      "citations": [
+       "aaib_m210_v1_poole_c0004"
+      ],
+      "quote": "not notice that the \u2018battery communication\u2019 message included the words \u2018land as soon as possible\u2019. ... one battery SOC was showing 58% while the other was still showing 97%.",
+      "conditions": [],
+      "assessment": "supported",
+      "claim_id": "C004",
+      "section": "incident:DJI Matrice 210 V1",
+      "tier": "official",
+      "incident_label": "investigated"
+     },
+     {
+      "text": "The maximum flight distance had been set to 500 m, yet the aircraft\u2019s distance from the pilot increased beyond that limit, suggesting a control limitation contributing to loss of recovery.",
+      "citations": [
+       "aaib_m210_v1_poole_c0005"
+      ],
+      "quote": "the maximum flight distance from the remote pilot had been set to 500 m using the DJI Pilot app. The pilot was now very concerned and activated the \u2018Return to home (RTH)\u2019 feature",
+      "conditions": [],
+      "assessment": "supported",
+      "claim_id": "C005",
+      "section": "incident:DJI Matrice 210 V1",
+      "tier": "official",
+      "incident_label": "investigated"
+     }
+    ]
+   }
+  ],
+  "gaps": [
+   {
+    "kind": "missing",
+    "text": "No definitive single cause identified; data gaps prevent a sole causal conclusion.",
+    "related_claim_ids": [
+     "claim_1",
+     "claim_2",
+     "claim_3",
+     "claim_4",
+     "claim_5"
+    ],
+    "origin": "single_pass"
+   },
+   {
+    "kind": "unclear",
+    "text": "Exact interaction timing between wind gusts, GPS/compass data, and RTH triggering is not fully documented.",
+    "related_claim_ids": [
+     "claim_2",
+     "claim_3"
+    ],
+    "origin": "single_pass"
+   },
+   {
+    "kind": "missing",
+    "text": "Comprehensive battery health data and communications logs are not provided.",
+    "related_claim_ids": [
+     "claim_4"
+    ],
+    "origin": "single_pass"
+   }
+  ],
+  "removed_claims": []
+ },
+ "brief_stats": {
+  "words": 190,
+  "claims": 5,
+  "gaps": 3
+ },
+ "searches": [
+  {
+   "search_id": "S001",
+   "section": "faa",
+   "origin": "base",
+   "query": "lost link loss of control link communication remote pilot contingency procedures",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link loss of control link communication remote pilot contingency procedures",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "faa_guidance"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0062",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0223",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0049",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0269",
+    "faa_ac_107_2a_2022_c0189"
+   ],
+   "kept_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0049"
+   ],
+   "new_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0049"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S002",
+   "section": "manual:DJI Matrice 210 V1",
+   "origin": "base",
+   "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "DJI Matrice 210 V1"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "dji_m210_v1_manual_v14_c0039",
+    "dji_m210_v1_manual_v14_c0037",
+    "dji_m210_v1_manual_v14_c0036",
+    "dji_m210_v1_manual_v14_c0049",
+    "dji_m210_v1_manual_v14_c0041",
+    "dji_m210_v1_manual_v14_c0111",
+    "dji_m210_v1_manual_v14_c0034",
+    "dji_m210_v1_manual_v14_c0032",
+    "dji_m210_v1_manual_v14_c0033",
+    "dji_m210_v1_manual_v14_c0045"
+   ],
+   "kept_ids": [
+    "dji_m210_v1_manual_v14_c0039",
+    "dji_m210_v1_manual_v14_c0037",
+    "dji_m210_v1_manual_v14_c0049",
+    "dji_m210_v1_manual_v14_c0041",
+    "dji_m210_v1_manual_v14_c0111"
+   ],
+   "new_ids": [
+    "dji_m210_v1_manual_v14_c0039",
+    "dji_m210_v1_manual_v14_c0037",
+    "dji_m210_v1_manual_v14_c0049",
+    "dji_m210_v1_manual_v14_c0041",
+    "dji_m210_v1_manual_v14_c0111"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S003",
+   "section": "incident:DJI Matrice 210 V1",
+   "origin": "base",
+   "query": "lost link lost control signal lost return to home flyaway",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link lost control signal lost return to home flyaway",
+     "returned": 11,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "aaib",
+     "model": "DJI Matrice 210 V1"
+    },
+    {
+     "source_type": "asrs",
+     "model": "DJI Matrice 210 V1"
+    },
+    {
+     "source_type": "forum",
+     "model": "DJI Matrice 210 V1"
+    },
+    {
+     "source_type": "asrs",
+     "model": "DJI Matrice 210"
+    }
+   ],
+   "backend_calls": 4,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "aaib_m210_v1_poole_c0013",
+    "aaib_m210_v1_poole_c0006",
+    "aaib_m210_v1_poole_c0005",
+    "aaib_m210_v1_poole_c0039",
+    "aaib_m210_v1_poole_c0004",
+    "aaib_m210_v1_poole_c0029",
+    "aaib_m210_v1_poole_c0002",
+    "aaib_m210_v1_poole_c0008",
+    "aaib_m210_v1_poole_c0018",
+    "aaib_m210_v1_poole_c0038",
+    "asrs_m210_1918661_c0001"
+   ],
+   "kept_ids": [
+    "aaib_m210_v1_poole_c0013",
+    "aaib_m210_v1_poole_c0006",
+    "aaib_m210_v1_poole_c0005",
+    "aaib_m210_v1_poole_c0039",
+    "aaib_m210_v1_poole_c0004"
+   ],
+   "new_ids": [
+    "aaib_m210_v1_poole_c0013",
+    "aaib_m210_v1_poole_c0006",
+    "aaib_m210_v1_poole_c0005",
+    "aaib_m210_v1_poole_c0039",
+    "aaib_m210_v1_poole_c0004"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  }
+ ],
+ "decisions": [],
+ "assessments": {},
+ "gate_results": {
+  "C001": null,
+  "C002": null,
+  "C003": null,
+  "C004": null,
+  "C005": null
+ },
+ "verifications": {},
+ "first_draft_results": [],
+ "revisions_used": 0,
+ "reopens": 0,
+ "cost": {
+  "model_calls": 1,
+  "tokens_in": 4257,
+  "tokens_out": 1619,
+  "searches": 3,
+  "agent_searches": 0,
+  "agent_tool_calls": 0,
+  "seconds": 12.8
+ },
+ "corpus_snapshot": "4d0e3c83c9425371",
+ "chunks_sha256": "3aff778d5475cd877ed6cef54834cdaa960ccce15ebda1442215c7ca258274c6",
+ "retrieval": "hybrid_rrf",
+ "model": "@30875-fall26-openai/gpt-5-nano",
+ "reasoning_effort": "low",
+ "config": {
+  "mode": "single_pass",
+  "max_revisions": 2,
+  "agent_base_searches_per_section": 2,
+  "agent_max_searches_per_section": 4,
+  "agent_max_tool_calls_per_section": 7,
+  "agent_max_turns_per_section": 8,
+  "agent_results_shown": 10,
+  "agent_max_searches_per_run": 8,
+  "agent_max_turns_per_run": 40,
+  "max_reopens_per_run": 1,
+  "max_searches": 40,
+  "max_model_calls": 120,
+  "top_k": 5,
+  "max_claims_per_section": 5,
+  "max_claim_words": 40,
+  "max_gaps": 6,
+  "max_short_answer_words": 120
+ },
+ "trace_path": "/content/drive/MyDrive/Agentic Unlearning Group/Project 1/processed/traces/20261102T173157-single_pass-21ca.jsonl"
+}

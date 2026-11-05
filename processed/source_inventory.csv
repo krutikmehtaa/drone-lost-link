@@ -1,0 +1,13 @@
+source_id,source_type,publisher,model,file,passages,incident_reports,screened_in,excluded,needs_review,labels
+dji_m30t_manual_v22,manufacturer,DJI,DJI Matrice 30T,manufacturer/dji_matrice30_user_manual_v2.2.pdf,262,0,0,0,0,{}
+faa_ac_107_2a_2022,faa_guidance,FAA,general,regulatory/Editorial_Update_AC_107-2A.pdf,276,0,0,0,0,{}
+dji_matrice4_manual_v12,manufacturer,DJI,DJI Matrice 4T,manufacturer/dji_matrice4_user_manual_v1.2.pdf,188,0,0,0,0,{}
+autel_evo_max_manual_v130,manufacturer,Autel Robotics,Autel EVO Max 4N,manufacturer/autel_evo_max_user_manual_v1.3.0.pdf,242,0,0,0,0,{}
+asrs_dji_m30t_selected,asrs,NASA ASRS,DJI Matrice 30T,incidents/selected/asrs_dji_m30t.csv,3,3,3,0,0,"{""narrative_explicit"": 1, ""summary_only"": 2}"
+asrs_autel_evo_max_4n_selected,asrs,NASA ASRS,Autel EVO Max 4N,incidents/selected/asrs_autel_evo_max_4n.csv,1,1,1,0,0,"{""summary_only"": 1}"
+dji_m210_v1_manual_v14,manufacturer,DJI,DJI Matrice 210 V1,manufacturer/dji_m210_v1_user_manual_v1.4.pdf,157,0,0,0,0,{}
+aaib_m210_v1_poole,aaib,UK AAIB,DJI Matrice 210 V1,incidents/aaib/aaib_m210_v1_2020_poole_full_report.pdf,41,1,1,0,0,"{""investigated"": 1}"
+asrs_m210_1918661,asrs,NASA ASRS,DJI Matrice 210,incidents/selected/asrs_acn_1918661_matrice210.csv,1,1,1,0,0,"{""summary_only"": 1}"
+aaib_dji_m30t_selected,aaib,UK AAIB,DJI Matrice 30T,incidents/selected/aaib_dji_m30t.csv,5,5,0,5,0,"{""control_loss_unconfirmed_link"": 1, ""no_link_loss"": 4}"
+asrs_dji_m4t_selected,asrs,NASA ASRS,DJI Matrice 4T,incidents/selected/asrs_dji_m4t.csv,1,1,0,1,0,"{""no_link_loss"": 1}"
+forum_dji_m30t,forum,Pilot forums,DJI Matrice 30T,incidents/selected/forum_dji_m30t.csv,2,2,1,1,0,"{""unverified_forum"": 2}"

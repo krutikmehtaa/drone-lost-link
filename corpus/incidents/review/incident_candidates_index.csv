@@ -1,0 +1,93 @@
+source,event_date,aircraft_type,model_group,event_type,location,review_list,in_corpus_now
+AAIB,2022-11-25,DJI M30,exact,other_occurrence,"Maidenhead, Berkshire",Oct-Nov 2022,no
+AAIB,2023-03-31,DJI M30T,exact,other_occurrence,"Coleshill, Warwickshire",Feb-Mar 2023,no
+AAIB,2023-06-10,DJI Matrice 30T,exact,other_occurrence,"Oadby, Leicestershire",Jun-Jul 2023,no
+AAIB,2023-10-23,DJI M30T,exact,other_occurrence,"Colwyn Bay, Conwy",Oct-Nov 2023,no
+AAIB,2024-01-31,DJI M30T,exact,rth_problem,Derby,Feb-Mar 2024,yes
+AAIB,2024-02-21,DJI M30T,exact,other_occurrence,"Stoke South Junction, Staffordshire",Feb-Mar 2024,no
+AAIB,2024-03-04,DJI M30 T,exact,unresponsive,"East Garston, Berkshire",Feb-Mar 2024,yes
+AAIB,2024-03-19,DJI M30T,exact,rth_problem,"North Gosforth, Northumberland",Feb-Mar 2024,yes
+AAIB,2024-03-26,DJI M30T,exact,other_occurrence,"Near Oxted, Surrey",Feb-Mar 2024,no
+AAIB,2024-05-13,DJI M30T,exact,other_occurrence,"Armthorpe, South Yorkshire",Apr-May 2024,no
+AAIB,2024-10-11,DJI M30T,exact,other_occurrence,"Dunscroft, South Yorkshire",Oct-Nov 2024,no
+AAIB,2024-12-10,DJI M30T,exact,other_occurrence,"Stourbridge, Worcestershire",Dec 2024-Jan 2025,no
+AAIB,2025-01-27,DJI M30T,exact,other_occurrence,"Huddersfield, West Yorkshire",Dec 2024-Jan 2025,no
+AAIB,2025-04-26,DJI Matrice M30,exact,unresponsive,"Gainsborough, Lincolnshire",Apr-May 2025,yes
+AAIB,2025-08-02,DJI M30T,exact,other_occurrence,"Sheerness, Kent",Oct-Nov 2025,no
+AAIB,2025-08-23,DJI M30T,exact,other_occurrence,"Aldershot, Hampshire",Aug-Sep 2025,no
+AAIB,2025-10-16,DJI M30T,exact,rth_problem,"Kettering, Northamptonshire",Oct-Nov 2025,yes
+AAIB,2025-12-01,DJI M30T,exact,rth_problem,"Willington, Durham",Dec 2025-Jan 2026,yes
+AAIB,2025-12-05,DJI M30,exact,other_occurrence,"Ely, Cardiff",Dec 2025-Jan 2026,no
+AAIB,2026-02-05,DJI M30T,exact,other_occurrence,"Cwmllynfell, Neath Port Talbot",Feb-Mar 2026,no
+AAIB,2024-08-09,DJI M3T (aggregator lists it as M30T),ambiguous,other_occurrence,"Wynyard, County Durham",Aug-Sep 2024,no
+BFU (via ASN),2024-05-18,DJI Matrice 30T,exact,link_loss,"Wittingen, Germany",BFU24-0402-3X,uploaded as secondary
+ASRS,2026-02,DJI Matrice 4T,exact,rth_problem,US,ASRS 2336078,yes
+AAIB,2026-06-16,Aurelia X6,other,uncommanded,"Near Weybourne Airfield, Norfolk",Jun-Jul 2026,no
+AAIB,2026-05-01,XAG P100 Pro,other,unresponsive,"Near Beverley, East Riding of Yorkshire",Jun-Jul 2026,no
+AAIB,2026-03-18,Apellix B1,other,unresponsive,"City of Westminster, London",Feb-Mar 2026,no
+AAIB,2025-08-20,Ultra Mk2,other,unresponsive,"Llanbedr Airfield, Gwynedd",Oct-Nov 2025,no
+AAIB,2025-08-15,Skymagic,other,link_loss,"Royal Chelsea Hospital, London",Aug-Sep 2025,no
+AAIB,2025-08-01,DJI Phantom 4 RTK,other,unresponsive;rth_problem,"North Thoresby, Grimsby",Jun-Jul 2025,no
+AAIB,2025-04-28,DJI Phantom 4 Multispectral,other,unresponsive,"Cairnfield, Banffshire",Apr-May 2025,no
+AAIB,2025-03-18,Chubory X10 Pro,other,flyaway,"Bournemouth, Dorset",Feb-Mar 2025,no
+AAIB,2024-11-26,DJI Mavic 3 Enterprise,related,rth_problem,"Elmbridge, Surrey",Dec 2024-Jan 2025,no
+AAIB,2024-11-26,AgEagle eBee X,other,link_loss;rth_problem,"Near Earystane, Isle of Man",Dec 2024-Jan 2025,no
+AAIB,2024-11-28,DJI Mavic 3T,related,unresponsive,"Rural Shropshire",Dec 2024-Jan 2025,no
+AAIB,2024-11-28,DJI Phantom 4 RTK,other,link_loss;rth_problem;flyaway,"Horton-in-Ribblesdale, North Yorkshire",Dec 2024-Jan 2025,no
+AAIB,2025-01-29,Skylane 250 VTOL,other,uncommanded,"Aylesbury, Buckinghamshire",Dec 2024-Jan 2025,no
+AAIB,2024-10-10,DJI Mavic 3,other,link_loss;rth_problem;flyaway,"Diana's Peak, St Helena",Oct-Nov 2024,no
+AAIB,2024-10-10,Skydio X10D,other,link_loss;rth_problem,"Near Stanton St Bernard, Wiltshire",Oct-Nov 2024,no
+AAIB,2024-10-04,Holybro X500 V2,other,uncommanded,"Near Lode, Cambridgeshire",Oct-Nov 2024,no
+AAIB,2024-06-16,DJI Mavic 3 Cine,other,gnss_loss,"Newton-on-the-Moor, Northumberland",Oct-Nov 2024,no
+AAIB,2024-07-15,DJI Mavic II Enterprise,related,link_loss,"Near Tilbury, Essex",Aug-Sep 2024,no
+AAIB,2024-05-17,FX2.5,other,unresponsive,"Deenethorpe Airfield, Northamptonshire",Jun-Jul 2024,no
+AAIB,2024-05-28,DJI Mini 4 Pro,other,link_loss,"Port of Liverpool, Merseyside",Jun-Jul 2024,no
+AAIB,2024-07-17,uAvionics Inspector,other,unresponsive,"Ashton, Northamptonshire",Jun-Jul 2024,no
+AAIB,2024-03-02,BFD Systems GD-40,other,unresponsive;flyaway,Belfast,Apr-May 2024,no
+AAIB,2024-04-17,DJI M300,related,unresponsive,"Near Bolventor, Cornwall",Apr-May 2024,no
+AAIB,2024-04-23,Evolve Dynamics Sky Mantis,other,link_loss;flyaway,"White Cliffs of Dover, Kent",Apr-May 2024,no
+AAIB,2024-04-24,DJI Matrice 300,related,rth_problem;uncommanded,"Near Mixbury, Oxfordshire",Apr-May 2024,no
+AAIB,2023-09-21,DJI M300 RTK,related,link_loss,"Whiteside, West Lothian",Feb-Mar 2024,no
+AAIB,2024-01-11,DJI Mini SE,other,link_loss,"Forest Mill, Clackmannanshire",Feb-Mar 2024,no
+AAIB,2024-03-04,DJI Phantom 4 RTK,other,rth_problem;flyaway,"Southport, Merseyside",Feb-Mar 2024,no
+AAIB,2023-10-15,DJI Mavic 3,other,unresponsive,"Holyhead, Isle of Anglesey",Dec 2023-Jan 2024,no
+AAIB,2023-07-20,DJI Matrice 300,related,gnss_loss,"Near Morpeth, Northumberland",Oct-Nov 2023,no
+AAIB,2023-10-06,DJI Phantom 4 Pro V2,other,unresponsive,"Near Frome, Somerset",Oct-Nov 2023,no
+AAIB,2023-10-26,PW.One,other,uncommanded,"Near Long Lawford, Warwickshire",Oct-Nov 2023,no
+AAIB,2023-11-17,DJI M300,related,uncommanded,"Carlisle, Cumbria",Oct-Nov 2023,no
+AAIB,2023-09-07,DJI Inspire 2,other,link_loss;flyaway,"Northolt, London",Aug-Sep 2023,no
+AAIB,2023-08-17,DJI M300,related,link_loss,"Strathaven, South Lanarkshire",Aug-Sep 2023,no
+AAIB,2023-04-17,Ghost Hybrid,other,uncommanded,"Twinwood Farm, Bedfordshire",Jun-Jul 2023,no
+AAIB,2023-05-24,Yuneec 520e,other,unresponsive,Southampton,Jun-Jul 2023,no
+AAIB,2023-06-22,DJI M300,related,unresponsive,Bristol,Jun-Jul 2023,no
+AAIB,2023-07-13,Applied Aeronautics Albatross,other,rth_problem;unresponsive,"Portland Harbour, Dorset",Jun-Jul 2023,no
+AAIB,2023-02-28,DJI Mavic Enterprise Pro 2,related,unresponsive;link_loss,"Lewisham, London",Apr-May 2023,no
+AAIB,2023-03-03,DJI Mavic 3,other,gnss_loss;unresponsive,Leeds,Apr-May 2023,no
+AAIB,2023-05-19,DJI M300 RTK,related,unresponsive,"Byfleet, Surrey",Apr-May 2023,no
+AAIB,2023-05-20,DJI Avata,other,unresponsive,"Keighley, West Yorkshire",Apr-May 2023,no
+AAIB,2023-02-16,Swoop Aero Kookaburra III,other,rth_problem,"Near Predannack Airfield, Cornwall",Feb-Mar 2023,no
+AAIB,2023-02-20,Unknown,other,unresponsive,"White Waltham Airfield, Maidenhead",Feb-Mar 2023,no
+AAIB,2023-02-28,DJI Mavic 2 Enterprise Advanced,related,gnss_loss;unresponsive,"Preston, Lancashire",Feb-Mar 2023,no
+AAIB,2023-03-07,DJI Phantom 4,other,gnss_loss;rth_problem;flyaway,"Near Buxton, Derbyshire",Feb-Mar 2023,no
+AAIB,2022-12-19,DJI Mavic 2 Enterprise Advanced,related,unresponsive,"Chertsey, Surrey",Dec 2022-Jan 2023,no
+AAIB,2023-01-06,DJI Mavic,other,gnss_loss;unresponsive,"Wakefield, West Yorkshire",Dec 2022-Jan 2023,no
+AAIB,2023-01-10,DJI Matrice 210 RTK,related,unresponsive,"Lythe, Northumberland",Dec 2022-Jan 2023,no
+AAIB,2023-01-11,DJI Mavic 2 Enterprise Dual,related,link_loss;flyaway,"Near Bridgwater, Somerset",Dec 2022-Jan 2023,no
+AAIB,2023-01-17,Evolve Skymantis,other,unresponsive,"Eastbourne, East Sussex",Dec 2022-Jan 2023,no
+AAIB,2022-09-14,DJI M300 RTK,related,unresponsive,"Biggleswade, Bedfordshire",Oct-Nov 2022,no
+AAIB,2022-10-03,Parrot Disco,other,unresponsive,"Lewannick, Cornwall",Oct-Nov 2022,no
+AAIB,2022-10-06,Parrot Anafi,other,unresponsive,"Stechford, Birmingham",Oct-Nov 2022,no
+AAIB,2022-05-30,DJI Inspire II,other,unresponsive,"Hinkley Point C, Somerset",Aug-Sep 2022,no
+AAIB,2022-06-18,iFlight Chimera (modified),other,uncommanded,"Denton with Wootton, Kent",Aug-Sep 2022,no
+AAIB,2022-07-23,DJI Matrice 300,related,unresponsive,Derby,Aug-Sep 2022,no
+AAIB,2022-08-11,DJI Mavic Pro 2,other,uncommanded,"Trawsfynydd, Gwynedd",Aug-Sep 2022,no
+AAIB,2022-04-21,Parrot Anafi,other,unresponsive,"East Kilbride, South Lanarkshire",Jun-Jul 2022,no
+AAIB,2022-05-25,DJI Mavic Pro 2,other,unresponsive,"Holborn, London",Jun-Jul 2022,no
+AAIB,2022-06-08,Mavic 2 Enterprise Advanced,related,unresponsive,Southampton Water,Jun-Jul 2022,no
+AAIB,2022-03-24,DJI Matrice 210 RTK,related,flyaway;unresponsive,"Selby, North Yorkshire",Apr-May 2022,no
+AAIB,2022-04-02,DJI Mavic Enterprise Advanced,related,link_loss,"Coniston, Cumbria",Apr-May 2022,no
+AAIB,2022-04-07,DJI Matrice 210,related,unresponsive,"Ipswich, Suffolk",Apr-May 2022,no
+AAIB,2022-04-18,DJI Mavic Enterprise Advanced,related,rth_problem;unresponsive,"Tyburn, Birmingham",Apr-May 2022,no
+AAIB,2022-04-24,DJI Matrice M300,related,unresponsive,Manchester,Apr-May 2022,no
+AAIB,2022-05-22,DJI Mavic Mini,other,link_loss,"Near Ben More, Isle of Mull",Apr-May 2022,no
+AAIB,2022-05-24,Autel Evo II Pro,related,gnss_loss;unresponsive,"Chalfont St Peter, Buckinghamshire",Apr-May 2022,no

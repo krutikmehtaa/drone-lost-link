@@ -1,0 +1,17 @@
+question,method,expected_passage_rank,hits,different_pages_or_reports_in_top_5,top_3_locators
+DJI Matrice 30T,BM25,1,10,3,dji_m30t_manual_v22 page 20; dji_m30t_manual_v22 page 34; dji_m30t_manual_v22 page 20
+DJI Matrice 30T,dense_MiniLM,1,10,3,dji_m30t_manual_v22 page 20; dji_m30t_manual_v22 page 34; dji_m30t_manual_v22 page 73
+DJI Matrice 30T,hybrid,1,10,3,dji_m30t_manual_v22 page 20; dji_m30t_manual_v22 page 34; dji_m30t_manual_v22 page 20
+DJI Matrice 30T,hybrid_shallow,1,10,5,dji_m30t_manual_v22 page 20; dji_m30t_manual_v22 page 34; dji_m30t_manual_v22 page 33
+DJI Matrice 4T,BM25,2,10,3,dji_matrice4_manual_v12 page 36; dji_matrice4_manual_v12 page 40; dji_matrice4_manual_v12 page 41
+DJI Matrice 4T,dense_MiniLM,3,10,3,dji_matrice4_manual_v12 page 40; dji_matrice4_manual_v12 page 36; dji_matrice4_manual_v12 page 40
+DJI Matrice 4T,hybrid,2,10,3,dji_matrice4_manual_v12 page 36; dji_matrice4_manual_v12 page 40; dji_matrice4_manual_v12 page 40
+DJI Matrice 4T,hybrid_shallow,2,10,5,dji_matrice4_manual_v12 page 36; dji_matrice4_manual_v12 page 40; dji_matrice4_manual_v12 page 41
+Autel EVO Max 4N,BM25,4,10,3,autel_evo_max_manual_v130 page 74; autel_evo_max_manual_v130 page 106; autel_evo_max_manual_v130 page 74
+Autel EVO Max 4N,dense_MiniLM,2,10,4,autel_evo_max_manual_v130 page 74; autel_evo_max_manual_v130 page 68; autel_evo_max_manual_v130 page 74
+Autel EVO Max 4N,hybrid,2,10,4,autel_evo_max_manual_v130 page 74; autel_evo_max_manual_v130 page 68; autel_evo_max_manual_v130 page 74
+Autel EVO Max 4N,hybrid_shallow,2,10,5,autel_evo_max_manual_v130 page 74; autel_evo_max_manual_v130 page 68; autel_evo_max_manual_v130 page 66
+Autel EVO Max 4N incident,BM25,1,1,1,asrs_autel_evo_max_4n_selected record 2202496
+Autel EVO Max 4N incident,dense_MiniLM,1,1,1,asrs_autel_evo_max_4n_selected record 2202496
+Autel EVO Max 4N incident,hybrid,1,1,1,asrs_autel_evo_max_4n_selected record 2202496
+Autel EVO Max 4N incident,hybrid_shallow,1,1,1,asrs_autel_evo_max_4n_selected record 2202496

@@ -1,0 +1,860 @@
+{
+ "run_id": "20261102T200846-full-4b54",
+ "mode": "full",
+ "question": "What can stop the Matrice 4T from getting back to its Home Point when GNSS is weak?",
+ "status": "completed_with_gaps",
+ "stop_reason": "verified claims; gaps listed",
+ "error": null,
+ "intake": {
+  "intent": "in_scope",
+  "models": [
+   "DJI Matrice 4T"
+  ],
+  "focus": "Matrice 4T GNSS weak RTH limitations",
+  "flight_phase": null,
+  "reason": "Question about what can stop the Matrice 4T from returning to the Home Point when GNSS is weak",
+  "decided_by": "model",
+  "unsupported_named": []
+ },
+ "brief": {
+  "short_answer": "FAA guidance claims: reestablishing the control link is advised when the hazard occurs; loss of control link is a described hazard requiring mitigation; regain VLOS when possible; and transfer of control between certificated remote pilots is allowed only if both maintain VLOS without LOC. Manufacturer manuals claim that during failsafe RTH the Matrice 4T may enter ATTI mode and land automatically if positioning is abnormal, and that RTH distance changes orientation and backtracks 50 m on the original route before Preset RTH. Incident reports: there are no usable incident reports available for DJI Matrice 4T to cite here (unverified accounts).",
+  "sections": [
+   {
+    "section": "faa",
+    "label": "FAA guidance",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "AC 107-2A states, when the hazard occurs, 'Try to reestablish control link connection with the small unmanned aircraft'.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0228"
+      ],
+      "quote": "Try to reestablish control link connection with the small unmanned aircraft",
+      "conditions": [
+       "hazard occurs"
+      ],
+      "assessment": "supported",
+      "claim_id": "C001",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "AC 107-2A Appendix A describes 'Loss of control link over people' as a hazard example that may require mitigation.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0227"
+      ],
+      "quote": "Loss of control link over people",
+      "conditions": [
+       "hazard example describing loss of control link over people"
+      ],
+      "assessment": "supported",
+      "claim_id": "C002",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "AC 107-2A states, if VLOS is not maintained, 'regain VLOS as soon as practicable' and follow pre-determined procedures.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0049"
+      ],
+      "quote": "regain VLOS as soon as practicable.",
+      "conditions": [
+       "VLOS lost or not maintained"
+      ],
+      "assessment": "supported",
+      "claim_id": "C003",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "AC 107-2A states that 'transfer of control of a small UAS between certificated remote pilots' is allowed only if both can maintain Visual Line of Sight without LOC.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0032"
+      ],
+      "quote": "transfer of control of a small UAS between certificated remote pilots",
+      "conditions": [
+       "two or more certificated remote pilots transferring operational control",
+       "both capable of maintaining Visual Line of Sight without LOC"
+      ],
+      "assessment": "supported",
+      "claim_id": "C004",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     }
+    ]
+   },
+   {
+    "section": "manual:DJI Matrice 4T",
+    "label": "DJI Matrice 4T manual",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "During Failsafe RTH, the aircraft may enter ATTI mode and land automatically if the positioning system is functioning abnormally.",
+      "citations": [
+       "dji_matrice4_manual_v12_c0058"
+      ],
+      "quote": "During Failsafe RTH, the aircraft may enter ATTI mode and land automatically if the positioning system is functioning abnormally.",
+      "conditions": [
+       "Failsafe RTH is triggered",
+       "positioning system functioning abnormally"
+      ],
+      "assessment": "supported",
+      "claim_id": "C006",
+      "section": "manual:DJI Matrice 4T",
+      "tier": "manufacturer",
+      "incident_label": null
+     },
+     {
+      "text": "If the RTH distance (the horizontal distance between the aircraft and the Home Point) is farther than 50 m, the aircraft adjusts its orientation and flies backward for 50 m on its original flight route before entering Preset RTH.",
+      "citations": [
+       "dji_matrice4_manual_v12_c0065"
+      ],
+      "quote": "If the RTH distance (the horizontal distance between the aircraft and the Home Point) is farther than 50 m, the aircraft adjusts its orientation and flies backward for 50 m on its original flight route before entering Preset RTH.",
+      "conditions": [
+       "RTH distance > 50 m"
+      ],
+      "assessment": "supported",
+      "claim_id": "C008",
+      "section": "manual:DJI Matrice 4T",
+      "tier": "manufacturer",
+      "incident_label": null
+     }
+    ]
+   },
+   {
+    "section": "incident:DJI Matrice 4T",
+    "label": "DJI Matrice 4T incident reports",
+    "status": "no_evidence",
+    "abstain_reason": "no passage passed the relevance check",
+    "claims": []
+   }
+  ],
+  "gaps": [
+   {
+    "kind": "missing",
+    "origin": "section_abstained",
+    "related_claim_ids": [],
+    "text": "No usable evidence found in the approved collection for DJI Matrice 4T incident reports."
+   },
+   {
+    "kind": "missing",
+    "origin": "revision",
+    "related_claim_ids": [],
+    "text": "The passage only states that vision positioning unavailable prevents return; it does not state GNSS being weak as a condition for failure to return."
+   },
+   {
+    "kind": "missing",
+    "origin": "revision",
+    "related_claim_ids": [],
+    "text": "The cited passage does not address exiting RTH due to vision-system suitability; no basis for the claim in c0058."
+   },
+   {
+    "kind": "missing",
+    "origin": "synthesis",
+    "text": "No incident passages describing GNSS weakness impacts on RTH to evaluate against the manual.",
+    "related_claim_ids": [
+     "C006",
+     "C008"
+    ]
+   },
+   {
+    "kind": "unclear",
+    "origin": "synthesis",
+    "text": "Manual cites ATTI-mode fail-safe for abnormal positioning; RTH behavior describes backward movement before Preset RTH, implying different handling under weak GNSS.",
+    "related_claim_ids": [
+     "C006",
+     "C008"
+    ]
+   },
+   {
+    "kind": "unclear",
+    "origin": "synthesis",
+    "text": "Unclear whether GNSS weakness is a listed failure mode in FAA guidance vs manufacturer docs.",
+    "related_claim_ids": [
+     "C003",
+     "C006",
+     "C008"
+    ]
+   }
+  ],
+  "removed_claims": [
+   {
+    "text": "When GNSS is weak and vision positioning is not available, the aircraft cannot return to the home point.",
+    "citations": [
+     "dji_matrice4_manual_v12_c0068"
+    ],
+    "quote": "If the vision positioning is not available during flight, the aircraft cannot return to the home point.",
+    "conditions": [
+     "vision positioning is not available during flight",
+     "GNSS is weak"
+    ],
+    "assessment": "supported",
+    "claim_id": "C005",
+    "section": "manual:DJI Matrice 4T",
+    "tier": "manufacturer",
+    "incident_label": null
+   },
+   {
+    "text": "If not, the aircraft may exit RTH.",
+    "citations": [
+     "dji_matrice4_manual_v12_c0058"
+    ],
+    "quote": "If not, the aircraft may exit RTH.",
+    "conditions": [
+     "vision system not suitable for RTH (lighting/environment)"
+    ],
+    "assessment": "supported_with_conditions",
+    "claim_id": "C007",
+    "section": "manual:DJI Matrice 4T",
+    "tier": "manufacturer",
+    "incident_label": null
+   }
+  ]
+ },
+ "brief_stats": {
+  "words": 348,
+  "claims": 6,
+  "gaps": 6
+ },
+ "searches": [
+  {
+   "search_id": "S001",
+   "section": "faa",
+   "origin": "base",
+   "query": "lost link loss of control link communication remote pilot contingency procedures Matrice 4T GNSS weak RTH limitations",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link loss of control link communication remote pilot contingency procedures Matrice 4T GNSS weak RTH limitations",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "faa_guidance"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0223",
+    "faa_ac_107_2a_2022_c0062",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0249",
+    "faa_ac_107_2a_2022_c0096",
+    "faa_ac_107_2a_2022_c0049",
+    "faa_ac_107_2a_2022_c0053"
+   ],
+   "kept_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0049"
+   ],
+   "new_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0049"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S002",
+   "section": "manual:DJI Matrice 4T",
+   "origin": "base",
+   "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect Matrice 4T GNSS weak RTH limitations",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect Matrice 4T GNSS weak RTH limitations",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "DJI Matrice 4T"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "dji_matrice4_manual_v12_c0067",
+    "dji_matrice4_manual_v12_c0065",
+    "dji_matrice4_manual_v12_c0055",
+    "dji_matrice4_manual_v12_c0057",
+    "dji_matrice4_manual_v12_c0058",
+    "dji_matrice4_manual_v12_c0017",
+    "dji_matrice4_manual_v12_c0068",
+    "dji_matrice4_manual_v12_c0066",
+    "dji_matrice4_manual_v12_c0056",
+    "dji_matrice4_manual_v12_c0023"
+   ],
+   "kept_ids": [
+    "dji_matrice4_manual_v12_c0067",
+    "dji_matrice4_manual_v12_c0065",
+    "dji_matrice4_manual_v12_c0055",
+    "dji_matrice4_manual_v12_c0057",
+    "dji_matrice4_manual_v12_c0058"
+   ],
+   "new_ids": [
+    "dji_matrice4_manual_v12_c0067",
+    "dji_matrice4_manual_v12_c0065",
+    "dji_matrice4_manual_v12_c0055",
+    "dji_matrice4_manual_v12_c0057",
+    "dji_matrice4_manual_v12_c0058"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S003",
+   "section": "incident:DJI Matrice 4T",
+   "origin": "base",
+   "query": "lost link lost control signal lost return to home flyaway Matrice 4T GNSS weak RTH limitations",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link lost control signal lost return to home flyaway Matrice 4T GNSS weak RTH limitations",
+     "returned": 1,
+     "kept": 0,
+     "new": 0
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "aaib",
+     "model": "DJI Matrice 4T"
+    },
+    {
+     "source_type": "asrs",
+     "model": "DJI Matrice 4T"
+    },
+    {
+     "source_type": "forum",
+     "model": "DJI Matrice 4T"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "asrs_dji_m4t_selected_c0001"
+   ],
+   "kept_ids": [],
+   "new_ids": [],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S004",
+   "section": "manual:DJI Matrice 4T",
+   "origin": "agent",
+   "query": "GNSS weak limitations RTH Matrice 4T",
+   "alternate_queries": [
+    "Signal Lost Action GNSS weak limitations",
+    "weak GNSS ATTI mode Matrice 4T RTH"
+   ],
+   "phrasing_stats": [
+    {
+     "query": "GNSS weak limitations RTH Matrice 4T",
+     "returned": 10,
+     "kept": 5,
+     "new": 4
+    },
+    {
+     "query": "Signal Lost Action GNSS weak limitations",
+     "returned": 10,
+     "kept": 5,
+     "new": 4
+    },
+    {
+     "query": "weak GNSS ATTI mode Matrice 4T RTH",
+     "returned": 10,
+     "kept": 5,
+     "new": 4
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "DJI Matrice 4T"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "Need explicit statements in the manual about GNSS weakness affecting RTH/LND, such as ATTI mode during Failsafe RTH.",
+   "follows_from": null,
+   "returned_ids": [
+    "dji_matrice4_manual_v12_c0023",
+    "dji_matrice4_manual_v12_c0017",
+    "dji_matrice4_manual_v12_c0067",
+    "dji_matrice4_manual_v12_c0035",
+    "dji_matrice4_manual_v12_c0068",
+    "dji_matrice4_manual_v12_c0071",
+    "dji_matrice4_manual_v12_c0058",
+    "dji_matrice4_manual_v12_c0022",
+    "dji_matrice4_manual_v12_c0079",
+    "dji_matrice4_manual_v12_c0065",
+    "dji_matrice4_manual_v12_c0179",
+    "dji_matrice4_manual_v12_c0034",
+    "dji_matrice4_manual_v12_c0174",
+    "dji_matrice4_manual_v12_c0055",
+    "dji_matrice4_manual_v12_c0104",
+    "dji_matrice4_manual_v12_c0066",
+    "dji_matrice4_manual_v12_c0164"
+   ],
+   "kept_ids": [
+    "dji_matrice4_manual_v12_c0023",
+    "dji_matrice4_manual_v12_c0017",
+    "dji_matrice4_manual_v12_c0067",
+    "dji_matrice4_manual_v12_c0068",
+    "dji_matrice4_manual_v12_c0071"
+   ],
+   "new_ids": [
+    "dji_matrice4_manual_v12_c0023",
+    "dji_matrice4_manual_v12_c0017",
+    "dji_matrice4_manual_v12_c0068",
+    "dji_matrice4_manual_v12_c0071"
+   ],
+   "below_cutoff_ids": [
+    "dji_matrice4_manual_v12_c0035",
+    "dji_matrice4_manual_v12_c0022",
+    "dji_matrice4_manual_v12_c0079",
+    "dji_matrice4_manual_v12_c0179",
+    "dji_matrice4_manual_v12_c0034"
+   ],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null,
+   "earned": true
+  },
+  {
+   "search_id": "S005",
+   "section": "manual:DJI Matrice 4T",
+   "origin": "agent",
+   "query": "Matrice 4T GNSS weak limitations RTH",
+   "alternate_queries": [
+    "GNSS signal weak RTH limitations DJI Matrice 4T",
+    "GPS signal weak RTH fails DJI Matrice 4T"
+   ],
+   "phrasing_stats": [
+    {
+     "query": "Matrice 4T GNSS weak limitations RTH",
+     "returned": 10,
+     "kept": 5,
+     "new": 0
+    },
+    {
+     "query": "GNSS signal weak RTH limitations DJI Matrice 4T",
+     "returned": 10,
+     "kept": 5,
+     "new": 0
+    },
+    {
+     "query": "GPS signal weak RTH fails DJI Matrice 4T",
+     "returned": 10,
+     "kept": 5,
+     "new": 0
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "DJI Matrice 4T"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "to find manual details about limitations when GNSS is weak that would prevent returning to Home Point",
+   "follows_from": null,
+   "returned_ids": [
+    "dji_matrice4_manual_v12_c0067",
+    "dji_matrice4_manual_v12_c0023",
+    "dji_matrice4_manual_v12_c0071",
+    "dji_matrice4_manual_v12_c0055",
+    "dji_matrice4_manual_v12_c0058",
+    "dji_matrice4_manual_v12_c0017",
+    "dji_matrice4_manual_v12_c0035",
+    "dji_matrice4_manual_v12_c0183",
+    "dji_matrice4_manual_v12_c0099",
+    "dji_matrice4_manual_v12_c0022",
+    "dji_matrice4_manual_v12_c0062",
+    "dji_matrice4_manual_v12_c0075",
+    "dji_matrice4_manual_v12_c0174",
+    "dji_matrice4_manual_v12_c0066",
+    "dji_matrice4_manual_v12_c0166",
+    "dji_matrice4_manual_v12_c0008",
+    "dji_matrice4_manual_v12_c0164",
+    "dji_matrice4_manual_v12_c0173"
+   ],
+   "kept_ids": [
+    "dji_matrice4_manual_v12_c0067",
+    "dji_matrice4_manual_v12_c0023",
+    "dji_matrice4_manual_v12_c0071",
+    "dji_matrice4_manual_v12_c0055",
+    "dji_matrice4_manual_v12_c0058"
+   ],
+   "new_ids": [],
+   "below_cutoff_ids": [
+    "dji_matrice4_manual_v12_c0035",
+    "dji_matrice4_manual_v12_c0183",
+    "dji_matrice4_manual_v12_c0099",
+    "dji_matrice4_manual_v12_c0022",
+    "dji_matrice4_manual_v12_c0062"
+   ],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  }
+ ],
+ "decisions": [
+  {
+   "decision_id": "D001",
+   "section": "faa",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "FAA section passages cover the required loss-of-control-link guidance: reestablish link, then emergency/contingency procedures. No conflicts found; no model-specific actions or gaps beyond high-level guidance.",
+   "tool": "finish_assessment",
+   "coverage": "sufficient",
+   "missing": [],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D002",
+   "section": "manual:DJI Matrice 4T",
+   "action": "search",
+   "continue_or_stop": "continue",
+   "reason": "Need explicit statements in the manual about GNSS weakness affecting RTH/LND, such as ATTI mode during Failsafe RTH.",
+   "tool": "document_search",
+   "searched_section": "manual:DJI Matrice 4T",
+   "query": "GNSS weak limitations RTH Matrice 4T",
+   "alternate_queries": [
+    "Signal Lost Action GNSS weak limitations",
+    "weak GNSS ATTI mode Matrice 4T RTH"
+   ],
+   "follows_from": null,
+   "search_id": "S004",
+   "new_passages": 4,
+   "below_cutoff": 5,
+   "earned_search": true
+  },
+  {
+   "decision_id": "D003",
+   "section": "manual:DJI Matrice 4T",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "Manual passages describe that with weak GNSS the Matrice 4T may enter ATTI mode during Failsafe RTH, which can prevent reliable return to Home Point. Also notes to avoid conditions that could hinder GNSS and to use RTH settings accordingly.",
+   "tool": "finish_assessment",
+   "coverage": "sufficient",
+   "missing": [],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D004",
+   "section": "incident:DJI Matrice 4T",
+   "action": "search",
+   "continue_or_stop": "continue",
+   "reason": "to find manual details about limitations when GNSS is weak that would prevent returning to Home Point",
+   "tool": "document_search",
+   "searched_section": "manual:DJI Matrice 4T",
+   "query": "Matrice 4T GNSS weak limitations RTH",
+   "alternate_queries": [
+    "GNSS signal weak RTH limitations DJI Matrice 4T",
+    "GPS signal weak RTH fails DJI Matrice 4T"
+   ],
+   "follows_from": null,
+   "search_id": "S005",
+   "new_passages": 0,
+   "below_cutoff": 5,
+   "earned_search": false
+  },
+  {
+   "decision_id": "D005",
+   "section": "incident:DJI Matrice 4T",
+   "action": "finish_insufficient",
+   "continue_or_stop": "stop",
+   "reason": "Incidents section has no provided content to compare; relies on manual for GNSS-related RTH behavior.",
+   "tool": "finish_assessment",
+   "coverage": "insufficient",
+   "missing": [
+    "No incident-specific reports available in this section to assess against the manual.",
+    "Need incident passages describing what happened during GNSS weakness to evaluate consistency with manual RTH behavior."
+   ],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D006",
+   "section": "manual:DJI Matrice 4T",
+   "action": "to_gap",
+   "continue_or_stop": "stop",
+   "reason": "The passage only states that vision positioning unavailable prevents return; it does not state GNSS being weak as a condition for failure to return.",
+   "claim_id": "C005",
+   "round": 1
+  },
+  {
+   "decision_id": "D007",
+   "section": "manual:DJI Matrice 4T",
+   "action": "to_gap",
+   "continue_or_stop": "stop",
+   "reason": "The cited passage does not address exiting RTH due to vision-system suitability; no basis for the claim in c0058.",
+   "claim_id": "C007",
+   "round": 1
+  },
+  {
+   "decision_id": "D008",
+   "section": "gaps",
+   "action": "rejected_by_code",
+   "continue_or_stop": "continue",
+   "reason": "conflict without claims on both sides; kept as unclear",
+   "text": "Manual cites ATTI-mode fail-safe for abnormal positioning; RTH behavior describes backward movement before Preset RTH, implying different handling under weak GNSS."
+  },
+  {
+   "decision_id": "D009",
+   "section": "short_answer",
+   "action": "trimmed_by_code",
+   "continue_or_stop": "stop",
+   "reason": "short answer over the limits after one retry"
+  }
+ ],
+ "assessments": {
+  "faa": {
+   "coverage": "sufficient",
+   "missing": [],
+   "conflicts_noticed": [],
+   "reason": "FAA section passages cover the required loss-of-control-link guidance: reestablish link, then emergency/contingency procedures. No conflicts found; no model-specific actions or gaps beyond high-level guidance.",
+   "stop_reason": "model_finished",
+   "section": "faa",
+   "turns": 2,
+   "tool_calls": 0,
+   "searches": 0,
+   "searches_allowed": 2
+  },
+  "manual:DJI Matrice 4T": {
+   "coverage": "sufficient",
+   "missing": [],
+   "conflicts_noticed": [],
+   "reason": "Manual passages describe that with weak GNSS the Matrice 4T may enter ATTI mode during Failsafe RTH, which can prevent reliable return to Home Point. Also notes to avoid conditions that could hinder GNSS and to use RTH settings accordingly.",
+   "stop_reason": "model_finished",
+   "section": "manual:DJI Matrice 4T",
+   "turns": 3,
+   "tool_calls": 1,
+   "searches": 1,
+   "searches_allowed": 3
+  },
+  "incident:DJI Matrice 4T": {
+   "coverage": "insufficient",
+   "missing": [
+    "No incident-specific reports available in this section to assess against the manual.",
+    "Need incident passages describing what happened during GNSS weakness to evaluate consistency with manual RTH behavior."
+   ],
+   "conflicts_noticed": [],
+   "reason": "Incidents section has no provided content to compare; relies on manual for GNSS-related RTH behavior.",
+   "stop_reason": "model_finished",
+   "section": "incident:DJI Matrice 4T",
+   "turns": 3,
+   "tool_calls": 1,
+   "searches": 1,
+   "searches_allowed": 2
+  }
+ },
+ "gate_results": {
+  "C001": {
+   "claim_id": "C001",
+   "passed": true,
+   "failures": []
+  },
+  "C002": {
+   "claim_id": "C002",
+   "passed": true,
+   "failures": []
+  },
+  "C003": {
+   "claim_id": "C003",
+   "passed": true,
+   "failures": []
+  },
+  "C004": {
+   "claim_id": "C004",
+   "passed": true,
+   "failures": []
+  },
+  "C006": {
+   "claim_id": "C006",
+   "passed": true,
+   "failures": []
+  },
+  "C008": {
+   "claim_id": "C008",
+   "passed": true,
+   "failures": []
+  }
+ },
+ "verifications": {
+  "C001": {
+   "claim_id": "C001",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage explicitly states: 'Example: Try to reestablish control link connection with the small unmanned aircraft.' and mentions taking emergency/contingency procedures if the link cannot be reestablished.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0228"
+   ]
+  },
+  "C002": {
+   "claim_id": "C002",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "Appendix A sample hazard section includes 'Loss of control link over people' as an example of a hazard and mitigation discussed in the cited material.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0227"
+   ]
+  },
+  "C003": {
+   "claim_id": "C003",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The passage states regain VLOS as soon as practicable and references following pre-determined procedures if VLOS cannot be regained, matching the claim.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0049"
+   ]
+  },
+  "C004": {
+   "claim_id": "C004",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited text specifies that two or more certificated remote pilots may transfer operational control only if both can maintain VLOS without LOC, aligning with the claim.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0032"
+   ]
+  },
+  "C006": {
+   "claim_id": "C006",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage (c0058) says: During Failsafe RTH, the aircraft may enter ATTI mode and land automatically if the positioning system is functioning abnormally.",
+   "supporting_ids": [
+    "dji_matrice4_manual_v12_c0058"
+   ]
+  },
+  "C008": {
+   "claim_id": "C008",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage (c0065) states that if the RTH distance > 50 m, the aircraft adjusts its orientation and flies backward for 50 m before entering Preset RTH.",
+   "supporting_ids": [
+    "dji_matrice4_manual_v12_c0065"
+   ]
+  }
+ },
+ "first_draft_results": [
+  {
+   "claim_id": "C001",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C002",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C003",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C004",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C005",
+   "passes": false,
+   "gate_failures": [],
+   "verifier": "partial"
+  },
+  {
+   "claim_id": "C006",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C007",
+   "passes": false,
+   "gate_failures": [
+    "quote_in_source"
+   ],
+   "verifier": "not_supported"
+  },
+  {
+   "claim_id": "C008",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  }
+ ],
+ "revisions_used": 1,
+ "reopens": 0,
+ "cost": {
+  "model_calls": 18,
+  "tokens_in": 37536,
+  "tokens_out": 16934,
+  "searches": 5,
+  "agent_searches": 2,
+  "agent_tool_calls": 5,
+  "seconds": 136.5
+ },
+ "corpus_snapshot": "4d0e3c83c9425371",
+ "chunks_sha256": "3aff778d5475cd877ed6cef54834cdaa960ccce15ebda1442215c7ca258274c6",
+ "retrieval": "hybrid_rrf",
+ "model": "@30875-fall26-openai/gpt-5-nano",
+ "reasoning_effort": "low",
+ "config": {
+  "mode": "full",
+  "max_revisions": 2,
+  "agent_base_searches_per_section": 2,
+  "agent_max_searches_per_section": 4,
+  "agent_max_tool_calls_per_section": 7,
+  "agent_max_turns_per_section": 8,
+  "agent_results_shown": 10,
+  "agent_max_searches_per_run": 8,
+  "agent_max_turns_per_run": 40,
+  "max_reopens_per_run": 1,
+  "max_searches": 40,
+  "max_model_calls": 120,
+  "top_k": 5,
+  "max_claims_per_section": 5,
+  "max_claim_words": 40,
+  "max_gaps": 6,
+  "max_short_answer_words": 120
+ },
+ "trace_path": "/content/drive/MyDrive/Agentic Unlearning Group/Project 1/processed/traces/20261102T200846-full-4b54.jsonl"
+}

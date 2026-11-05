@@ -1,0 +1,576 @@
+{
+ "run_id": "20261102T185625-fixed-aaf9",
+ "mode": "fixed",
+ "question": "Can the Autel manual explain why every return-to-home attempt failed in the EVO Max 4N ASRS report?",
+ "status": "completed_with_gaps",
+ "stop_reason": "verified claims; gaps listed",
+ "error": null,
+ "intake": {
+  "intent": "in_scope",
+  "models": [
+   "Autel EVO Max 4N"
+  ],
+  "focus": "Autel EVO Max 4N RTH failure ASRS",
+  "flight_phase": null,
+  "reason": "User asks whether the Autel EVO Max 4N manual explains why every return-to-home attempt failed in an ASRS report. Provide guidance from the Autel manual on RTH behavior and loss of control link, and note that ASRS reports are not verified findings. To determine applicability to a specific ASRS entry, we need the report's details (conditions, warnings, GPS loss, battery, interference) since the manual describes normal/failsafe RTH behavior and typical fault indicators rather than the exact ASRS case.",
+  "decided_by": "model",
+  "unsupported_named": []
+ },
+ "brief": {
+  "short_answer": "FAA guidance supports attempting to reestablish a control link and discontinuing flight if the link is not recoverable, and requires preflight control link loss procedures; example language frames loss-of-link scenarios. The Autel EVO Max 4N manual section is not found in the verified materials, so no usable evidence from the manual is available. Incident reports (unverified accounts) state loss of control shortly after takeoff and that the UAS was not located or recovered. Main gap: there is a conflict between FAA guidance to reestablish the control link and the unverified Autel report of sudden loss after takeoff, with no verified evidence of any RTH attempts or a manual explanation of why RTH would fail.",
+  "sections": [
+   {
+    "section": "faa",
+    "label": "FAA guidance",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "When the control link is lost, \"Try to reestablish control link connection with the small unmanned aircraft\"; if connection cannot be reestablished, start emergency or contingency procedures for loss of control link.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0228"
+      ],
+      "quote": "Try to reestablish control link connection with the small unmanned aircraft",
+      "conditions": [
+       "loss of control link",
+       "inability to reestablish connection triggers emergency/contingency procedures"
+      ],
+      "assessment": "supported",
+      "claim_id": "C001",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "If the hazard involves a control link issue, \"Discontinue flight and/or avoid further flight operations until further inspection and testing of the control link between the ground control unit and the aircraft.\"",
+      "citations": [
+       "faa_ac_107_2a_2022_c0254"
+      ],
+      "quote": "Discontinue flight and/or avoid further flight operations until further inspection and testing of the control link between the ground control unit and the aircraft",
+      "conditions": [
+       "control link issue",
+       "require inspection and testing before further flight"
+      ],
+      "assessment": "supported",
+      "claim_id": "C002",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "FAA guidance states that, \"The preflight briefing must include control link loss procedures.\"",
+      "citations": [
+       "faa_ac_107_2a_2022_c0227"
+      ],
+      "quote": "The preflight briefing must include control link loss procedures",
+      "conditions": [
+       "preflight briefing",
+       "control link loss procedures included"
+      ],
+      "assessment": "supported",
+      "claim_id": "C003",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "The guidance includes an example: \"Describe what will be done if the hazard occurs\" with the example \"Loss of control link over people\" to frame potential lost-link scenarios.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0227"
+      ],
+      "quote": "Describe what will be done if the hazard occurs",
+      "conditions": [
+       "hazard scenario description required",
+       "example: loss of control link over people"
+      ],
+      "assessment": "supported",
+      "claim_id": "C004",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     }
+    ]
+   },
+   {
+    "section": "manual:Autel EVO Max 4N",
+    "label": "Autel EVO Max 4N manual",
+    "status": "no_evidence",
+    "abstain_reason": "No passage describes ASRS report reasons for EVO Max 4N RTH failures; the provided excerpts only discuss general Signal Loss and RTH behavior in manual, automated, and disconnection contexts without referencing ASRS findings.",
+    "claims": []
+   },
+   {
+    "section": "incident:Autel EVO Max 4N",
+    "label": "Autel EVO Max 4N incident reports",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "The reporter states: 'Shortly after takeoff I completely lost control of the UAS,' with conditions: shortly after takeoff and loss of control.",
+      "citations": [
+       "asrs_autel_evo_max_4n_selected_c0001"
+      ],
+      "quote": "Shortly after takeoff I completely lost control of the UAS.",
+      "conditions": [
+       "Shortly after takeoff",
+       "loss of control"
+      ],
+      "assessment": "supported",
+      "claim_id": "C005",
+      "section": "incident:Autel EVO Max 4N",
+      "tier": "unverified",
+      "incident_label": "summary_only"
+     },
+     {
+      "text": "The reporter states: 'UAS Platform has not been located or recovered,' with conditions: not located or recovered.",
+      "citations": [
+       "asrs_autel_evo_max_4n_selected_c0001"
+      ],
+      "quote": "UAS Platform has not been located or recovered.",
+      "conditions": [
+       "not located or recovered"
+      ],
+      "assessment": "supported",
+      "claim_id": "C007",
+      "section": "incident:Autel EVO Max 4N",
+      "tier": "unverified",
+      "incident_label": "summary_only"
+     }
+    ]
+   }
+  ],
+  "gaps": [
+   {
+    "kind": "conflict",
+    "origin": "synthesis",
+    "text": "Conflict between FAA guidance to reestablish the control link and Autel report of sudden loss of control after takeoff; both describe control-link issues but actions differ.",
+    "related_claim_ids": [
+     "C001",
+     "C005"
+    ]
+   },
+   {
+    "kind": "missing",
+    "origin": "section_abstained",
+    "related_claim_ids": [],
+    "text": "No usable evidence found in the approved collection for Autel EVO Max 4N manual."
+   },
+   {
+    "kind": "missing",
+    "origin": "revision",
+    "related_claim_ids": [],
+    "text": "The passage does not state that RTH attempts were made, only that RTH features failed."
+   },
+   {
+    "kind": "missing",
+    "origin": "synthesis",
+    "text": "Missing evidence: Autel manual section explaining why RTH would fail is not in verified materials.",
+    "related_claim_ids": [
+     "C005",
+     "C007"
+    ]
+   },
+   {
+    "kind": "unclear",
+    "origin": "synthesis",
+    "text": "Unclear whether the reports show RTH attempts were made; no explicit mention in verified sources.",
+    "related_claim_ids": [
+     "C005",
+     "C007"
+    ]
+   }
+  ],
+  "removed_claims": [
+   {
+    "text": "The reporter states: 'All attempts of Return To Home features failed,' with conditions: RTH attempts were made; RTH features failed.",
+    "citations": [
+     "asrs_autel_evo_max_4n_selected_c0001"
+    ],
+    "quote": "All attempts of Return To Home features failed.",
+    "conditions": [
+     "RTH attempts were made",
+     "RTH features failed"
+    ],
+    "assessment": "supported",
+    "claim_id": "C006",
+    "section": "incident:Autel EVO Max 4N",
+    "tier": "unverified",
+    "incident_label": "summary_only"
+   }
+  ]
+ },
+ "brief_stats": {
+  "words": 343,
+  "claims": 6,
+  "gaps": 5
+ },
+ "searches": [
+  {
+   "search_id": "S001",
+   "section": "faa",
+   "origin": "base",
+   "query": "lost link loss of control link communication remote pilot contingency procedures Autel EVO Max 4N RTH failure ASRS",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link loss of control link communication remote pilot contingency procedures Autel EVO Max 4N RTH failure ASRS",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "faa_guidance"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0223",
+    "faa_ac_107_2a_2022_c0062",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0274",
+    "faa_ac_107_2a_2022_c0269",
+    "faa_ac_107_2a_2022_c0049"
+   ],
+   "kept_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0032"
+   ],
+   "new_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0032"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S002",
+   "section": "manual:Autel EVO Max 4N",
+   "origin": "base",
+   "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect Autel EVO Max 4N RTH failure ASRS",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect Autel EVO Max 4N RTH failure ASRS",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "Autel EVO Max 4N"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "autel_evo_max_manual_v130_c0118",
+    "autel_evo_max_manual_v130_c0107",
+    "autel_evo_max_manual_v130_c0183",
+    "autel_evo_max_manual_v130_c0117",
+    "autel_evo_max_manual_v130_c0106",
+    "autel_evo_max_manual_v130_c0226",
+    "autel_evo_max_manual_v130_c0101",
+    "autel_evo_max_manual_v130_c0104",
+    "autel_evo_max_manual_v130_c0023",
+    "autel_evo_max_manual_v130_c0166"
+   ],
+   "kept_ids": [
+    "autel_evo_max_manual_v130_c0118",
+    "autel_evo_max_manual_v130_c0107",
+    "autel_evo_max_manual_v130_c0183",
+    "autel_evo_max_manual_v130_c0117",
+    "autel_evo_max_manual_v130_c0106"
+   ],
+   "new_ids": [
+    "autel_evo_max_manual_v130_c0118",
+    "autel_evo_max_manual_v130_c0107",
+    "autel_evo_max_manual_v130_c0183",
+    "autel_evo_max_manual_v130_c0117",
+    "autel_evo_max_manual_v130_c0106"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S003",
+   "section": "incident:Autel EVO Max 4N",
+   "origin": "base",
+   "query": "lost link lost control signal lost return to home flyaway Autel EVO Max 4N RTH failure ASRS",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link lost control signal lost return to home flyaway Autel EVO Max 4N RTH failure ASRS",
+     "returned": 1,
+     "kept": 1,
+     "new": 1
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "aaib",
+     "model": "Autel EVO Max 4N"
+    },
+    {
+     "source_type": "asrs",
+     "model": "Autel EVO Max 4N"
+    },
+    {
+     "source_type": "forum",
+     "model": "Autel EVO Max 4N"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "asrs_autel_evo_max_4n_selected_c0001"
+   ],
+   "kept_ids": [
+    "asrs_autel_evo_max_4n_selected_c0001"
+   ],
+   "new_ids": [
+    "asrs_autel_evo_max_4n_selected_c0001"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  }
+ ],
+ "decisions": [
+  {
+   "decision_id": "D001",
+   "section": "incident:Autel EVO Max 4N",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "verbatim quote, proper attribution, include conditions, under 40 words",
+   "claim_id": "C005",
+   "round": 1,
+   "new_text": "The reporter states: 'Shortly after takeoff I completely lost control of the UAS,' with conditions: shortly after takeoff and loss of control."
+  },
+  {
+   "decision_id": "D002",
+   "section": "incident:Autel EVO Max 4N",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "verbatim quote, proper attribution, include conditions, under 40 words",
+   "claim_id": "C006",
+   "round": 1,
+   "new_text": "The reporter states: 'All attempts of Return To Home features failed,' with conditions: RTH attempts were made; RTH features failed."
+  },
+  {
+   "decision_id": "D003",
+   "section": "incident:Autel EVO Max 4N",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "verbatim quote, proper attribution, include conditions, under 40 words",
+   "claim_id": "C007",
+   "round": 1,
+   "new_text": "The reporter states: 'UAS Platform has not been located or recovered,' with conditions: not located or recovered."
+  },
+  {
+   "decision_id": "D004",
+   "section": "incident:Autel EVO Max 4N",
+   "action": "to_gap",
+   "continue_or_stop": "stop",
+   "reason": "The passage does not state that RTH attempts were made, only that RTH features failed.",
+   "claim_id": "C006",
+   "round": 2
+  }
+ ],
+ "assessments": {},
+ "gate_results": {
+  "C001": {
+   "claim_id": "C001",
+   "passed": true,
+   "failures": []
+  },
+  "C002": {
+   "claim_id": "C002",
+   "passed": true,
+   "failures": []
+  },
+  "C003": {
+   "claim_id": "C003",
+   "passed": true,
+   "failures": []
+  },
+  "C004": {
+   "claim_id": "C004",
+   "passed": true,
+   "failures": []
+  },
+  "C005": {
+   "claim_id": "C005",
+   "passed": true,
+   "failures": []
+  },
+  "C007": {
+   "claim_id": "C007",
+   "passed": true,
+   "failures": []
+  }
+ },
+ "verifications": {
+  "C001": {
+   "claim_id": "C001",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage provides the exact guidance: reestablish control link, and if not possible, start emergency or contingency procedures for loss of control link.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0228"
+   ]
+  },
+  "C002": {
+   "claim_id": "C002",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states to discontinue flight and/or avoid further flight operations until further inspection and testing of the control link between the ground control unit and the aircraft.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0254"
+   ]
+  },
+  "C003": {
+   "claim_id": "C003",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage explicitly says the preflight briefing must include control link loss procedures.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0227"
+   ]
+  },
+  "C004": {
+   "claim_id": "C004",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage includes the example and description: describe what will be done if the hazard occurs with an example loss of control link over people to frame potential lost-link scenarios.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0227"
+   ]
+  },
+  "C005": {
+   "claim_id": "C005",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The passage states exactly: 'Shortly after takeoff I completely lost control of the UAS.'",
+   "supporting_ids": [
+    "asrs_autel_evo_max_4n_selected_c0001"
+   ]
+  },
+  "C007": {
+   "claim_id": "C007",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The passage includes the exact statement 'UAS Platform has not been located or recovered.'",
+   "supporting_ids": [
+    "asrs_autel_evo_max_4n_selected_c0001"
+   ]
+  }
+ },
+ "first_draft_results": [
+  {
+   "claim_id": "C001",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C002",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C003",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C004",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C005",
+   "passes": false,
+   "gate_failures": [
+    "attributed"
+   ],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C006",
+   "passes": false,
+   "gate_failures": [
+    "attributed"
+   ],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C007",
+   "passes": false,
+   "gate_failures": [
+    "attributed"
+   ],
+   "verifier": "supported"
+  }
+ ],
+ "revisions_used": 2,
+ "reopens": 0,
+ "cost": {
+  "model_calls": 12,
+  "tokens_in": 13948,
+  "tokens_out": 12788,
+  "searches": 3,
+  "agent_searches": 0,
+  "agent_tool_calls": 0,
+  "seconds": 100.4
+ },
+ "corpus_snapshot": "4d0e3c83c9425371",
+ "chunks_sha256": "3aff778d5475cd877ed6cef54834cdaa960ccce15ebda1442215c7ca258274c6",
+ "retrieval": "hybrid_rrf",
+ "model": "@30875-fall26-openai/gpt-5-nano",
+ "reasoning_effort": "low",
+ "config": {
+  "mode": "fixed",
+  "max_revisions": 2,
+  "agent_base_searches_per_section": 2,
+  "agent_max_searches_per_section": 4,
+  "agent_max_tool_calls_per_section": 7,
+  "agent_max_turns_per_section": 8,
+  "agent_results_shown": 10,
+  "agent_max_searches_per_run": 8,
+  "agent_max_turns_per_run": 40,
+  "max_reopens_per_run": 1,
+  "max_searches": 40,
+  "max_model_calls": 120,
+  "top_k": 5,
+  "max_claims_per_section": 5,
+  "max_claim_words": 40,
+  "max_gaps": 6,
+  "max_short_answer_words": 120
+ },
+ "trace_path": "/content/drive/MyDrive/Agentic Unlearning Group/Project 1/processed/traces/20261102T185625-fixed-aaf9.jsonl"
+}

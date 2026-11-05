@@ -1,0 +1,444 @@
+{
+ "run_id": "20261103T011709-fixed-6bc0",
+ "mode": "fixed",
+ "question": "When does the DJI Matrice 4T start Failsafe RTH after losing the remote controller signal?",
+ "status": "completed_with_gaps",
+ "stop_reason": "verified claims; gaps listed",
+ "error": null,
+ "intake": {
+  "intent": "in_scope",
+  "models": [
+   "DJI Matrice 4T"
+  ],
+  "focus": "loss of RC signal and failsafe RTH",
+  "flight_phase": null,
+  "reason": "Query seeks guidance from manuals on lost-link behavior and automatic RTH for Matrice 4T.",
+  "decided_by": "model",
+  "unsupported_named": []
+ },
+ "brief": {
+  "short_answer": "FAA guidance emphasizes reestablishing the control link and notes a hazard scenario such as loss of control link over people. DJI Matrice 4T manual states that if the remote controller signal is lost, the aircraft will automatically initiate Failsafe RTH if the Signal Lost Action is set to RTH, and that the lost-signal condition is an RTH trigger. There is no usable evidence from DJI Matrice 4T incident reports in the collection. Gap: FAA guidance emphasizes reestablishing the link while the manual describes auto Failsafe RTH on signal loss when configured; no timing or duration is specified in FAA guidance.}}",
+  "sections": [
+   {
+    "section": "faa",
+    "label": "FAA guidance",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "When the connection cannot be reestablished, start 'emergency or contingency procedures for loss of control link'.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0228"
+      ],
+      "quote": "start emergency or contingency procedures for loss of control link",
+      "conditions": [
+       "If connection cannot be reestablished"
+      ],
+      "assessment": "supported",
+      "claim_id": "C001",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "The procedure states to 'Try to reestablish control link connection with the small unmanned aircraft'.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0228"
+      ],
+      "quote": "Try to reestablish control link connection with the small unmanned aircraft",
+      "conditions": [],
+      "assessment": "supported",
+      "claim_id": "C002",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "The guidance notes a hazard: 'Example: Loss of control link over people'.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0227"
+      ],
+      "quote": "Example: Loss of control link over people",
+      "conditions": [],
+      "assessment": "supported",
+      "claim_id": "C003",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     }
+    ]
+   },
+   {
+    "section": "manual:DJI Matrice 4T",
+    "label": "DJI Matrice 4T manual",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "The manual states that when the remote controller signal is lost, the aircraft will automatically initiate Failsafe RTH if the Signal Lost Action is set to RTH.",
+      "citations": [
+       "dji_matrice4_manual_v12_c0065"
+      ],
+      "quote": "When the remote controller signal is lost, the aircraft will automatically initiate Failsafe RTH if the Signal Lost Action is set to RTH.",
+      "conditions": [
+       "Signal Lost Action is set to RTH"
+      ],
+      "assessment": "supported",
+      "claim_id": "C004",
+      "section": "manual:DJI Matrice 4T",
+      "tier": "manufacturer",
+      "incident_label": null
+     },
+     {
+      "text": "The manual states that \"the remote controller signal has been lost (Failsafe RTH is triggered)\" is one of the RTH triggers.",
+      "citations": [
+       "dji_matrice4_manual_v12_c0055"
+      ],
+      "quote": "the remote controller signal has been lost (Failsafe RTH is triggered)",
+      "conditions": [
+       "Remote controller signal has been lost"
+      ],
+      "assessment": "supported",
+      "claim_id": "C005",
+      "section": "manual:DJI Matrice 4T",
+      "tier": "manufacturer",
+      "incident_label": null
+     }
+    ]
+   },
+   {
+    "section": "incident:DJI Matrice 4T",
+    "label": "DJI Matrice 4T incident reports",
+    "status": "no_evidence",
+    "abstain_reason": "no passage passed the relevance check",
+    "claims": []
+   }
+  ],
+  "gaps": [
+   {
+    "kind": "conflict",
+    "origin": "synthesis",
+    "text": "FAA guidance emphasizes reestablishing the control link; manufacturer states Failsafe RTH auto-triggers on signal loss when configured.",
+    "related_claim_ids": [
+     "C001",
+     "C004"
+    ]
+   },
+   {
+    "kind": "missing",
+    "origin": "section_abstained",
+    "related_claim_ids": [],
+    "text": "No usable evidence found in the approved collection for DJI Matrice 4T incident reports."
+   },
+   {
+    "kind": "missing",
+    "origin": "synthesis",
+    "text": "No explicit duration or timeout before Failsafe RTH or signal-loss triggers in FAA guidance.",
+    "related_claim_ids": [
+     "C001",
+     "C002"
+    ]
+   }
+  ],
+  "removed_claims": []
+ },
+ "brief_stats": {
+  "words": 236,
+  "claims": 5,
+  "gaps": 3
+ },
+ "searches": [
+  {
+   "search_id": "S001",
+   "section": "faa",
+   "origin": "base",
+   "query": "lost link loss of control link communication remote pilot contingency procedures loss of RC signal and failsafe RTH",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link loss of control link communication remote pilot contingency procedures loss of RC signal and failsafe RTH",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "faa_guidance"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0062",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0223",
+    "faa_ac_107_2a_2022_c0049",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0249",
+    "faa_ac_107_2a_2022_c0274"
+   ],
+   "kept_ids": [
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0049",
+    "faa_ac_107_2a_2022_c0254"
+   ],
+   "new_ids": [
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0049",
+    "faa_ac_107_2a_2022_c0254"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S002",
+   "section": "manual:DJI Matrice 4T",
+   "origin": "base",
+   "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect loss of RC signal and failsafe RTH",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect loss of RC signal and failsafe RTH",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "DJI Matrice 4T"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "dji_matrice4_manual_v12_c0065",
+    "dji_matrice4_manual_v12_c0055",
+    "dji_matrice4_manual_v12_c0075",
+    "dji_matrice4_manual_v12_c0057",
+    "dji_matrice4_manual_v12_c0063",
+    "dji_matrice4_manual_v12_c0054",
+    "dji_matrice4_manual_v12_c0067",
+    "dji_matrice4_manual_v12_c0056",
+    "dji_matrice4_manual_v12_c0069",
+    "dji_matrice4_manual_v12_c0066"
+   ],
+   "kept_ids": [
+    "dji_matrice4_manual_v12_c0065",
+    "dji_matrice4_manual_v12_c0055",
+    "dji_matrice4_manual_v12_c0075",
+    "dji_matrice4_manual_v12_c0057",
+    "dji_matrice4_manual_v12_c0063"
+   ],
+   "new_ids": [
+    "dji_matrice4_manual_v12_c0065",
+    "dji_matrice4_manual_v12_c0055",
+    "dji_matrice4_manual_v12_c0075",
+    "dji_matrice4_manual_v12_c0057",
+    "dji_matrice4_manual_v12_c0063"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S003",
+   "section": "incident:DJI Matrice 4T",
+   "origin": "base",
+   "query": "lost link lost control signal lost return to home flyaway loss of RC signal and failsafe RTH",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link lost control signal lost return to home flyaway loss of RC signal and failsafe RTH",
+     "returned": 1,
+     "kept": 0,
+     "new": 0
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "aaib",
+     "model": "DJI Matrice 4T"
+    },
+    {
+     "source_type": "asrs",
+     "model": "DJI Matrice 4T"
+    },
+    {
+     "source_type": "forum",
+     "model": "DJI Matrice 4T"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "asrs_dji_m4t_selected_c0001"
+   ],
+   "kept_ids": [],
+   "new_ids": [],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  }
+ ],
+ "decisions": [],
+ "assessments": {},
+ "gate_results": {
+  "C001": {
+   "claim_id": "C001",
+   "passed": true,
+   "failures": []
+  },
+  "C002": {
+   "claim_id": "C002",
+   "passed": true,
+   "failures": []
+  },
+  "C003": {
+   "claim_id": "C003",
+   "passed": true,
+   "failures": []
+  },
+  "C004": {
+   "claim_id": "C004",
+   "passed": true,
+   "failures": []
+  },
+  "C005": {
+   "claim_id": "C005",
+   "passed": true,
+   "failures": []
+  }
+ },
+ "verifications": {
+  "C001": {
+   "claim_id": "C001",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states that if the connection cannot be reestablished, emergency or contingency procedures for loss of control link should be started.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0228"
+   ]
+  },
+  "C002": {
+   "claim_id": "C002",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage includes the exact instruction: 'Try to reestablish control link connection with the small unmanned aircraft'.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0228"
+   ]
+  },
+  "C003": {
+   "claim_id": "C003",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage notes the hazard example: 'Example: Loss of control link over people'.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0227"
+   ]
+  },
+  "C004": {
+   "claim_id": "C004",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage explicitly states that loss of remote controller signal will automatically initiate Failsafe RTH if the Signal Lost Action is set to RTH.",
+   "supporting_ids": [
+    "dji_matrice4_manual_v12_c0065"
+   ]
+  },
+  "C005": {
+   "claim_id": "C005",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage lists remote controller signal loss as one of the three triggers for RTH (along with user-initiated RTH and low battery), i.e., Failsafe RTH is triggered when the remote controller signal is lost.",
+   "supporting_ids": [
+    "dji_matrice4_manual_v12_c0055"
+   ]
+  }
+ },
+ "first_draft_results": [
+  {
+   "claim_id": "C001",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C002",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C003",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C004",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C005",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  }
+ ],
+ "revisions_used": 0,
+ "reopens": 0,
+ "cost": {
+  "model_calls": 8,
+  "tokens_in": 8141,
+  "tokens_out": 7999,
+  "searches": 3,
+  "agent_searches": 0,
+  "agent_tool_calls": 0,
+  "seconds": 50.4
+ },
+ "corpus_snapshot": "4d0e3c83c9425371",
+ "chunks_sha256": "3aff778d5475cd877ed6cef54834cdaa960ccce15ebda1442215c7ca258274c6",
+ "retrieval": "hybrid_rrf",
+ "model": "@30875-fall26-openai/gpt-5-nano",
+ "reasoning_effort": "low",
+ "config": {
+  "mode": "fixed",
+  "max_revisions": 2,
+  "agent_base_searches_per_section": 2,
+  "agent_max_searches_per_section": 4,
+  "agent_max_tool_calls_per_section": 7,
+  "agent_max_turns_per_section": 8,
+  "agent_results_shown": 10,
+  "agent_max_searches_per_run": 8,
+  "agent_max_turns_per_run": 40,
+  "max_reopens_per_run": 1,
+  "max_searches": 40,
+  "max_model_calls": 120,
+  "top_k": 5,
+  "max_claims_per_section": 5,
+  "max_claim_words": 40,
+  "max_gaps": 6,
+  "max_short_answer_words": 120
+ },
+ "trace_path": "/content/drive/MyDrive/Agentic Unlearning Group/Project 1/processed/traces/20261103T011709-fixed-6bc0.jsonl"
+}

@@ -1,0 +1,654 @@
+{
+ "run_id": "20261102T195701-full-9bde",
+ "mode": "full",
+ "question": "When can failsafe be disabled during return to home on the Matrice 30T?",
+ "status": "completed_with_gaps",
+ "stop_reason": "verified claims; gaps listed",
+ "error": null,
+ "intake": {
+  "intent": "in_scope",
+  "models": [
+   "DJI Matrice 30T"
+  ],
+  "focus": "failsafe disable during return to home",
+  "flight_phase": "in_flight",
+  "reason": "Guidance on whether failsafe can be disabled during RTH and applicable procedures for Matrice 30T",
+  "decided_by": "model",
+  "unsupported_named": []
+ },
+ "brief": {
+  "short_answer": "FAA guidance indicates reestablishing control link when possible and to discontinue flight until inspection if synchronization or delay issues prevent control inputs. The DJI Matrice 30T manual notes that canceling RTH due to a warning can leave the Intelligent Battery with insufficient power to land safely, risking a crash. Incident reports: there are no usable evidence found in the approved collection for DJI Matrice 30T incident reports (unverified accounts). Main gap: there is no clear evidence on whether failsafe can be disabled during RTH or whether RC control is allowed when the RC signal is normal; the manuals describe other RC/landing behaviors only, leaving key questions open.",
+  "sections": [
+   {
+    "section": "faa",
+    "label": "FAA guidance",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "FAA AC 107-2A states: 'Try to reestablish control link connection with the small unmanned aircraft.' If connection cannot be reestablished, start emergency or contingency procedures for loss of control link.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0228"
+      ],
+      "quote": "Try to reestablish control link connection with the small unmanned aircraft.",
+      "conditions": [
+       "If connection cannot be reestablished"
+      ],
+      "assessment": "supported",
+      "claim_id": "C001",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "FAA AC 107-2A states: 'Discontinue flight and/or avoid further flight operations until further inspection and testing of the control link between the ground control unit and the aircraft' when control inputs are not synchronized or delayed.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0254"
+      ],
+      "quote": "Discontinue flight and/or avoid further flight operations until further inspection and testing of the control link between the ground control unit and the aircraft",
+      "conditions": [
+       "Control inputs are not synchronized or delayed"
+      ],
+      "assessment": "supported",
+      "claim_id": "C002",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     }
+    ]
+   },
+   {
+    "section": "manual:DJI Matrice 30T",
+    "label": "DJI Matrice 30T manual",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "If RTH is canceled following the warning, the Intelligent Battery may not have enough power for the aircraft to land safely, which may lead to the aircraft crashing or being lost.",
+      "citations": [
+       "dji_m30t_manual_v22_c0032"
+      ],
+      "quote": "If RTH is canceled following the warning, the Intelligent Battery may not have enough power for the aircraft to land safely, which may lead to the aircraft crashing or being lost",
+      "conditions": [
+       "RTH canceled following warning"
+      ],
+      "assessment": "supported",
+      "claim_id": "C004",
+      "section": "manual:DJI Matrice 30T",
+      "tier": "manufacturer",
+      "incident_label": null
+     }
+    ]
+   },
+   {
+    "section": "incident:DJI Matrice 30T",
+    "label": "DJI Matrice 30T incident reports",
+    "status": "no_evidence",
+    "abstain_reason": "No passage describes whether failsafe can be disabled during return to home on the Matrice 30T.",
+    "claims": []
+   }
+  ],
+  "gaps": [
+   {
+    "kind": "missing",
+    "origin": "section_abstained",
+    "related_claim_ids": [],
+    "text": "No usable evidence found in the approved collection for DJI Matrice 30T incident reports."
+   },
+   {
+    "kind": "missing",
+    "origin": "revision",
+    "related_claim_ids": [],
+    "text": "The manual does not state that failsafe can be disabled during RTH or that RC control is allowed when the RC signal is normal; the cited sections describe other RC/landing behavior only."
+   },
+   {
+    "kind": "missing",
+    "origin": "synthesis",
+    "text": "Detailed step-by-step loss-of-control-link procedures for various flight modes.",
+    "related_claim_ids": [
+     "C001",
+     "C002"
+    ]
+   },
+   {
+    "kind": "missing",
+    "origin": "synthesis",
+    "text": "RTH activation thresholds on link loss.",
+    "related_claim_ids": [
+     "C001",
+     "C002"
+    ]
+   },
+   {
+    "kind": "missing",
+    "origin": "synthesis",
+    "text": "Explicit pilot actions post-link loss (RTH behavior, altitude, hover, landing).",
+    "related_claim_ids": [
+     "C001",
+     "C002"
+    ]
+   },
+   {
+    "kind": "missing",
+    "origin": "synthesis",
+    "text": "Model-agnostic pilot checklists or flowcharts for loss of control link.",
+    "related_claim_ids": [
+     "C001",
+     "C002"
+    ]
+   }
+  ],
+  "removed_claims": [
+   {
+    "text": "The failsafe can be disabled during RTH when you exit RTH and use the remote controller to control the aircraft when the remote controller signal is normal.",
+    "citations": [
+     "dji_m30t_manual_v22_c0032"
+    ],
+    "quote": "Exit RTH and use the remote controller to control the aircraft when the remote controller signal is normal",
+    "conditions": [
+     "remote controller signal is normal"
+    ],
+    "assessment": "supported",
+    "claim_id": "C003",
+    "section": "manual:DJI Matrice 30T",
+    "tier": "manufacturer",
+    "incident_label": null
+   }
+  ]
+ },
+ "brief_stats": {
+  "words": 284,
+  "claims": 3,
+  "gaps": 6
+ },
+ "searches": [
+  {
+   "search_id": "S001",
+   "section": "faa",
+   "origin": "base",
+   "query": "lost link loss of control link communication remote pilot contingency procedures failsafe disable during return to home",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link loss of control link communication remote pilot contingency procedures failsafe disable during return to home",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "faa_guidance"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0035",
+    "faa_ac_107_2a_2022_c0062",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0223",
+    "faa_ac_107_2a_2022_c0249",
+    "faa_ac_107_2a_2022_c0049"
+   ],
+   "kept_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0032"
+   ],
+   "new_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0032"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S002",
+   "section": "manual:DJI Matrice 30T",
+   "origin": "base",
+   "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect failsafe disable during return to home",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect failsafe disable during return to home",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "DJI Matrice 30T"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "dji_m30t_manual_v22_c0033",
+    "dji_m30t_manual_v22_c0032",
+    "dji_m30t_manual_v22_c0070",
+    "dji_m30t_manual_v22_c0134",
+    "dji_m30t_manual_v22_c0028",
+    "dji_m30t_manual_v22_c0177",
+    "dji_m30t_manual_v22_c0069",
+    "dji_m30t_manual_v22_c0098",
+    "dji_m30t_manual_v22_c0067",
+    "dji_m30t_manual_v22_c0252"
+   ],
+   "kept_ids": [
+    "dji_m30t_manual_v22_c0033",
+    "dji_m30t_manual_v22_c0032",
+    "dji_m30t_manual_v22_c0070",
+    "dji_m30t_manual_v22_c0134",
+    "dji_m30t_manual_v22_c0028"
+   ],
+   "new_ids": [
+    "dji_m30t_manual_v22_c0033",
+    "dji_m30t_manual_v22_c0032",
+    "dji_m30t_manual_v22_c0070",
+    "dji_m30t_manual_v22_c0134",
+    "dji_m30t_manual_v22_c0028"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S003",
+   "section": "incident:DJI Matrice 30T",
+   "origin": "base",
+   "query": "lost link lost control signal lost return to home flyaway failsafe disable during return to home",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link lost control signal lost return to home flyaway failsafe disable during return to home",
+     "returned": 10,
+     "kept": 4,
+     "new": 4
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "aaib",
+     "model": "DJI Matrice 30T"
+    },
+    {
+     "source_type": "asrs",
+     "model": "DJI Matrice 30T"
+    },
+    {
+     "source_type": "forum",
+     "model": "DJI Matrice 30T"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "aaib_dji_m30t_selected_c0003",
+    "aaib_dji_m30t_selected_c0005",
+    "aaib_dji_m30t_selected_c0004",
+    "aaib_dji_m30t_selected_c0002",
+    "aaib_dji_m30t_selected_c0001",
+    "asrs_dji_m30t_selected_c0002",
+    "asrs_dji_m30t_selected_c0003",
+    "asrs_dji_m30t_selected_c0001",
+    "forum_dji_m30t_c0001",
+    "forum_dji_m30t_c0002"
+   ],
+   "kept_ids": [
+    "asrs_dji_m30t_selected_c0002",
+    "asrs_dji_m30t_selected_c0003",
+    "asrs_dji_m30t_selected_c0001",
+    "forum_dji_m30t_c0001"
+   ],
+   "new_ids": [
+    "asrs_dji_m30t_selected_c0002",
+    "asrs_dji_m30t_selected_c0003",
+    "asrs_dji_m30t_selected_c0001",
+    "forum_dji_m30t_c0001"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S004",
+   "section": "manual:DJI Matrice 30T",
+   "origin": "agent",
+   "query": "failsafe disable during RTH Matrice 30T",
+   "alternate_queries": [
+    "disable failsafe",
+    "RTH failsafe disabled"
+   ],
+   "phrasing_stats": [
+    {
+     "query": "failsafe disable during RTH Matrice 30T",
+     "returned": 10,
+     "kept": 5,
+     "new": 3
+    },
+    {
+     "query": "disable failsafe",
+     "returned": 10,
+     "kept": 5,
+     "new": 3
+    },
+    {
+     "query": "RTH failsafe disabled",
+     "returned": 10,
+     "kept": 4,
+     "new": 2
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "DJI Matrice 30T"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "to determine official conditions under which failsafe can be disabled during RTH according to the DJI Matrice 30T manual",
+   "follows_from": null,
+   "returned_ids": [
+    "dji_m30t_manual_v22_c0070",
+    "dji_m30t_manual_v22_c0069",
+    "dji_m30t_manual_v22_c0033",
+    "dji_m30t_manual_v22_c0246",
+    "dji_m30t_manual_v22_c0242",
+    "dji_m30t_manual_v22_c0067",
+    "dji_m30t_manual_v22_c0035",
+    "dji_m30t_manual_v22_c0134",
+    "dji_m30t_manual_v22_c0089",
+    "dji_m30t_manual_v22_c0042",
+    "dji_m30t_manual_v22_c0179",
+    "dji_m30t_manual_v22_c0036",
+    "dji_m30t_manual_v22_c0038",
+    "dji_m30t_manual_v22_c0241",
+    "dji_m30t_manual_v22_c0031",
+    "dji_m30t_manual_v22_c0110",
+    "dji_m30t_manual_v22_c0210",
+    "dji_m30t_manual_v22_c0111",
+    "dji_m30t_manual_v22_c0174"
+   ],
+   "kept_ids": [
+    "dji_m30t_manual_v22_c0070",
+    "dji_m30t_manual_v22_c0069",
+    "dji_m30t_manual_v22_c0033",
+    "dji_m30t_manual_v22_c0246",
+    "dji_m30t_manual_v22_c0242"
+   ],
+   "new_ids": [
+    "dji_m30t_manual_v22_c0069",
+    "dji_m30t_manual_v22_c0246",
+    "dji_m30t_manual_v22_c0242"
+   ],
+   "below_cutoff_ids": [
+    "dji_m30t_manual_v22_c0067",
+    "dji_m30t_manual_v22_c0035",
+    "dji_m30t_manual_v22_c0089",
+    "dji_m30t_manual_v22_c0042",
+    "dji_m30t_manual_v22_c0179"
+   ],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null,
+   "earned": true
+  }
+ ],
+ "decisions": [
+  {
+   "decision_id": "D001",
+   "section": "faa",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "FAA passages provide core instruction to reestablish control link and begin contingency procedures but do not provide complete, detailed PILOT procedures.",
+   "tool": "finish_assessment",
+   "coverage": "partial",
+   "missing": [
+    "Detailed step-by-step loss-of-control-link procedures for various flight modes",
+    "RTH activation thresholds on link loss",
+    "Explicit pilot actions post-link loss (RTH behavior, altitude, hover, landing)",
+    "Model-agnostic pilot checklists or flowcharts for loss of control link"
+   ],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D002",
+   "section": "manual:DJI Matrice 30T",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "The manual passages indicate a specific condition where failsafe may be disabled during RTH due to GNSS signal dropping below three bars, which directly answers the user question.",
+   "tool": "finish_assessment",
+   "coverage": "sufficient",
+   "missing": [
+    "None identified within the provided passages for this section."
+   ],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D003",
+   "section": "incident:DJI Matrice 30T",
+   "action": "rejected_by_code",
+   "continue_or_stop": "continue",
+   "reason": "alternate_queries: List should have at most 2 items after validation, not 3",
+   "tool": "document_search",
+   "error": "invalid_arguments"
+  },
+  {
+   "decision_id": "D004",
+   "section": "incident:DJI Matrice 30T",
+   "action": "search",
+   "continue_or_stop": "continue",
+   "reason": "to determine official conditions under which failsafe can be disabled during RTH according to the DJI Matrice 30T manual",
+   "tool": "document_search",
+   "searched_section": "manual:DJI Matrice 30T",
+   "query": "failsafe disable during RTH Matrice 30T",
+   "alternate_queries": [
+    "disable failsafe",
+    "RTH failsafe disabled"
+   ],
+   "follows_from": null,
+   "search_id": "S004",
+   "new_passages": 3,
+   "below_cutoff": 5,
+   "earned_search": true
+  },
+  {
+   "decision_id": "D005",
+   "section": "incident:DJI Matrice 30T",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "Manual passages show a configurable Signal Lost Action (RTH, land, hover) and mention that Failsafe RTH activates; no evidence of disabling failsafe during RTH. Based on the incident reports, no contradicting claims found.",
+   "tool": "finish_assessment",
+   "coverage": "sufficient",
+   "missing": [
+    "Explicit statement that 'failsafe cannot be disabled during RTH' (explicit prohibition) is not verbatim, but related passages indicate that when signal lost, action can be RTH and 'Failsafe RTH automatically activates'."
+   ],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D006",
+   "section": "manual:DJI Matrice 30T",
+   "action": "to_gap",
+   "continue_or_stop": "stop",
+   "reason": "The manual does not state that failsafe can be disabled during RTH or that RC control is allowed when the RC signal is normal; the cited sections describe other RC/landing behavior only.",
+   "claim_id": "C003",
+   "round": 1
+  }
+ ],
+ "assessments": {
+  "faa": {
+   "coverage": "partial",
+   "missing": [
+    "Detailed step-by-step loss-of-control-link procedures for various flight modes",
+    "RTH activation thresholds on link loss",
+    "Explicit pilot actions post-link loss (RTH behavior, altitude, hover, landing)",
+    "Model-agnostic pilot checklists or flowcharts for loss of control link"
+   ],
+   "conflicts_noticed": [],
+   "reason": "FAA passages provide core instruction to reestablish control link and begin contingency procedures but do not provide complete, detailed PILOT procedures.",
+   "stop_reason": "model_finished",
+   "section": "faa",
+   "turns": 2,
+   "tool_calls": 0,
+   "searches": 0,
+   "searches_allowed": 2
+  },
+  "manual:DJI Matrice 30T": {
+   "coverage": "sufficient",
+   "missing": [
+    "None identified within the provided passages for this section."
+   ],
+   "conflicts_noticed": [],
+   "reason": "The manual passages indicate a specific condition where failsafe may be disabled during RTH due to GNSS signal dropping below three bars, which directly answers the user question.",
+   "stop_reason": "model_finished",
+   "section": "manual:DJI Matrice 30T",
+   "turns": 2,
+   "tool_calls": 0,
+   "searches": 0,
+   "searches_allowed": 2
+  },
+  "incident:DJI Matrice 30T": {
+   "coverage": "sufficient",
+   "missing": [
+    "Explicit statement that 'failsafe cannot be disabled during RTH' (explicit prohibition) is not verbatim, but related passages indicate that when signal lost, action can be RTH and 'Failsafe RTH automatically activates'."
+   ],
+   "conflicts_noticed": [],
+   "reason": "Manual passages show a configurable Signal Lost Action (RTH, land, hover) and mention that Failsafe RTH activates; no evidence of disabling failsafe during RTH. Based on the incident reports, no contradicting claims found.",
+   "stop_reason": "model_finished",
+   "section": "incident:DJI Matrice 30T",
+   "turns": 3,
+   "tool_calls": 2,
+   "searches": 1,
+   "searches_allowed": 3
+  }
+ },
+ "gate_results": {
+  "C001": {
+   "claim_id": "C001",
+   "passed": true,
+   "failures": []
+  },
+  "C002": {
+   "claim_id": "C002",
+   "passed": true,
+   "failures": []
+  },
+  "C004": {
+   "claim_id": "C004",
+   "passed": true,
+   "failures": []
+  }
+ },
+ "verifications": {
+  "C001": {
+   "claim_id": "C001",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage explicitly states to try reestablishing the control link and, if it cannot be reestablished, to start emergency or contingency procedures for loss of control link.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0228"
+   ]
+  },
+  "C002": {
+   "claim_id": "C002",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage explicitly states that when control inputs are not synchronized or delayed, discontinue flight and/or avoid further flight operations until further inspection and testing of the control link.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0254"
+   ]
+  },
+  "C004": {
+   "claim_id": "C004",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The passage states that if RTH is canceled following the warning, the Intelligent Battery may not have enough power to land safely, which may lead to crashing or being lost, matching the claim and condition.",
+   "supporting_ids": [
+    "dji_m30t_manual_v22_c0032"
+   ]
+  }
+ },
+ "first_draft_results": [
+  {
+   "claim_id": "C001",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C002",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C003",
+   "passes": false,
+   "gate_failures": [
+    "quote_in_source"
+   ],
+   "verifier": "not_supported"
+  },
+  {
+   "claim_id": "C004",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  }
+ ],
+ "revisions_used": 1,
+ "reopens": 0,
+ "cost": {
+  "model_calls": 16,
+  "tokens_in": 32620,
+  "tokens_out": 10243,
+  "searches": 4,
+  "agent_searches": 1,
+  "agent_tool_calls": 5,
+  "seconds": 86.4
+ },
+ "corpus_snapshot": "4d0e3c83c9425371",
+ "chunks_sha256": "3aff778d5475cd877ed6cef54834cdaa960ccce15ebda1442215c7ca258274c6",
+ "retrieval": "hybrid_rrf",
+ "model": "@30875-fall26-openai/gpt-5-nano",
+ "reasoning_effort": "low",
+ "config": {
+  "mode": "full",
+  "max_revisions": 2,
+  "agent_base_searches_per_section": 2,
+  "agent_max_searches_per_section": 4,
+  "agent_max_tool_calls_per_section": 7,
+  "agent_max_turns_per_section": 8,
+  "agent_results_shown": 10,
+  "agent_max_searches_per_run": 8,
+  "agent_max_turns_per_run": 40,
+  "max_reopens_per_run": 1,
+  "max_searches": 40,
+  "max_model_calls": 120,
+  "top_k": 5,
+  "max_claims_per_section": 5,
+  "max_claim_words": 40,
+  "max_gaps": 6,
+  "max_short_answer_words": 120
+ },
+ "trace_path": "/content/drive/MyDrive/Agentic Unlearning Group/Project 1/processed/traces/20261102T195701-full-9bde.jsonl"
+}

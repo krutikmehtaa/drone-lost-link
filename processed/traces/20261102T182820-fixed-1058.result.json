@@ -1,0 +1,448 @@
+{
+ "run_id": "20261102T182820-fixed-1058",
+ "mode": "fixed",
+ "question": "What can stop the Matrice 4T from getting back to its Home Point when GNSS is weak?",
+ "status": "completed_with_gaps",
+ "stop_reason": "verified claims; gaps listed",
+ "error": null,
+ "intake": {
+  "intent": "in_scope",
+  "models": [
+   "DJI Matrice 4T"
+  ],
+  "focus": "Matrice 4T GNSS weak impact on Home Point / Return to Home",
+  "flight_phase": null,
+  "reason": "The question asks how weak GNSS affects the Matrice 4T\u2019s ability to return to its Home Point and what the aircraft/pilot does in that scenario.",
+  "decided_by": "model",
+  "unsupported_named": []
+ },
+ "brief": {
+  "short_answer": "FAA guidance: If the remote PIC cannot regain VLOS, the remote PIC or person manipulating the controls should follow pre-determined procedures for the loss of VLOS. FAA guidance: The guidance instructs to try to reestablish control link connection with the small unmanned aircraft when a link loss occurs. FAA guidance: The guidance states to start emergency or contingency procedures for loss of control link if the connection cannot be reestablished. DJI Matrice 4T manual: If the vision positioning is not available during flight, the aircraft cannot return to the home point.",
+  "sections": [
+   {
+    "section": "faa",
+    "label": "FAA guidance",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "If the remote PIC cannot regain VLOS, the remote PIC or person manipulating the controls should follow pre-determined procedures for the loss of VLOS.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0049",
+       "faa_ac_107_2a_2022_c0228"
+      ],
+      "quote": "If the remote PIC cannot regain VLOS, the remote PIC or person manipulating the controls should follow pre-determined procedures for the loss of VLOS.",
+      "conditions": [
+       "If the remote PIC cannot regain VLOS",
+       "loss of VLOS",
+       "pre-determined procedures for the loss of VLOS"
+      ],
+      "assessment": "supported",
+      "claim_id": "C001",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "The guidance instructs to 'Try to reestablish control link connection with the small unmanned aircraft' when a link loss occurs.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0228"
+      ],
+      "quote": "Try to reestablish control link connection with the small unmanned aircraft.",
+      "conditions": [
+       "link loss occurs"
+      ],
+      "assessment": "supported",
+      "claim_id": "C002",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "The guidance states to 'start emergency or contingency procedures for loss of control link' if the connection cannot be reestablished.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0228"
+      ],
+      "quote": "start emergency or contingency procedures for loss of control link",
+      "conditions": [
+       "If the connection cannot be reestablished"
+      ],
+      "assessment": "supported",
+      "claim_id": "C003",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     }
+    ]
+   },
+   {
+    "section": "manual:DJI Matrice 4T",
+    "label": "DJI Matrice 4T manual",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "If the vision positioning is not available during flight, the aircraft cannot return to the home point. [dji_matrice4_manual_v12_c0068]",
+      "citations": [
+       "dji_matrice4_manual_v12_c0068"
+      ],
+      "quote": "If the vision positioning is not available during flight, the aircraft cannot return to the home point.",
+      "conditions": [
+       "vision positioning is not available during flight"
+      ],
+      "assessment": "supported",
+      "claim_id": "C004",
+      "section": "manual:DJI Matrice 4T",
+      "tier": "manufacturer",
+      "incident_label": null
+     }
+    ]
+   },
+   {
+    "section": "incident:DJI Matrice 4T",
+    "label": "DJI Matrice 4T incident reports",
+    "status": "no_evidence",
+    "abstain_reason": "no passage passed the relevance check",
+    "claims": []
+   }
+  ],
+  "gaps": [
+   {
+    "kind": "conflict",
+    "origin": "synthesis",
+    "text": "Vision positioning unavailable (C004) conflicts with FAA guidance to reestablish control link to regain control and return home (C002).",
+    "related_claim_ids": [
+     "C004",
+     "C002"
+    ]
+   },
+   {
+    "kind": "missing",
+    "origin": "section_abstained",
+    "related_claim_ids": [],
+    "text": "No usable evidence found in the approved collection for DJI Matrice 4T incident reports."
+   },
+   {
+    "kind": "missing",
+    "origin": "synthesis",
+    "text": "No verified evidence tying GNSS weakness to a failed return-to-home in FAA or DJI docs.",
+    "related_claim_ids": [
+     "C001",
+     "C002",
+     "C003",
+     "C004"
+    ]
+   },
+   {
+    "kind": "unclear",
+    "origin": "synthesis",
+    "text": "Unclear whether GNSS weakness alone prevents return-to-home without vision positioning.",
+    "related_claim_ids": [
+     "C001",
+     "C002",
+     "C003",
+     "C004"
+    ]
+   }
+  ],
+  "removed_claims": []
+ },
+ "brief_stats": {
+  "words": 231,
+  "claims": 4,
+  "gaps": 4
+ },
+ "searches": [
+  {
+   "search_id": "S001",
+   "section": "faa",
+   "origin": "base",
+   "query": "lost link loss of control link communication remote pilot contingency procedures Matrice 4T GNSS weak impact on Home Point / Return to Home",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link loss of control link communication remote pilot contingency procedures Matrice 4T GNSS weak impact on Home Point / Return to Home",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "faa_guidance"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0062",
+    "faa_ac_107_2a_2022_c0035",
+    "faa_ac_107_2a_2022_c0223",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0107",
+    "faa_ac_107_2a_2022_c0049",
+    "faa_ac_107_2a_2022_c0269"
+   ],
+   "kept_ids": [
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0049"
+   ],
+   "new_ids": [
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0049"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S002",
+   "section": "manual:DJI Matrice 4T",
+   "origin": "base",
+   "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect Matrice 4T GNSS weak impact on Home Point / Return to Home",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect Matrice 4T GNSS weak impact on Home Point / Return to Home",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "DJI Matrice 4T"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "dji_matrice4_manual_v12_c0067",
+    "dji_matrice4_manual_v12_c0055",
+    "dji_matrice4_manual_v12_c0065",
+    "dji_matrice4_manual_v12_c0023",
+    "dji_matrice4_manual_v12_c0068",
+    "dji_matrice4_manual_v12_c0056",
+    "dji_matrice4_manual_v12_c0035",
+    "dji_matrice4_manual_v12_c0057",
+    "dji_matrice4_manual_v12_c0017",
+    "dji_matrice4_manual_v12_c0099"
+   ],
+   "kept_ids": [
+    "dji_matrice4_manual_v12_c0067",
+    "dji_matrice4_manual_v12_c0055",
+    "dji_matrice4_manual_v12_c0065",
+    "dji_matrice4_manual_v12_c0068",
+    "dji_matrice4_manual_v12_c0056"
+   ],
+   "new_ids": [
+    "dji_matrice4_manual_v12_c0067",
+    "dji_matrice4_manual_v12_c0055",
+    "dji_matrice4_manual_v12_c0065",
+    "dji_matrice4_manual_v12_c0068",
+    "dji_matrice4_manual_v12_c0056"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S003",
+   "section": "incident:DJI Matrice 4T",
+   "origin": "base",
+   "query": "lost link lost control signal lost return to home flyaway Matrice 4T GNSS weak impact on Home Point / Return to Home",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link lost control signal lost return to home flyaway Matrice 4T GNSS weak impact on Home Point / Return to Home",
+     "returned": 1,
+     "kept": 0,
+     "new": 0
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "aaib",
+     "model": "DJI Matrice 4T"
+    },
+    {
+     "source_type": "asrs",
+     "model": "DJI Matrice 4T"
+    },
+    {
+     "source_type": "forum",
+     "model": "DJI Matrice 4T"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "asrs_dji_m4t_selected_c0001"
+   ],
+   "kept_ids": [],
+   "new_ids": [],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  }
+ ],
+ "decisions": [
+  {
+   "decision_id": "D001",
+   "section": "manual:DJI Matrice 4T",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "quote_in_source",
+   "claim_id": "C004",
+   "round": 1,
+   "new_text": "If the vision positioning is not available during flight, the aircraft cannot return to the home point. [dji_matrice4_manual_v12_c0068]"
+  },
+  {
+   "decision_id": "D002",
+   "section": "short_answer",
+   "action": "trimmed_by_code",
+   "continue_or_stop": "stop",
+   "reason": "short answer over the limits after one retry"
+  }
+ ],
+ "assessments": {},
+ "gate_results": {
+  "C001": {
+   "claim_id": "C001",
+   "passed": true,
+   "failures": []
+  },
+  "C002": {
+   "claim_id": "C002",
+   "passed": true,
+   "failures": []
+  },
+  "C003": {
+   "claim_id": "C003",
+   "passed": true,
+   "failures": []
+  },
+  "C004": {
+   "claim_id": "C004",
+   "passed": true,
+   "failures": []
+  }
+ },
+ "verifications": {
+  "C001": {
+   "claim_id": "C001",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states that if the remote PIC cannot regain VLOS, they should follow pre-determined procedures for the loss of VLOS, matching the claim conditions.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0049",
+    "faa_ac_107_2a_2022_c0228"
+   ]
+  },
+  "C002": {
+   "claim_id": "C002",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage includes the explicit instruction to Try to reestablish control link connection with the small unmanned aircraft when a link loss occurs.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0228"
+   ]
+  },
+  "C003": {
+   "claim_id": "C003",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states to start emergency or contingency procedures for loss of control link if the connection cannot be reestablished.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0228"
+   ]
+  },
+  "C004": {
+   "claim_id": "C004",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states: 'If the vision positioning is not available during flight, the aircraft cannot return to the home point.' This matches the claim condition that vision positioning is not available during flight leads to inability to return to home point.",
+   "supporting_ids": [
+    "dji_matrice4_manual_v12_c0068"
+   ]
+  }
+ },
+ "first_draft_results": [
+  {
+   "claim_id": "C001",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C002",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C003",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C004",
+   "passes": false,
+   "gate_failures": [],
+   "verifier": "supported"
+  }
+ ],
+ "revisions_used": 1,
+ "reopens": 0,
+ "cost": {
+  "model_calls": 11,
+  "tokens_in": 12800,
+  "tokens_out": 11454,
+  "searches": 3,
+  "agent_searches": 0,
+  "agent_tool_calls": 0,
+  "seconds": 103.8
+ },
+ "corpus_snapshot": "4d0e3c83c9425371",
+ "chunks_sha256": "3aff778d5475cd877ed6cef54834cdaa960ccce15ebda1442215c7ca258274c6",
+ "retrieval": "hybrid_rrf",
+ "model": "@30875-fall26-openai/gpt-5-nano",
+ "reasoning_effort": "low",
+ "config": {
+  "mode": "fixed",
+  "max_revisions": 2,
+  "agent_base_searches_per_section": 2,
+  "agent_max_searches_per_section": 4,
+  "agent_max_tool_calls_per_section": 7,
+  "agent_max_turns_per_section": 8,
+  "agent_results_shown": 10,
+  "agent_max_searches_per_run": 8,
+  "agent_max_turns_per_run": 40,
+  "max_reopens_per_run": 1,
+  "max_searches": 40,
+  "max_model_calls": 120,
+  "top_k": 5,
+  "max_claims_per_section": 5,
+  "max_claim_words": 40,
+  "max_gaps": 6,
+  "max_short_answer_words": 120
+ },
+ "trace_path": "/content/drive/MyDrive/Agentic Unlearning Group/Project 1/processed/traces/20261102T182820-fixed-1058.jsonl"
+}

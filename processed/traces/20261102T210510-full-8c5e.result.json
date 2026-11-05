@@ -1,0 +1,695 @@
+{
+ "run_id": "20261102T210510-full-8c5e",
+ "mode": "full",
+ "question": "What did NTSB investigators conclude about Matrice 30T lost-link accidents?",
+ "status": "completed_with_gaps",
+ "stop_reason": "verified claims; gaps listed",
+ "error": null,
+ "intake": {
+  "intent": "in_scope",
+  "models": [
+   "DJI Matrice 30T"
+  ],
+  "focus": "NTSB conclusions on Matrice 30T lost-link accidents",
+  "flight_phase": null,
+  "reason": "NTSB conclusions are not in the provided collection (which includes FAA AC 107-2A, Matrice 30T/Matrice 4T manuals, AAIB records, NASA ASRS, and community accounts). If you want, I can summarize applicable guidance from the FAA/Manufacturer materials or locate NTSB findings if you provide them.",
+  "decided_by": "model",
+  "unsupported_named": []
+ },
+ "brief": {
+  "short_answer": "FAA guidance indicates reestablishing the control link when lost and, if not achievable, initiating emergency or contingency procedures for loss of control link. If VLOS cannot be regained, remote-PIC procedures for loss of VLOS should be followed. The remote PIC may need to land immediately, hover, or execute a return-to-home sequence. There is no usable evidence from manuals or incident reports for the Matrice 30T lost-link incidents. Main gap: official NTSB conclusions on Matrice 30T lost-link accidents are absent from the evidence.",
+  "sections": [
+   {
+    "section": "faa",
+    "label": "FAA guidance",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "When the control link is lost, try to reestablish control link connection with the small unmanned aircraft, and if this cannot be reestablished, start emergency or contingency procedures for loss of control link.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0228"
+      ],
+      "quote": "Try to reestablish control link connection with the small unmanned aircraft.",
+      "conditions": [
+       "The control link is lost"
+      ],
+      "assessment": "supported",
+      "claim_id": "C001",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "If the remote PIC cannot regain VLOS, the remote PIC or person manipulating the controls should follow pre-determined procedures for the loss of VLOS.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0049"
+      ],
+      "quote": "If the remote PIC cannot regain VLOS, the remote PIC or person manipulating the controls should follow pre-determined procedures for the loss of VLOS.",
+      "conditions": [
+       "Cannot regain visual line of sight (VLOS)"
+      ],
+      "assessment": "supported",
+      "claim_id": "C002",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "The remote PIC may need to land the small unmanned aircraft immediately, enter hover mode, or employ a return-to-home sequence.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0049"
+      ],
+      "quote": "the remote PIC may need to land the small unmanned aircraft immediately, enter hover mode, or employ a return-to-home sequence.",
+      "conditions": [
+       "Lost-link or loss of control link scenario"
+      ],
+      "assessment": "supported",
+      "claim_id": "C003",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     }
+    ]
+   },
+   {
+    "section": "manual:DJI Matrice 30T",
+    "label": "DJI Matrice 30T manual",
+    "status": "no_evidence",
+    "abstain_reason": "No passage describes NTSB investigators' conclusions about Matrice 30T lost-link accidents.",
+    "claims": []
+   },
+   {
+    "section": "incident:DJI Matrice 30T",
+    "label": "DJI Matrice 30T incident reports",
+    "status": "no_evidence",
+    "abstain_reason": "No passage in the provided excerpts states what NTSB investigators concluded about Matrice 30T lost-link accidents.",
+    "claims": []
+   }
+  ],
+  "gaps": [
+   {
+    "kind": "missing",
+    "origin": "section_abstained",
+    "related_claim_ids": [],
+    "text": "No usable evidence found in the approved collection for DJI Matrice 30T manual."
+   },
+   {
+    "kind": "missing",
+    "origin": "section_abstained",
+    "related_claim_ids": [],
+    "text": "No usable evidence found in the approved collection for DJI Matrice 30T incident reports."
+   },
+   {
+    "kind": "missing",
+    "origin": "synthesis",
+    "text": "Official NTSB conclusions on Matrice 30T lost-link accidents are absent from the evidence.",
+    "related_claim_ids": [
+     "C001",
+     "C002",
+     "C003"
+    ]
+   },
+   {
+    "kind": "missing",
+    "origin": "synthesis",
+    "text": "No NTSB final report or docket for Matrice 30T lost-link incidents is available in the collection.",
+    "related_claim_ids": [
+     "C001",
+     "C002",
+     "C003"
+    ]
+   },
+   {
+    "kind": "missing",
+    "origin": "synthesis",
+    "text": "No passages provide NTSB conclusions for Matrice 30T lost-link incidents.",
+    "related_claim_ids": [
+     "C001",
+     "C002",
+     "C003"
+    ]
+   }
+  ],
+  "removed_claims": []
+ },
+ "brief_stats": {
+  "words": 225,
+  "claims": 3,
+  "gaps": 5
+ },
+ "searches": [
+  {
+   "search_id": "S001",
+   "section": "faa",
+   "origin": "base",
+   "query": "lost link loss of control link communication remote pilot contingency procedures NTSB conclusions on Matrice 30T lost-link accidents",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link loss of control link communication remote pilot contingency procedures NTSB conclusions on Matrice 30T lost-link accidents",
+     "returned": 10,
+     "kept": 4,
+     "new": 4
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "faa_guidance"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0030",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0223",
+    "faa_ac_107_2a_2022_c0049",
+    "faa_ac_107_2a_2022_c0269",
+    "faa_ac_107_2a_2022_c0028",
+    "faa_ac_107_2a_2022_c0062",
+    "faa_ac_107_2a_2022_c0189"
+   ],
+   "kept_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0049"
+   ],
+   "new_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0049"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S002",
+   "section": "manual:DJI Matrice 30T",
+   "origin": "base",
+   "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect NTSB conclusions on Matrice 30T lost-link accidents",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect NTSB conclusions on Matrice 30T lost-link accidents",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "DJI Matrice 30T"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "dji_m30t_manual_v22_c0033",
+    "dji_m30t_manual_v22_c0070",
+    "dji_m30t_manual_v22_c0032",
+    "dji_m30t_manual_v22_c0134",
+    "dji_m30t_manual_v22_c0069",
+    "dji_m30t_manual_v22_c0177",
+    "dji_m30t_manual_v22_c0028",
+    "dji_m30t_manual_v22_c0067",
+    "dji_m30t_manual_v22_c0117",
+    "dji_m30t_manual_v22_c0118"
+   ],
+   "kept_ids": [
+    "dji_m30t_manual_v22_c0033",
+    "dji_m30t_manual_v22_c0070",
+    "dji_m30t_manual_v22_c0032",
+    "dji_m30t_manual_v22_c0134",
+    "dji_m30t_manual_v22_c0069"
+   ],
+   "new_ids": [
+    "dji_m30t_manual_v22_c0033",
+    "dji_m30t_manual_v22_c0070",
+    "dji_m30t_manual_v22_c0032",
+    "dji_m30t_manual_v22_c0134",
+    "dji_m30t_manual_v22_c0069"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S003",
+   "section": "incident:DJI Matrice 30T",
+   "origin": "base",
+   "query": "lost link lost control signal lost return to home flyaway NTSB conclusions on Matrice 30T lost-link accidents",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link lost control signal lost return to home flyaway NTSB conclusions on Matrice 30T lost-link accidents",
+     "returned": 10,
+     "kept": 4,
+     "new": 4
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "aaib",
+     "model": "DJI Matrice 30T"
+    },
+    {
+     "source_type": "asrs",
+     "model": "DJI Matrice 30T"
+    },
+    {
+     "source_type": "forum",
+     "model": "DJI Matrice 30T"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "aaib_dji_m30t_selected_c0005",
+    "aaib_dji_m30t_selected_c0003",
+    "aaib_dji_m30t_selected_c0004",
+    "aaib_dji_m30t_selected_c0001",
+    "aaib_dji_m30t_selected_c0002",
+    "asrs_dji_m30t_selected_c0002",
+    "asrs_dji_m30t_selected_c0001",
+    "asrs_dji_m30t_selected_c0003",
+    "forum_dji_m30t_c0001",
+    "forum_dji_m30t_c0002"
+   ],
+   "kept_ids": [
+    "asrs_dji_m30t_selected_c0002",
+    "asrs_dji_m30t_selected_c0001",
+    "asrs_dji_m30t_selected_c0003",
+    "forum_dji_m30t_c0001"
+   ],
+   "new_ids": [
+    "asrs_dji_m30t_selected_c0002",
+    "asrs_dji_m30t_selected_c0001",
+    "asrs_dji_m30t_selected_c0003",
+    "forum_dji_m30t_c0001"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S004",
+   "section": "incident:DJI Matrice 30T",
+   "origin": "agent",
+   "query": "NTSB conclusions Matrice 30T lost-link",
+   "alternate_queries": [
+    "NTSB findings Matrice 30T lost link",
+    "National Transportation Safety Board Matrice 30T lost control link conclusions"
+   ],
+   "phrasing_stats": [
+    {
+     "query": "NTSB conclusions Matrice 30T lost-link",
+     "returned": 10,
+     "kept": 4,
+     "new": 0
+    },
+    {
+     "query": "NTSB findings Matrice 30T lost link",
+     "returned": 10,
+     "kept": 4,
+     "new": 0
+    },
+    {
+     "query": "National Transportation Safety Board Matrice 30T lost control link conclusions",
+     "returned": 10,
+     "kept": 4,
+     "new": 0
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "aaib",
+     "model": "DJI Matrice 30T"
+    },
+    {
+     "source_type": "asrs",
+     "model": "DJI Matrice 30T"
+    },
+    {
+     "source_type": "forum",
+     "model": "DJI Matrice 30T"
+    }
+   ],
+   "backend_calls": 9,
+   "reason": "to locate any NTSB conclusions about Matrice 30T lost-link accidents in the incident section",
+   "follows_from": null,
+   "returned_ids": [
+    "aaib_dji_m30t_selected_c0004",
+    "aaib_dji_m30t_selected_c0005",
+    "aaib_dji_m30t_selected_c0002",
+    "aaib_dji_m30t_selected_c0003",
+    "aaib_dji_m30t_selected_c0001",
+    "asrs_dji_m30t_selected_c0002",
+    "asrs_dji_m30t_selected_c0001",
+    "asrs_dji_m30t_selected_c0003",
+    "forum_dji_m30t_c0002",
+    "forum_dji_m30t_c0001"
+   ],
+   "kept_ids": [
+    "asrs_dji_m30t_selected_c0002",
+    "asrs_dji_m30t_selected_c0001",
+    "asrs_dji_m30t_selected_c0003",
+    "forum_dji_m30t_c0001"
+   ],
+   "new_ids": [],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S005",
+   "section": "incident:DJI Matrice 30T",
+   "origin": "agent",
+   "query": "NTSB conclusions Matrice 30T lost-link accidents",
+   "alternate_queries": [
+    "NTSB investigation Matrice 30T lost link",
+    "NTSB findings DJI M30T signal loss"
+   ],
+   "phrasing_stats": [
+    {
+     "query": "NTSB conclusions Matrice 30T lost-link accidents",
+     "returned": 10,
+     "kept": 4,
+     "new": 0
+    },
+    {
+     "query": "NTSB investigation Matrice 30T lost link",
+     "returned": 10,
+     "kept": 4,
+     "new": 0
+    },
+    {
+     "query": "NTSB findings DJI M30T signal loss",
+     "returned": 10,
+     "kept": 4,
+     "new": 0
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "aaib",
+     "model": "DJI Matrice 30T"
+    },
+    {
+     "source_type": "asrs",
+     "model": "DJI Matrice 30T"
+    },
+    {
+     "source_type": "forum",
+     "model": "DJI Matrice 30T"
+    }
+   ],
+   "backend_calls": 9,
+   "reason": "user asked for NTSB conclusions; not in provided passages, need search for official findings.",
+   "follows_from": null,
+   "returned_ids": [
+    "aaib_dji_m30t_selected_c0004",
+    "aaib_dji_m30t_selected_c0005",
+    "aaib_dji_m30t_selected_c0002",
+    "aaib_dji_m30t_selected_c0003",
+    "aaib_dji_m30t_selected_c0001",
+    "asrs_dji_m30t_selected_c0002",
+    "asrs_dji_m30t_selected_c0003",
+    "asrs_dji_m30t_selected_c0001",
+    "forum_dji_m30t_c0002",
+    "forum_dji_m30t_c0001"
+   ],
+   "kept_ids": [
+    "asrs_dji_m30t_selected_c0002",
+    "asrs_dji_m30t_selected_c0003",
+    "asrs_dji_m30t_selected_c0001",
+    "forum_dji_m30t_c0001"
+   ],
+   "new_ids": [],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  }
+ ],
+ "decisions": [
+  {
+   "decision_id": "D001",
+   "section": "faa",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "FAA section covers high-level loss-of-link guidance but lacks detailed procedural steps and explicit post-loss criteria.",
+   "tool": "finish_assessment",
+   "coverage": "sufficient",
+   "missing": [
+    "No explicit step-by-step FAA procedure list with times/thresholds beyond 'reestablish link' and 'start emergency/contingency procedures'.",
+    "No model-agnostic actions detailing concrete post-loss-of-link maneuvers (e.g., RTH criteria, altitude thresholds, exact pilot actions)."
+   ],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D002",
+   "section": "manual:DJI Matrice 30T",
+   "action": "search",
+   "continue_or_stop": "continue",
+   "reason": "to locate any NTSB conclusions about Matrice 30T lost-link accidents in the incident section",
+   "tool": "document_search",
+   "searched_section": "incident:DJI Matrice 30T",
+   "query": "NTSB conclusions Matrice 30T lost-link",
+   "alternate_queries": [
+    "NTSB findings Matrice 30T lost link",
+    "National Transportation Safety Board Matrice 30T lost control link conclusions"
+   ],
+   "follows_from": null,
+   "search_id": "S004",
+   "new_passages": 0,
+   "below_cutoff": 0,
+   "earned_search": false
+  },
+  {
+   "decision_id": "D003",
+   "section": "manual:DJI Matrice 30T",
+   "action": "finish_insufficient",
+   "continue_or_stop": "stop",
+   "reason": "Incident passages describe unverified reports; no NTSB conclusions found; need formal NTSB sources.",
+   "tool": "finish_assessment",
+   "coverage": "insufficient",
+   "missing": [
+    "Official NTSB conclusions on Matrice 30T lost-link accidents",
+    "NTSB final reports or docket on M30T lost-link incidents"
+   ],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D004",
+   "section": "incident:DJI Matrice 30T",
+   "action": "search",
+   "continue_or_stop": "continue",
+   "reason": "user asked for NTSB conclusions; not in provided passages, need search for official findings.",
+   "tool": "document_search",
+   "searched_section": "incident:DJI Matrice 30T",
+   "query": "NTSB conclusions Matrice 30T lost-link accidents",
+   "alternate_queries": [
+    "NTSB investigation Matrice 30T lost link",
+    "NTSB findings DJI M30T signal loss"
+   ],
+   "follows_from": null,
+   "search_id": "S005",
+   "new_passages": 0,
+   "below_cutoff": 0,
+   "earned_search": false
+  },
+  {
+   "decision_id": "D005",
+   "section": "incident:DJI Matrice 30T",
+   "action": "finish_insufficient",
+   "continue_or_stop": "stop",
+   "reason": "Current incident passages do not include NTSB conclusions; request targeted NTSB sources to complete this section.",
+   "tool": "finish_assessment",
+   "coverage": "insufficient",
+   "missing": [
+    "No passages provide NTSB conclusions for Matrice 30T lost-link incidents.",
+    "Need official NTSB report or reliable source to summarize conclusions."
+   ],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D006",
+   "section": "manual:DJI Matrice 30T",
+   "action": "rejected_by_code",
+   "continue_or_stop": "continue",
+   "reason": "agent judged the evidence insufficient, but the section has passages; drafting anyway and letting verification decide",
+   "agent_reason": "Incident passages describe unverified reports; no NTSB conclusions found; need formal NTSB sources."
+  },
+  {
+   "decision_id": "D007",
+   "section": "incident:DJI Matrice 30T",
+   "action": "rejected_by_code",
+   "continue_or_stop": "continue",
+   "reason": "agent judged the evidence insufficient, but the section has passages; drafting anyway and letting verification decide",
+   "agent_reason": "Current incident passages do not include NTSB conclusions; request targeted NTSB sources to complete this section."
+  }
+ ],
+ "assessments": {
+  "faa": {
+   "coverage": "sufficient",
+   "missing": [
+    "No explicit step-by-step FAA procedure list with times/thresholds beyond 'reestablish link' and 'start emergency/contingency procedures'.",
+    "No model-agnostic actions detailing concrete post-loss-of-link maneuvers (e.g., RTH criteria, altitude thresholds, exact pilot actions)."
+   ],
+   "conflicts_noticed": [],
+   "reason": "FAA section covers high-level loss-of-link guidance but lacks detailed procedural steps and explicit post-loss criteria.",
+   "stop_reason": "model_finished",
+   "section": "faa",
+   "turns": 3,
+   "tool_calls": 0,
+   "searches": 0,
+   "searches_allowed": 2
+  },
+  "manual:DJI Matrice 30T": {
+   "coverage": "insufficient",
+   "missing": [
+    "Official NTSB conclusions on Matrice 30T lost-link accidents",
+    "NTSB final reports or docket on M30T lost-link incidents"
+   ],
+   "conflicts_noticed": [],
+   "reason": "Incident passages describe unverified reports; no NTSB conclusions found; need formal NTSB sources.",
+   "stop_reason": "model_finished",
+   "section": "manual:DJI Matrice 30T",
+   "turns": 3,
+   "tool_calls": 1,
+   "searches": 1,
+   "searches_allowed": 2
+  },
+  "incident:DJI Matrice 30T": {
+   "coverage": "insufficient",
+   "missing": [
+    "No passages provide NTSB conclusions for Matrice 30T lost-link incidents.",
+    "Need official NTSB report or reliable source to summarize conclusions."
+   ],
+   "conflicts_noticed": [],
+   "reason": "Current incident passages do not include NTSB conclusions; request targeted NTSB sources to complete this section.",
+   "stop_reason": "model_finished",
+   "section": "incident:DJI Matrice 30T",
+   "turns": 3,
+   "tool_calls": 1,
+   "searches": 1,
+   "searches_allowed": 2
+  }
+ },
+ "gate_results": {
+  "C001": {
+   "claim_id": "C001",
+   "passed": true,
+   "failures": []
+  },
+  "C002": {
+   "claim_id": "C002",
+   "passed": true,
+   "failures": []
+  },
+  "C003": {
+   "claim_id": "C003",
+   "passed": true,
+   "failures": []
+  }
+ },
+ "verifications": {
+  "C001": {
+   "claim_id": "C001",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage explicitly says to try to reestablish the control link and, if it cannot be reestablished, to start emergency or contingency procedures for loss of control link.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0228"
+   ]
+  },
+  "C002": {
+   "claim_id": "C002",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states that if the remote PIC cannot regain VLOS, they should follow pre-determined procedures for the loss of VLOS, which matches the claim.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0049"
+   ]
+  },
+  "C003": {
+   "claim_id": "C003",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage indicates that after loss of VLOS, the remote PIC may need to land immediately, enter hover mode, or use a return-to-home sequence, which aligns with the claim.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0049"
+   ]
+  }
+ },
+ "first_draft_results": [
+  {
+   "claim_id": "C001",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C002",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C003",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  }
+ ],
+ "revisions_used": 0,
+ "reopens": 0,
+ "cost": {
+  "model_calls": 16,
+  "tokens_in": 34037,
+  "tokens_out": 9173,
+  "searches": 5,
+  "agent_searches": 2,
+  "agent_tool_calls": 5,
+  "seconds": 99.1
+ },
+ "corpus_snapshot": "4d0e3c83c9425371",
+ "chunks_sha256": "3aff778d5475cd877ed6cef54834cdaa960ccce15ebda1442215c7ca258274c6",
+ "retrieval": "hybrid_rrf",
+ "model": "@30875-fall26-openai/gpt-5-nano",
+ "reasoning_effort": "low",
+ "config": {
+  "mode": "full",
+  "max_revisions": 2,
+  "agent_base_searches_per_section": 2,
+  "agent_max_searches_per_section": 4,
+  "agent_max_tool_calls_per_section": 7,
+  "agent_max_turns_per_section": 8,
+  "agent_results_shown": 10,
+  "agent_max_searches_per_run": 8,
+  "agent_max_turns_per_run": 40,
+  "max_reopens_per_run": 1,
+  "max_searches": 40,
+  "max_model_calls": 120,
+  "top_k": 5,
+  "max_claims_per_section": 5,
+  "max_claim_words": 40,
+  "max_gaps": 6,
+  "max_short_answer_words": 120
+ },
+ "trace_path": "/content/drive/MyDrive/Agentic Unlearning Group/Project 1/processed/traces/20261102T210510-full-8c5e.jsonl"
+}

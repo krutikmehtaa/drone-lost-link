@@ -1,0 +1,1214 @@
+{
+ "run_id": "20261102T202336-full-9a2b",
+ "mode": "full",
+ "question": "Compare what the Matrice 210 V1 and the Autel EVO Max 4N do with altitude when RTH starts near the Home Point.",
+ "status": "completed_with_gaps",
+ "stop_reason": "verified claims; gaps listed",
+ "error": null,
+ "intake": {
+  "intent": "in_scope",
+  "models": [
+   "Autel EVO Max 4N",
+   "DJI Matrice 210 V1"
+  ],
+  "focus": "RTH altitude behavior near Home Point",
+  "flight_phase": "in_flight",
+  "reason": "Compare RTH altitude handling for two models when starting RTH near Home Point",
+  "decided_by": "model",
+  "unsupported_named": [
+   "Matrice 210"
+  ]
+ },
+ "brief": {
+  "short_answer": "FAA guidance states that if a control link cannot be reestablished, emergency or contingency procedures for loss of control should be started. The DJI Matrice 210 V1 manual indicates altitude behavior during RTH near Home Point: within 20 m it descends and lands; farther than 20 m it ascends to the pre\u2011set RTH attitude and then flies to the Home Point. It also notes the aircraft may hover 0.7 m above ground awaiting user confirmation. There is no usable evidence for Autel EVO Max 4N manuals or incident reports in the approved collection.",
+  "sections": [
+   {
+    "section": "faa",
+    "label": "FAA guidance",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "If connection cannot be reestablished, start emergency or contingency procedures for loss of control link.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0228"
+      ],
+      "quote": "If connection cannot be reestablished, start emergency or contingency procedures for loss of control link.",
+      "conditions": [
+       "loss of control link"
+      ],
+      "assessment": "supported",
+      "claim_id": "C002",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     }
+    ]
+   },
+   {
+    "section": "manual:Autel EVO Max 4N",
+    "label": "Autel EVO Max 4N manual",
+    "status": "no_evidence",
+    "abstain_reason": "No passages describe Matrice 210 V1 lost-link altitude behavior, so a comparison cannot be made.",
+    "claims": []
+   },
+   {
+    "section": "manual:DJI Matrice 210 V1",
+    "label": "DJI Matrice 210 V1 manual",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "The aircraft will automatically descend and land if RTH is triggered when the aircraft flies within a 65 feet (20 meters) radius of the Home Point.",
+      "citations": [
+       "dji_m210_v1_manual_v14_c0039"
+      ],
+      "quote": "The aircraft will automatically descend and land if RTH is triggered when the aircraft flies within a 65 feet (20 meters) radius of the Home Point.",
+      "conditions": [
+       "RTH is triggered",
+       "within a 65 feet (20 meters) radius of the Home Point"
+      ],
+      "assessment": "supported_with_conditions",
+      "claim_id": "C004",
+      "section": "manual:DJI Matrice 210 V1",
+      "tier": "manufacturer",
+      "incident_label": null
+     },
+     {
+      "text": "When RTH is triggered and the aircraft is further than 20 m from the Home Point, the aircraft will ascend to the pre-set RTH attitude and then fly to the Home Point.",
+      "citations": [
+       "dji_m210_v1_manual_v14_c0038"
+      ],
+      "quote": "The aircraft will ascend to the pre-set RTH attitude and then fly to the Home Point.",
+      "conditions": [
+       "RTH is triggered",
+       "further than 20 m from the Home Point"
+      ],
+      "assessment": "supported",
+      "claim_id": "C005",
+      "section": "manual:DJI Matrice 210 V1",
+      "tier": "manufacturer",
+      "incident_label": null
+     },
+     {
+      "text": "The aircraft will hover 0.7 m above ground and wait for confirmation from the user.",
+      "citations": [
+       "dji_m210_v1_manual_v14_c0038"
+      ],
+      "quote": "The aircraft will hover 0.7 m above ground and wait for confirmation from the user.",
+      "conditions": [
+       "RTH procedure is active"
+      ],
+      "assessment": "supported",
+      "claim_id": "C006",
+      "section": "manual:DJI Matrice 210 V1",
+      "tier": "manufacturer",
+      "incident_label": null
+     }
+    ]
+   },
+   {
+    "section": "incident:Autel EVO Max 4N",
+    "label": "Autel EVO Max 4N incident reports",
+    "status": "no_evidence",
+    "abstain_reason": "No passages describe Matrice 210 V1 or RTH altitude behavior near Home Point; only Autel EVO Max 4N summary_only indicates loss of control and failed Return To Home features.",
+    "claims": []
+   },
+   {
+    "section": "incident:DJI Matrice 210 V1",
+    "label": "DJI Matrice 210 V1 incident reports",
+    "status": "no_evidence",
+    "abstain_reason": "No passages describe Autel EVO Max 4N lost-link altitude behavior near Home Point; only DJI Matrice 210 V1 sources are available.",
+    "claims": []
+   }
+  ],
+  "gaps": [
+   {
+    "kind": "missing",
+    "origin": "intake",
+    "related_claim_ids": [],
+    "text": "Matrice 210 is not in the approved collection, so the brief does not cover it."
+   },
+   {
+    "kind": "missing",
+    "origin": "section_abstained",
+    "related_claim_ids": [],
+    "text": "No usable evidence found in the approved collection for Autel EVO Max 4N manual."
+   },
+   {
+    "kind": "missing",
+    "origin": "section_abstained",
+    "related_claim_ids": [],
+    "text": "No usable evidence found in the approved collection for Autel EVO Max 4N incident reports."
+   },
+   {
+    "kind": "missing",
+    "origin": "section_abstained",
+    "related_claim_ids": [],
+    "text": "No usable evidence found in the approved collection for DJI Matrice 210 V1 incident reports."
+   },
+   {
+    "kind": "missing",
+    "origin": "revision",
+    "related_claim_ids": [],
+    "text": "The passage only provides an example; it does not mandate reestablishing the control link."
+   },
+   {
+    "kind": "missing",
+    "origin": "revision",
+    "related_claim_ids": [],
+    "text": "The passage does not mention a required control link check or operations over people."
+   }
+  ],
+  "removed_claims": [
+   {
+    "text": "If a loss of control link occurs, AC 107-2A states: 'Try to reestablish control link connection with the small unmanned aircraft'.",
+    "citations": [
+     "faa_ac_107_2a_2022_c0228"
+    ],
+    "quote": "Try to reestablish control link connection with the small unmanned aircraft",
+    "conditions": [
+     "loss of control link"
+    ],
+    "assessment": "supported",
+    "claim_id": "C001",
+    "section": "faa",
+    "tier": "official",
+    "incident_label": null
+   },
+   {
+    "text": "The remote PIC must conduct a control link check prior to operations over people.",
+    "citations": [
+     "faa_ac_107_2a_2022_c0228"
+    ],
+    "quote": "The remote PIC must conduct a control link check prior to operations over people.",
+    "conditions": [
+     "control link check prior to operations over people"
+    ],
+    "assessment": "supported",
+    "claim_id": "C003",
+    "section": "faa",
+    "tier": "official",
+    "incident_label": null
+   }
+  ]
+ },
+ "brief_stats": {
+  "words": 268,
+  "claims": 4,
+  "gaps": 6
+ },
+ "searches": [
+  {
+   "search_id": "S001",
+   "section": "faa",
+   "origin": "base",
+   "query": "lost link loss of control link communication remote pilot contingency procedures RTH altitude behavior near Home Point",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link loss of control link communication remote pilot contingency procedures RTH altitude behavior near Home Point",
+     "returned": 10,
+     "kept": 2,
+     "new": 2
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "faa_guidance"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0062",
+    "faa_ac_107_2a_2022_c0223",
+    "faa_ac_107_2a_2022_c0035",
+    "faa_ac_107_2a_2022_c0217",
+    "faa_ac_107_2a_2022_c0274",
+    "faa_ac_107_2a_2022_c0054",
+    "faa_ac_107_2a_2022_c0067",
+    "faa_ac_107_2a_2022_c0068"
+   ],
+   "kept_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227"
+   ],
+   "new_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S002",
+   "section": "manual:Autel EVO Max 4N",
+   "origin": "base",
+   "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect RTH altitude behavior near Home Point",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect RTH altitude behavior near Home Point",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "Autel EVO Max 4N"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "autel_evo_max_manual_v130_c0118",
+    "autel_evo_max_manual_v130_c0107",
+    "autel_evo_max_manual_v130_c0106",
+    "autel_evo_max_manual_v130_c0166",
+    "autel_evo_max_manual_v130_c0102",
+    "autel_evo_max_manual_v130_c0117",
+    "autel_evo_max_manual_v130_c0183",
+    "autel_evo_max_manual_v130_c0165",
+    "autel_evo_max_manual_v130_c0100",
+    "autel_evo_max_manual_v130_c0101"
+   ],
+   "kept_ids": [
+    "autel_evo_max_manual_v130_c0118",
+    "autel_evo_max_manual_v130_c0107",
+    "autel_evo_max_manual_v130_c0106",
+    "autel_evo_max_manual_v130_c0166",
+    "autel_evo_max_manual_v130_c0102",
+    "autel_evo_max_manual_v130_c0105"
+   ],
+   "new_ids": [
+    "autel_evo_max_manual_v130_c0118",
+    "autel_evo_max_manual_v130_c0107",
+    "autel_evo_max_manual_v130_c0106",
+    "autel_evo_max_manual_v130_c0166",
+    "autel_evo_max_manual_v130_c0102"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [
+    "autel_evo_max_manual_v130_c0105"
+   ],
+   "error": null
+  },
+  {
+   "search_id": "S003",
+   "section": "manual:DJI Matrice 210 V1",
+   "origin": "base",
+   "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect RTH altitude behavior near Home Point",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect RTH altitude behavior near Home Point",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "DJI Matrice 210 V1"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "dji_m210_v1_manual_v14_c0039",
+    "dji_m210_v1_manual_v14_c0037",
+    "dji_m210_v1_manual_v14_c0041",
+    "dji_m210_v1_manual_v14_c0038",
+    "dji_m210_v1_manual_v14_c0034",
+    "dji_m210_v1_manual_v14_c0032",
+    "dji_m210_v1_manual_v14_c0040",
+    "dji_m210_v1_manual_v14_c0035",
+    "dji_m210_v1_manual_v14_c0033",
+    "dji_m210_v1_manual_v14_c0042"
+   ],
+   "kept_ids": [
+    "dji_m210_v1_manual_v14_c0039",
+    "dji_m210_v1_manual_v14_c0037",
+    "dji_m210_v1_manual_v14_c0041",
+    "dji_m210_v1_manual_v14_c0038",
+    "dji_m210_v1_manual_v14_c0034"
+   ],
+   "new_ids": [
+    "dji_m210_v1_manual_v14_c0039",
+    "dji_m210_v1_manual_v14_c0037",
+    "dji_m210_v1_manual_v14_c0041",
+    "dji_m210_v1_manual_v14_c0038",
+    "dji_m210_v1_manual_v14_c0034"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S004",
+   "section": "incident:Autel EVO Max 4N",
+   "origin": "base",
+   "query": "lost link lost control signal lost return to home flyaway RTH altitude behavior near Home Point",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link lost control signal lost return to home flyaway RTH altitude behavior near Home Point",
+     "returned": 1,
+     "kept": 1,
+     "new": 1
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "aaib",
+     "model": "Autel EVO Max 4N"
+    },
+    {
+     "source_type": "asrs",
+     "model": "Autel EVO Max 4N"
+    },
+    {
+     "source_type": "forum",
+     "model": "Autel EVO Max 4N"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "asrs_autel_evo_max_4n_selected_c0001"
+   ],
+   "kept_ids": [
+    "asrs_autel_evo_max_4n_selected_c0001"
+   ],
+   "new_ids": [
+    "asrs_autel_evo_max_4n_selected_c0001"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S005",
+   "section": "incident:DJI Matrice 210 V1",
+   "origin": "base",
+   "query": "lost link lost control signal lost return to home flyaway RTH altitude behavior near Home Point",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link lost control signal lost return to home flyaway RTH altitude behavior near Home Point",
+     "returned": 11,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "aaib",
+     "model": "DJI Matrice 210 V1"
+    },
+    {
+     "source_type": "asrs",
+     "model": "DJI Matrice 210 V1"
+    },
+    {
+     "source_type": "forum",
+     "model": "DJI Matrice 210 V1"
+    },
+    {
+     "source_type": "asrs",
+     "model": "DJI Matrice 210"
+    }
+   ],
+   "backend_calls": 4,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "aaib_m210_v1_poole_c0013",
+    "aaib_m210_v1_poole_c0005",
+    "aaib_m210_v1_poole_c0029",
+    "aaib_m210_v1_poole_c0039",
+    "aaib_m210_v1_poole_c0006",
+    "aaib_m210_v1_poole_c0004",
+    "aaib_m210_v1_poole_c0028",
+    "aaib_m210_v1_poole_c0002",
+    "aaib_m210_v1_poole_c0008",
+    "aaib_m210_v1_poole_c0018",
+    "asrs_m210_1918661_c0001"
+   ],
+   "kept_ids": [
+    "aaib_m210_v1_poole_c0013",
+    "aaib_m210_v1_poole_c0005",
+    "aaib_m210_v1_poole_c0029",
+    "aaib_m210_v1_poole_c0039",
+    "aaib_m210_v1_poole_c0006"
+   ],
+   "new_ids": [
+    "aaib_m210_v1_poole_c0013",
+    "aaib_m210_v1_poole_c0005",
+    "aaib_m210_v1_poole_c0029",
+    "aaib_m210_v1_poole_c0039",
+    "aaib_m210_v1_poole_c0006"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S006",
+   "section": "manual:Autel EVO Max 4N",
+   "origin": "agent",
+   "query": "Autel EVO Max 4N lost link RTH altitude",
+   "alternate_queries": [
+    "Autel Signal Loss Action Max 4N",
+    "EVO Max 4N lost control link altitude behavior during RTH"
+   ],
+   "phrasing_stats": [
+    {
+     "query": "Autel EVO Max 4N lost link RTH altitude",
+     "returned": 10,
+     "kept": 5,
+     "new": 2
+    },
+    {
+     "query": "Autel Signal Loss Action Max 4N",
+     "returned": 10,
+     "kept": 5,
+     "new": 2
+    },
+    {
+     "query": "EVO Max 4N lost control link altitude behavior during RTH",
+     "returned": 10,
+     "kept": 5,
+     "new": 2
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "Autel EVO Max 4N",
+     "flight_phase": "in_flight"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "to compare altitude behavior during RTH near Home Point for Autel EVO Max 4N with DJI Matrice 210 V1",
+   "follows_from": null,
+   "returned_ids": [
+    "autel_evo_max_manual_v130_c0118",
+    "autel_evo_max_manual_v130_c0106",
+    "autel_evo_max_manual_v130_c0107",
+    "autel_evo_max_manual_v130_c0183",
+    "autel_evo_max_manual_v130_c0109",
+    "autel_evo_max_manual_v130_c0182",
+    "autel_evo_max_manual_v130_c0101",
+    "autel_evo_max_manual_v130_c0003",
+    "autel_evo_max_manual_v130_c0111",
+    "autel_evo_max_manual_v130_c0141",
+    "autel_evo_max_manual_v130_c0029",
+    "autel_evo_max_manual_v130_c0049",
+    "autel_evo_max_manual_v130_c0195",
+    "autel_evo_max_manual_v130_c0134",
+    "autel_evo_max_manual_v130_c0158"
+   ],
+   "kept_ids": [
+    "autel_evo_max_manual_v130_c0118",
+    "autel_evo_max_manual_v130_c0106",
+    "autel_evo_max_manual_v130_c0107",
+    "autel_evo_max_manual_v130_c0183",
+    "autel_evo_max_manual_v130_c0109"
+   ],
+   "new_ids": [
+    "autel_evo_max_manual_v130_c0183",
+    "autel_evo_max_manual_v130_c0109"
+   ],
+   "below_cutoff_ids": [
+    "autel_evo_max_manual_v130_c0182",
+    "autel_evo_max_manual_v130_c0101",
+    "autel_evo_max_manual_v130_c0003",
+    "autel_evo_max_manual_v130_c0111",
+    "autel_evo_max_manual_v130_c0141"
+   ],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null,
+   "earned": true
+  },
+  {
+   "search_id": "S007",
+   "section": "manual:DJI Matrice 210 V1",
+   "origin": "agent",
+   "query": "DJI Matrice 210 V1 RTH altitude near Home Point",
+   "alternate_queries": [
+    "M210 V1 Return-to-Home altitude behavior",
+    "RTH height near home point DJI Matrice 210 V1"
+   ],
+   "phrasing_stats": [
+    {
+     "query": "DJI Matrice 210 V1 RTH altitude near Home Point",
+     "returned": 10,
+     "kept": 3,
+     "new": 3
+    },
+    {
+     "query": "M210 V1 Return-to-Home altitude behavior",
+     "returned": 10,
+     "kept": 3,
+     "new": 3
+    },
+    {
+     "query": "RTH height near home point DJI Matrice 210 V1",
+     "returned": 10,
+     "kept": 3,
+     "new": 3
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "DJI Matrice 210 V1",
+     "flight_phase": "in_flight"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "Need DJI Matrice 210 V1 RTH altitude behavior near Home Point for comparison",
+   "follows_from": null,
+   "returned_ids": [
+    "dji_m210_v1_manual_v14_c0002",
+    "dji_m210_v1_manual_v14_c0126",
+    "dji_m210_v1_manual_v14_c0079",
+    "dji_m210_v1_manual_v14_c0127",
+    "dji_m210_v1_manual_v14_c0007",
+    "dji_m210_v1_manual_v14_c0105",
+    "dji_m210_v1_manual_v14_c0003",
+    "dji_m210_v1_manual_v14_c0122",
+    "dji_m210_v1_manual_v14_c0051",
+    "dji_m210_v1_manual_v14_c0128",
+    "dji_m210_v1_manual_v14_c0118",
+    "dji_m210_v1_manual_v14_c0084",
+    "dji_m210_v1_manual_v14_c0046",
+    "dji_m210_v1_manual_v14_c0047",
+    "dji_m210_v1_manual_v14_c0052"
+   ],
+   "kept_ids": [
+    "dji_m210_v1_manual_v14_c0002",
+    "dji_m210_v1_manual_v14_c0126",
+    "dji_m210_v1_manual_v14_c0127"
+   ],
+   "new_ids": [
+    "dji_m210_v1_manual_v14_c0002",
+    "dji_m210_v1_manual_v14_c0126",
+    "dji_m210_v1_manual_v14_c0127"
+   ],
+   "below_cutoff_ids": [
+    "dji_m210_v1_manual_v14_c0079",
+    "dji_m210_v1_manual_v14_c0007",
+    "dji_m210_v1_manual_v14_c0105",
+    "dji_m210_v1_manual_v14_c0003",
+    "dji_m210_v1_manual_v14_c0122",
+    "dji_m210_v1_manual_v14_c0051",
+    "dji_m210_v1_manual_v14_c0128"
+   ],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null,
+   "earned": true
+  },
+  {
+   "search_id": "S008",
+   "section": "manual:DJI Matrice 210 V1",
+   "origin": "agent",
+   "query": "RTH altitude near Home Point Matrice 210 V1 DJI Flight Controller RTH altitude behavior",
+   "alternate_queries": [
+    "Signal Lost Action Matrice 210 V1 RTH altitude near home point",
+    "DJI Matrice 210 V1 RTH within 20 m home point descent landing"
+   ],
+   "phrasing_stats": [
+    {
+     "query": "RTH altitude near Home Point Matrice 210 V1 DJI Flight Controller RTH altitude behavior",
+     "returned": 10,
+     "kept": 4,
+     "new": 1
+    },
+    {
+     "query": "Signal Lost Action Matrice 210 V1 RTH altitude near home point",
+     "returned": 10,
+     "kept": 5,
+     "new": 2
+    },
+    {
+     "query": "DJI Matrice 210 V1 RTH within 20 m home point descent landing",
+     "returned": 10,
+     "kept": 3,
+     "new": 0
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "DJI Matrice 210 V1",
+     "flight_phase": "in_flight"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "Need the manual behavior of RTH altitude when near Home Point to compare with Autel EVO Max 4N in incident context.",
+   "follows_from": null,
+   "returned_ids": [
+    "dji_m210_v1_manual_v14_c0002",
+    "dji_m210_v1_manual_v14_c0126",
+    "dji_m210_v1_manual_v14_c0127",
+    "dji_m210_v1_manual_v14_c0007",
+    "dji_m210_v1_manual_v14_c0105",
+    "dji_m210_v1_manual_v14_c0079",
+    "dji_m210_v1_manual_v14_c0051",
+    "dji_m210_v1_manual_v14_c0136",
+    "dji_m210_v1_manual_v14_c0122",
+    "dji_m210_v1_manual_v14_c0025",
+    "dji_m210_v1_manual_v14_c0046",
+    "dji_m210_v1_manual_v14_c0003",
+    "dji_m210_v1_manual_v14_c0047",
+    "dji_m210_v1_manual_v14_c0083",
+    "dji_m210_v1_manual_v14_c0056",
+    "dji_m210_v1_manual_v14_c0128"
+   ],
+   "kept_ids": [
+    "dji_m210_v1_manual_v14_c0002",
+    "dji_m210_v1_manual_v14_c0126",
+    "dji_m210_v1_manual_v14_c0127",
+    "dji_m210_v1_manual_v14_c0136",
+    "dji_m210_v1_manual_v14_c0025"
+   ],
+   "new_ids": [
+    "dji_m210_v1_manual_v14_c0136",
+    "dji_m210_v1_manual_v14_c0025"
+   ],
+   "below_cutoff_ids": [
+    "dji_m210_v1_manual_v14_c0007",
+    "dji_m210_v1_manual_v14_c0105",
+    "dji_m210_v1_manual_v14_c0079",
+    "dji_m210_v1_manual_v14_c0051",
+    "dji_m210_v1_manual_v14_c0122"
+   ],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null,
+   "earned": true
+  },
+  {
+   "search_id": "S009",
+   "section": "manual:Autel EVO Max 4N",
+   "origin": "agent",
+   "query": "Autel EVO Max 4N lost link RTH altitude behavior near Home Point",
+   "alternate_queries": [
+    "Signal Loss Action EVO Max 4N RTH altitude near HP",
+    "EVO Max 4N RTH behavior when close to home point altitude change"
+   ],
+   "phrasing_stats": [
+    {
+     "query": "Autel EVO Max 4N lost link RTH altitude behavior near Home Point",
+     "returned": 10,
+     "kept": 5,
+     "new": 1
+    },
+    {
+     "query": "Signal Loss Action EVO Max 4N RTH altitude near HP",
+     "returned": 10,
+     "kept": 5,
+     "new": 1
+    },
+    {
+     "query": "EVO Max 4N RTH behavior when close to home point altitude change",
+     "returned": 10,
+     "kept": 5,
+     "new": 1
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "Autel EVO Max 4N",
+     "flight_phase": "in_flight"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "Need the Autel EVO Max 4N manual behavior for RTH altitude when near Home Point to compare with DJI M210 V1.",
+   "follows_from": null,
+   "returned_ids": [
+    "autel_evo_max_manual_v130_c0106",
+    "autel_evo_max_manual_v130_c0118",
+    "autel_evo_max_manual_v130_c0107",
+    "autel_evo_max_manual_v130_c0101",
+    "autel_evo_max_manual_v130_c0109",
+    "autel_evo_max_manual_v130_c0003",
+    "autel_evo_max_manual_v130_c0182",
+    "autel_evo_max_manual_v130_c0183",
+    "autel_evo_max_manual_v130_c0046",
+    "autel_evo_max_manual_v130_c0189",
+    "autel_evo_max_manual_v130_c0029",
+    "autel_evo_max_manual_v130_c0158",
+    "autel_evo_max_manual_v130_c0184",
+    "autel_evo_max_manual_v130_c0049"
+   ],
+   "kept_ids": [
+    "autel_evo_max_manual_v130_c0106",
+    "autel_evo_max_manual_v130_c0118",
+    "autel_evo_max_manual_v130_c0107",
+    "autel_evo_max_manual_v130_c0101",
+    "autel_evo_max_manual_v130_c0109"
+   ],
+   "new_ids": [
+    "autel_evo_max_manual_v130_c0101"
+   ],
+   "below_cutoff_ids": [
+    "autel_evo_max_manual_v130_c0003",
+    "autel_evo_max_manual_v130_c0182",
+    "autel_evo_max_manual_v130_c0046",
+    "autel_evo_max_manual_v130_c0189",
+    "autel_evo_max_manual_v130_c0029"
+   ],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null,
+   "earned": true
+  }
+ ],
+ "decisions": [
+  {
+   "decision_id": "D001",
+   "section": "faa",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "FAA section provided high-level guidance but lacked concrete, model-agnostic, step-by-step pilot actions and thresholds for loss-of-link scenarios; available text fragment ends mid-sentence.",
+   "tool": "finish_assessment",
+   "coverage": "sufficient",
+   "missing": [
+    "Concrete pilot actions and thresholds for loss of control link (step-by-step checklist)",
+    "explicit RTH initiation criteria and altitude settings when link is lost",
+    "urban/remote flight considerations and safety margins"
+   ],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D002",
+   "section": "manual:Autel EVO Max 4N",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "Autel EVO Max 4N manual sections on RTH altitude behavior near Home Point provide concrete rules; no conflicts found within the Autel manual. DJIs behavior is outside this section and thus remains missing.",
+   "tool": "finish_assessment",
+   "coverage": "sufficient",
+   "missing": [
+    "DJI Matrice 210 V1 RTH altitude near Home Point not described in this section."
+   ],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D003",
+   "section": "manual:DJI Matrice 210 V1",
+   "action": "search",
+   "continue_or_stop": "continue",
+   "reason": "to compare altitude behavior during RTH near Home Point for Autel EVO Max 4N with DJI Matrice 210 V1",
+   "tool": "document_search",
+   "searched_section": "manual:Autel EVO Max 4N",
+   "query": "Autel EVO Max 4N lost link RTH altitude",
+   "alternate_queries": [
+    "Autel Signal Loss Action Max 4N",
+    "EVO Max 4N lost control link altitude behavior during RTH"
+   ],
+   "follows_from": null,
+   "search_id": "S006",
+   "new_passages": 2,
+   "below_cutoff": 5,
+   "earned_search": true
+  },
+  {
+   "decision_id": "D004",
+   "section": "manual:DJI Matrice 210 V1",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "Evidence establishes RTH altitude behavior near Home Point for both models: DJI uses ~0.7 m hover near HP awaiting user confirmation; Autel uses distance-based RTH altitude.",
+   "tool": "finish_assessment",
+   "coverage": "sufficient",
+   "missing": [],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D005",
+   "section": "incident:Autel EVO Max 4N",
+   "action": "expand",
+   "continue_or_stop": "continue",
+   "reason": "need full RTH altitude mechanism rules near home point",
+   "tool": "expand_context",
+   "chunk_id": "autel_evo_max_manual_v130_c0106",
+   "direction": "after",
+   "added_to_section": "manual:Autel EVO Max 4N",
+   "new_passages": 0
+  },
+  {
+   "decision_id": "D006",
+   "section": "incident:Autel EVO Max 4N",
+   "action": "expand",
+   "continue_or_stop": "continue",
+   "reason": "need the full RTH altitude rules",
+   "tool": "expand_context",
+   "chunk_id": "autel_evo_max_manual_v130_c0106",
+   "direction": "before",
+   "added_to_section": "manual:Autel EVO Max 4N",
+   "new_passages": 1
+  },
+  {
+   "decision_id": "D007",
+   "section": "incident:Autel EVO Max 4N",
+   "action": "search",
+   "continue_or_stop": "continue",
+   "reason": "Need DJI Matrice 210 V1 RTH altitude behavior near Home Point for comparison",
+   "tool": "document_search",
+   "searched_section": "manual:DJI Matrice 210 V1",
+   "query": "DJI Matrice 210 V1 RTH altitude near Home Point",
+   "alternate_queries": [
+    "M210 V1 Return-to-Home altitude behavior",
+    "RTH height near home point DJI Matrice 210 V1"
+   ],
+   "follows_from": null,
+   "search_id": "S007",
+   "new_passages": 3,
+   "below_cutoff": 7,
+   "earned_search": true
+  },
+  {
+   "decision_id": "D008",
+   "section": "incident:Autel EVO Max 4N",
+   "action": "lookup",
+   "continue_or_stop": "continue",
+   "reason": "need details of altitude behavior during RTH near home point",
+   "tool": "citation_lookup",
+   "chunk_id": "dji_m210_v1_manual_v14_c0127"
+  },
+  {
+   "decision_id": "D009",
+   "section": "incident:Autel EVO Max 4N",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "Current evidence includes a fragment of Autel RTH altitude mechanism and DJI altitude/Geo behavior, but lacks complete explicit rules for both near Home Point scenarios.",
+   "tool": "finish_assessment",
+   "coverage": "partial",
+   "missing": [
+    "Exact Autel EVO Max 4N RTH altitude rules near Home Point (distance bands and target altitudes) are not fully shown in the provided passages.",
+    "DJI Matrice 210 V1 RTH altitude behavior near Home Point is described in general GPS/Altitude Zone terms; precise near-Home-Point rule not extracted from cited passages."
+   ],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D010",
+   "section": "incident:DJI Matrice 210 V1",
+   "action": "search",
+   "continue_or_stop": "continue",
+   "reason": "Need the manual behavior of RTH altitude when near Home Point to compare with Autel EVO Max 4N in incident context.",
+   "tool": "document_search",
+   "searched_section": "manual:DJI Matrice 210 V1",
+   "query": "RTH altitude near Home Point Matrice 210 V1 DJI Flight Controller RTH altitude behavior",
+   "alternate_queries": [
+    "Signal Lost Action Matrice 210 V1 RTH altitude near home point",
+    "DJI Matrice 210 V1 RTH within 20 m home point descent landing"
+   ],
+   "follows_from": null,
+   "search_id": "S008",
+   "new_passages": 2,
+   "below_cutoff": 5,
+   "earned_search": true
+  },
+  {
+   "decision_id": "D011",
+   "section": "incident:DJI Matrice 210 V1",
+   "action": "search",
+   "continue_or_stop": "continue",
+   "reason": "Need the Autel EVO Max 4N manual behavior for RTH altitude when near Home Point to compare with DJI M210 V1.",
+   "tool": "document_search",
+   "searched_section": "manual:Autel EVO Max 4N",
+   "query": "Autel EVO Max 4N lost link RTH altitude behavior near Home Point",
+   "alternate_queries": [
+    "Signal Loss Action EVO Max 4N RTH altitude near HP",
+    "EVO Max 4N RTH behavior when close to home point altitude change"
+   ],
+   "follows_from": null,
+   "search_id": "S009",
+   "new_passages": 1,
+   "below_cutoff": 5,
+   "earned_search": true
+  },
+  {
+   "decision_id": "D012",
+   "section": "incident:DJI Matrice 210 V1",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "Incident passages describe lost-link and RTH attempts but do not clearly document RTH altitude behavior near Home Point; manual passages provide this behavior but the incident text does not confirm it.",
+   "tool": "finish_assessment",
+   "coverage": "partial",
+   "missing": [
+    "Missing explicit description of near-Home Point RTH altitude behavior in the incident reports for DJI Matrice 210 V1; need to confirm how RTH behaves near Home Point from the DJI manual",
+    "Need to verify if any reported incident contradicts official RTH behavior near Home Point; currently no clear conflicts"
+   ],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D013",
+   "section": "faa",
+   "action": "to_gap",
+   "continue_or_stop": "stop",
+   "reason": "The passage only provides an example; it does not mandate reestablishing the control link.",
+   "claim_id": "C001",
+   "round": 1
+  },
+  {
+   "decision_id": "D014",
+   "section": "faa",
+   "action": "to_gap",
+   "continue_or_stop": "stop",
+   "reason": "The passage does not mention a required control link check or operations over people.",
+   "claim_id": "C003",
+   "round": 1
+  },
+  {
+   "decision_id": "D015",
+   "section": "manual:DJI Matrice 210 V1",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "too_long",
+   "claim_id": "C004",
+   "round": 1,
+   "new_text": "The aircraft will automatically descend and land if RTH is triggered when the aircraft flies within a 65 feet (20 meters) radius of the Home Point."
+  },
+  {
+   "decision_id": "D016",
+   "section": "short_answer",
+   "action": "trimmed_by_code",
+   "continue_or_stop": "stop",
+   "reason": "short answer over the limits after one retry"
+  }
+ ],
+ "assessments": {
+  "faa": {
+   "coverage": "sufficient",
+   "missing": [
+    "Concrete pilot actions and thresholds for loss of control link (step-by-step checklist)",
+    "explicit RTH initiation criteria and altitude settings when link is lost",
+    "urban/remote flight considerations and safety margins"
+   ],
+   "conflicts_noticed": [],
+   "reason": "FAA section provided high-level guidance but lacked concrete, model-agnostic, step-by-step pilot actions and thresholds for loss-of-link scenarios; available text fragment ends mid-sentence.",
+   "stop_reason": "model_finished",
+   "section": "faa",
+   "turns": 2,
+   "tool_calls": 0,
+   "searches": 0,
+   "searches_allowed": 2
+  },
+  "manual:Autel EVO Max 4N": {
+   "coverage": "sufficient",
+   "missing": [
+    "DJI Matrice 210 V1 RTH altitude near Home Point not described in this section."
+   ],
+   "conflicts_noticed": [],
+   "reason": "Autel EVO Max 4N manual sections on RTH altitude behavior near Home Point provide concrete rules; no conflicts found within the Autel manual. DJIs behavior is outside this section and thus remains missing.",
+   "stop_reason": "model_finished",
+   "section": "manual:Autel EVO Max 4N",
+   "turns": 2,
+   "tool_calls": 0,
+   "searches": 0,
+   "searches_allowed": 2
+  },
+  "manual:DJI Matrice 210 V1": {
+   "coverage": "sufficient",
+   "missing": [],
+   "conflicts_noticed": [],
+   "reason": "Evidence establishes RTH altitude behavior near Home Point for both models: DJI uses ~0.7 m hover near HP awaiting user confirmation; Autel uses distance-based RTH altitude.",
+   "stop_reason": "model_finished",
+   "section": "manual:DJI Matrice 210 V1",
+   "turns": 3,
+   "tool_calls": 1,
+   "searches": 1,
+   "searches_allowed": 3
+  },
+  "incident:Autel EVO Max 4N": {
+   "coverage": "partial",
+   "missing": [
+    "Exact Autel EVO Max 4N RTH altitude rules near Home Point (distance bands and target altitudes) are not fully shown in the provided passages.",
+    "DJI Matrice 210 V1 RTH altitude behavior near Home Point is described in general GPS/Altitude Zone terms; precise near-Home-Point rule not extracted from cited passages."
+   ],
+   "conflicts_noticed": [],
+   "reason": "Current evidence includes a fragment of Autel RTH altitude mechanism and DJI altitude/Geo behavior, but lacks complete explicit rules for both near Home Point scenarios.",
+   "stop_reason": "model_finished",
+   "section": "incident:Autel EVO Max 4N",
+   "turns": 6,
+   "tool_calls": 4,
+   "searches": 1,
+   "searches_allowed": 3
+  },
+  "incident:DJI Matrice 210 V1": {
+   "coverage": "partial",
+   "missing": [
+    "Missing explicit description of near-Home Point RTH altitude behavior in the incident reports for DJI Matrice 210 V1; need to confirm how RTH behaves near Home Point from the DJI manual",
+    "Need to verify if any reported incident contradicts official RTH behavior near Home Point; currently no clear conflicts"
+   ],
+   "conflicts_noticed": [],
+   "reason": "Incident passages describe lost-link and RTH attempts but do not clearly document RTH altitude behavior near Home Point; manual passages provide this behavior but the incident text does not confirm it.",
+   "stop_reason": "model_finished",
+   "section": "incident:DJI Matrice 210 V1",
+   "turns": 4,
+   "tool_calls": 2,
+   "searches": 2,
+   "searches_allowed": 4
+  }
+ },
+ "gate_results": {
+  "C002": {
+   "claim_id": "C002",
+   "passed": true,
+   "failures": []
+  },
+  "C004": {
+   "claim_id": "C004",
+   "passed": true,
+   "failures": []
+  },
+  "C005": {
+   "claim_id": "C005",
+   "passed": true,
+   "failures": []
+  },
+  "C006": {
+   "claim_id": "C006",
+   "passed": true,
+   "failures": []
+  }
+ },
+ "verifications": {
+  "C002": {
+   "claim_id": "C002",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The passage states: 'If connection cannot be reestablished, start emergency or contingency procedures for loss of control link.'",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0228"
+   ]
+  },
+  "C004": {
+   "claim_id": "C004",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited manual states: 'The aircraft will automatically descend and land if RTH is triggered when the aircraft flies within a 65 feet (20 meters) radius of the Home Point.' This matches the claim and its conditions (RTH triggered; within 65 ft/20 m of Home Point).",
+   "supporting_ids": [
+    "dji_m210_v1_manual_v14_c0039"
+   ]
+  },
+  "C005": {
+   "claim_id": "C005",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states: \"The aircraft will ascend to the pre-set RTH attitude and then fly to the Home Point when the aircraft is further than 20 m from the Home Point.\" This matches the claim condition of RTH trigger and distance >20 m.",
+   "supporting_ids": [
+    "dji_m210_v1_manual_v14_c0038"
+   ]
+  },
+  "C006": {
+   "claim_id": "C006",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage includes: \"The aircraft will hover 0.7 m above ground and wait for confirmation from the user.\" within the RTH procedure flow, which aligns with the claim condition that RTH procedure is active.",
+   "supporting_ids": [
+    "dji_m210_v1_manual_v14_c0038"
+   ]
+  }
+ },
+ "first_draft_results": [
+  {
+   "claim_id": "C001",
+   "passes": false,
+   "gate_failures": [],
+   "verifier": "not_supported"
+  },
+  {
+   "claim_id": "C002",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C003",
+   "passes": false,
+   "gate_failures": [
+    "quote_in_source"
+   ],
+   "verifier": "not_supported"
+  },
+  {
+   "claim_id": "C004",
+   "passes": false,
+   "gate_failures": [
+    "within_length"
+   ],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C005",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C006",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  }
+ ],
+ "revisions_used": 1,
+ "reopens": 0,
+ "cost": {
+  "model_calls": 31,
+  "tokens_in": 85937,
+  "tokens_out": 24461,
+  "searches": 9,
+  "agent_searches": 4,
+  "agent_tool_calls": 12,
+  "seconds": 212.0
+ },
+ "corpus_snapshot": "4d0e3c83c9425371",
+ "chunks_sha256": "3aff778d5475cd877ed6cef54834cdaa960ccce15ebda1442215c7ca258274c6",
+ "retrieval": "hybrid_rrf",
+ "model": "@30875-fall26-openai/gpt-5-nano",
+ "reasoning_effort": "low",
+ "config": {
+  "mode": "full",
+  "max_revisions": 2,
+  "agent_base_searches_per_section": 2,
+  "agent_max_searches_per_section": 4,
+  "agent_max_tool_calls_per_section": 7,
+  "agent_max_turns_per_section": 8,
+  "agent_results_shown": 10,
+  "agent_max_searches_per_run": 8,
+  "agent_max_turns_per_run": 40,
+  "max_reopens_per_run": 1,
+  "max_searches": 40,
+  "max_model_calls": 120,
+  "top_k": 5,
+  "max_claims_per_section": 5,
+  "max_claim_words": 40,
+  "max_gaps": 6,
+  "max_short_answer_words": 120
+ },
+ "trace_path": "/content/drive/MyDrive/Agentic Unlearning Group/Project 1/processed/traces/20261102T202336-full-9a2b.jsonl"
+}

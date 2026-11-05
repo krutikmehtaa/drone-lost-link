@@ -1,0 +1,12 @@
+{
+  "corpus_snapshot": "35851731f59a04eb",
+  "built_at_utc": "2026-10-31T03:08:40.788188+00:00",
+  "source_count": 6,
+  "chunk_count": 983,
+  "retrieval_method": "BM25",
+  "chunk_words": 180,
+  "overlap_words": 30,
+  "chunking": "sections_breadcrumb",
+  "index_file": "chunks_sections.jsonl",
+  "warnings": []
+}

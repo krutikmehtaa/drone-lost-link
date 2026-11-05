@@ -1,0 +1,2092 @@
+{
+ "run_id": "20261102T201125-full-7643",
+ "mode": "full",
+ "question": "What does FAA AC 107-2A say the remote pilot must be able to do during automated flight?",
+ "status": "human_review_required",
+ "stop_reason": "claims still failing after the revision limit",
+ "error": null,
+ "intake": {
+  "intent": "in_scope",
+  "models": [
+   "DJI Matrice 30T",
+   "DJI Matrice 4T",
+   "Autel EVO Max 4N",
+   "DJI Matrice 210 V1"
+  ],
+  "focus": "remote pilot actions during automated flight (loss of control link)",
+  "flight_phase": null,
+  "reason": "Question about FAA AC 107-2A guidance on remote pilot responsibilities during automated flight.",
+  "decided_by": "model",
+  "unsupported_named": []
+ },
+ "brief": {
+  "short_answer": "FAA guidance indicates that when the control link is lost and cannot be reestablished, emergency or contingency procedures for loss of control link should be started, and during automated flight the remote PIC must be able to change routing/altitude or command the aircraft to land immediately; if VLOS cannot be regained, follow pre-determined procedures. There is no usable evidence for the manuals. Unverified Autel EVO Max 4N incident reports describe loss of control shortly after takeoff, the platform flying away despite control input, RTH failures, and the platform not being located or recovered. Gap: open questions remain about whether the FAA guidance is supported by verifiable evidence and whether these unverified accounts indicate a conflict with the stated procedures.",
+  "sections": [
+   {
+    "section": "faa",
+    "label": "FAA guidance",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "When the control link is lost and cannot be reestablished, start emergency or contingency procedures for loss of control link.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0228"
+      ],
+      "quote": "If connection cannot be reestablished, start emergency or contingency procedures for loss of control link.",
+      "conditions": [
+       "connection cannot be reestablished"
+      ],
+      "assessment": "supported",
+      "claim_id": "C001",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "If the remote PIC loses the control link to the small unmanned aircraft, the aircraft would continue to fly the programmed mission/return home to land.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0035"
+      ],
+      "quote": "If the remote PIC loses the control link to the small unmanned aircraft, the aircraft would continue to fly the programmed mission/return home to land.",
+      "conditions": [
+       "loss of control link"
+      ],
+      "assessment": "supported",
+      "claim_id": "C002",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "During automated flight, the remote PIC must have the ability to change routing/altitude or command the aircraft to land immediately.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0036"
+      ],
+      "quote": "During automated flight, the remote PIC must have the ability to change routing/altitude or command the aircraft to land immediately.",
+      "conditions": [
+       "automated flight",
+       "need to change routing/altitude or land immediately"
+      ],
+      "assessment": "supported",
+      "claim_id": "C003",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "If the remote PIC cannot regain VLOS, the remote PIC or person manipulating the controls should follow pre-determined procedures for the loss of VLOS.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0049"
+      ],
+      "quote": "If the remote PIC cannot regain VLOS, the remote PIC or person manipulating the controls should follow pre-determined procedures for the loss of VLOS.",
+      "conditions": [
+       "unable to regain VLOS"
+      ],
+      "assessment": "supported",
+      "claim_id": "C004",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     }
+    ]
+   },
+   {
+    "section": "manual:DJI Matrice 30T",
+    "label": "DJI Matrice 30T manual",
+    "status": "no_evidence",
+    "abstain_reason": "The supplied passages do not contain FAA AC 107-2A text or statements of what remote pilots must do during automated flight; only manufacturer manuals describe DJI Signal Lost Action and related RTH behavior.",
+    "claims": []
+   },
+   {
+    "section": "manual:DJI Matrice 4T",
+    "label": "DJI Matrice 4T manual",
+    "status": "no_evidence",
+    "abstain_reason": "No passage describes what FAA AC 107-2A says the remote pilot must be able to do during automated flight (loss of control link); the provided passages only cover manufacturer guidance for DJI Matrice 4 Series and do not reference FAA guidelines.",
+    "claims": []
+   },
+   {
+    "section": "manual:Autel EVO Max 4N",
+    "label": "Autel EVO Max 4N manual",
+    "status": "no_evidence",
+    "abstain_reason": "The supplied passages do not contain any statement of FAA AC 107-2A requirements.",
+    "claims": []
+   },
+   {
+    "section": "manual:DJI Matrice 210 V1",
+    "label": "DJI Matrice 210 V1 manual",
+    "status": "no_evidence",
+    "abstain_reason": "The provided passages are manufacturer manuals and do not contain FAA AC 107-2A text about remote pilots\u2019 required actions during automated flight.",
+    "claims": []
+   },
+   {
+    "section": "incident:DJI Matrice 30T",
+    "label": "DJI Matrice 30T incident reports",
+    "status": "no_evidence",
+    "abstain_reason": "No passages describe FAA AC 107-2A guidance on remote pilot abilities during automated flight.",
+    "claims": []
+   },
+   {
+    "section": "incident:DJI Matrice 4T",
+    "label": "DJI Matrice 4T incident reports",
+    "status": "no_evidence",
+    "abstain_reason": "no passage passed the relevance check",
+    "claims": []
+   },
+   {
+    "section": "incident:Autel EVO Max 4N",
+    "label": "Autel EVO Max 4N incident reports",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "The reporter states: \"Shortly after takeoff I completely lost control of the UAS.\" (conditions: shortly after takeoff)",
+      "citations": [
+       "asrs_autel_evo_max_4n_selected_c0001"
+      ],
+      "quote": "Shortly after takeoff I completely lost control of the UAS.",
+      "conditions": [
+       "shortly after takeoff"
+      ],
+      "assessment": "supported_with_conditions",
+      "claim_id": "C006",
+      "section": "incident:Autel EVO Max 4N",
+      "tier": "unverified",
+      "incident_label": "summary_only"
+     },
+     {
+      "text": "The reporter states: \"Platform continued to fly away from me while input into the controls to return.\" (conditions: none)",
+      "citations": [
+       "asrs_autel_evo_max_4n_selected_c0001"
+      ],
+      "quote": "Platform continued to fly away from me while input into the controls to return.",
+      "conditions": [],
+      "assessment": "supported_with_conditions",
+      "claim_id": "C007",
+      "section": "incident:Autel EVO Max 4N",
+      "tier": "unverified",
+      "incident_label": "summary_only"
+     },
+     {
+      "text": "The reporter states: \"All attempts of Return To Home features failed.\" (conditions: none)",
+      "citations": [
+       "asrs_autel_evo_max_4n_selected_c0001"
+      ],
+      "quote": "All attempts of Return To Home features failed.",
+      "conditions": [],
+      "assessment": "supported_with_conditions",
+      "claim_id": "C008",
+      "section": "incident:Autel EVO Max 4N",
+      "tier": "unverified",
+      "incident_label": "summary_only"
+     },
+     {
+      "text": "The reporter states: \"UAS Platform has not been located or recovered.\" (conditions: none)",
+      "citations": [
+       "asrs_autel_evo_max_4n_selected_c0001"
+      ],
+      "quote": "UAS Platform has not been located or recovered.",
+      "conditions": [],
+      "assessment": "supported_with_conditions",
+      "claim_id": "C009",
+      "section": "incident:Autel EVO Max 4N",
+      "tier": "unverified",
+      "incident_label": "summary_only"
+     }
+    ]
+   },
+   {
+    "section": "incident:DJI Matrice 210 V1",
+    "label": "DJI Matrice 210 V1 incident reports",
+    "status": "no_evidence",
+    "abstain_reason": "The provided passages describe aircraft behavior during lost-link events but do not contain any quotes or statements from FAA AC 107-2A about remote pilot requirements during automated flight.",
+    "claims": []
+   }
+  ],
+  "gaps": [
+   {
+    "kind": "missing",
+    "origin": "section_abstained",
+    "related_claim_ids": [],
+    "text": "No usable evidence found in the approved collection for DJI Matrice 30T manual."
+   },
+   {
+    "kind": "missing",
+    "origin": "section_abstained",
+    "related_claim_ids": [],
+    "text": "No usable evidence found in the approved collection for DJI Matrice 4T manual."
+   },
+   {
+    "kind": "missing",
+    "origin": "section_abstained",
+    "related_claim_ids": [],
+    "text": "No usable evidence found in the approved collection for Autel EVO Max 4N manual."
+   },
+   {
+    "kind": "missing",
+    "origin": "section_abstained",
+    "related_claim_ids": [],
+    "text": "No usable evidence found in the approved collection for DJI Matrice 210 V1 manual."
+   },
+   {
+    "kind": "missing",
+    "origin": "section_abstained",
+    "related_claim_ids": [],
+    "text": "No usable evidence found in the approved collection for DJI Matrice 30T incident reports."
+   },
+   {
+    "kind": "missing",
+    "origin": "section_abstained",
+    "related_claim_ids": [],
+    "text": "No usable evidence found in the approved collection for DJI Matrice 4T incident reports."
+   }
+  ],
+  "removed_claims": [
+   {
+    "text": "Two or more certificated remote pilots transferring operational control to each other may do so only if they are both capable of maintaining Visual Line of Sight (VLOS) of the small unmanned aircraft without loss of control (LOC).",
+    "citations": [
+     "faa_ac_107_2a_2022_c0124"
+    ],
+    "quote": "\"Two or more certificated remote pilots transferring operational control to each other may do so only if they are both capable of maintaining Visual Line of Sight (VLOS) of the small unmanned aircraft without loss of control (LOC).\"",
+    "conditions": [
+     "transfer of control between remote pilots",
+     "maintain VLOS without LOC"
+    ],
+    "assessment": "supported",
+    "claim_id": "C005",
+    "section": "faa",
+    "tier": "official",
+    "incident_label": null
+   }
+  ]
+ },
+ "brief_stats": {
+  "words": 352,
+  "claims": 8,
+  "gaps": 6
+ },
+ "searches": [
+  {
+   "search_id": "S001",
+   "section": "faa",
+   "origin": "base",
+   "query": "lost link loss of control link communication remote pilot contingency procedures remote pilot actions during automated flight (loss of control link)",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link loss of control link communication remote pilot contingency procedures remote pilot actions during automated flight (loss of control link)",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "faa_guidance"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0035",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0062",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0049",
+    "faa_ac_107_2a_2022_c0036",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0223"
+   ],
+   "kept_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0049",
+    "faa_ac_107_2a_2022_c0036"
+   ],
+   "new_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0049",
+    "faa_ac_107_2a_2022_c0036"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S002",
+   "section": "manual:DJI Matrice 30T",
+   "origin": "base",
+   "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect remote pilot actions during automated flight (loss of control link)",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect remote pilot actions during automated flight (loss of control link)",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "DJI Matrice 30T"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "dji_m30t_manual_v22_c0033",
+    "dji_m30t_manual_v22_c0032",
+    "dji_m30t_manual_v22_c0134",
+    "dji_m30t_manual_v22_c0177",
+    "dji_m30t_manual_v22_c0070",
+    "dji_m30t_manual_v22_c0028",
+    "dji_m30t_manual_v22_c0067",
+    "dji_m30t_manual_v22_c0069",
+    "dji_m30t_manual_v22_c0098",
+    "dji_m30t_manual_v22_c0031"
+   ],
+   "kept_ids": [
+    "dji_m30t_manual_v22_c0033",
+    "dji_m30t_manual_v22_c0032",
+    "dji_m30t_manual_v22_c0134",
+    "dji_m30t_manual_v22_c0177",
+    "dji_m30t_manual_v22_c0070"
+   ],
+   "new_ids": [
+    "dji_m30t_manual_v22_c0033",
+    "dji_m30t_manual_v22_c0032",
+    "dji_m30t_manual_v22_c0134",
+    "dji_m30t_manual_v22_c0177",
+    "dji_m30t_manual_v22_c0070"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S003",
+   "section": "manual:DJI Matrice 4T",
+   "origin": "base",
+   "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect remote pilot actions during automated flight (loss of control link)",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect remote pilot actions during automated flight (loss of control link)",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "DJI Matrice 4T"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "dji_matrice4_manual_v12_c0065",
+    "dji_matrice4_manual_v12_c0055",
+    "dji_matrice4_manual_v12_c0063",
+    "dji_matrice4_manual_v12_c0057",
+    "dji_matrice4_manual_v12_c0056",
+    "dji_matrice4_manual_v12_c0062",
+    "dji_matrice4_manual_v12_c0164",
+    "dji_matrice4_manual_v12_c0067",
+    "dji_matrice4_manual_v12_c0054",
+    "dji_matrice4_manual_v12_c0099"
+   ],
+   "kept_ids": [
+    "dji_matrice4_manual_v12_c0065",
+    "dji_matrice4_manual_v12_c0055",
+    "dji_matrice4_manual_v12_c0063",
+    "dji_matrice4_manual_v12_c0057",
+    "dji_matrice4_manual_v12_c0056"
+   ],
+   "new_ids": [
+    "dji_matrice4_manual_v12_c0065",
+    "dji_matrice4_manual_v12_c0055",
+    "dji_matrice4_manual_v12_c0063",
+    "dji_matrice4_manual_v12_c0057",
+    "dji_matrice4_manual_v12_c0056"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S004",
+   "section": "manual:Autel EVO Max 4N",
+   "origin": "base",
+   "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect remote pilot actions during automated flight (loss of control link)",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect remote pilot actions during automated flight (loss of control link)",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "Autel EVO Max 4N"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "autel_evo_max_manual_v130_c0118",
+    "autel_evo_max_manual_v130_c0107",
+    "autel_evo_max_manual_v130_c0117",
+    "autel_evo_max_manual_v130_c0183",
+    "autel_evo_max_manual_v130_c0166",
+    "autel_evo_max_manual_v130_c0226",
+    "autel_evo_max_manual_v130_c0106",
+    "autel_evo_max_manual_v130_c0141",
+    "autel_evo_max_manual_v130_c0104",
+    "autel_evo_max_manual_v130_c0025"
+   ],
+   "kept_ids": [
+    "autel_evo_max_manual_v130_c0118",
+    "autel_evo_max_manual_v130_c0107",
+    "autel_evo_max_manual_v130_c0117",
+    "autel_evo_max_manual_v130_c0183",
+    "autel_evo_max_manual_v130_c0166"
+   ],
+   "new_ids": [
+    "autel_evo_max_manual_v130_c0118",
+    "autel_evo_max_manual_v130_c0107",
+    "autel_evo_max_manual_v130_c0117",
+    "autel_evo_max_manual_v130_c0183",
+    "autel_evo_max_manual_v130_c0166"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S005",
+   "section": "manual:DJI Matrice 210 V1",
+   "origin": "base",
+   "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect remote pilot actions during automated flight (loss of control link)",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect remote pilot actions during automated flight (loss of control link)",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "DJI Matrice 210 V1"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "dji_m210_v1_manual_v14_c0037",
+    "dji_m210_v1_manual_v14_c0039",
+    "dji_m210_v1_manual_v14_c0036",
+    "dji_m210_v1_manual_v14_c0034",
+    "dji_m210_v1_manual_v14_c0049",
+    "dji_m210_v1_manual_v14_c0111",
+    "dji_m210_v1_manual_v14_c0038",
+    "dji_m210_v1_manual_v14_c0020",
+    "dji_m210_v1_manual_v14_c0041",
+    "dji_m210_v1_manual_v14_c0035"
+   ],
+   "kept_ids": [
+    "dji_m210_v1_manual_v14_c0037",
+    "dji_m210_v1_manual_v14_c0039",
+    "dji_m210_v1_manual_v14_c0034",
+    "dji_m210_v1_manual_v14_c0049",
+    "dji_m210_v1_manual_v14_c0111"
+   ],
+   "new_ids": [
+    "dji_m210_v1_manual_v14_c0037",
+    "dji_m210_v1_manual_v14_c0039",
+    "dji_m210_v1_manual_v14_c0034",
+    "dji_m210_v1_manual_v14_c0049",
+    "dji_m210_v1_manual_v14_c0111"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S006",
+   "section": "incident:DJI Matrice 30T",
+   "origin": "base",
+   "query": "lost link lost control signal lost return to home flyaway remote pilot actions during automated flight (loss of control link)",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link lost control signal lost return to home flyaway remote pilot actions during automated flight (loss of control link)",
+     "returned": 10,
+     "kept": 4,
+     "new": 4
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "aaib",
+     "model": "DJI Matrice 30T"
+    },
+    {
+     "source_type": "asrs",
+     "model": "DJI Matrice 30T"
+    },
+    {
+     "source_type": "forum",
+     "model": "DJI Matrice 30T"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "aaib_dji_m30t_selected_c0003",
+    "aaib_dji_m30t_selected_c0005",
+    "aaib_dji_m30t_selected_c0002",
+    "aaib_dji_m30t_selected_c0001",
+    "aaib_dji_m30t_selected_c0004",
+    "asrs_dji_m30t_selected_c0002",
+    "asrs_dji_m30t_selected_c0003",
+    "asrs_dji_m30t_selected_c0001",
+    "forum_dji_m30t_c0001",
+    "forum_dji_m30t_c0002"
+   ],
+   "kept_ids": [
+    "asrs_dji_m30t_selected_c0002",
+    "asrs_dji_m30t_selected_c0003",
+    "asrs_dji_m30t_selected_c0001",
+    "forum_dji_m30t_c0001"
+   ],
+   "new_ids": [
+    "asrs_dji_m30t_selected_c0002",
+    "asrs_dji_m30t_selected_c0003",
+    "asrs_dji_m30t_selected_c0001",
+    "forum_dji_m30t_c0001"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S007",
+   "section": "incident:DJI Matrice 4T",
+   "origin": "base",
+   "query": "lost link lost control signal lost return to home flyaway remote pilot actions during automated flight (loss of control link)",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link lost control signal lost return to home flyaway remote pilot actions during automated flight (loss of control link)",
+     "returned": 1,
+     "kept": 0,
+     "new": 0
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "aaib",
+     "model": "DJI Matrice 4T"
+    },
+    {
+     "source_type": "asrs",
+     "model": "DJI Matrice 4T"
+    },
+    {
+     "source_type": "forum",
+     "model": "DJI Matrice 4T"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "asrs_dji_m4t_selected_c0001"
+   ],
+   "kept_ids": [],
+   "new_ids": [],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S008",
+   "section": "incident:Autel EVO Max 4N",
+   "origin": "base",
+   "query": "lost link lost control signal lost return to home flyaway remote pilot actions during automated flight (loss of control link)",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link lost control signal lost return to home flyaway remote pilot actions during automated flight (loss of control link)",
+     "returned": 1,
+     "kept": 1,
+     "new": 1
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "aaib",
+     "model": "Autel EVO Max 4N"
+    },
+    {
+     "source_type": "asrs",
+     "model": "Autel EVO Max 4N"
+    },
+    {
+     "source_type": "forum",
+     "model": "Autel EVO Max 4N"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "asrs_autel_evo_max_4n_selected_c0001"
+   ],
+   "kept_ids": [
+    "asrs_autel_evo_max_4n_selected_c0001"
+   ],
+   "new_ids": [
+    "asrs_autel_evo_max_4n_selected_c0001"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S009",
+   "section": "incident:DJI Matrice 210 V1",
+   "origin": "base",
+   "query": "lost link lost control signal lost return to home flyaway remote pilot actions during automated flight (loss of control link)",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link lost control signal lost return to home flyaway remote pilot actions during automated flight (loss of control link)",
+     "returned": 11,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "aaib",
+     "model": "DJI Matrice 210 V1"
+    },
+    {
+     "source_type": "asrs",
+     "model": "DJI Matrice 210 V1"
+    },
+    {
+     "source_type": "forum",
+     "model": "DJI Matrice 210 V1"
+    },
+    {
+     "source_type": "asrs",
+     "model": "DJI Matrice 210"
+    }
+   ],
+   "backend_calls": 4,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "aaib_m210_v1_poole_c0005",
+    "aaib_m210_v1_poole_c0013",
+    "aaib_m210_v1_poole_c0004",
+    "aaib_m210_v1_poole_c0008",
+    "aaib_m210_v1_poole_c0018",
+    "aaib_m210_v1_poole_c0039",
+    "aaib_m210_v1_poole_c0017",
+    "aaib_m210_v1_poole_c0029",
+    "aaib_m210_v1_poole_c0003",
+    "aaib_m210_v1_poole_c0002",
+    "asrs_m210_1918661_c0001"
+   ],
+   "kept_ids": [
+    "aaib_m210_v1_poole_c0005",
+    "aaib_m210_v1_poole_c0013",
+    "aaib_m210_v1_poole_c0004",
+    "aaib_m210_v1_poole_c0008",
+    "aaib_m210_v1_poole_c0018"
+   ],
+   "new_ids": [
+    "aaib_m210_v1_poole_c0005",
+    "aaib_m210_v1_poole_c0013",
+    "aaib_m210_v1_poole_c0004",
+    "aaib_m210_v1_poole_c0008",
+    "aaib_m210_v1_poole_c0018"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S010",
+   "section": "faa",
+   "origin": "agent",
+   "query": "loss of control link pilot actions guidance",
+   "alternate_queries": [
+    "loss of control link procedures",
+    "signal loss action"
+   ],
+   "phrasing_stats": [
+    {
+     "query": "loss of control link pilot actions guidance",
+     "returned": 10,
+     "kept": 5,
+     "new": 1
+    },
+    {
+     "query": "loss of control link procedures",
+     "returned": 10,
+     "kept": 5,
+     "new": 1
+    },
+    {
+     "query": "signal loss action",
+     "returned": 10,
+     "kept": 4,
+     "new": 1
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "faa_guidance"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "Need explicit ordered pilot actions on loss of control link per FAA guidance to complete the FAA section.",
+   "follows_from": null,
+   "returned_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0049",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0062",
+    "faa_ac_107_2a_2022_c0048",
+    "faa_ac_107_2a_2022_c0035",
+    "faa_ac_107_2a_2022_c0220",
+    "faa_ac_107_2a_2022_c0053",
+    "faa_ac_107_2a_2022_c0150",
+    "faa_ac_107_2a_2022_c0231",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0041",
+    "faa_ac_107_2a_2022_c0255",
+    "faa_ac_107_2a_2022_c0190",
+    "faa_ac_107_2a_2022_c0240",
+    "faa_ac_107_2a_2022_c0188",
+    "faa_ac_107_2a_2022_c0249"
+   ],
+   "kept_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0049",
+    "faa_ac_107_2a_2022_c0033"
+   ],
+   "new_ids": [
+    "faa_ac_107_2a_2022_c0254"
+   ],
+   "below_cutoff_ids": [
+    "faa_ac_107_2a_2022_c0062",
+    "faa_ac_107_2a_2022_c0048",
+    "faa_ac_107_2a_2022_c0035",
+    "faa_ac_107_2a_2022_c0220",
+    "faa_ac_107_2a_2022_c0053"
+   ],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null,
+   "earned": true
+  },
+  {
+   "search_id": "S011",
+   "section": "faa",
+   "origin": "agent",
+   "query": "loss of control link procedures regulated by FAA pilot actions",
+   "alternate_queries": [
+    "control link loss procedure",
+    "lost link actions"
+   ],
+   "phrasing_stats": [
+    {
+     "query": "loss of control link procedures regulated by FAA pilot actions",
+     "returned": 10,
+     "kept": 3,
+     "new": 0
+    },
+    {
+     "query": "control link loss procedure",
+     "returned": 10,
+     "kept": 5,
+     "new": 0
+    },
+    {
+     "query": "lost link actions",
+     "returned": 10,
+     "kept": 3,
+     "new": 0
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "faa_guidance"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "Seek explicit step-by-step pilot actions on loss of control link in FAA guidance to complete the section.",
+   "follows_from": null,
+   "returned_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0049",
+    "faa_ac_107_2a_2022_c0035",
+    "faa_ac_107_2a_2022_c0060",
+    "faa_ac_107_2a_2022_c0150",
+    "faa_ac_107_2a_2022_c0185",
+    "faa_ac_107_2a_2022_c0028",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0179",
+    "faa_ac_107_2a_2022_c0232",
+    "faa_ac_107_2a_2022_c0256",
+    "faa_ac_107_2a_2022_c0106",
+    "faa_ac_107_2a_2022_c0181",
+    "faa_ac_107_2a_2022_c0149",
+    "faa_ac_107_2a_2022_c0184",
+    "faa_ac_107_2a_2022_c0108",
+    "faa_ac_107_2a_2022_c0250",
+    "faa_ac_107_2a_2022_c0029",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0240"
+   ],
+   "kept_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0049",
+    "faa_ac_107_2a_2022_c0033"
+   ],
+   "new_ids": [],
+   "below_cutoff_ids": [
+    "faa_ac_107_2a_2022_c0035",
+    "faa_ac_107_2a_2022_c0060",
+    "faa_ac_107_2a_2022_c0150",
+    "faa_ac_107_2a_2022_c0185",
+    "faa_ac_107_2a_2022_c0028"
+   ],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S012",
+   "section": "faa",
+   "origin": "agent",
+   "query": "remote pilot actions during automated flight loss of control link FAA guidance AC 107-2A",
+   "alternate_queries": [
+    "AC 107-2A loss of control link automated flight remote pilot actions",
+    "FAA guidance automated flight when control link is lost"
+   ],
+   "phrasing_stats": [
+    {
+     "query": "remote pilot actions during automated flight loss of control link FAA guidance AC 107-2A",
+     "returned": 10,
+     "kept": 4,
+     "new": 1
+    },
+    {
+     "query": "AC 107-2A loss of control link automated flight remote pilot actions",
+     "returned": 10,
+     "kept": 5,
+     "new": 1
+    },
+    {
+     "query": "FAA guidance automated flight when control link is lost",
+     "returned": 10,
+     "kept": 4,
+     "new": 1
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "faa_guidance"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "Need FAA guidance on what the remote pilot must be able to do during automated flight when control link is lost",
+   "follows_from": null,
+   "returned_ids": [
+    "faa_ac_107_2a_2022_c0035",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0036",
+    "faa_ac_107_2a_2022_c0049",
+    "faa_ac_107_2a_2022_c0062",
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0060",
+    "faa_ac_107_2a_2022_c0025",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0274",
+    "faa_ac_107_2a_2022_c0008",
+    "faa_ac_107_2a_2022_c0107",
+    "faa_ac_107_2a_2022_c0223",
+    "faa_ac_107_2a_2022_c0209",
+    "faa_ac_107_2a_2022_c0014",
+    "faa_ac_107_2a_2022_c0165"
+   ],
+   "kept_ids": [
+    "faa_ac_107_2a_2022_c0035",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0036",
+    "faa_ac_107_2a_2022_c0049",
+    "faa_ac_107_2a_2022_c0228"
+   ],
+   "new_ids": [
+    "faa_ac_107_2a_2022_c0035"
+   ],
+   "below_cutoff_ids": [
+    "faa_ac_107_2a_2022_c0062",
+    "faa_ac_107_2a_2022_c0060",
+    "faa_ac_107_2a_2022_c0025",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0274"
+   ],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null,
+   "earned": true
+  },
+  {
+   "search_id": "S013",
+   "section": "faa",
+   "origin": "agent",
+   "query": "FAA AC 107-2A loss of control link remote pilot must be able to",
+   "alternate_queries": [
+    "loss of control link remote pilot actions",
+    "loss of control link guidance for automated flight"
+   ],
+   "phrasing_stats": [
+    {
+     "query": "FAA AC 107-2A loss of control link remote pilot must be able to",
+     "returned": 10,
+     "kept": 5,
+     "new": 1
+    },
+    {
+     "query": "loss of control link remote pilot actions",
+     "returned": 10,
+     "kept": 5,
+     "new": 1
+    },
+    {
+     "query": "loss of control link guidance for automated flight",
+     "returned": 10,
+     "kept": 5,
+     "new": 1
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "faa_guidance"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "We need FAA guidance on what the remote pilot must do during automated flight when the control link is lost; this is central to the FAA section.",
+   "follows_from": null,
+   "returned_ids": [
+    "faa_ac_107_2a_2022_c0035",
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0049",
+    "faa_ac_107_2a_2022_c0036",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0062",
+    "faa_ac_107_2a_2022_c0274",
+    "faa_ac_107_2a_2022_c0048",
+    "faa_ac_107_2a_2022_c0066",
+    "faa_ac_107_2a_2022_c0083",
+    "faa_ac_107_2a_2022_c0107",
+    "faa_ac_107_2a_2022_c0214",
+    "faa_ac_107_2a_2022_c0025"
+   ],
+   "kept_ids": [
+    "faa_ac_107_2a_2022_c0035",
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0032"
+   ],
+   "new_ids": [
+    "faa_ac_107_2a_2022_c0032"
+   ],
+   "below_cutoff_ids": [
+    "faa_ac_107_2a_2022_c0062",
+    "faa_ac_107_2a_2022_c0274",
+    "faa_ac_107_2a_2022_c0048",
+    "faa_ac_107_2a_2022_c0066",
+    "faa_ac_107_2a_2022_c0083"
+   ],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null,
+   "earned": true
+  },
+  {
+   "search_id": "S014",
+   "section": "faa",
+   "origin": "agent",
+   "query": "FAA guidance on loss of control link during automated flight for remote pilots (AC 107-2A)",
+   "alternate_queries": [
+    "loss of control link",
+    "C2 link lost guidance"
+   ],
+   "phrasing_stats": [
+    {
+     "query": "FAA guidance on loss of control link during automated flight for remote pilots (AC 107-2A)",
+     "returned": 10,
+     "kept": 5,
+     "new": 0
+    },
+    {
+     "query": "loss of control link",
+     "returned": 10,
+     "kept": 4,
+     "new": 0
+    },
+    {
+     "query": "C2 link lost guidance",
+     "returned": 10,
+     "kept": 2,
+     "new": 0
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "faa_guidance"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "To locate the FAA's required actions of the remote pilot during automated/flight when control link is lost, per AC 107-2A.",
+   "follows_from": null,
+   "returned_ids": [
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0035",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0049",
+    "faa_ac_107_2a_2022_c0008",
+    "faa_ac_107_2a_2022_c0036",
+    "faa_ac_107_2a_2022_c0024",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0107",
+    "faa_ac_107_2a_2022_c0108",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0276",
+    "faa_ac_107_2a_2022_c0001",
+    "faa_ac_107_2a_2022_c0062",
+    "faa_ac_107_2a_2022_c0011",
+    "faa_ac_107_2a_2022_c0025",
+    "faa_ac_107_2a_2022_c0106",
+    "faa_ac_107_2a_2022_c0002",
+    "faa_ac_107_2a_2022_c0014",
+    "faa_ac_107_2a_2022_c0274",
+    "faa_ac_107_2a_2022_c0038",
+    "faa_ac_107_2a_2022_c0256"
+   ],
+   "kept_ids": [
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0049",
+    "faa_ac_107_2a_2022_c0036"
+   ],
+   "new_ids": [],
+   "below_cutoff_ids": [
+    "faa_ac_107_2a_2022_c0008",
+    "faa_ac_107_2a_2022_c0024",
+    "faa_ac_107_2a_2022_c0107",
+    "faa_ac_107_2a_2022_c0108",
+    "faa_ac_107_2a_2022_c0276"
+   ],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S015",
+   "section": "faa",
+   "origin": "agent",
+   "query": "FAA AC 107-2A remote pilot must be able to do during automated flight loss of control link",
+   "alternate_queries": [
+    "loss of control link remote pilot must do AC 107-2A",
+    "drone automated flight pilot actions loss of control link FAA AC 107-2A"
+   ],
+   "phrasing_stats": [
+    {
+     "query": "FAA AC 107-2A remote pilot must be able to do during automated flight loss of control link",
+     "returned": 10,
+     "kept": 3,
+     "new": 1
+    },
+    {
+     "query": "loss of control link remote pilot must do AC 107-2A",
+     "returned": 10,
+     "kept": 3,
+     "new": 1
+    },
+    {
+     "query": "drone automated flight pilot actions loss of control link FAA AC 107-2A",
+     "returned": 10,
+     "kept": 3,
+     "new": 1
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "faa_guidance",
+     "flight_phase": "in_flight"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "to find FAA guidance on remote pilot actions during automated flight when control link is lost",
+   "follows_from": null,
+   "returned_ids": [
+    "faa_ac_107_2a_2022_c0035",
+    "faa_ac_107_2a_2022_c0124",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0012",
+    "faa_ac_107_2a_2022_c0031",
+    "faa_ac_107_2a_2022_c0078",
+    "faa_ac_107_2a_2022_c0051",
+    "faa_ac_107_2a_2022_c0003",
+    "faa_ac_107_2a_2022_c0248",
+    "faa_ac_107_2a_2022_c0068",
+    "faa_ac_107_2a_2022_c0066",
+    "faa_ac_107_2a_2022_c0047",
+    "faa_ac_107_2a_2022_c0231",
+    "faa_ac_107_2a_2022_c0054",
+    "faa_ac_107_2a_2022_c0141"
+   ],
+   "kept_ids": [
+    "faa_ac_107_2a_2022_c0035",
+    "faa_ac_107_2a_2022_c0124",
+    "faa_ac_107_2a_2022_c0032"
+   ],
+   "new_ids": [
+    "faa_ac_107_2a_2022_c0124"
+   ],
+   "below_cutoff_ids": [
+    "faa_ac_107_2a_2022_c0012",
+    "faa_ac_107_2a_2022_c0031",
+    "faa_ac_107_2a_2022_c0078",
+    "faa_ac_107_2a_2022_c0051",
+    "faa_ac_107_2a_2022_c0003",
+    "faa_ac_107_2a_2022_c0248",
+    "faa_ac_107_2a_2022_c0068"
+   ],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null,
+   "earned": true
+  },
+  {
+   "search_id": "S016",
+   "section": "faa",
+   "origin": "agent",
+   "query": "FAA AC 107-2A remote pilot ability during automated flight loss of control link must be able to do",
+   "alternate_queries": [
+    "AC 107-2A loss of control link remote pilot action during automated flight",
+    "remote pilot actions automated flight loss of control FAA 107-2A"
+   ],
+   "phrasing_stats": [
+    {
+     "query": "FAA AC 107-2A remote pilot ability during automated flight loss of control link must be able to do",
+     "returned": 10,
+     "kept": 4,
+     "new": 0
+    },
+    {
+     "query": "AC 107-2A loss of control link remote pilot action during automated flight",
+     "returned": 10,
+     "kept": 5,
+     "new": 0
+    },
+    {
+     "query": "remote pilot actions automated flight loss of control FAA 107-2A",
+     "returned": 10,
+     "kept": 5,
+     "new": 0
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "faa_guidance"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "Need FAA guidance on remote pilot required actions during automated flight loss of control link.",
+   "follows_from": null,
+   "returned_ids": [
+    "faa_ac_107_2a_2022_c0035",
+    "faa_ac_107_2a_2022_c0036",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0062",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0049",
+    "faa_ac_107_2a_2022_c0053",
+    "faa_ac_107_2a_2022_c0025",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0060",
+    "faa_ac_107_2a_2022_c0208",
+    "faa_ac_107_2a_2022_c0034",
+    "faa_ac_107_2a_2022_c0223",
+    "faa_ac_107_2a_2022_c0045",
+    "faa_ac_107_2a_2022_c0209",
+    "faa_ac_107_2a_2022_c0048"
+   ],
+   "kept_ids": [
+    "faa_ac_107_2a_2022_c0035",
+    "faa_ac_107_2a_2022_c0036",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0049"
+   ],
+   "new_ids": [],
+   "below_cutoff_ids": [
+    "faa_ac_107_2a_2022_c0062",
+    "faa_ac_107_2a_2022_c0053",
+    "faa_ac_107_2a_2022_c0025",
+    "faa_ac_107_2a_2022_c0060",
+    "faa_ac_107_2a_2022_c0208"
+   ],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S017",
+   "section": "faa",
+   "origin": "agent",
+   "query": "FAA AC 107-2A loss of control link remote pilot actions automated flight",
+   "alternate_queries": [
+    "loss of control link guidance FAA part 107 remote pilot responsibilities automated flight",
+    "Remote pilot actions during automated flight loss of control link FAA 107-2A"
+   ],
+   "phrasing_stats": [
+    {
+     "query": "FAA AC 107-2A loss of control link remote pilot actions automated flight",
+     "returned": 10,
+     "kept": 5,
+     "new": 0
+    },
+    {
+     "query": "loss of control link guidance FAA part 107 remote pilot responsibilities automated flight",
+     "returned": 10,
+     "kept": 4,
+     "new": 0
+    },
+    {
+     "query": "Remote pilot actions during automated flight loss of control link FAA 107-2A",
+     "returned": 10,
+     "kept": 5,
+     "new": 0
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "faa_guidance"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "We need FAA guidance on what the remote pilot must be able to do during automated flight when control link is lost.",
+   "follows_from": null,
+   "returned_ids": [
+    "faa_ac_107_2a_2022_c0035",
+    "faa_ac_107_2a_2022_c0036",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0062",
+    "faa_ac_107_2a_2022_c0049",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0025",
+    "faa_ac_107_2a_2022_c0060",
+    "faa_ac_107_2a_2022_c0110",
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0014",
+    "faa_ac_107_2a_2022_c0031",
+    "faa_ac_107_2a_2022_c0189",
+    "faa_ac_107_2a_2022_c0003",
+    "faa_ac_107_2a_2022_c0083"
+   ],
+   "kept_ids": [
+    "faa_ac_107_2a_2022_c0035",
+    "faa_ac_107_2a_2022_c0036",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0049"
+   ],
+   "new_ids": [],
+   "below_cutoff_ids": [
+    "faa_ac_107_2a_2022_c0062",
+    "faa_ac_107_2a_2022_c0025",
+    "faa_ac_107_2a_2022_c0060",
+    "faa_ac_107_2a_2022_c0110",
+    "faa_ac_107_2a_2022_c0014"
+   ],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  }
+ ],
+ "decisions": [
+  {
+   "decision_id": "D001",
+   "section": "faa",
+   "action": "rejected_by_code",
+   "continue_or_stop": "continue",
+   "reason": "alternate_queries: List should have at most 2 items after validation, not 3",
+   "tool": "document_search",
+   "error": "invalid_arguments"
+  },
+  {
+   "decision_id": "D002",
+   "section": "faa",
+   "action": "search",
+   "continue_or_stop": "continue",
+   "reason": "Need explicit ordered pilot actions on loss of control link per FAA guidance to complete the FAA section.",
+   "tool": "document_search",
+   "searched_section": "faa",
+   "query": "loss of control link pilot actions guidance",
+   "alternate_queries": [
+    "loss of control link procedures",
+    "signal loss action"
+   ],
+   "follows_from": null,
+   "search_id": "S010",
+   "new_passages": 1,
+   "below_cutoff": 5,
+   "earned_search": true
+  },
+  {
+   "decision_id": "D003",
+   "section": "faa",
+   "action": "search",
+   "continue_or_stop": "continue",
+   "reason": "Seek explicit step-by-step pilot actions on loss of control link in FAA guidance to complete the section.",
+   "tool": "document_search",
+   "searched_section": "faa",
+   "query": "loss of control link procedures regulated by FAA pilot actions",
+   "alternate_queries": [
+    "control link loss procedure",
+    "lost link actions"
+   ],
+   "follows_from": null,
+   "search_id": "S011",
+   "new_passages": 0,
+   "below_cutoff": 5,
+   "earned_search": false
+  },
+  {
+   "decision_id": "D004",
+   "section": "faa",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "To conclude evaluation for FAA section given the evidence gathered.",
+   "tool": "finish_assessment",
+   "coverage": "partial",
+   "missing": [
+    "A clear, ordered FAA pilot action sequence for loss of control link (step-by-step actions). Explicit criteria for when to attempt reestablishment vs. when to execute emergency contingencies (RTH, land, hover/flyaway) and any altitude/visibility constraints. Any model-agnostic vs. model-specific notes on loss of control link required by FAA guidance. If available, a definition of loss of control link timing/thresholds and who is responsible (remote PIC handover).",
+    "conflicts_noticed:[]",
+    "reason_for_assessment:This FAA section currently contains fragments about loss of control link procedures but lacks a concise, ordered action set for pilots, making the coverage partial."
+   ],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D005",
+   "section": "manual:DJI Matrice 30T",
+   "action": "search",
+   "continue_or_stop": "continue",
+   "reason": "Need FAA guidance on what the remote pilot must be able to do during automated flight when control link is lost",
+   "tool": "document_search",
+   "searched_section": "faa",
+   "query": "remote pilot actions during automated flight loss of control link FAA guidance AC 107-2A",
+   "alternate_queries": [
+    "AC 107-2A loss of control link automated flight remote pilot actions",
+    "FAA guidance automated flight when control link is lost"
+   ],
+   "follows_from": null,
+   "search_id": "S012",
+   "new_passages": 1,
+   "below_cutoff": 5,
+   "earned_search": true
+  },
+  {
+   "decision_id": "D006",
+   "section": "manual:DJI Matrice 30T",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "FAA AC 107-2A states remote PIC must be able to change routing/altitude or command the aircraft to land immediately during automated flight; can be via manual control or automation.",
+   "tool": "finish_assessment",
+   "coverage": "sufficient",
+   "missing": [
+    "N/A"
+   ],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D007",
+   "section": "manual:DJI Matrice 4T",
+   "action": "search",
+   "continue_or_stop": "continue",
+   "reason": "We need FAA guidance on what the remote pilot must do during automated flight when the control link is lost; this is central to the FAA section.",
+   "tool": "document_search",
+   "searched_section": "faa",
+   "query": "FAA AC 107-2A loss of control link remote pilot must be able to",
+   "alternate_queries": [
+    "loss of control link remote pilot actions",
+    "loss of control link guidance for automated flight"
+   ],
+   "follows_from": null,
+   "search_id": "S013",
+   "new_passages": 1,
+   "below_cutoff": 5,
+   "earned_search": true
+  },
+  {
+   "decision_id": "D008",
+   "section": "manual:DJI Matrice 4T",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "FAA passages describe remote pilot actions during automated flight with loss of control link (reestablish link or initiate contingency procedures) and roles. This satisfies the section's purpose.",
+   "tool": "finish_assessment",
+   "coverage": "sufficient",
+   "missing": [
+    "none identified; FAA guidance on loss of control link procedures and remote pilot responsibilities is covered."
+   ],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D009",
+   "section": "manual:Autel EVO Max 4N",
+   "action": "rejected_by_code",
+   "continue_or_stop": "continue",
+   "reason": "alternate_queries: List should have at most 2 items after validation, not 3",
+   "tool": "document_search",
+   "error": "invalid_arguments"
+  },
+  {
+   "decision_id": "D010",
+   "section": "manual:Autel EVO Max 4N",
+   "action": "search",
+   "continue_or_stop": "continue",
+   "reason": "To locate the FAA's required actions of the remote pilot during automated/flight when control link is lost, per AC 107-2A.",
+   "tool": "document_search",
+   "searched_section": "faa",
+   "query": "FAA guidance on loss of control link during automated flight for remote pilots (AC 107-2A)",
+   "alternate_queries": [
+    "loss of control link",
+    "C2 link lost guidance"
+   ],
+   "follows_from": null,
+   "search_id": "S014",
+   "new_passages": 0,
+   "below_cutoff": 5,
+   "earned_search": false
+  },
+  {
+   "decision_id": "D011",
+   "section": "manual:Autel EVO Max 4N",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "FAA AC 107-2A requires remote PIC during automated flight to be able to change routing/altitude or command landing, and to take emergency procedures if control link cannot be reestablished; this is covered by the retrieved passages.",
+   "tool": "finish_assessment",
+   "coverage": "sufficient",
+   "missing": [
+    "none"
+   ],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D012",
+   "section": "manual:DJI Matrice 210 V1",
+   "action": "search",
+   "continue_or_stop": "continue",
+   "reason": "to find FAA guidance on remote pilot actions during automated flight when control link is lost",
+   "tool": "document_search",
+   "searched_section": "faa",
+   "query": "FAA AC 107-2A remote pilot must be able to do during automated flight loss of control link",
+   "alternate_queries": [
+    "loss of control link remote pilot must do AC 107-2A",
+    "drone automated flight pilot actions loss of control link FAA AC 107-2A"
+   ],
+   "follows_from": null,
+   "search_id": "S015",
+   "new_passages": 1,
+   "below_cutoff": 7,
+   "earned_search": true
+  },
+  {
+   "decision_id": "D013",
+   "section": "manual:DJI Matrice 210 V1",
+   "action": "lookup",
+   "continue_or_stop": "continue",
+   "reason": "to read the specific guidance on remote pilot actions during automated flight",
+   "tool": "citation_lookup",
+   "chunk_id": "faa_ac_107_2a_2022_c0035"
+  },
+  {
+   "decision_id": "D014",
+   "section": "manual:DJI Matrice 210 V1",
+   "action": "rejected_by_code",
+   "continue_or_stop": "continue",
+   "reason": "identical call already made; change the query or call finish_assessment",
+   "tool": "citation_lookup",
+   "error": "repeated_call"
+  },
+  {
+   "decision_id": "D015",
+   "section": "manual:DJI Matrice 210 V1",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "FAA guidance on remote pilot actions during automated flight (loss of control link) is described in AC 107-2A; the section is sufficient for the requested question.",
+   "tool": "finish_assessment",
+   "coverage": "sufficient",
+   "missing": [
+    ""
+   ],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D016",
+   "section": "incident:DJI Matrice 30T",
+   "action": "search",
+   "continue_or_stop": "continue",
+   "reason": "Need FAA guidance on remote pilot required actions during automated flight loss of control link.",
+   "tool": "document_search",
+   "searched_section": "faa",
+   "query": "FAA AC 107-2A remote pilot ability during automated flight loss of control link must be able to do",
+   "alternate_queries": [
+    "AC 107-2A loss of control link remote pilot action during automated flight",
+    "remote pilot actions automated flight loss of control FAA 107-2A"
+   ],
+   "follows_from": null,
+   "search_id": "S016",
+   "new_passages": 0,
+   "below_cutoff": 5,
+   "earned_search": false
+  },
+  {
+   "decision_id": "D017",
+   "section": "incident:DJI Matrice 30T",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "FAA guidance on remote pilot actions during automated flight (loss of control link) is present in the cited passages, indicating the remote PIC must be able to intervene and take over control; no conflicting FAA statements found in the current passages.",
+   "tool": "finish_assessment",
+   "coverage": "sufficient",
+   "missing": [
+    "none"
+   ],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D018",
+   "section": "incident:DJI Matrice 4T",
+   "action": "search",
+   "continue_or_stop": "continue",
+   "reason": "We need FAA guidance on what the remote pilot must be able to do during automated flight when control link is lost.",
+   "tool": "document_search",
+   "searched_section": "faa",
+   "query": "FAA AC 107-2A loss of control link remote pilot actions automated flight",
+   "alternate_queries": [
+    "loss of control link guidance FAA part 107 remote pilot responsibilities automated flight",
+    "Remote pilot actions during automated flight loss of control link FAA 107-2A"
+   ],
+   "follows_from": null,
+   "search_id": "S017",
+   "new_passages": 0,
+   "below_cutoff": 5,
+   "earned_search": false
+  },
+  {
+   "decision_id": "D019",
+   "section": "incident:DJI Matrice 4T",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "FAA AC 107-2A guidance indicates remote PIC must be able to change routing/altitude or command landing during automated flight, via manual control or automation. This directly answers the user question for the FAA section.",
+   "tool": "finish_assessment",
+   "coverage": "sufficient",
+   "missing": [],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D020",
+   "section": "incident:Autel EVO Max 4N",
+   "action": "stopped_by_code",
+   "continue_or_stop": "stop",
+   "reason": "8 agent searches used in this run",
+   "tool": "document_search",
+   "stop_reason": "run_search_cap"
+  },
+  {
+   "decision_id": "D021",
+   "section": "incident:DJI Matrice 210 V1",
+   "action": "stopped_by_code",
+   "continue_or_stop": "stop",
+   "reason": "8 agent searches used in this run",
+   "tool": "document_search",
+   "stop_reason": "run_search_cap"
+  },
+  {
+   "decision_id": "D022",
+   "section": "faa",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "quote_in_source: the quote is verbatim and drawn from the cited source; provide a precise, attributed rewrite with the exact wording.",
+   "claim_id": "C005",
+   "round": 1,
+   "new_text": "Two or more certificated remote pilots transferring operational control may do so only if they are both capable of maintaining Visual Line of Sight (VLOS) of the small unmanned aircraft without loss of control (LOC)."
+  },
+  {
+   "decision_id": "D023",
+   "section": "incident:Autel EVO Max 4N",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "Fix attribution and include conditions in a single verifiable sentence.",
+   "claim_id": "C006",
+   "round": 1,
+   "new_text": "The reporter states: \"Shortly after takeoff I completely lost control of the UAS.\" (conditions: shortly after takeoff)"
+  },
+  {
+   "decision_id": "D024",
+   "section": "incident:Autel EVO Max 4N",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "Fix attribution and include explicit conditions (none) in a single verifiable sentence.",
+   "claim_id": "C007",
+   "round": 1,
+   "new_text": "The reporter states: \"Platform continued to fly away from me while input into the controls to return.\" (conditions: none)"
+  },
+  {
+   "decision_id": "D025",
+   "section": "incident:Autel EVO Max 4N",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "Fix attribution and include explicit conditions (none) in a single verifiable sentence.",
+   "claim_id": "C008",
+   "round": 1,
+   "new_text": "The reporter states: \"All attempts of Return To Home features failed.\" (conditions: none)"
+  },
+  {
+   "decision_id": "D026",
+   "section": "incident:Autel EVO Max 4N",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "Fix attribution and include explicit conditions (none) in a single verifiable sentence.",
+   "claim_id": "C009",
+   "round": 1,
+   "new_text": "The reporter states: \"UAS Platform has not been located or recovered.\" (conditions: none)"
+  },
+  {
+   "decision_id": "D027",
+   "section": "faa",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "quote_in_source fixed by using a verbatim, properly scoped quote within 40 words; cites corrected; conditions included; attribution aligned with AC 107-2A wording.",
+   "claim_id": "C005",
+   "round": 2,
+   "new_text": "Two or more certificated remote pilots transferring operational control to each other may do so only if they are both capable of maintaining Visual Line of Sight (VLOS) of the small unmanned aircraft without loss of control (LOC)."
+  },
+  {
+   "decision_id": "D028",
+   "section": "faa",
+   "action": "drop",
+   "continue_or_stop": "stop",
+   "reason": "still failing after 2 revision rounds",
+   "claim_id": "C005",
+   "human_review": true
+  },
+  {
+   "decision_id": "D029",
+   "section": "gaps",
+   "action": "trimmed_by_code",
+   "continue_or_stop": "stop",
+   "reason": "over the gap limit",
+   "text": "No usable evidence found in the approved collection for DJI Matrice 210 V1 incident reports."
+  }
+ ],
+ "assessments": {
+  "faa": {
+   "coverage": "partial",
+   "missing": [
+    "A clear, ordered FAA pilot action sequence for loss of control link (step-by-step actions). Explicit criteria for when to attempt reestablishment vs. when to execute emergency contingencies (RTH, land, hover/flyaway) and any altitude/visibility constraints. Any model-agnostic vs. model-specific notes on loss of control link required by FAA guidance. If available, a definition of loss of control link timing/thresholds and who is responsible (remote PIC handover).",
+    "conflicts_noticed:[]",
+    "reason_for_assessment:This FAA section currently contains fragments about loss of control link procedures but lacks a concise, ordered action set for pilots, making the coverage partial."
+   ],
+   "conflicts_noticed": [],
+   "reason": "To conclude evaluation for FAA section given the evidence gathered.",
+   "stop_reason": "model_finished",
+   "section": "faa",
+   "turns": 5,
+   "tool_calls": 3,
+   "searches": 2,
+   "searches_allowed": 3
+  },
+  "manual:DJI Matrice 30T": {
+   "coverage": "sufficient",
+   "missing": [
+    "N/A"
+   ],
+   "conflicts_noticed": [],
+   "reason": "FAA AC 107-2A states remote PIC must be able to change routing/altitude or command the aircraft to land immediately during automated flight; can be via manual control or automation.",
+   "stop_reason": "model_finished",
+   "section": "manual:DJI Matrice 30T",
+   "turns": 3,
+   "tool_calls": 1,
+   "searches": 1,
+   "searches_allowed": 3
+  },
+  "manual:DJI Matrice 4T": {
+   "coverage": "sufficient",
+   "missing": [
+    "none identified; FAA guidance on loss of control link procedures and remote pilot responsibilities is covered."
+   ],
+   "conflicts_noticed": [],
+   "reason": "FAA passages describe remote pilot actions during automated flight with loss of control link (reestablish link or initiate contingency procedures) and roles. This satisfies the section's purpose.",
+   "stop_reason": "model_finished",
+   "section": "manual:DJI Matrice 4T",
+   "turns": 3,
+   "tool_calls": 1,
+   "searches": 1,
+   "searches_allowed": 3
+  },
+  "manual:Autel EVO Max 4N": {
+   "coverage": "sufficient",
+   "missing": [
+    "none"
+   ],
+   "conflicts_noticed": [],
+   "reason": "FAA AC 107-2A requires remote PIC during automated flight to be able to change routing/altitude or command landing, and to take emergency procedures if control link cannot be reestablished; this is covered by the retrieved passages.",
+   "stop_reason": "model_finished",
+   "section": "manual:Autel EVO Max 4N",
+   "turns": 4,
+   "tool_calls": 2,
+   "searches": 1,
+   "searches_allowed": 2
+  },
+  "manual:DJI Matrice 210 V1": {
+   "coverage": "sufficient",
+   "missing": [
+    ""
+   ],
+   "conflicts_noticed": [],
+   "reason": "FAA guidance on remote pilot actions during automated flight (loss of control link) is described in AC 107-2A; the section is sufficient for the requested question.",
+   "stop_reason": "model_finished",
+   "section": "manual:DJI Matrice 210 V1",
+   "turns": 5,
+   "tool_calls": 3,
+   "searches": 1,
+   "searches_allowed": 3
+  },
+  "incident:DJI Matrice 30T": {
+   "coverage": "sufficient",
+   "missing": [
+    "none"
+   ],
+   "conflicts_noticed": [],
+   "reason": "FAA guidance on remote pilot actions during automated flight (loss of control link) is present in the cited passages, indicating the remote PIC must be able to intervene and take over control; no conflicting FAA statements found in the current passages.",
+   "stop_reason": "model_finished",
+   "section": "incident:DJI Matrice 30T",
+   "turns": 3,
+   "tool_calls": 1,
+   "searches": 1,
+   "searches_allowed": 2
+  },
+  "incident:DJI Matrice 4T": {
+   "coverage": "sufficient",
+   "missing": [],
+   "conflicts_noticed": [],
+   "reason": "FAA AC 107-2A guidance indicates remote PIC must be able to change routing/altitude or command landing during automated flight, via manual control or automation. This directly answers the user question for the FAA section.",
+   "stop_reason": "model_finished",
+   "section": "incident:DJI Matrice 4T",
+   "turns": 3,
+   "tool_calls": 1,
+   "searches": 1,
+   "searches_allowed": 2
+  },
+  "incident:Autel EVO Max 4N": {
+   "coverage": "partial",
+   "missing": [],
+   "conflicts_noticed": [],
+   "reason": "8 agent searches used in this run",
+   "stop_reason": "run_search_cap",
+   "section": "incident:Autel EVO Max 4N",
+   "turns": 2,
+   "tool_calls": 0,
+   "searches": 0,
+   "searches_allowed": 2
+  },
+  "incident:DJI Matrice 210 V1": {
+   "coverage": "partial",
+   "missing": [],
+   "conflicts_noticed": [],
+   "reason": "8 agent searches used in this run",
+   "stop_reason": "run_search_cap",
+   "section": "incident:DJI Matrice 210 V1",
+   "turns": 2,
+   "tool_calls": 0,
+   "searches": 0,
+   "searches_allowed": 2
+  }
+ },
+ "gate_results": {
+  "C001": {
+   "claim_id": "C001",
+   "passed": true,
+   "failures": []
+  },
+  "C002": {
+   "claim_id": "C002",
+   "passed": true,
+   "failures": []
+  },
+  "C003": {
+   "claim_id": "C003",
+   "passed": true,
+   "failures": []
+  },
+  "C004": {
+   "claim_id": "C004",
+   "passed": true,
+   "failures": []
+  },
+  "C006": {
+   "claim_id": "C006",
+   "passed": true,
+   "failures": []
+  },
+  "C007": {
+   "claim_id": "C007",
+   "passed": true,
+   "failures": []
+  },
+  "C008": {
+   "claim_id": "C008",
+   "passed": true,
+   "failures": []
+  },
+  "C009": {
+   "claim_id": "C009",
+   "passed": true,
+   "failures": []
+  }
+ },
+ "verifications": {
+  "C001": {
+   "claim_id": "C001",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states that if the control link cannot be reestablished, start emergency or contingency procedures for loss of control link.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0228"
+   ]
+  },
+  "C002": {
+   "claim_id": "C002",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states that if the remote PIC loses the control link, the aircraft would continue the programmed mission/return home to land.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0035"
+   ]
+  },
+  "C003": {
+   "claim_id": "C003",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states that during automated flight, the remote PIC must have the ability to change routing/altitude or command the aircraft to land immediately.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0036"
+   ]
+  },
+  "C004": {
+   "claim_id": "C004",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states that if the remote PIC cannot regain VLOS, the remote PIC or person manipulating the controls should follow pre-determined procedures for the loss of VLOS.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0049"
+   ]
+  },
+  "C006": {
+   "claim_id": "C006",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The passage contains the exact quoted statement: 'Shortly after takeoff I completely lost control of the UAS.'",
+   "supporting_ids": [
+    "asrs_autel_evo_max_4n_selected_c0001"
+   ]
+  },
+  "C007": {
+   "claim_id": "C007",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The passage contains the exact quoted statement: 'Platform continued to fly away from me while input into the controls to return.'",
+   "supporting_ids": [
+    "asrs_autel_evo_max_4n_selected_c0001"
+   ]
+  },
+  "C008": {
+   "claim_id": "C008",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The passage contains the exact quoted statement: 'All attempts of Return To Home features failed.'",
+   "supporting_ids": [
+    "asrs_autel_evo_max_4n_selected_c0001"
+   ]
+  },
+  "C009": {
+   "claim_id": "C009",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The passage contains the exact quoted statement: 'UAS Platform has not been located or recovered.'",
+   "supporting_ids": [
+    "asrs_autel_evo_max_4n_selected_c0001"
+   ]
+  }
+ },
+ "first_draft_results": [
+  {
+   "claim_id": "C001",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C002",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C003",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C004",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C005",
+   "passes": false,
+   "gate_failures": [
+    "quote_in_source"
+   ],
+   "verifier": "not_supported"
+  },
+  {
+   "claim_id": "C006",
+   "passes": false,
+   "gate_failures": [
+    "attributed"
+   ],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C007",
+   "passes": false,
+   "gate_failures": [
+    "attributed"
+   ],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C008",
+   "passes": false,
+   "gate_failures": [
+    "attributed"
+   ],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C009",
+   "passes": false,
+   "gate_failures": [
+    "attributed"
+   ],
+   "verifier": "supported"
+  }
+ ],
+ "revisions_used": 2,
+ "reopens": 0,
+ "cost": {
+  "model_calls": 48,
+  "tokens_in": 130495,
+  "tokens_out": 24350,
+  "searches": 17,
+  "agent_searches": 8,
+  "agent_tool_calls": 21,
+  "seconds": 239.2
+ },
+ "corpus_snapshot": "4d0e3c83c9425371",
+ "chunks_sha256": "3aff778d5475cd877ed6cef54834cdaa960ccce15ebda1442215c7ca258274c6",
+ "retrieval": "hybrid_rrf",
+ "model": "@30875-fall26-openai/gpt-5-nano",
+ "reasoning_effort": "low",
+ "config": {
+  "mode": "full",
+  "max_revisions": 2,
+  "agent_base_searches_per_section": 2,
+  "agent_max_searches_per_section": 4,
+  "agent_max_tool_calls_per_section": 7,
+  "agent_max_turns_per_section": 8,
+  "agent_results_shown": 10,
+  "agent_max_searches_per_run": 8,
+  "agent_max_turns_per_run": 40,
+  "max_reopens_per_run": 1,
+  "max_searches": 40,
+  "max_model_calls": 120,
+  "top_k": 5,
+  "max_claims_per_section": 5,
+  "max_claim_words": 40,
+  "max_gaps": 6,
+  "max_short_answer_words": 120
+ },
+ "trace_path": "/content/drive/MyDrive/Agentic Unlearning Group/Project 1/processed/traces/20261102T201125-full-7643.jsonl"
+}

@@ -1,0 +1,382 @@
+{
+ "run_id": "20261102T173609-single_pass-66b5",
+ "mode": "single_pass",
+ "question": "What do the Skydio X10 and the DJI Matrice 30T do when the link is lost?",
+ "status": "completed_with_gaps",
+ "stop_reason": "verified claims; gaps listed",
+ "error": null,
+ "intake": {
+  "intent": "in_scope",
+  "models": [
+   "DJI Matrice 30T"
+  ],
+  "focus": "",
+  "unsupported_named": [],
+  "decided_by": "code (single pass has no intake call)"
+ },
+ "brief": {
+  "short_answer": "FAA and DJI manual guidance align that loss of link triggers predefined emergency actions (RTH, hover, or land) and possible return-to-home sequences; incident reports show actual cases of lost link with RTH and interference near the controller. Gaps: lack of uniform time-to-regain-VLOS criteria, and specific failure modes (interference sources) not fully reconciled between FAA guidance and incident details.",
+  "sections": [
+   {
+    "section": "faa",
+    "label": "FAA guidance",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "When a control link is lost, FAA guidance requires attempting to reestablish the link and, if that fails, to start emergency or contingency procedures for loss of control link.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0228",
+       "faa_ac_107_2a_2022_c0227"
+      ],
+      "quote": "If connection cannot be reestablished, start emergency or contingency procedures for loss of control link.",
+      "conditions": [
+       "Loss of control link",
+       "No reestablishment of connection"
+      ],
+      "assessment": "supported",
+      "claim_id": "C001",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "FAA guidance also notes that if the remote PIC cannot regain Visual Line of Sight (VLOS), they should follow pre-determined procedures for the loss of VLOS, which may include landing, hover, or a return-to-home sequence.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0049"
+      ],
+      "quote": "If the remote PIC cannot regain VLOS, the remote PIC or person manipulating the controls should follow pre-determined procedures for the loss of VLOS. The capabilities of the small UAS will govern the remote PIC\u2019s determination as to the appropriate course of action. For example, the remote PIC may need to land the small unmanned aircraft immediately, enter hover mode, or employ a return-to-home sequence.",
+      "conditions": [],
+      "assessment": "supported",
+      "claim_id": "C002",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     }
+    ]
+   },
+   {
+    "section": "manual:DJI Matrice 30T",
+    "label": "DJI Matrice 30T manual",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "DJI Matrice 30T manual states that when the remote controller signal is lost, the action can be set to RTH, land, or hover, and that RTH activates automatically after more than six seconds if the Home Point/compass are valid.",
+      "citations": [
+       "dji_m30t_manual_v22_c0033",
+       "dji_m30t_manual_v22_c0032"
+      ],
+      "quote": "The action of the aircraft when the remote controller signal is lost can be set to RTH, land, or hover... Failsafe RTH automatically activates after the remote controller signal is lost for more than six seconds.",
+      "conditions": [
+       "Signal lost"
+      ],
+      "assessment": "supported",
+      "claim_id": "C003",
+      "section": "manual:DJI Matrice 30T",
+      "tier": "manufacturer",
+      "incident_label": null
+     },
+     {
+      "text": "DJI Matrice 30T manual explains that RTH will use Advanced RTH if lighting allows, and Original Route RTH when lighting is insufficient or vision systems are unavailable, with possible preset or canceled paths.",
+      "citations": [
+       "dji_m30t_manual_v22_c0033",
+       "dji_m30t_manual_v22_c0032",
+       "dji_m30t_manual_v22_c0070"
+      ],
+      "quote": "When the lighting is sufficient and the vision systems are working normally, DJI Pilot 2 will display the RTH path... The aircraft will start RTH using Advanced RTH... The aircraft will remain in RTH even if the remote controller signal is restored. DJI Pilot 2 will update the RTH path accordingly.",
+      "conditions": [
+       "Sufficient light and vision systems available"
+      ],
+      "assessment": "supported",
+      "claim_id": "C004",
+      "section": "manual:DJI Matrice 30T",
+      "tier": "manufacturer",
+      "incident_label": null
+     }
+    ]
+   },
+   {
+    "section": "incident:DJI Matrice 30T",
+    "label": "DJI Matrice 30T incident reports",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "Incident report notes a lost link with DJI M30T where RTH occurred within seconds and was successful, with interference observed near a cellular antenna booster\u2014suggesting external factors can trigger or affect loss-of-link events.",
+      "citations": [
+       "asrs_dji_m30t_selected_c0002"
+      ],
+      "quote": "Lost link and RTH occurred twice on back-to-back hops. After securing flights; the crew noticed a cellular antenna booster within 6 feet of the pilot in command; used by the command vehicle data terminal (non-uas). Repeated testing shows interference with the flight controller within 5 feet of the antenna.",
+      "conditions": [
+       "Interference near controller/antenna"
+      ],
+      "assessment": "supported",
+      "claim_id": "C005",
+      "section": "incident:DJI Matrice 30T",
+      "tier": "unverified",
+      "incident_label": "narrative_explicit"
+     },
+     {
+      "text": "Another incident report describes a loss of control with no stick inputs responsive, attempted RTH and Attitude mode with VPS sensor toggling, and eventual regain of control and landing\u2014illustrating a real-world loss-link scenario with mixed outcomes.",
+      "citations": [
+       "asrs_dji_m30t_selected_c0003"
+      ],
+      "quote": "I lost all control of the drone... I attempted to place the drone into RTH without success... I then proceeded to toggle on and off the bottom Vision Positioning System (VPS) sensor... I attempted to regain control again and attempted to initiate another Return to Home. This time the drone responded; and I took over and landed the drone.",
+      "conditions": [
+       "Loss of control, VPS toggling"
+      ],
+      "assessment": "supported",
+      "claim_id": "C006",
+      "section": "incident:DJI Matrice 30T",
+      "tier": "unverified",
+      "incident_label": "summary_only"
+     }
+    ]
+   }
+  ],
+  "gaps": [
+   {
+    "kind": "missing",
+    "text": "No explicit cross-reference in FAA material to a mandatory minimum time-to-reengage control link before executing RTH.",
+    "related_claim_ids": [
+     "claim_1",
+     "claim_2"
+    ],
+    "origin": "single_pass"
+   },
+   {
+    "kind": "unclear",
+    "text": "Unclear how incident-derived interference sources should modify standard RTH/land/hover actions.",
+    "related_claim_ids": [
+     "claim_4",
+     "claim_5"
+    ],
+    "origin": "single_pass"
+   }
+  ],
+  "removed_claims": []
+ },
+ "brief_stats": {
+  "words": 289,
+  "claims": 6,
+  "gaps": 2
+ },
+ "searches": [
+  {
+   "search_id": "S001",
+   "section": "faa",
+   "origin": "base",
+   "query": "lost link loss of control link communication remote pilot contingency procedures",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link loss of control link communication remote pilot contingency procedures",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "faa_guidance"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0062",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0223",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0049",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0269",
+    "faa_ac_107_2a_2022_c0189"
+   ],
+   "kept_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0049"
+   ],
+   "new_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0049"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S002",
+   "section": "manual:DJI Matrice 30T",
+   "origin": "base",
+   "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "DJI Matrice 30T"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "dji_m30t_manual_v22_c0033",
+    "dji_m30t_manual_v22_c0032",
+    "dji_m30t_manual_v22_c0070",
+    "dji_m30t_manual_v22_c0134",
+    "dji_m30t_manual_v22_c0177",
+    "dji_m30t_manual_v22_c0028",
+    "dji_m30t_manual_v22_c0069",
+    "dji_m30t_manual_v22_c0067",
+    "dji_m30t_manual_v22_c0117",
+    "dji_m30t_manual_v22_c0031"
+   ],
+   "kept_ids": [
+    "dji_m30t_manual_v22_c0033",
+    "dji_m30t_manual_v22_c0032",
+    "dji_m30t_manual_v22_c0070",
+    "dji_m30t_manual_v22_c0134",
+    "dji_m30t_manual_v22_c0177"
+   ],
+   "new_ids": [
+    "dji_m30t_manual_v22_c0033",
+    "dji_m30t_manual_v22_c0032",
+    "dji_m30t_manual_v22_c0070",
+    "dji_m30t_manual_v22_c0134",
+    "dji_m30t_manual_v22_c0177"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S003",
+   "section": "incident:DJI Matrice 30T",
+   "origin": "base",
+   "query": "lost link lost control signal lost return to home flyaway",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link lost control signal lost return to home flyaway",
+     "returned": 10,
+     "kept": 4,
+     "new": 4
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "aaib",
+     "model": "DJI Matrice 30T"
+    },
+    {
+     "source_type": "asrs",
+     "model": "DJI Matrice 30T"
+    },
+    {
+     "source_type": "forum",
+     "model": "DJI Matrice 30T"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "aaib_dji_m30t_selected_c0005",
+    "aaib_dji_m30t_selected_c0003",
+    "aaib_dji_m30t_selected_c0002",
+    "aaib_dji_m30t_selected_c0004",
+    "aaib_dji_m30t_selected_c0001",
+    "asrs_dji_m30t_selected_c0002",
+    "asrs_dji_m30t_selected_c0001",
+    "asrs_dji_m30t_selected_c0003",
+    "forum_dji_m30t_c0001",
+    "forum_dji_m30t_c0002"
+   ],
+   "kept_ids": [
+    "asrs_dji_m30t_selected_c0002",
+    "asrs_dji_m30t_selected_c0001",
+    "asrs_dji_m30t_selected_c0003",
+    "forum_dji_m30t_c0001"
+   ],
+   "new_ids": [
+    "asrs_dji_m30t_selected_c0002",
+    "asrs_dji_m30t_selected_c0001",
+    "asrs_dji_m30t_selected_c0003",
+    "forum_dji_m30t_c0001"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  }
+ ],
+ "decisions": [],
+ "assessments": {},
+ "gate_results": {
+  "C001": null,
+  "C002": null,
+  "C003": null,
+  "C004": null,
+  "C005": null,
+  "C006": null
+ },
+ "verifications": {},
+ "first_draft_results": [],
+ "revisions_used": 0,
+ "reopens": 0,
+ "cost": {
+  "model_calls": 1,
+  "tokens_in": 3955,
+  "tokens_out": 1492,
+  "searches": 3,
+  "agent_searches": 0,
+  "agent_tool_calls": 0,
+  "seconds": 9.5
+ },
+ "corpus_snapshot": "4d0e3c83c9425371",
+ "chunks_sha256": "3aff778d5475cd877ed6cef54834cdaa960ccce15ebda1442215c7ca258274c6",
+ "retrieval": "hybrid_rrf",
+ "model": "@30875-fall26-openai/gpt-5-nano",
+ "reasoning_effort": "low",
+ "config": {
+  "mode": "single_pass",
+  "max_revisions": 2,
+  "agent_base_searches_per_section": 2,
+  "agent_max_searches_per_section": 4,
+  "agent_max_tool_calls_per_section": 7,
+  "agent_max_turns_per_section": 8,
+  "agent_results_shown": 10,
+  "agent_max_searches_per_run": 8,
+  "agent_max_turns_per_run": 40,
+  "max_reopens_per_run": 1,
+  "max_searches": 40,
+  "max_model_calls": 120,
+  "top_k": 5,
+  "max_claims_per_section": 5,
+  "max_claim_words": 40,
+  "max_gaps": 6,
+  "max_short_answer_words": 120
+ },
+ "trace_path": "/content/drive/MyDrive/Agentic Unlearning Group/Project 1/processed/traces/20261102T173609-single_pass-66b5.jsonl"
+}

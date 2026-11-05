@@ -1,0 +1,59 @@
+chunking,question,source,phrase,rank,phrase_split
+fixed 180-word windows,Q01,dji_m30t_manual_v22,"can be set to RTH, land, or hover in Camera View",2.0,False
+fixed 180-word windows,Q01,dji_m30t_manual_v22,Failsafe RTH automatically activates after the rem,3.0,False
+fixed 180-word windows,Q01,dji_m30t_manual_v22,It is recommended to set the failsafe action to RT,,False
+fixed 180-word windows,Q02,dji_m30t_manual_v22,set an appropriate failsafe altitude before each f,1.0,False
+fixed 180-word windows,Q02,dji_m30t_manual_v22,cannot avoid obstacles during failsafe RTH when th,1.0,False
+fixed 180-word windows,Q03,dji_matrice4_manual_v12,or the remote controller signal has been lost (Fai,2.0,False
+fixed 180-word windows,Q03,dji_matrice4_manual_v12,automatically initiate Failsafe RTH if the Signal ,3.0,False
+fixed 180-word windows,Q04,dji_matrice4_manual_v12,only the vision system was working when takeoff,5.0,False
+fixed 180-word windows,Q04,dji_matrice4_manual_v12,greater than 2 meters and less than 30 meters,3.0,False
+fixed 180-word windows,Q05,autel_evo_max_manual_v130,"upon losing connection, the drone will slow down a",1.0,False
+fixed 180-word windows,Q05,autel_evo_max_manual_v130,the drone will continue to attempt to reconnect. I,7.0,False
+fixed 180-word windows,Q06,autel_evo_max_manual_v130,Return to Home (RTH) cannot be triggered,3.0,False
+fixed 180-word windows,Q06,autel_evo_max_manual_v130,The RTH function is only available in GNSS mode,,False
+fixed 180-word windows,Q07,autel_evo_max_manual_v130,the drone will trigger RTH once the same disconnec,1.0,False
+fixed 180-word windows,Q07,autel_evo_max_manual_v130,the drone will continue to attempt to reconnect,8.0,False
+fixed 180-word windows,Q07,asrs_autel_evo_max_4n_selected,All attempts of Return To Home features failed,1.0,False
+fixed 180-word windows,Q08,faa_ac_107_2a_2022,If the remote PIC loses the control link,3.0,False
+fixed 180-word windows,Q08,faa_ac_107_2a_2022,Ensure all control links between the CS and the sm,,False
+fixed 180-word windows,Q08,faa_ac_107_2a_2022,Try to reestablish control link connection with th,1.0,False
+fixed 180-word windows,Q09,dji_m30t_manual_v22,"can be set to RTH, land, or hover in Camera View",,False
+fixed 180-word windows,Q09,dji_matrice4_manual_v12,automatically initiate Failsafe RTH if the Signal ,,False
+fixed 180-word windows,Q09,autel_evo_max_manual_v130,"upon losing connection, the drone will slow down a",,False
+fixed 180-word windows,Q10,dji_m30t_manual_v22,Failsafe RTH automatically activates after the rem,,False
+fixed 180-word windows,Q10,asrs_dji_m30t_selected,returned home within 10 seconds of the glitching s,1.0,False
+fixed 180-word windows,Q10,asrs_dji_m30t_selected,the RTH initiated but did not respond,2.0,False
+fixed 180-word windows,Q10,asrs_dji_m30t_selected,I had 0 control and watched the UAS crash into a t,3.0,False
+fixed 180-word windows,Q14,faa_ac_107_2a_2022,If the remote PIC loses the control link,10.0,False
+fixed 180-word windows,Q14,dji_m30t_manual_v22,"can be set to RTH, land, or hover in Camera View",6.0,False
+fixed 180-word windows,Q15,autel_evo_max_manual_v130,"upon losing connection, the drone will slow down a",2.0,False
+sections + breadcrumbs,Q01,dji_m30t_manual_v22,"can be set to RTH, land, or hover in Camera View",1.0,False
+sections + breadcrumbs,Q01,dji_m30t_manual_v22,Failsafe RTH automatically activates after the rem,1.0,False
+sections + breadcrumbs,Q01,dji_m30t_manual_v22,It is recommended to set the failsafe action to RT,,False
+sections + breadcrumbs,Q02,dji_m30t_manual_v22,set an appropriate failsafe altitude before each f,,False
+sections + breadcrumbs,Q02,dji_m30t_manual_v22,cannot avoid obstacles during failsafe RTH when th,2.0,False
+sections + breadcrumbs,Q03,dji_matrice4_manual_v12,or the remote controller signal has been lost (Fai,2.0,False
+sections + breadcrumbs,Q03,dji_matrice4_manual_v12,automatically initiate Failsafe RTH if the Signal ,1.0,False
+sections + breadcrumbs,Q04,dji_matrice4_manual_v12,only the vision system was working when takeoff,6.0,False
+sections + breadcrumbs,Q04,dji_matrice4_manual_v12,greater than 2 meters and less than 30 meters,1.0,False
+sections + breadcrumbs,Q05,autel_evo_max_manual_v130,"upon losing connection, the drone will slow down a",3.0,False
+sections + breadcrumbs,Q05,autel_evo_max_manual_v130,the drone will continue to attempt to reconnect. I,7.0,False
+sections + breadcrumbs,Q06,autel_evo_max_manual_v130,Return to Home (RTH) cannot be triggered,7.0,False
+sections + breadcrumbs,Q06,autel_evo_max_manual_v130,The RTH function is only available in GNSS mode,,False
+sections + breadcrumbs,Q07,autel_evo_max_manual_v130,the drone will trigger RTH once the same disconnec,3.0,False
+sections + breadcrumbs,Q07,autel_evo_max_manual_v130,the drone will continue to attempt to reconnect,5.0,False
+sections + breadcrumbs,Q07,asrs_autel_evo_max_4n_selected,All attempts of Return To Home features failed,1.0,False
+sections + breadcrumbs,Q08,faa_ac_107_2a_2022,If the remote PIC loses the control link,10.0,False
+sections + breadcrumbs,Q08,faa_ac_107_2a_2022,Ensure all control links between the CS and the sm,,False
+sections + breadcrumbs,Q08,faa_ac_107_2a_2022,Try to reestablish control link connection with th,1.0,False
+sections + breadcrumbs,Q09,dji_m30t_manual_v22,"can be set to RTH, land, or hover in Camera View",,False
+sections + breadcrumbs,Q09,dji_matrice4_manual_v12,automatically initiate Failsafe RTH if the Signal ,,False
+sections + breadcrumbs,Q09,autel_evo_max_manual_v130,"upon losing connection, the drone will slow down a",,False
+sections + breadcrumbs,Q10,dji_m30t_manual_v22,Failsafe RTH automatically activates after the rem,,False
+sections + breadcrumbs,Q10,asrs_dji_m30t_selected,returned home within 10 seconds of the glitching s,1.0,False
+sections + breadcrumbs,Q10,asrs_dji_m30t_selected,the RTH initiated but did not respond,2.0,False
+sections + breadcrumbs,Q10,asrs_dji_m30t_selected,I had 0 control and watched the UAS crash into a t,3.0,False
+sections + breadcrumbs,Q14,faa_ac_107_2a_2022,If the remote PIC loses the control link,7.0,False
+sections + breadcrumbs,Q14,dji_m30t_manual_v22,"can be set to RTH, land, or hover in Camera View",1.0,False
+sections + breadcrumbs,Q15,autel_evo_max_manual_v130,"upon losing connection, the drone will slow down a",7.0,False

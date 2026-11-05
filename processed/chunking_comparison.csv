@@ -1,0 +1,3 @@
+chunking,chunks,avg words per chunk,answer found in top 10,MRR,answers checked
+fixed 180-word windows,1141,134,0.759,0.405,29
+sections + breadcrumbs,983,172,0.724,0.398,29

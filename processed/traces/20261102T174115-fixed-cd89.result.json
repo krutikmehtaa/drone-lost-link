@@ -1,0 +1,766 @@
+{
+ "run_id": "20261102T174115-fixed-cd89",
+ "mode": "fixed",
+ "question": "What does the Matrice 210 V1 do when RTH is triggered close to the Home Point?",
+ "status": "human_review_required",
+ "stop_reason": "claims still failing after the revision limit",
+ "error": null,
+ "intake": {
+  "intent": "in_scope",
+  "models": [
+   "DJI Matrice 210 V1"
+  ],
+  "focus": "RTL near Home Point behavior",
+  "flight_phase": null,
+  "reason": "Question about what happens when RTH is triggered close to Home Point per Matrice 210 V1 behavior",
+  "decided_by": "model",
+  "unsupported_named": [
+   "Matrice 210"
+  ]
+ },
+ "brief": {
+  "short_answer": "FAA guidance: If the control link is lost, reestablish the link or start emergency procedures; if VLOS cannot be regained, follow loss-of-control procedures, with the remote PIC maintaining responsibility for safe operation. Manuals: If RTH is triggered and the aircraft is <20 m from the Home Point, it will land automatically; if >20 m, it ascends to the pre-set RTH attitude and then flies to the Home Point, planning a return route or retracing the original flight path. Incident reports (unverified): RTH did not engage when activated, and RTH via a slave controller reportedly failed.",
+  "sections": [
+   {
+    "section": "faa",
+    "label": "FAA guidance",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "When the control link is lost, the remote PIC should 'Try to reestablish control link connection with the small unmanned aircraft' and, if not reestablished, start emergency or contingency procedures for loss of control link.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0228"
+      ],
+      "quote": "Try to reestablish control link connection with the small unmanned aircraft",
+      "conditions": [
+       "loss of control link",
+       "if connection cannot be reestablished"
+      ],
+      "assessment": "supported",
+      "claim_id": "C001",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "If the remote PIC cannot regain VLOS, the remote PIC or person manipulating the controls should follow pre-determined procedures for the loss of VLOS.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0049"
+      ],
+      "quote": "If the remote PIC cannot regain VLOS, the remote PIC or person manipulating the controls should follow pre-determined procedures for the loss of VLOS.",
+      "conditions": [
+       "loss of VLOS",
+       "cannot regain VLOS"
+      ],
+      "assessment": "supported",
+      "claim_id": "C002",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "The remote PIC assuming control of the small UAS maintains responsibility for the safe operation of the small UAS.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0033"
+      ],
+      "quote": "The remote PIC assuming control of the small UAS maintains responsibility for the safe operation of the small UAS.",
+      "conditions": [
+       "transfer of control to remote PIC",
+       "remote PIC assumes control"
+      ],
+      "assessment": "supported",
+      "claim_id": "C003",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "If VLOS is briefly lost, the remote PIC must regain VLOS; there is no specific time interval allowed for interruption of VLOS.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0049"
+      ],
+      "quote": "no specific time interval exists in which interruption of VLOS is permissible",
+      "conditions": [
+       "brief loss of VLOS",
+       "no defined permissible interruption window"
+      ],
+      "assessment": "supported",
+      "claim_id": "C004",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     }
+    ]
+   },
+   {
+    "section": "manual:DJI Matrice 210 V1",
+    "label": "DJI Matrice 210 V1 manual",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "The manual states: If RTH is triggered and the aircraft is less than 20 m from the Home Point, the aircraft will land automatically.",
+      "citations": [
+       "dji_m210_v1_manual_v14_c0038"
+      ],
+      "quote": "The aircraft will land automatically if RTH is triggered and the aircraft is less than 20 m from the home point.",
+      "conditions": [
+       "RTH is triggered",
+       "distance from Home Point < 20 m"
+      ],
+      "assessment": "supported",
+      "claim_id": "C005",
+      "section": "manual:DJI Matrice 210 V1",
+      "tier": "manufacturer",
+      "incident_label": null
+     },
+     {
+      "text": "The manual states: If RTH is triggered while the aircraft is more than 20 m from the Home Point, the aircraft will ascend to the pre-set RTH attitude and then fly to the Home Point.",
+      "citations": [
+       "dji_m210_v1_manual_v14_c0038"
+      ],
+      "quote": "The aircraft will ascend to the pre-set RTH attitude and then fly to the Home Point when the aircraft is further than 20 m from the Home Point.",
+      "conditions": [
+       "RTH is triggered",
+       "distance from Home Point > 20 m"
+      ],
+      "assessment": "supported",
+      "claim_id": "C006",
+      "section": "manual:DJI Matrice 210 V1",
+      "tier": "manufacturer",
+      "incident_label": null
+     },
+     {
+      "text": "The manual states: The aircraft will plan its return route and retrace its original flight route home.",
+      "citations": [
+       "dji_m210_v1_manual_v14_c0037"
+      ],
+      "quote": "The aircraft will plan its return route and retrace its original flight route home.",
+      "conditions": [
+       "RTH procedure triggered"
+      ],
+      "assessment": "supported",
+      "claim_id": "C007",
+      "section": "manual:DJI Matrice 210 V1",
+      "tier": "manufacturer",
+      "incident_label": null
+     }
+    ]
+   },
+   {
+    "section": "incident:DJI Matrice 210 V1",
+    "label": "DJI Matrice 210 V1 incident reports",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "The reporter states \"it did not appear to engage despite being operated multiple times\" when the Return to Home feature was activated; Condition: RTH activated but did not engage.",
+      "citations": [
+       "aaib_m210_v1_poole_c0005"
+      ],
+      "quote": "it did not appear to engage despite being operated multiple times",
+      "conditions": [
+       "RTH activated but did not engage"
+      ],
+      "assessment": "supported",
+      "claim_id": "C008",
+      "section": "incident:DJI Matrice 210 V1",
+      "tier": "official",
+      "incident_label": "investigated"
+     },
+     {
+      "text": "The reporter states \"this did not work either\" when asked to engage RTH via a slave controller; Condition: attempt to engage RTH via slave controller failed.",
+      "citations": [
+       "aaib_m210_v1_poole_c0005"
+      ],
+      "quote": "this did not work either",
+      "conditions": [
+       "attempt to engage RTH via slave controller failed"
+      ],
+      "assessment": "supported",
+      "claim_id": "C010",
+      "section": "incident:DJI Matrice 210 V1",
+      "tier": "official",
+      "incident_label": "investigated"
+     }
+    ]
+   }
+  ],
+  "gaps": [
+   {
+    "kind": "conflict",
+    "origin": "synthesis",
+    "text": "Manual: RTH <20 m from Home Point triggers auto land; incident reports say RTH did not engage when activated.",
+    "related_claim_ids": [
+     "C005",
+     "C008"
+    ]
+   },
+   {
+    "kind": "conflict",
+    "origin": "synthesis",
+    "text": "Manual: RTH >20 m ascends then flies to Home Point; slave-controller RTH activation reportedly failed.",
+    "related_claim_ids": [
+     "C006",
+     "C010"
+    ]
+   },
+   {
+    "kind": "missing",
+    "origin": "intake",
+    "related_claim_ids": [],
+    "text": "Matrice 210 is not in the approved collection, so the brief does not cover it."
+   },
+   {
+    "kind": "missing",
+    "origin": "revision",
+    "related_claim_ids": [],
+    "text": "gap statement"
+   },
+   {
+    "kind": "missing",
+    "origin": "synthesis",
+    "text": "No FAA guidance covers RTH behavior specifically when near the Home Point.",
+    "related_claim_ids": [
+     "C001",
+     "C002",
+     "C003",
+     "C004"
+    ]
+   },
+   {
+    "kind": "unclear",
+    "origin": "synthesis",
+    "text": "Unclear whether RTH activation via a slave controller counts as valid RTH engagement.",
+    "related_claim_ids": [
+     "C010"
+    ]
+   }
+  ],
+  "removed_claims": [
+   {
+    "text": "AAIB records that 'Both controllers then lost communication with the aircraft', indicating a lost-link condition near the home point.",
+    "citations": [
+     "aaib_m210_v1_poole_c0005",
+     "aaib_m210_v1_poole_c0006"
+    ],
+    "quote": "Both controllers then lost communication with the aircraft",
+    "conditions": [
+     "loss of communication (lost-link) near home point"
+    ],
+    "assessment": "supported",
+    "claim_id": "C011",
+    "section": "incident:DJI Matrice 210 V1",
+    "tier": "official",
+    "incident_label": "investigated"
+   },
+   {
+    "text": "The reporter states 'RTH appeared to activate but the aircraft did not move any closer' (aaib_m210_v1_poole_c0005); conditions: RTH appeared to activate; aircraft did not move closer.",
+    "citations": [
+     "aaib_m210_v1_poole_c0005"
+    ],
+    "quote": "RTH appeared to activate but the aircraft did not move any closer",
+    "conditions": [
+     "RTH appeared to activate",
+     "aircraft did not move closer"
+    ],
+    "assessment": "supported_with_conditions",
+    "claim_id": "C009",
+    "section": "incident:DJI Matrice 210 V1",
+    "tier": "official",
+    "incident_label": "investigated"
+   }
+  ]
+ },
+ "brief_stats": {
+  "words": 402,
+  "claims": 9,
+  "gaps": 6
+ },
+ "searches": [
+  {
+   "search_id": "S001",
+   "section": "faa",
+   "origin": "base",
+   "query": "lost link loss of control link communication remote pilot contingency procedures RTL near Home Point behavior",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link loss of control link communication remote pilot contingency procedures RTL near Home Point behavior",
+     "returned": 10,
+     "kept": 4,
+     "new": 4
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "faa_guidance"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0223",
+    "faa_ac_107_2a_2022_c0062",
+    "faa_ac_107_2a_2022_c0035",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0249",
+    "faa_ac_107_2a_2022_c0053",
+    "faa_ac_107_2a_2022_c0269",
+    "faa_ac_107_2a_2022_c0049"
+   ],
+   "kept_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0049"
+   ],
+   "new_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0049"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S002",
+   "section": "manual:DJI Matrice 210 V1",
+   "origin": "base",
+   "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect RTL near Home Point behavior",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect RTL near Home Point behavior",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "DJI Matrice 210 V1"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "dji_m210_v1_manual_v14_c0039",
+    "dji_m210_v1_manual_v14_c0037",
+    "dji_m210_v1_manual_v14_c0041",
+    "dji_m210_v1_manual_v14_c0038",
+    "dji_m210_v1_manual_v14_c0034",
+    "dji_m210_v1_manual_v14_c0032",
+    "dji_m210_v1_manual_v14_c0036",
+    "dji_m210_v1_manual_v14_c0033",
+    "dji_m210_v1_manual_v14_c0035",
+    "dji_m210_v1_manual_v14_c0049"
+   ],
+   "kept_ids": [
+    "dji_m210_v1_manual_v14_c0039",
+    "dji_m210_v1_manual_v14_c0037",
+    "dji_m210_v1_manual_v14_c0041",
+    "dji_m210_v1_manual_v14_c0038",
+    "dji_m210_v1_manual_v14_c0034"
+   ],
+   "new_ids": [
+    "dji_m210_v1_manual_v14_c0039",
+    "dji_m210_v1_manual_v14_c0037",
+    "dji_m210_v1_manual_v14_c0041",
+    "dji_m210_v1_manual_v14_c0038",
+    "dji_m210_v1_manual_v14_c0034"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S003",
+   "section": "incident:DJI Matrice 210 V1",
+   "origin": "base",
+   "query": "lost link lost control signal lost return to home flyaway RTL near Home Point behavior",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link lost control signal lost return to home flyaway RTL near Home Point behavior",
+     "returned": 11,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "aaib",
+     "model": "DJI Matrice 210 V1"
+    },
+    {
+     "source_type": "asrs",
+     "model": "DJI Matrice 210 V1"
+    },
+    {
+     "source_type": "forum",
+     "model": "DJI Matrice 210 V1"
+    },
+    {
+     "source_type": "asrs",
+     "model": "DJI Matrice 210"
+    }
+   ],
+   "backend_calls": 4,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "aaib_m210_v1_poole_c0013",
+    "aaib_m210_v1_poole_c0005",
+    "aaib_m210_v1_poole_c0006",
+    "aaib_m210_v1_poole_c0039",
+    "aaib_m210_v1_poole_c0029",
+    "aaib_m210_v1_poole_c0002",
+    "aaib_m210_v1_poole_c0004",
+    "aaib_m210_v1_poole_c0028",
+    "aaib_m210_v1_poole_c0008",
+    "aaib_m210_v1_poole_c0018",
+    "asrs_m210_1918661_c0001"
+   ],
+   "kept_ids": [
+    "aaib_m210_v1_poole_c0013",
+    "aaib_m210_v1_poole_c0005",
+    "aaib_m210_v1_poole_c0006",
+    "aaib_m210_v1_poole_c0039",
+    "aaib_m210_v1_poole_c0029"
+   ],
+   "new_ids": [
+    "aaib_m210_v1_poole_c0013",
+    "aaib_m210_v1_poole_c0005",
+    "aaib_m210_v1_poole_c0006",
+    "aaib_m210_v1_poole_c0039",
+    "aaib_m210_v1_poole_c0029"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  }
+ ],
+ "decisions": [
+  {
+   "decision_id": "D001",
+   "section": "incident:DJI Matrice 210 V1",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "quote_in_source",
+   "claim_id": "C008",
+   "round": 1,
+   "new_text": "The reporter states \"it did not appear to engage despite being operated multiple times\" when the Return to Home feature was activated; Condition: RTH activated but did not engage."
+  },
+  {
+   "decision_id": "D002",
+   "section": "incident:DJI Matrice 210 V1",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "quote_in_source",
+   "claim_id": "C009",
+   "round": 1,
+   "new_text": "The reporter states \"RTH appeared to activate but the aircraft did not move any closer\" to the home point; Condition: RTH appeared to activate; aircraft did not move closer."
+  },
+  {
+   "decision_id": "D003",
+   "section": "incident:DJI Matrice 210 V1",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "quote_in_source",
+   "claim_id": "C010",
+   "round": 1,
+   "new_text": "The reporter states \"this did not work either\" when asked to engage RTH via a slave controller; Condition: attempt to engage RTH via slave controller failed."
+  },
+  {
+   "decision_id": "D004",
+   "section": "incident:DJI Matrice 210 V1",
+   "action": "to_gap",
+   "continue_or_stop": "stop",
+   "reason": "gap statement",
+   "claim_id": "C011",
+   "round": 1
+  },
+  {
+   "decision_id": "D005",
+   "section": "incident:DJI Matrice 210 V1",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "quote_in_source",
+   "claim_id": "C009",
+   "round": 2,
+   "new_text": "The reporter states 'RTH appeared to activate but the aircraft did not move any closer' (aaib_m210_v1_poole_c0005); conditions: RTH appeared to activate; aircraft did not move closer."
+  },
+  {
+   "decision_id": "D006",
+   "section": "incident:DJI Matrice 210 V1",
+   "action": "drop",
+   "continue_or_stop": "stop",
+   "reason": "still failing after 2 revision rounds",
+   "claim_id": "C009",
+   "human_review": true
+  },
+  {
+   "decision_id": "D007",
+   "section": "short_answer",
+   "action": "trimmed_by_code",
+   "continue_or_stop": "stop",
+   "reason": "short answer over the limits after one retry"
+  }
+ ],
+ "assessments": {},
+ "gate_results": {
+  "C001": {
+   "claim_id": "C001",
+   "passed": true,
+   "failures": []
+  },
+  "C002": {
+   "claim_id": "C002",
+   "passed": true,
+   "failures": []
+  },
+  "C003": {
+   "claim_id": "C003",
+   "passed": true,
+   "failures": []
+  },
+  "C004": {
+   "claim_id": "C004",
+   "passed": true,
+   "failures": []
+  },
+  "C005": {
+   "claim_id": "C005",
+   "passed": true,
+   "failures": []
+  },
+  "C006": {
+   "claim_id": "C006",
+   "passed": true,
+   "failures": []
+  },
+  "C007": {
+   "claim_id": "C007",
+   "passed": true,
+   "failures": []
+  },
+  "C008": {
+   "claim_id": "C008",
+   "passed": true,
+   "failures": []
+  },
+  "C010": {
+   "claim_id": "C010",
+   "passed": true,
+   "failures": []
+  }
+ },
+ "verifications": {
+  "C001": {
+   "claim_id": "C001",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage instructs to try to reestablish the control link and states that if the connection cannot be reestablished, emergency or contingency procedures for loss of control link should be started.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0228"
+   ]
+  },
+  "C002": {
+   "claim_id": "C002",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states regain VLOS as soon as practicable and, if the remote PIC cannot regain VLOS, follow pre-determined procedures for the loss of VLOS.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0049"
+   ]
+  },
+  "C003": {
+   "claim_id": "C003",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage explicitly states that the remote PIC assuming control maintains responsibility for the safe operation of the small UAS.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0033"
+   ]
+  },
+  "C004": {
+   "claim_id": "C004",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states briefly losing VLOS requires regaining VLOS and that there is no defined permissible interruption window.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0049"
+   ]
+  },
+  "C005": {
+   "claim_id": "C005",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states that the aircraft will land automatically if RTH is triggered and the aircraft is less than 20 m from the Home Point.",
+   "supporting_ids": [
+    "dji_m210_v1_manual_v14_c0038"
+   ]
+  },
+  "C006": {
+   "claim_id": "C006",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states that when the aircraft is further than 20 m from the Home Point, it ascends to the pre-set RTH attitude and then flies to the Home Point.",
+   "supporting_ids": [
+    "dji_m210_v1_manual_v14_c0038"
+   ]
+  },
+  "C007": {
+   "claim_id": "C007",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states that the aircraft will plan its return route and retrace its original flight route home.",
+   "supporting_ids": [
+    "dji_m210_v1_manual_v14_c0037"
+   ]
+  },
+  "C008": {
+   "claim_id": "C008",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The passage states the RTH did not appear to engage despite being operated multiple times, matching the claim's condition. The passage also notes RTH activation occurred.",
+   "supporting_ids": [
+    "aaib_m210_v1_poole_c0005"
+   ]
+  },
+  "C010": {
+   "claim_id": "C010",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The passage states that attempting to engage RTH via the slave controller did not work, which aligns with the claim.",
+   "supporting_ids": [
+    "aaib_m210_v1_poole_c0005"
+   ]
+  }
+ },
+ "first_draft_results": [
+  {
+   "claim_id": "C001",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C002",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C003",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C004",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C005",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C006",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C007",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C008",
+   "passes": false,
+   "gate_failures": [
+    "attributed"
+   ],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C009",
+   "passes": false,
+   "gate_failures": [
+    "quote_in_source",
+    "attributed"
+   ],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C010",
+   "passes": false,
+   "gate_failures": [
+    "attributed"
+   ],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C011",
+   "passes": false,
+   "gate_failures": [
+    "attributed"
+   ],
+   "verifier": "not_supported"
+  }
+ ],
+ "revisions_used": 2,
+ "reopens": 0,
+ "cost": {
+  "model_calls": 14,
+  "tokens_in": 18667,
+  "tokens_out": 16919,
+  "searches": 3,
+  "agent_searches": 0,
+  "agent_tool_calls": 0,
+  "seconds": 117.3
+ },
+ "corpus_snapshot": "4d0e3c83c9425371",
+ "chunks_sha256": "3aff778d5475cd877ed6cef54834cdaa960ccce15ebda1442215c7ca258274c6",
+ "retrieval": "hybrid_rrf",
+ "model": "@30875-fall26-openai/gpt-5-nano",
+ "reasoning_effort": "low",
+ "config": {
+  "mode": "fixed",
+  "max_revisions": 2,
+  "agent_base_searches_per_section": 2,
+  "agent_max_searches_per_section": 4,
+  "agent_max_tool_calls_per_section": 7,
+  "agent_max_turns_per_section": 8,
+  "agent_results_shown": 10,
+  "agent_max_searches_per_run": 8,
+  "agent_max_turns_per_run": 40,
+  "max_reopens_per_run": 1,
+  "max_searches": 40,
+  "max_model_calls": 120,
+  "top_k": 5,
+  "max_claims_per_section": 5,
+  "max_claim_words": 40,
+  "max_gaps": 6,
+  "max_short_answer_words": 120
+ },
+ "trace_path": "/content/drive/MyDrive/Agentic Unlearning Group/Project 1/processed/traces/20261102T174115-fixed-cd89.jsonl"
+}

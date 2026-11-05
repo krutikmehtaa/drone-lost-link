@@ -1,0 +1,687 @@
+{
+ "run_id": "20261103T011514-fixed-5b66",
+ "mode": "fixed",
+ "question": "What does the Matrice 30T manual say about altitude and obstacles during Failsafe RTH?",
+ "status": "completed_with_gaps",
+ "stop_reason": "verified claims; gaps listed",
+ "error": null,
+ "intake": {
+  "intent": "in_scope",
+  "models": [
+   "DJI Matrice 30T"
+  ],
+  "focus": "Failsafe RTH altitude/obstacle avoidance",
+  "flight_phase": "in_flight",
+  "reason": "Seeking guidance on altitude limits and obstacle handling during Failsafe Return-To-Home per Matrice 30T manual",
+  "decided_by": "model",
+  "unsupported_named": []
+ },
+ "brief": {
+  "short_answer": "FAA guidance: In hazard cases, attempts to reestablish control link and use emergency procedures for loss of control link. DJI Matrice 30T manual: RTH altitude must be higher than obstacles; states failsafe RTH cannot avoid obstacles in low light and allows manual control if remote signal is normal; notes monitoring liveview and altitude when GNSS bars are limited. Incident reports: no usable evidence for DJI Matrice 30T in approved collection. Main gap/conflict: FAA allows remote-PIC to change routing/altitude during automated flight, while the manual asserts obstacle avoidance failure in low light during failsafe RTH, and there is no evidence about persistence of RTH after remote control restoration.",
+  "sections": [
+   {
+    "section": "faa",
+    "label": "FAA guidance",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "When a hazard occurs, \"Try to reestablish control link connection with the small unmanned aircraft. If connection cannot be reestablished, start emergency or contingency procedures for loss of control link.\"",
+      "citations": [
+       "faa_ac_107_2a_2022_c0228"
+      ],
+      "quote": "Try to reestablish control link connection with the small unmanned aircraft. If connection cannot be reestablished, start emergency or contingency procedures for loss of control link.",
+      "conditions": [
+       "if connection cannot be reestablished"
+      ],
+      "assessment": "supported",
+      "claim_id": "C001",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "AC 107-2A Appendix A requires describing what will be done if the hazard occurs, e.g., \"Describe what will be done if the hazard occurs.\"",
+      "citations": [
+       "faa_ac_107_2a_2022_c0227"
+      ],
+      "quote": "Describe what will be done if the hazard occurs.",
+      "conditions": [
+       "if the hazard occurs"
+      ],
+      "assessment": "supported_with_conditions",
+      "claim_id": "C002",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "During automated flight, the remote PIC must have the ability to change routing/altitude or command the aircraft to land immediately.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0036"
+      ],
+      "quote": "During automated flight, the remote PIC must have the ability to change routing/altitude or command the aircraft to land immediately.",
+      "conditions": [
+       "During automated flight"
+      ],
+      "assessment": "supported",
+      "claim_id": "C003",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "The remote PIC may transmit a command for the automated aircraft to climb, descend, land now, proceed to a new waypoint, enter an orbit pattern, or return to home.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0036"
+      ],
+      "quote": "The remote PIC may transmit a command for the automated aircraft to climb, descend, land now, proceed to a new waypoint, enter an orbit pattern, or return to home.",
+      "conditions": [
+       "to avoid a hazard or give right-of-way"
+      ],
+      "assessment": "supported",
+      "claim_id": "C004",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "The remote PIC assuming control of the small UAS maintains responsibility for the safe operation of the small UAS.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0033",
+       "faa_ac_107_2a_2022_c0036"
+      ],
+      "quote": "The remote PIC assuming control of the small UAS maintains responsibility for the safe operation of the small UAS.",
+      "conditions": [],
+      "assessment": "supported",
+      "claim_id": "C005",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     }
+    ]
+   },
+   {
+    "section": "manual:DJI Matrice 30T",
+    "label": "DJI Matrice 30T manual",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "The RTH altitude is related to the Home Point; Make sure the RTH altitude is higher than any obstacle in the area.",
+      "citations": [
+       "dji_m30t_manual_v22_c0070"
+      ],
+      "quote": "The RTH altitude is related to the Home Point. Make sure the RTH altitude is higher than any obstacle in the area.",
+      "conditions": [
+       "Home Point recorded",
+       "RTH active during Failsafe RTH"
+      ],
+      "assessment": "supported",
+      "claim_id": "C006",
+      "section": "manual:DJI Matrice 30T",
+      "tier": "manufacturer",
+      "incident_label": null
+     },
+     {
+      "text": "The manual states: 'The aircraft cannot avoid obstacles during failsafe RTH when there is insufficient light.'",
+      "citations": [
+       "dji_m30t_manual_v22_c0070"
+      ],
+      "quote": "The aircraft cannot avoid obstacles during failsafe RTH when there is insufficient light.",
+      "conditions": [
+       "Failsafe RTH is active",
+       "Insufficient light present"
+      ],
+      "assessment": "supported",
+      "claim_id": "C007",
+      "section": "manual:DJI Matrice 30T",
+      "tier": "manufacturer",
+      "incident_label": null
+     },
+     {
+      "text": "The manual states: 'Exit RTH and use the remote controller to control the aircraft when the remote controller signal is normal.'",
+      "citations": [
+       "dji_m30t_manual_v22_c0070"
+      ],
+      "quote": "Exit RTH and use the remote controller to control the aircraft when the remote controller signal is normal.",
+      "conditions": [
+       "RTH is active",
+       "Remote controller signal is normal"
+      ],
+      "assessment": "supported",
+      "claim_id": "C008",
+      "section": "manual:DJI Matrice 30T",
+      "tier": "manufacturer",
+      "incident_label": null
+     },
+     {
+      "text": "The manual states: 'During RTH, continue to check the liveview and the aircraft altitude in case failsafe is disabled due to the GNSS signal icon having less than three bars.'",
+      "citations": [
+       "dji_m30t_manual_v22_c0070"
+      ],
+      "quote": "During RTH, continue to check the liveview and the aircraft altitude in case failsafe is disabled due to the GNSS signal icon having less than three bars.",
+      "conditions": [
+       "RTH is active",
+       "GNSS signal has fewer than three bars"
+      ],
+      "assessment": "supported",
+      "claim_id": "C009",
+      "section": "manual:DJI Matrice 30T",
+      "tier": "manufacturer",
+      "incident_label": null
+     }
+    ]
+   },
+   {
+    "section": "incident:DJI Matrice 30T",
+    "label": "DJI Matrice 30T incident reports",
+    "status": "no_evidence",
+    "abstain_reason": "The provided passages do not contain any quotes or statements from the Matrice 30T manual about Failsafe RTH altitude or obstacle avoidance.",
+    "claims": []
+   }
+  ],
+  "gaps": [
+   {
+    "kind": "conflict",
+    "origin": "synthesis",
+    "text": "The DJI manual says failsafe RTH cannot avoid obstacles in low light, while FAA guidance allows remote-PIC to issue routing/altitude changes or RTH commands.",
+    "related_claim_ids": [
+     "C007",
+     "C004"
+    ]
+   },
+   {
+    "kind": "conflict",
+    "origin": "synthesis",
+    "text": "DJI states RTH altitude must be higher than obstacles; FAA says the remote PIC must be able to change routing or altitude during automated flight.",
+    "related_claim_ids": [
+     "C006",
+     "C003"
+    ]
+   },
+   {
+    "kind": "missing",
+    "origin": "section_abstained",
+    "related_claim_ids": [],
+    "text": "No usable evidence found in the approved collection for DJI Matrice 30T incident reports."
+   },
+   {
+    "kind": "missing",
+    "origin": "revision",
+    "related_claim_ids": [],
+    "text": "The quote is not supported by the passages; there is no statement that RTH persists after remote control signal is restored."
+   },
+   {
+    "kind": "missing",
+    "origin": "synthesis",
+    "text": "FAA guidance lacks explicit link between GNSS signal strength and RTH behavior.",
+    "related_claim_ids": [
+     "C001",
+     "C009"
+    ]
+   },
+   {
+    "kind": "unclear",
+    "origin": "synthesis",
+    "text": "Whether RTH persists after remote-control signal is restored is unclear in the passages.",
+    "related_claim_ids": [
+     "C008",
+     "C001"
+    ]
+   }
+  ],
+  "removed_claims": [
+   {
+    "text": "The manual states: 'The aircraft will remain in RTH even if the remote controller signal is restored.'",
+    "citations": [
+     "dji_m30t_manual_v22_c0070"
+    ],
+    "quote": "The aircraft will remain in RTH even if the remote controller signal is restored.",
+    "conditions": [
+     "RTH is active",
+     "Remote controller signal restored"
+    ],
+    "assessment": "supported",
+    "claim_id": "C010",
+    "section": "manual:DJI Matrice 30T",
+    "tier": "manufacturer",
+    "incident_label": null
+   }
+  ]
+ },
+ "brief_stats": {
+  "words": 427,
+  "claims": 9,
+  "gaps": 6
+ },
+ "searches": [
+  {
+   "search_id": "S001",
+   "section": "faa",
+   "origin": "base",
+   "query": "lost link loss of control link communication remote pilot contingency procedures Failsafe RTH altitude/obstacle avoidance",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link loss of control link communication remote pilot contingency procedures Failsafe RTH altitude/obstacle avoidance",
+     "returned": 10,
+     "kept": 4,
+     "new": 4
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "faa_guidance"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0062",
+    "faa_ac_107_2a_2022_c0223",
+    "faa_ac_107_2a_2022_c0274",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0035",
+    "faa_ac_107_2a_2022_c0036",
+    "faa_ac_107_2a_2022_c0269",
+    "faa_ac_107_2a_2022_c0067"
+   ],
+   "kept_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0036"
+   ],
+   "new_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0036"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S002",
+   "section": "manual:DJI Matrice 30T",
+   "origin": "base",
+   "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect Failsafe RTH altitude/obstacle avoidance",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect Failsafe RTH altitude/obstacle avoidance",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "DJI Matrice 30T"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "dji_m30t_manual_v22_c0033",
+    "dji_m30t_manual_v22_c0070",
+    "dji_m30t_manual_v22_c0032",
+    "dji_m30t_manual_v22_c0069",
+    "dji_m30t_manual_v22_c0028",
+    "dji_m30t_manual_v22_c0030",
+    "dji_m30t_manual_v22_c0035",
+    "dji_m30t_manual_v22_c0044",
+    "dji_m30t_manual_v22_c0177",
+    "dji_m30t_manual_v22_c0038"
+   ],
+   "kept_ids": [
+    "dji_m30t_manual_v22_c0033",
+    "dji_m30t_manual_v22_c0070",
+    "dji_m30t_manual_v22_c0032",
+    "dji_m30t_manual_v22_c0069",
+    "dji_m30t_manual_v22_c0028"
+   ],
+   "new_ids": [
+    "dji_m30t_manual_v22_c0033",
+    "dji_m30t_manual_v22_c0070",
+    "dji_m30t_manual_v22_c0032",
+    "dji_m30t_manual_v22_c0069",
+    "dji_m30t_manual_v22_c0028"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S003",
+   "section": "incident:DJI Matrice 30T",
+   "origin": "base",
+   "query": "lost link lost control signal lost return to home flyaway Failsafe RTH altitude/obstacle avoidance",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link lost control signal lost return to home flyaway Failsafe RTH altitude/obstacle avoidance",
+     "returned": 10,
+     "kept": 4,
+     "new": 4
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "aaib",
+     "model": "DJI Matrice 30T"
+    },
+    {
+     "source_type": "asrs",
+     "model": "DJI Matrice 30T"
+    },
+    {
+     "source_type": "forum",
+     "model": "DJI Matrice 30T"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "aaib_dji_m30t_selected_c0004",
+    "aaib_dji_m30t_selected_c0005",
+    "aaib_dji_m30t_selected_c0001",
+    "aaib_dji_m30t_selected_c0002",
+    "aaib_dji_m30t_selected_c0003",
+    "asrs_dji_m30t_selected_c0002",
+    "asrs_dji_m30t_selected_c0003",
+    "asrs_dji_m30t_selected_c0001",
+    "forum_dji_m30t_c0001",
+    "forum_dji_m30t_c0002"
+   ],
+   "kept_ids": [
+    "asrs_dji_m30t_selected_c0002",
+    "asrs_dji_m30t_selected_c0003",
+    "asrs_dji_m30t_selected_c0001",
+    "forum_dji_m30t_c0001"
+   ],
+   "new_ids": [
+    "asrs_dji_m30t_selected_c0002",
+    "asrs_dji_m30t_selected_c0003",
+    "asrs_dji_m30t_selected_c0001",
+    "forum_dji_m30t_c0001"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  }
+ ],
+ "decisions": [
+  {
+   "decision_id": "D001",
+   "section": "manual:DJI Matrice 30T",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "The exact wording is in the manual, but the claim must present the quote with explicit conditions drawn from the passages.",
+   "claim_id": "C006",
+   "round": 1,
+   "new_text": "The RTH altitude is related to the Home Point; make sure the RTH altitude is higher than any obstacle in the area. (Conditions: Home Point recorded; RTH active during Failsafe RTH.)"
+  },
+  {
+   "decision_id": "D002",
+   "section": "manual:DJI Matrice 30T",
+   "action": "to_gap",
+   "continue_or_stop": "stop",
+   "reason": "The quote is not supported by the passages; there is no statement that RTH persists after remote control signal is restored.",
+   "claim_id": "C010",
+   "round": 1
+  },
+  {
+   "decision_id": "D003",
+   "section": "manual:DJI Matrice 30T",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "Provide verbatim, correctly cited quote from the relevant section; include the stated conditions and cite the right chunk; keep to one sentence under 40 words.",
+   "claim_id": "C006",
+   "round": 2,
+   "new_text": "The RTH altitude is related to the Home Point; Make sure the RTH altitude is higher than any obstacle in the area."
+  }
+ ],
+ "assessments": {},
+ "gate_results": {
+  "C001": {
+   "claim_id": "C001",
+   "passed": true,
+   "failures": []
+  },
+  "C002": {
+   "claim_id": "C002",
+   "passed": true,
+   "failures": []
+  },
+  "C003": {
+   "claim_id": "C003",
+   "passed": true,
+   "failures": []
+  },
+  "C004": {
+   "claim_id": "C004",
+   "passed": true,
+   "failures": []
+  },
+  "C005": {
+   "claim_id": "C005",
+   "passed": true,
+   "failures": []
+  },
+  "C006": {
+   "claim_id": "C006",
+   "passed": true,
+   "failures": []
+  },
+  "C007": {
+   "claim_id": "C007",
+   "passed": true,
+   "failures": []
+  },
+  "C008": {
+   "claim_id": "C008",
+   "passed": true,
+   "failures": []
+  },
+  "C009": {
+   "claim_id": "C009",
+   "passed": true,
+   "failures": []
+  }
+ },
+ "verifications": {
+  "C001": {
+   "claim_id": "C001",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "Passage states: 'If connection cannot be reestablished, start emergency or contingency procedures for loss of control link.'",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0228"
+   ]
+  },
+  "C002": {
+   "claim_id": "C002",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "Appendix A language shows: 'Describe what will be done if the hazard occurs.' and example entries.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0227"
+   ]
+  },
+  "C003": {
+   "claim_id": "C003",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "Passage states: 'During automated flight, the remote PIC must have the ability to change routing/altitude or command the aircraft to land immediately.'",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0036"
+   ]
+  },
+  "C004": {
+   "claim_id": "C004",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "Passage allows the remote PIC to transmit commands (climb, descend, land now, etc.) to avoid a hazard or give right-of-way.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0036"
+   ]
+  },
+  "C005": {
+   "claim_id": "C005",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "Passage states: 'The remote PIC assuming control of the small UAS maintains responsibility for the safe operation of the small UAS.'",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0033"
+   ]
+  },
+  "C006": {
+   "claim_id": "C006",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states that the RTH altitude is related to the Home Point and to make sure the RTH altitude is higher than any obstacle in the area, which covers the claim that RTH altitude is related to the Home Point and should be higher than obstacles. It also mentions setting a failsafe altitude before flight, which aligns with the context of RTH during failsafe. No explicit requirement in the passage matches the claim\u2019s listed conditions (Home Point recorded; RTH active during Failsafe RTH), so no missing_conditions are recorded from the passage.",
+   "supporting_ids": [
+    "dji_m30t_manual_v22_c0070"
+   ]
+  },
+  "C007": {
+   "claim_id": "C007",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The passage states that aircraft cannot avoid obstacles during failsafe RTH when there is insufficient light, matching the claim.",
+   "supporting_ids": [
+    "dji_m30t_manual_v22_c0070"
+   ]
+  },
+  "C008": {
+   "claim_id": "C008",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The passage includes the exact instruction to exit RTH and control with the remote controller when RC signal is normal.",
+   "supporting_ids": [
+    "dji_m30t_manual_v22_c0070"
+   ]
+  },
+  "C009": {
+   "claim_id": "C009",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The passage contains the exact instruction about continuing to check liveview and altitude during RTH due to GNSS below three bars.",
+   "supporting_ids": [
+    "dji_m30t_manual_v22_c0070"
+   ]
+  }
+ },
+ "first_draft_results": [
+  {
+   "claim_id": "C001",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C002",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C003",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C004",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C005",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C006",
+   "passes": false,
+   "gate_failures": [],
+   "verifier": "partial"
+  },
+  {
+   "claim_id": "C007",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C008",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C009",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C010",
+   "passes": false,
+   "gate_failures": [
+    "quote_in_source"
+   ],
+   "verifier": "not_supported"
+  }
+ ],
+ "revisions_used": 2,
+ "reopens": 0,
+ "cost": {
+  "model_calls": 12,
+  "tokens_in": 16262,
+  "tokens_out": 14362,
+  "searches": 3,
+  "agent_searches": 0,
+  "agent_tool_calls": 0,
+  "seconds": 88.5
+ },
+ "corpus_snapshot": "4d0e3c83c9425371",
+ "chunks_sha256": "3aff778d5475cd877ed6cef54834cdaa960ccce15ebda1442215c7ca258274c6",
+ "retrieval": "hybrid_rrf",
+ "model": "@30875-fall26-openai/gpt-5-nano",
+ "reasoning_effort": "low",
+ "config": {
+  "mode": "fixed",
+  "max_revisions": 2,
+  "agent_base_searches_per_section": 2,
+  "agent_max_searches_per_section": 4,
+  "agent_max_tool_calls_per_section": 7,
+  "agent_max_turns_per_section": 8,
+  "agent_results_shown": 10,
+  "agent_max_searches_per_run": 8,
+  "agent_max_turns_per_run": 40,
+  "max_reopens_per_run": 1,
+  "max_searches": 40,
+  "max_model_calls": 120,
+  "top_k": 5,
+  "max_claims_per_section": 5,
+  "max_claim_words": 40,
+  "max_gaps": 6,
+  "max_short_answer_words": 120
+ },
+ "trace_path": "/content/drive/MyDrive/Agentic Unlearning Group/Project 1/processed/traces/20261103T011514-fixed-5b66.jsonl"
+}

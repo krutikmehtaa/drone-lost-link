@@ -1,0 +1,2293 @@
+{
+ "run_id": "20261103T015210-full-9423",
+ "mode": "full",
+ "question": "What does current FAA guidance say should happen when a small drone loses its control link?",
+ "status": "human_review_required",
+ "stop_reason": "claims still failing after the revision limit",
+ "error": null,
+ "intake": {
+  "intent": "in_scope",
+  "models": [
+   "DJI Matrice 30T",
+   "DJI Matrice 4T",
+   "Autel EVO Max 4N",
+   "DJI Matrice 210 V1"
+  ],
+  "focus": "FAA guidance for loss of control link / loss of signal (failsafe) for small UAS",
+  "flight_phase": null,
+  "reason": "Query about what FAA guidance says should happen when a small drone loses its control link (failsafe procedures, RTH, hover, or landing)",
+  "decided_by": "model",
+  "unsupported_named": []
+ },
+ "brief": {
+  "short_answer": "FAA guidance says that if the control link cannot be reestablished, emergency or contingency procedures for loss of control should be started, and the remote PIC should regain Visual Line of Sight as soon as practicable; two certificated remote pilots may transfer control only if both can maintain Visual Line of Sight without loss of control; see\u2011and\u2011avoid responsibilities apply if sight is lost, with pre\u2011determined procedures (land, hover, or return\u2011to\u2011home). There is no usable evidence for DJI Matrice 30T manual, DJI Matrice 4T manual, Autel EVO Max 4N manual, or DJI Matrice 210 V1 manual. Unverified incident reports describe lost\u2011link with back\u2011to\u2011back RTH, RTH not responding, VPS regain and landing, and logs showing strong uplink/downlink with no gradual drop.",
+  "sections": [
+   {
+    "section": "faa",
+    "label": "FAA guidance",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "If the connection cannot be reestablished, start emergency or contingency procedures for loss of control link, per FAA guidance. The trigger is loss of control link, and the action follows the condition that the connection cannot be reestablished.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0228"
+      ],
+      "quote": "If connection cannot be reestablished, start emergency or contingency procedures for loss of control link.",
+      "conditions": [
+       "connection cannot be reestablished"
+      ],
+      "assessment": "supported",
+      "claim_id": "C001",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "The remote PIC should regain VLOS as soon as practicable after loss of visibility, since the remote PIC may briefly lose sight but must maintain see-and-avoid responsibilities.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0049"
+      ],
+      "quote": "regain VLOS as soon as practicable.",
+      "conditions": [
+       "VLOS lost or degraded"
+      ],
+      "assessment": "supported_with_conditions",
+      "claim_id": "C002",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "Two or more certificated remote pilots transferring operational control may do so only if both are capable of maintaining Visual Line of Sight without loss of control.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0032"
+      ],
+      "quote": "Two or more certificated remote pilots transferring operational control (i.e., the remote PIC designation) to each other may do so only if they are both capable of maintaining Visual Line of Sight (VLOS) of the small unmanned aircraft without loss of control (LOC).",
+      "conditions": [
+       "transferring control between pilots",
+       "both pilots capable of maintaining VLOS without LOC"
+      ],
+      "assessment": "supported",
+      "claim_id": "C003",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "AC 107-2A states that the remote PIC has see-and-avoid responsibilities if sight is lost and should follow pre-determined procedures (e.g., land, hover, or return-to-home) to address hazards.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0049"
+      ],
+      "quote": "The remote PIC always has the see-and-avoid responsibilities",
+      "conditions": [
+       "brief loss of sight",
+       "hazardous situation"
+      ],
+      "assessment": "supported",
+      "claim_id": "C004",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "Loss of control link over people is an example hazard described for risk assessment and mitigation steps, illustrating the types of consequences that may occur when the link is lost.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0227",
+       "faa_ac_107_2a_2022_c0228"
+      ],
+      "quote": "Example: Loss of control link over people",
+      "conditions": [
+       "loss of control link",
+       "potential ground impact or injury"
+      ],
+      "assessment": "supported",
+      "claim_id": "C005",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     }
+    ]
+   },
+   {
+    "section": "manual:DJI Matrice 30T",
+    "label": "DJI Matrice 30T manual",
+    "status": "no_evidence",
+    "abstain_reason": "No passages describe FAA guidance for loss of control link (loss of signal) for small UAS; the supplied passages only cover manufacturer guidance for DJI Matrice 30T and do not address FAA directives.",
+    "claims": []
+   },
+   {
+    "section": "manual:DJI Matrice 4T",
+    "label": "DJI Matrice 4T manual",
+    "status": "no_evidence",
+    "abstain_reason": "The passages do not contain FAA guidance on loss of control link for small UAS; they only describe DJI Matrice 4 Series/Matice 4T behavior.",
+    "claims": []
+   },
+   {
+    "section": "manual:Autel EVO Max 4N",
+    "label": "Autel EVO Max 4N manual",
+    "status": "no_evidence",
+    "abstain_reason": "No FAA guidance is present in the supplied passages; all provided material is Autel EVO Max 4N manual content, not FAA guidance on loss of control/link for small UAS.",
+    "claims": []
+   },
+   {
+    "section": "manual:DJI Matrice 210 V1",
+    "label": "DJI Matrice 210 V1 manual",
+    "status": "no_evidence",
+    "abstain_reason": "The supplied passages do not contain FAA guidance on what should happen when a small drone loses its control link; they only include manufacturer guidance from the DJI Matrice 200 Series manual and do not reference FAA rules or recommended loss-of-signal procedures.",
+    "claims": []
+   },
+   {
+    "section": "incident:DJI Matrice 30T",
+    "label": "DJI Matrice 30T incident reports",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "The reporter states 'Lost link and RTH occurred twice on back-to-back hops' during a lost link event with back-to-back RTH.",
+      "citations": [
+       "asrs_dji_m30t_selected_c0002"
+      ],
+      "quote": "\"Lost link and RTH occurred twice on back-to-back hops.\"",
+      "conditions": [
+       "lost link event",
+       "RTH triggered on back-to-back hops"
+      ],
+      "assessment": "supported",
+      "claim_id": "C006",
+      "section": "incident:DJI Matrice 30T",
+      "tier": "unverified",
+      "incident_label": "narrative_explicit"
+     },
+     {
+      "text": "The report notes the UAS went into a lost link and returned home within 10 seconds of the glitching screen.",
+      "citations": [
+       "asrs_dji_m30t_selected_c0002"
+      ],
+      "quote": "went into a lost link and returned home within 10 seconds of the glitching screen.",
+      "conditions": [
+       "lost link event",
+       "glitching screen visible"
+      ],
+      "assessment": "supported",
+      "claim_id": "C007",
+      "section": "incident:DJI Matrice 30T",
+      "tier": "unverified",
+      "incident_label": "narrative_explicit"
+     },
+     {
+      "text": "In another report, the RTH was initiated after a loss of control, but the RTH did not respond.",
+      "citations": [
+       "asrs_dji_m30t_selected_c0003"
+      ],
+      "quote": "the RTH initiated but did not respond.",
+      "conditions": [
+       "loss of control",
+       "RTH initiation without response"
+      ],
+      "assessment": "supported",
+      "claim_id": "C008",
+      "section": "incident:DJI Matrice 30T",
+      "tier": "unverified",
+      "incident_label": "summary_only"
+     },
+     {
+      "text": "The reporter states 'This time the drone responded; and I took over and landed the drone without further incident' during a VPS toggle with regained control.",
+      "citations": [
+       "asrs_dji_m30t_selected_c0003"
+      ],
+      "quote": "\"This time the drone responded; and I took over and landed the drone without further incident.\"",
+      "conditions": [
+       "toggle VPS sensor",
+       "regained control"
+      ],
+      "assessment": "supported",
+      "claim_id": "C009",
+      "section": "incident:DJI Matrice 30T",
+      "tier": "unverified",
+      "incident_label": "summary_only"
+     },
+     {
+      "text": "A forum report states the flight log showed strong uplink and downlink signals with no gradual signal drop.",
+      "citations": [
+       "forum_dji_m30t_c0001"
+      ],
+      "quote": "flight log ended with strong uplink and downlink signals and no gradual signal drop.",
+      "conditions": [
+       "flight log shows strong uplink/downlink",
+       "no gradual signal drop"
+      ],
+      "assessment": "supported",
+      "claim_id": "C010",
+      "section": "incident:DJI Matrice 30T",
+      "tier": "unverified",
+      "incident_label": "unverified_forum"
+     }
+    ]
+   },
+   {
+    "section": "incident:DJI Matrice 4T",
+    "label": "DJI Matrice 4T incident reports",
+    "status": "no_evidence",
+    "abstain_reason": "no passage passed the relevance check",
+    "claims": []
+   },
+   {
+    "section": "incident:Autel EVO Max 4N",
+    "label": "Autel EVO Max 4N incident reports",
+    "status": "no_evidence",
+    "abstain_reason": "No passage describes FAA guidance for loss of control link / loss of signal for small UAS.",
+    "claims": []
+   },
+   {
+    "section": "incident:DJI Matrice 210 V1",
+    "label": "DJI Matrice 210 V1 incident reports",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "The reporter states 'When communications are lost the UA would normally enter a 'Failsafe RTH' mode' and notes it could not return home due to the wind with its limited pitch attitude.",
+      "citations": [
+       "aaib_m210_v1_poole_c0013"
+      ],
+      "quote": "When communications are lost the UA would normally enter a 'Failsafe RTH' mode",
+      "conditions": [
+       "loss of communications",
+       "could not return home due to the wind and limited pitch attitude"
+      ],
+      "assessment": "supported_with_conditions",
+      "claim_id": "C011",
+      "section": "incident:DJI Matrice 210 V1",
+      "tier": "official",
+      "incident_label": "investigated"
+     },
+     {
+      "text": "The reporter states 'could not overcome the wind with its limited pitch attitude'",
+      "citations": [
+       "aaib_m210_v1_poole_c0013"
+      ],
+      "quote": "could not overcome the wind with its limited pitch attitude",
+      "conditions": [
+       "wind",
+       "limited pitch attitude"
+      ],
+      "assessment": "supported",
+      "claim_id": "C013",
+      "section": "incident:DJI Matrice 210 V1",
+      "tier": "official",
+      "incident_label": "investigated"
+     },
+     {
+      "text": "The reporter states \"Fly with caution, strong wind\" appeared on the pilot's controller display when wind limits were exceeded.",
+      "citations": [
+       "aaib_m210_v1_poole_c0002"
+      ],
+      "quote": "Fly with caution, strong wind",
+      "conditions": [
+       "wind limit exceeded",
+       "alert messaging on controller"
+      ],
+      "assessment": "supported",
+      "claim_id": "C014",
+      "section": "incident:DJI Matrice 210 V1",
+      "tier": "official",
+      "incident_label": "investigated"
+     }
+    ]
+   }
+  ],
+  "gaps": [
+   {
+    "kind": "missing",
+    "origin": "section_abstained",
+    "related_claim_ids": [],
+    "text": "No usable evidence found in the approved collection for DJI Matrice 30T manual."
+   },
+   {
+    "kind": "missing",
+    "origin": "section_abstained",
+    "related_claim_ids": [],
+    "text": "No usable evidence found in the approved collection for DJI Matrice 4T manual."
+   },
+   {
+    "kind": "missing",
+    "origin": "section_abstained",
+    "related_claim_ids": [],
+    "text": "No usable evidence found in the approved collection for Autel EVO Max 4N manual."
+   },
+   {
+    "kind": "missing",
+    "origin": "section_abstained",
+    "related_claim_ids": [],
+    "text": "No usable evidence found in the approved collection for DJI Matrice 210 V1 manual."
+   },
+   {
+    "kind": "missing",
+    "origin": "section_abstained",
+    "related_claim_ids": [],
+    "text": "No usable evidence found in the approved collection for DJI Matrice 4T incident reports."
+   },
+   {
+    "kind": "missing",
+    "origin": "section_abstained",
+    "related_claim_ids": [],
+    "text": "No usable evidence found in the approved collection for Autel EVO Max 4N incident reports."
+   }
+  ],
+  "removed_claims": [
+   {
+    "text": "Battery disconnection reduced the UA\u2019s maximum pitch attitude and maximum speed.",
+    "citations": [
+     "aaib_m210_v1_poole_c0002"
+    ],
+    "quote": "reduced the UA\u2019s maximum pitch attitude and maximum speed",
+    "conditions": [
+     "battery disconnected",
+     "reduced pitch and speed"
+    ],
+    "assessment": "supported",
+    "claim_id": "C015",
+    "section": "incident:DJI Matrice 210 V1",
+    "tier": "official",
+    "incident_label": "investigated"
+   },
+   {
+    "text": "The reporter states 'The UA drifted beyond visual line of sight and communication was lost.' (loss of VLOS; communication loss)",
+    "citations": [
+     "aaib_m210_v1_poole_c0002"
+    ],
+    "quote": "The UA drifted beyond visual line of sight and communication was lost.",
+    "conditions": [
+     "loss of VLOS",
+     "communication loss"
+    ],
+    "assessment": "supported_with_conditions",
+    "claim_id": "C012",
+    "section": "incident:DJI Matrice 210 V1",
+    "tier": "official",
+    "incident_label": "investigated"
+   }
+  ]
+ },
+ "brief_stats": {
+  "words": 517,
+  "claims": 13,
+  "gaps": 6
+ },
+ "searches": [
+  {
+   "search_id": "S001",
+   "section": "faa",
+   "origin": "base",
+   "query": "lost link loss of control link communication remote pilot contingency procedures FAA guidance for loss of control link / loss of signal (failsafe) for small UAS",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link loss of control link communication remote pilot contingency procedures FAA guidance for loss of control link / loss of signal (failsafe) for small UAS",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "faa_guidance"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0062",
+    "faa_ac_107_2a_2022_c0269",
+    "faa_ac_107_2a_2022_c0274",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0249",
+    "faa_ac_107_2a_2022_c0107",
+    "faa_ac_107_2a_2022_c0049"
+   ],
+   "kept_ids": [
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0049"
+   ],
+   "new_ids": [
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0049"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S002",
+   "section": "manual:DJI Matrice 30T",
+   "origin": "base",
+   "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect FAA guidance for loss of control link / loss of signal (failsafe) for small UAS",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect FAA guidance for loss of control link / loss of signal (failsafe) for small UAS",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "DJI Matrice 30T"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "dji_m30t_manual_v22_c0033",
+    "dji_m30t_manual_v22_c0032",
+    "dji_m30t_manual_v22_c0070",
+    "dji_m30t_manual_v22_c0134",
+    "dji_m30t_manual_v22_c0177",
+    "dji_m30t_manual_v22_c0028",
+    "dji_m30t_manual_v22_c0069",
+    "dji_m30t_manual_v22_c0067",
+    "dji_m30t_manual_v22_c0244",
+    "dji_m30t_manual_v22_c0035"
+   ],
+   "kept_ids": [
+    "dji_m30t_manual_v22_c0033",
+    "dji_m30t_manual_v22_c0032",
+    "dji_m30t_manual_v22_c0070",
+    "dji_m30t_manual_v22_c0134",
+    "dji_m30t_manual_v22_c0177"
+   ],
+   "new_ids": [
+    "dji_m30t_manual_v22_c0033",
+    "dji_m30t_manual_v22_c0032",
+    "dji_m30t_manual_v22_c0070",
+    "dji_m30t_manual_v22_c0134",
+    "dji_m30t_manual_v22_c0177"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S003",
+   "section": "manual:DJI Matrice 4T",
+   "origin": "base",
+   "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect FAA guidance for loss of control link / loss of signal (failsafe) for small UAS",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect FAA guidance for loss of control link / loss of signal (failsafe) for small UAS",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "DJI Matrice 4T"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "dji_matrice4_manual_v12_c0065",
+    "dji_matrice4_manual_v12_c0055",
+    "dji_matrice4_manual_v12_c0057",
+    "dji_matrice4_manual_v12_c0067",
+    "dji_matrice4_manual_v12_c0177",
+    "dji_matrice4_manual_v12_c0164",
+    "dji_matrice4_manual_v12_c0063",
+    "dji_matrice4_manual_v12_c0056",
+    "dji_matrice4_manual_v12_c0054",
+    "dji_matrice4_manual_v12_c0068"
+   ],
+   "kept_ids": [
+    "dji_matrice4_manual_v12_c0065",
+    "dji_matrice4_manual_v12_c0055",
+    "dji_matrice4_manual_v12_c0057",
+    "dji_matrice4_manual_v12_c0067",
+    "dji_matrice4_manual_v12_c0164"
+   ],
+   "new_ids": [
+    "dji_matrice4_manual_v12_c0065",
+    "dji_matrice4_manual_v12_c0055",
+    "dji_matrice4_manual_v12_c0057",
+    "dji_matrice4_manual_v12_c0067",
+    "dji_matrice4_manual_v12_c0164"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S004",
+   "section": "manual:Autel EVO Max 4N",
+   "origin": "base",
+   "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect FAA guidance for loss of control link / loss of signal (failsafe) for small UAS",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect FAA guidance for loss of control link / loss of signal (failsafe) for small UAS",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "Autel EVO Max 4N"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "autel_evo_max_manual_v130_c0118",
+    "autel_evo_max_manual_v130_c0117",
+    "autel_evo_max_manual_v130_c0107",
+    "autel_evo_max_manual_v130_c0183",
+    "autel_evo_max_manual_v130_c0226",
+    "autel_evo_max_manual_v130_c0166",
+    "autel_evo_max_manual_v130_c0141",
+    "autel_evo_max_manual_v130_c0102",
+    "autel_evo_max_manual_v130_c0106",
+    "autel_evo_max_manual_v130_c0225"
+   ],
+   "kept_ids": [
+    "autel_evo_max_manual_v130_c0118",
+    "autel_evo_max_manual_v130_c0117",
+    "autel_evo_max_manual_v130_c0107",
+    "autel_evo_max_manual_v130_c0183",
+    "autel_evo_max_manual_v130_c0226"
+   ],
+   "new_ids": [
+    "autel_evo_max_manual_v130_c0118",
+    "autel_evo_max_manual_v130_c0117",
+    "autel_evo_max_manual_v130_c0107",
+    "autel_evo_max_manual_v130_c0183",
+    "autel_evo_max_manual_v130_c0226"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S005",
+   "section": "manual:DJI Matrice 210 V1",
+   "origin": "base",
+   "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect FAA guidance for loss of control link / loss of signal (failsafe) for small UAS",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect FAA guidance for loss of control link / loss of signal (failsafe) for small UAS",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "DJI Matrice 210 V1"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "dji_m210_v1_manual_v14_c0039",
+    "dji_m210_v1_manual_v14_c0037",
+    "dji_m210_v1_manual_v14_c0034",
+    "dji_m210_v1_manual_v14_c0041",
+    "dji_m210_v1_manual_v14_c0049",
+    "dji_m210_v1_manual_v14_c0111",
+    "dji_m210_v1_manual_v14_c0036",
+    "dji_m210_v1_manual_v14_c0101",
+    "dji_m210_v1_manual_v14_c0020",
+    "dji_m210_v1_manual_v14_c0040"
+   ],
+   "kept_ids": [
+    "dji_m210_v1_manual_v14_c0039",
+    "dji_m210_v1_manual_v14_c0037",
+    "dji_m210_v1_manual_v14_c0034",
+    "dji_m210_v1_manual_v14_c0041",
+    "dji_m210_v1_manual_v14_c0049"
+   ],
+   "new_ids": [
+    "dji_m210_v1_manual_v14_c0039",
+    "dji_m210_v1_manual_v14_c0037",
+    "dji_m210_v1_manual_v14_c0034",
+    "dji_m210_v1_manual_v14_c0041",
+    "dji_m210_v1_manual_v14_c0049"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S006",
+   "section": "incident:DJI Matrice 30T",
+   "origin": "base",
+   "query": "lost link lost control signal lost return to home flyaway FAA guidance for loss of control link / loss of signal (failsafe) for small UAS",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link lost control signal lost return to home flyaway FAA guidance for loss of control link / loss of signal (failsafe) for small UAS",
+     "returned": 10,
+     "kept": 4,
+     "new": 4
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "aaib",
+     "model": "DJI Matrice 30T"
+    },
+    {
+     "source_type": "asrs",
+     "model": "DJI Matrice 30T"
+    },
+    {
+     "source_type": "forum",
+     "model": "DJI Matrice 30T"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "aaib_dji_m30t_selected_c0005",
+    "aaib_dji_m30t_selected_c0003",
+    "aaib_dji_m30t_selected_c0001",
+    "aaib_dji_m30t_selected_c0004",
+    "aaib_dji_m30t_selected_c0002",
+    "asrs_dji_m30t_selected_c0002",
+    "asrs_dji_m30t_selected_c0001",
+    "asrs_dji_m30t_selected_c0003",
+    "forum_dji_m30t_c0001",
+    "forum_dji_m30t_c0002"
+   ],
+   "kept_ids": [
+    "asrs_dji_m30t_selected_c0002",
+    "asrs_dji_m30t_selected_c0001",
+    "asrs_dji_m30t_selected_c0003",
+    "forum_dji_m30t_c0001"
+   ],
+   "new_ids": [
+    "asrs_dji_m30t_selected_c0002",
+    "asrs_dji_m30t_selected_c0001",
+    "asrs_dji_m30t_selected_c0003",
+    "forum_dji_m30t_c0001"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S007",
+   "section": "incident:DJI Matrice 4T",
+   "origin": "base",
+   "query": "lost link lost control signal lost return to home flyaway FAA guidance for loss of control link / loss of signal (failsafe) for small UAS",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link lost control signal lost return to home flyaway FAA guidance for loss of control link / loss of signal (failsafe) for small UAS",
+     "returned": 1,
+     "kept": 0,
+     "new": 0
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "aaib",
+     "model": "DJI Matrice 4T"
+    },
+    {
+     "source_type": "asrs",
+     "model": "DJI Matrice 4T"
+    },
+    {
+     "source_type": "forum",
+     "model": "DJI Matrice 4T"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "asrs_dji_m4t_selected_c0001"
+   ],
+   "kept_ids": [],
+   "new_ids": [],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S008",
+   "section": "incident:Autel EVO Max 4N",
+   "origin": "base",
+   "query": "lost link lost control signal lost return to home flyaway FAA guidance for loss of control link / loss of signal (failsafe) for small UAS",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link lost control signal lost return to home flyaway FAA guidance for loss of control link / loss of signal (failsafe) for small UAS",
+     "returned": 1,
+     "kept": 1,
+     "new": 1
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "aaib",
+     "model": "Autel EVO Max 4N"
+    },
+    {
+     "source_type": "asrs",
+     "model": "Autel EVO Max 4N"
+    },
+    {
+     "source_type": "forum",
+     "model": "Autel EVO Max 4N"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "asrs_autel_evo_max_4n_selected_c0001"
+   ],
+   "kept_ids": [
+    "asrs_autel_evo_max_4n_selected_c0001"
+   ],
+   "new_ids": [
+    "asrs_autel_evo_max_4n_selected_c0001"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S009",
+   "section": "incident:DJI Matrice 210 V1",
+   "origin": "base",
+   "query": "lost link lost control signal lost return to home flyaway FAA guidance for loss of control link / loss of signal (failsafe) for small UAS",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link lost control signal lost return to home flyaway FAA guidance for loss of control link / loss of signal (failsafe) for small UAS",
+     "returned": 11,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "aaib",
+     "model": "DJI Matrice 210 V1"
+    },
+    {
+     "source_type": "asrs",
+     "model": "DJI Matrice 210 V1"
+    },
+    {
+     "source_type": "forum",
+     "model": "DJI Matrice 210 V1"
+    },
+    {
+     "source_type": "asrs",
+     "model": "DJI Matrice 210"
+    }
+   ],
+   "backend_calls": 4,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "aaib_m210_v1_poole_c0013",
+    "aaib_m210_v1_poole_c0038",
+    "aaib_m210_v1_poole_c0002",
+    "aaib_m210_v1_poole_c0029",
+    "aaib_m210_v1_poole_c0041",
+    "aaib_m210_v1_poole_c0005",
+    "aaib_m210_v1_poole_c0008",
+    "aaib_m210_v1_poole_c0003",
+    "aaib_m210_v1_poole_c0017",
+    "aaib_m210_v1_poole_c0020",
+    "asrs_m210_1918661_c0001"
+   ],
+   "kept_ids": [
+    "aaib_m210_v1_poole_c0013",
+    "aaib_m210_v1_poole_c0038",
+    "aaib_m210_v1_poole_c0002",
+    "aaib_m210_v1_poole_c0029",
+    "aaib_m210_v1_poole_c0041"
+   ],
+   "new_ids": [
+    "aaib_m210_v1_poole_c0013",
+    "aaib_m210_v1_poole_c0038",
+    "aaib_m210_v1_poole_c0002",
+    "aaib_m210_v1_poole_c0029",
+    "aaib_m210_v1_poole_c0041"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S010",
+   "section": "faa",
+   "origin": "agent",
+   "query": "FAA guidance loss of control link small UAS what should happen",
+   "alternate_queries": [
+    "FAA guidance loss of control link small UAS",
+    "FAA recommends action when control link lost"
+   ],
+   "phrasing_stats": [
+    {
+     "query": "FAA guidance loss of control link small UAS what should happen",
+     "returned": 10,
+     "kept": 3,
+     "new": 0
+    },
+    {
+     "query": "FAA guidance loss of control link small UAS",
+     "returned": 10,
+     "kept": 3,
+     "new": 0
+    },
+    {
+     "query": "FAA recommends action when control link lost",
+     "returned": 10,
+     "kept": 2,
+     "new": 0
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "faa_guidance"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "need FAA guidance on what pilots should do when control link is lost for small UAS",
+   "follows_from": null,
+   "returned_ids": [
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0001",
+    "faa_ac_107_2a_2022_c0107",
+    "faa_ac_107_2a_2022_c0026",
+    "faa_ac_107_2a_2022_c0010",
+    "faa_ac_107_2a_2022_c0099",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0180",
+    "faa_ac_107_2a_2022_c0274",
+    "faa_ac_107_2a_2022_c0181",
+    "faa_ac_107_2a_2022_c0106",
+    "faa_ac_107_2a_2022_c0193",
+    "faa_ac_107_2a_2022_c0194",
+    "faa_ac_107_2a_2022_c0188",
+    "faa_ac_107_2a_2022_c0249",
+    "faa_ac_107_2a_2022_c0009",
+    "faa_ac_107_2a_2022_c0195",
+    "faa_ac_107_2a_2022_c0102",
+    "faa_ac_107_2a_2022_c0105"
+   ],
+   "kept_ids": [
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0032"
+   ],
+   "new_ids": [],
+   "below_cutoff_ids": [
+    "faa_ac_107_2a_2022_c0001",
+    "faa_ac_107_2a_2022_c0107",
+    "faa_ac_107_2a_2022_c0026",
+    "faa_ac_107_2a_2022_c0010",
+    "faa_ac_107_2a_2022_c0099",
+    "faa_ac_107_2a_2022_c0180",
+    "faa_ac_107_2a_2022_c0274"
+   ],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S011",
+   "section": "faa",
+   "origin": "agent",
+   "query": "FAA guidance loss of Control link small UAS",
+   "alternate_queries": [
+    "FAA guidance on loss of signal small UAS",
+    "loss of control link drone FAA guidance"
+   ],
+   "phrasing_stats": [
+    {
+     "query": "FAA guidance loss of Control link small UAS",
+     "returned": 10,
+     "kept": 4,
+     "new": 1
+    },
+    {
+     "query": "FAA guidance on loss of signal small UAS",
+     "returned": 10,
+     "kept": 2,
+     "new": 1
+    },
+    {
+     "query": "loss of control link drone FAA guidance",
+     "returned": 10,
+     "kept": 5,
+     "new": 2
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "faa_guidance"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "Need FAA guidance for what pilots should do when control link is lost; no FAA passages provided yet.",
+   "follows_from": null,
+   "returned_ids": [
+    "faa_ac_107_2a_2022_c0001",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0099",
+    "faa_ac_107_2a_2022_c0107",
+    "faa_ac_107_2a_2022_c0010",
+    "faa_ac_107_2a_2022_c0274",
+    "faa_ac_107_2a_2022_c0249",
+    "faa_ac_107_2a_2022_c0020",
+    "faa_ac_107_2a_2022_c0026",
+    "faa_ac_107_2a_2022_c0017",
+    "faa_ac_107_2a_2022_c0025",
+    "faa_ac_107_2a_2022_c0106",
+    "faa_ac_107_2a_2022_c0066",
+    "faa_ac_107_2a_2022_c0009",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0083",
+    "faa_ac_107_2a_2022_c0164"
+   ],
+   "kept_ids": [
+    "faa_ac_107_2a_2022_c0001",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0025"
+   ],
+   "new_ids": [
+    "faa_ac_107_2a_2022_c0001",
+    "faa_ac_107_2a_2022_c0025"
+   ],
+   "below_cutoff_ids": [
+    "faa_ac_107_2a_2022_c0099",
+    "faa_ac_107_2a_2022_c0107",
+    "faa_ac_107_2a_2022_c0010",
+    "faa_ac_107_2a_2022_c0274",
+    "faa_ac_107_2a_2022_c0249"
+   ],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null,
+   "earned": true
+  },
+  {
+   "search_id": "S012",
+   "section": "faa",
+   "origin": "agent",
+   "query": "loss of control link small UAS FAA guidance what to do pilot should do after control link lost",
+   "alternate_queries": [
+    "Signal loss guidance",
+    "control link lost actions"
+   ],
+   "phrasing_stats": [
+    {
+     "query": "loss of control link small UAS FAA guidance what to do pilot should do after control link lost",
+     "returned": 10,
+     "kept": 4,
+     "new": 0
+    },
+    {
+     "query": "Signal loss guidance",
+     "returned": 10,
+     "kept": 3,
+     "new": 0
+    },
+    {
+     "query": "control link lost actions",
+     "returned": 10,
+     "kept": 3,
+     "new": 1
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "faa_guidance"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "Need FAA guidance on piloting after control link is lost for small UAS to answer user question.",
+   "follows_from": null,
+   "returned_ids": [
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0106",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0107",
+    "faa_ac_107_2a_2022_c0010",
+    "faa_ac_107_2a_2022_c0066",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0035",
+    "faa_ac_107_2a_2022_c0065",
+    "faa_ac_107_2a_2022_c0028",
+    "faa_ac_107_2a_2022_c0008",
+    "faa_ac_107_2a_2022_c0029",
+    "faa_ac_107_2a_2022_c0249",
+    "faa_ac_107_2a_2022_c0274",
+    "faa_ac_107_2a_2022_c0001",
+    "faa_ac_107_2a_2022_c0049",
+    "faa_ac_107_2a_2022_c0099",
+    "faa_ac_107_2a_2022_c0053",
+    "faa_ac_107_2a_2022_c0232",
+    "faa_ac_107_2a_2022_c0038",
+    "faa_ac_107_2a_2022_c0048"
+   ],
+   "kept_ids": [
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0033"
+   ],
+   "new_ids": [
+    "faa_ac_107_2a_2022_c0254"
+   ],
+   "below_cutoff_ids": [
+    "faa_ac_107_2a_2022_c0106",
+    "faa_ac_107_2a_2022_c0107",
+    "faa_ac_107_2a_2022_c0010",
+    "faa_ac_107_2a_2022_c0066",
+    "faa_ac_107_2a_2022_c0035"
+   ],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null,
+   "earned": true
+  },
+  {
+   "search_id": "S013",
+   "section": "faa",
+   "origin": "agent",
+   "query": "FAA guidance loss of control link small UAS what should the pilot do after losing control link guidance",
+   "alternate_queries": [
+    "FAA guidance loss of control link small UAS",
+    "FAA lost control link procedure UAS"
+   ],
+   "phrasing_stats": [
+    {
+     "query": "FAA guidance loss of control link small UAS what should the pilot do after losing control link guidance",
+     "returned": 10,
+     "kept": 5,
+     "new": 2
+    },
+    {
+     "query": "FAA guidance loss of control link small UAS",
+     "returned": 10,
+     "kept": 5,
+     "new": 2
+    },
+    {
+     "query": "FAA lost control link procedure UAS",
+     "returned": 10,
+     "kept": 2,
+     "new": 2
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "faa_guidance"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "To answer what FAA guidance says pilots should do when control link is lost for small UAS as part of the incident section assessment.",
+   "follows_from": null,
+   "returned_ids": [
+    "faa_ac_107_2a_2022_c0107",
+    "faa_ac_107_2a_2022_c0010",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0106",
+    "faa_ac_107_2a_2022_c0001",
+    "faa_ac_107_2a_2022_c0099",
+    "faa_ac_107_2a_2022_c0249",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0028",
+    "faa_ac_107_2a_2022_c0105",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0274",
+    "faa_ac_107_2a_2022_c0017",
+    "faa_ac_107_2a_2022_c0029",
+    "faa_ac_107_2a_2022_c0108",
+    "faa_ac_107_2a_2022_c0062",
+    "faa_ac_107_2a_2022_c0014",
+    "faa_ac_107_2a_2022_c0272"
+   ],
+   "kept_ids": [
+    "faa_ac_107_2a_2022_c0107",
+    "faa_ac_107_2a_2022_c0010",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0032"
+   ],
+   "new_ids": [
+    "faa_ac_107_2a_2022_c0107",
+    "faa_ac_107_2a_2022_c0010"
+   ],
+   "below_cutoff_ids": [
+    "faa_ac_107_2a_2022_c0106",
+    "faa_ac_107_2a_2022_c0099",
+    "faa_ac_107_2a_2022_c0249",
+    "faa_ac_107_2a_2022_c0028",
+    "faa_ac_107_2a_2022_c0105"
+   ],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null,
+   "earned": true
+  },
+  {
+   "search_id": "S014",
+   "section": "faa",
+   "origin": "agent",
+   "query": "FAA guidance lost control link small UAS",
+   "alternate_queries": [
+    "loss of signal guidance small UAS",
+    "RTH lost control FAA"
+   ],
+   "phrasing_stats": [
+    {
+     "query": "FAA guidance lost control link small UAS",
+     "returned": 10,
+     "kept": 3,
+     "new": 0
+    },
+    {
+     "query": "loss of signal guidance small UAS",
+     "returned": 10,
+     "kept": 4,
+     "new": 0
+    },
+    {
+     "query": "RTH lost control FAA",
+     "returned": 10,
+     "kept": 2,
+     "new": 0
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "faa_guidance"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "Need FAA guidance on recommended actions pilots should take when control link is lost for small UAS.",
+   "follows_from": null,
+   "returned_ids": [
+    "faa_ac_107_2a_2022_c0001",
+    "faa_ac_107_2a_2022_c0107",
+    "faa_ac_107_2a_2022_c0099",
+    "faa_ac_107_2a_2022_c0274",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0249",
+    "faa_ac_107_2a_2022_c0025",
+    "faa_ac_107_2a_2022_c0179",
+    "faa_ac_107_2a_2022_c0012",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0010",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0055",
+    "faa_ac_107_2a_2022_c0049",
+    "faa_ac_107_2a_2022_c0106",
+    "faa_ac_107_2a_2022_c0180",
+    "faa_ac_107_2a_2022_c0017",
+    "faa_ac_107_2a_2022_c0102",
+    "faa_ac_107_2a_2022_c0192",
+    "faa_ac_107_2a_2022_c0014",
+    "faa_ac_107_2a_2022_c0181",
+    "faa_ac_107_2a_2022_c0009",
+    "faa_ac_107_2a_2022_c0026"
+   ],
+   "kept_ids": [
+    "faa_ac_107_2a_2022_c0001",
+    "faa_ac_107_2a_2022_c0107",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0025",
+    "faa_ac_107_2a_2022_c0227"
+   ],
+   "new_ids": [],
+   "below_cutoff_ids": [
+    "faa_ac_107_2a_2022_c0099",
+    "faa_ac_107_2a_2022_c0274",
+    "faa_ac_107_2a_2022_c0249",
+    "faa_ac_107_2a_2022_c0179",
+    "faa_ac_107_2a_2022_c0012"
+   ],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S015",
+   "section": "faa",
+   "origin": "agent",
+   "query": "loss of control link small UAS FAA guidance what to do after loss of control link",
+   "alternate_queries": [
+    "FAA guidance loss of control link",
+    "loss of signal UAS FAA pilot actions"
+   ],
+   "phrasing_stats": [
+    {
+     "query": "loss of control link small UAS FAA guidance what to do after loss of control link",
+     "returned": 10,
+     "kept": 3,
+     "new": 0
+    },
+    {
+     "query": "FAA guidance loss of control link",
+     "returned": 10,
+     "kept": 5,
+     "new": 0
+    },
+    {
+     "query": "loss of signal UAS FAA pilot actions",
+     "returned": 10,
+     "kept": 2,
+     "new": 0
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "faa_guidance"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "to confirm authoritative FAA guidance on what pilots should do when control link is lost for small UAS",
+   "follows_from": null,
+   "returned_ids": [
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0029",
+    "faa_ac_107_2a_2022_c0001",
+    "faa_ac_107_2a_2022_c0026",
+    "faa_ac_107_2a_2022_c0028",
+    "faa_ac_107_2a_2022_c0010",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0020",
+    "faa_ac_107_2a_2022_c0107",
+    "faa_ac_107_2a_2022_c0178",
+    "faa_ac_107_2a_2022_c0008",
+    "faa_ac_107_2a_2022_c0014",
+    "faa_ac_107_2a_2022_c0274",
+    "faa_ac_107_2a_2022_c0025",
+    "faa_ac_107_2a_2022_c0049",
+    "faa_ac_107_2a_2022_c0106",
+    "faa_ac_107_2a_2022_c0179",
+    "faa_ac_107_2a_2022_c0099",
+    "faa_ac_107_2a_2022_c0181",
+    "faa_ac_107_2a_2022_c0003",
+    "faa_ac_107_2a_2022_c0164"
+   ],
+   "kept_ids": [
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0025"
+   ],
+   "new_ids": [],
+   "below_cutoff_ids": [
+    "faa_ac_107_2a_2022_c0029",
+    "faa_ac_107_2a_2022_c0026",
+    "faa_ac_107_2a_2022_c0028",
+    "faa_ac_107_2a_2022_c0020",
+    "faa_ac_107_2a_2022_c0178"
+   ],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S016",
+   "section": "faa",
+   "origin": "agent",
+   "query": "FAA guidance for loss of control link / loss of signal for small UAS what the pilot should do",
+   "alternate_queries": [
+    "Loss of control link guidance",
+    "small UAS lost link FAA"
+   ],
+   "phrasing_stats": [
+    {
+     "query": "FAA guidance for loss of control link / loss of signal for small UAS what the pilot should do",
+     "returned": 10,
+     "kept": 5,
+     "new": 0
+    },
+    {
+     "query": "Loss of control link guidance",
+     "returned": 10,
+     "kept": 5,
+     "new": 0
+    },
+    {
+     "query": "small UAS lost link FAA",
+     "returned": 10,
+     "kept": 1,
+     "new": 0
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "faa_guidance"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "Need FAA guidance on pilot actions during loss of control link for small UAS to compare with incident Matrice 210 V1",
+   "follows_from": null,
+   "returned_ids": [
+    "faa_ac_107_2a_2022_c0107",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0010",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0028",
+    "faa_ac_107_2a_2022_c0029",
+    "faa_ac_107_2a_2022_c0249",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0026",
+    "faa_ac_107_2a_2022_c0017",
+    "faa_ac_107_2a_2022_c0035",
+    "faa_ac_107_2a_2022_c0099",
+    "faa_ac_107_2a_2022_c0105",
+    "faa_ac_107_2a_2022_c0274",
+    "faa_ac_107_2a_2022_c0001",
+    "faa_ac_107_2a_2022_c0106",
+    "faa_ac_107_2a_2022_c0049",
+    "faa_ac_107_2a_2022_c0108",
+    "faa_ac_107_2a_2022_c0025",
+    "faa_ac_107_2a_2022_c0062",
+    "faa_ac_107_2a_2022_c0169"
+   ],
+   "kept_ids": [
+    "faa_ac_107_2a_2022_c0107",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0032"
+   ],
+   "new_ids": [],
+   "below_cutoff_ids": [
+    "faa_ac_107_2a_2022_c0028",
+    "faa_ac_107_2a_2022_c0029",
+    "faa_ac_107_2a_2022_c0249",
+    "faa_ac_107_2a_2022_c0026",
+    "faa_ac_107_2a_2022_c0017"
+   ],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  }
+ ],
+ "decisions": [
+  {
+   "decision_id": "D001",
+   "section": "faa",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "FAA passages describe pilot actions when control link is lost: reestablish link or start emergency/contingency if cannot reestablish; see-and-avoid; no model automatic behavior.",
+   "tool": "finish_assessment",
+   "coverage": "sufficient",
+   "missing": [],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D002",
+   "section": "manual:DJI Matrice 30T",
+   "action": "search",
+   "continue_or_stop": "continue",
+   "reason": "need FAA guidance on what pilots should do when control link is lost for small UAS",
+   "tool": "document_search",
+   "searched_section": "faa",
+   "query": "FAA guidance loss of control link small UAS what should happen",
+   "alternate_queries": [
+    "FAA guidance loss of control link small UAS",
+    "FAA recommends action when control link lost"
+   ],
+   "follows_from": null,
+   "search_id": "S010",
+   "new_passages": 0,
+   "below_cutoff": 7,
+   "earned_search": false
+  },
+  {
+   "decision_id": "D003",
+   "section": "manual:DJI Matrice 30T",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "FAA mentions reestablishing control link and commencing contingency procedures for loss of control link; passages found adequate for the section purpose.",
+   "tool": "finish_assessment",
+   "coverage": "sufficient",
+   "missing": [
+    "None identified; FAA guidance on loss of control link covers reconnect attempts and emergency procedures."
+   ],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D004",
+   "section": "manual:DJI Matrice 4T",
+   "action": "rejected_by_code",
+   "continue_or_stop": "continue",
+   "reason": "alternate_queries: List should have at most 2 items after validation, not 3",
+   "tool": "document_search",
+   "error": "invalid_arguments"
+  },
+  {
+   "decision_id": "D005",
+   "section": "manual:DJI Matrice 4T",
+   "action": "search",
+   "continue_or_stop": "continue",
+   "reason": "Need FAA guidance for what pilots should do when control link is lost; no FAA passages provided yet.",
+   "tool": "document_search",
+   "searched_section": "faa",
+   "query": "FAA guidance loss of Control link small UAS",
+   "alternate_queries": [
+    "FAA guidance on loss of signal small UAS",
+    "loss of control link drone FAA guidance"
+   ],
+   "follows_from": null,
+   "search_id": "S011",
+   "new_passages": 2,
+   "below_cutoff": 5,
+   "earned_search": true
+  },
+  {
+   "decision_id": "D006",
+   "section": "manual:DJI Matrice 4T",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "FAA guidance clearly covers actions when control link is lost (reconnect attempt, then contingency if unrecoverable).",
+   "tool": "finish_assessment",
+   "coverage": "sufficient",
+   "missing": [
+    "No major gaps; FAA AC 107-2A provides guidance on reestablishing link and emergency procedures but does not mandate any specific drone model actions."
+   ],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D007",
+   "section": "manual:Autel EVO Max 4N",
+   "action": "finish_insufficient",
+   "continue_or_stop": "stop",
+   "reason": "Current evidence set from manual:Autel EVO Max 4N covers Autel-specific SLA behavior; no FAA guidance is included in this section.",
+   "tool": "finish_assessment",
+   "coverage": "insufficient",
+   "missing": [
+    "FAA guidance on loss of control link (loss of signal) for small UAS not covered in provided manual:Autel EVO Max 4N passages."
+   ],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D008",
+   "section": "manual:DJI Matrice 210 V1",
+   "action": "rejected_by_code",
+   "continue_or_stop": "continue",
+   "reason": "alternate_queries: List should have at most 2 items after validation, not 3",
+   "tool": "document_search",
+   "error": "invalid_arguments"
+  },
+  {
+   "decision_id": "D009",
+   "section": "manual:DJI Matrice 210 V1",
+   "action": "search",
+   "continue_or_stop": "continue",
+   "reason": "Need FAA guidance on piloting after control link is lost for small UAS to answer user question.",
+   "tool": "document_search",
+   "searched_section": "faa",
+   "query": "loss of control link small UAS FAA guidance what to do pilot should do after control link lost",
+   "alternate_queries": [
+    "Signal loss guidance",
+    "control link lost actions"
+   ],
+   "follows_from": null,
+   "search_id": "S012",
+   "new_passages": 1,
+   "below_cutoff": 5,
+   "earned_search": true
+  },
+  {
+   "decision_id": "D010",
+   "section": "manual:DJI Matrice 210 V1",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "FAA section provides the required guidance: reestablish control link; if cannot reestablish, use emergency/contingency procedures for loss of control link.",
+   "tool": "finish_assessment",
+   "coverage": "sufficient",
+   "missing": [],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D011",
+   "section": "incident:DJI Matrice 30T",
+   "action": "search",
+   "continue_or_stop": "continue",
+   "reason": "To answer what FAA guidance says pilots should do when control link is lost for small UAS as part of the incident section assessment.",
+   "tool": "document_search",
+   "searched_section": "faa",
+   "query": "FAA guidance loss of control link small UAS what should the pilot do after losing control link guidance",
+   "alternate_queries": [
+    "FAA guidance loss of control link small UAS",
+    "FAA lost control link procedure UAS"
+   ],
+   "follows_from": null,
+   "search_id": "S013",
+   "new_passages": 2,
+   "below_cutoff": 5,
+   "earned_search": true
+  },
+  {
+   "decision_id": "D012",
+   "section": "incident:DJI Matrice 30T",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "FAA guidance on loss of control link is described: reestablish link; if unsuccessful, initiate emergency/contingency procedures for loss of control link.",
+   "tool": "finish_assessment",
+   "coverage": "sufficient",
+   "missing": [
+    "none identified"
+   ],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D013",
+   "section": "incident:DJI Matrice 4T",
+   "action": "search",
+   "continue_or_stop": "continue",
+   "reason": "Need FAA guidance on recommended actions pilots should take when control link is lost for small UAS.",
+   "tool": "document_search",
+   "searched_section": "faa",
+   "query": "FAA guidance lost control link small UAS",
+   "alternate_queries": [
+    "loss of signal guidance small UAS",
+    "RTH lost control FAA"
+   ],
+   "follows_from": null,
+   "search_id": "S014",
+   "new_passages": 0,
+   "below_cutoff": 5,
+   "earned_search": false
+  },
+  {
+   "decision_id": "D014",
+   "section": "incident:DJI Matrice 4T",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "FAA AC 107-2A covers loss of control link guidance: when the control link is lost, the pilot should ensure proper preflight and the aircraft may enter failsafe RTH if Signal Lost Action is set to RTH; the guidance supports defining expected pilot procedures for loss of signal.",
+   "tool": "finish_assessment",
+   "coverage": "sufficient",
+   "missing": [],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D015",
+   "section": "incident:Autel EVO Max 4N",
+   "action": "search",
+   "continue_or_stop": "continue",
+   "reason": "to confirm authoritative FAA guidance on what pilots should do when control link is lost for small UAS",
+   "tool": "document_search",
+   "searched_section": "faa",
+   "query": "loss of control link small UAS FAA guidance what to do after loss of control link",
+   "alternate_queries": [
+    "FAA guidance loss of control link",
+    "loss of signal UAS FAA pilot actions"
+   ],
+   "follows_from": null,
+   "search_id": "S015",
+   "new_passages": 0,
+   "below_cutoff": 5,
+   "earned_search": false
+  },
+  {
+   "decision_id": "D016",
+   "section": "incident:Autel EVO Max 4N",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "FAA guidance on loss of control link (small UAS) states to reestablish link and execute emergency/contingency procedures; incident details align with this but involve Autel-specific behavior.",
+   "tool": "finish_assessment",
+   "coverage": "sufficient",
+   "missing": [],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D017",
+   "section": "incident:DJI Matrice 210 V1",
+   "action": "rejected_by_code",
+   "continue_or_stop": "continue",
+   "reason": "alternate_queries: List should have at most 2 items after validation, not 3",
+   "tool": "document_search",
+   "error": "invalid_arguments"
+  },
+  {
+   "decision_id": "D018",
+   "section": "incident:DJI Matrice 210 V1",
+   "action": "search",
+   "continue_or_stop": "continue",
+   "reason": "Need FAA guidance on pilot actions during loss of control link for small UAS to compare with incident Matrice 210 V1",
+   "tool": "document_search",
+   "searched_section": "faa",
+   "query": "FAA guidance for loss of control link / loss of signal for small UAS what the pilot should do",
+   "alternate_queries": [
+    "Loss of control link guidance",
+    "small UAS lost link FAA"
+   ],
+   "follows_from": null,
+   "search_id": "S016",
+   "new_passages": 0,
+   "below_cutoff": 5,
+   "earned_search": false
+  },
+  {
+   "decision_id": "D019",
+   "section": "incident:DJI Matrice 210 V1",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "FAA guidance indicates initiating loss-of-control link procedures; incident Matrice 210 V1 passages show failsafe and RTL behavior consistent with FAA guidance and the manual.",
+   "tool": "finish_assessment",
+   "coverage": "sufficient",
+   "missing": [
+    "None identified; FAA guidance on loss of control link indicates initiating contingency procedures when link is lost, which matches the incident behavior with failsafe/RTH."
+   ],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D020",
+   "section": "manual:Autel EVO Max 4N",
+   "action": "rejected_by_code",
+   "continue_or_stop": "continue",
+   "reason": "agent judged the evidence insufficient, but the section has passages; drafting anyway and letting verification decide",
+   "agent_reason": "Current evidence set from manual:Autel EVO Max 4N covers Autel-specific SLA behavior; no FAA guidance is included in this section."
+  },
+  {
+   "decision_id": "D021",
+   "section": "faa",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "The claim misstates the immediacy of action; the passage supports see-and-avoid responsibilities and gives examples of actions but does not state an explicit blanket requirement to take immediate action. The rewrite uses only the supplied text.",
+   "claim_id": "C004",
+   "round": 1,
+   "new_text": "AC 107-2A states that the remote PIC has see-and-avoid responsibilities if sight is lost and should follow pre-determined procedures (e.g., land, hover, or return-to-home) to address hazards."
+  },
+  {
+   "decision_id": "D022",
+   "section": "incident:DJI Matrice 30T",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "attributed",
+   "claim_id": "C006",
+   "round": 1,
+   "new_text": "The reporter states 'Lost link and RTH occurred twice on back-to-back hops' during a lost link event with back-to-back RTH."
+  },
+  {
+   "decision_id": "D023",
+   "section": "incident:DJI Matrice 30T",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "attributed",
+   "claim_id": "C009",
+   "round": 1,
+   "new_text": "The reporter states 'This time the drone responded; and I took over and landed the drone without further incident' during a VPS toggle with regained control."
+  },
+  {
+   "decision_id": "D024",
+   "section": "incident:DJI Matrice 210 V1",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "Quote is verbatim from source and must be attributed; include conditions.",
+   "claim_id": "C011",
+   "round": 1,
+   "new_text": "The reporter states \"When communications are lost the UA would normally enter a 'Failsafe RTH' mode\" (loss of communications)."
+  },
+  {
+   "decision_id": "D025",
+   "section": "incident:DJI Matrice 210 V1",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "Quote is verbatim from source; proper attribution and conditions.",
+   "claim_id": "C012",
+   "round": 1,
+   "new_text": "The reporter states \"The UA drifted beyond visual line of sight and communication was lost\" (loss of VLOS; communication loss)."
+  },
+  {
+   "decision_id": "D026",
+   "section": "incident:DJI Matrice 210 V1",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "Quote is verbatim from source; include conditions.",
+   "claim_id": "C013",
+   "round": 1,
+   "new_text": "The reporter states \"could not return home due to the wind with its limited pitch attitude\" (wind limit exceeded; limited pitch attitude)."
+  },
+  {
+   "decision_id": "D027",
+   "section": "incident:DJI Matrice 210 V1",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "Quote is verbatim; attribute and note wind condition.",
+   "claim_id": "C014",
+   "round": 1,
+   "new_text": "The reporter states \"Fly with caution, strong wind\" appeared on the pilot's controller display when wind limits were exceeded."
+  },
+  {
+   "decision_id": "D028",
+   "section": "incident:DJI Matrice 210 V1",
+   "action": "to_gap",
+   "continue_or_stop": "stop",
+   "reason": "Passages do not support a reduced pitch attitude claim; only speed reduction is indicated.",
+   "claim_id": "C015",
+   "round": 1
+  },
+  {
+   "decision_id": "D029",
+   "section": "incident:DJI Matrice 210 V1",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "quote_in_source resolved by using exact verbiage from the source and adding the missing wind/pitch context.",
+   "claim_id": "C011",
+   "round": 2,
+   "new_text": "The reporter states 'When communications are lost the UA would normally enter a 'Failsafe RTH' mode' and notes it could not return home due to the wind with its limited pitch attitude."
+  },
+  {
+   "decision_id": "D030",
+   "section": "incident:DJI Matrice 210 V1",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "quote_in_source resolved by restating the exact quoted material and clarifying the accompanying loss conditions.",
+   "claim_id": "C012",
+   "round": 2,
+   "new_text": "The reporter states 'The UA drifted beyond visual line of sight and communication was lost.' (loss of VLOS; communication loss)"
+  },
+  {
+   "decision_id": "D031",
+   "section": "incident:DJI Matrice 210 V1",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "quote_in_source resolved by using the exact verbatim phrase from the source.",
+   "claim_id": "C013",
+   "round": 2,
+   "new_text": "The reporter states 'could not overcome the wind with its limited pitch attitude'"
+  },
+  {
+   "decision_id": "D032",
+   "section": "incident:DJI Matrice 210 V1",
+   "action": "drop",
+   "continue_or_stop": "stop",
+   "reason": "still failing after 2 revision rounds",
+   "claim_id": "C012",
+   "human_review": true
+  },
+  {
+   "decision_id": "D033",
+   "section": "gaps",
+   "action": "trimmed_by_code",
+   "continue_or_stop": "stop",
+   "reason": "over the gap limit",
+   "text": "Passages do not support a reduced pitch attitude claim; only speed reduction is indicated."
+  },
+  {
+   "decision_id": "D034",
+   "section": "short_answer",
+   "action": "trimmed_by_code",
+   "continue_or_stop": "stop",
+   "reason": "short answer over the limits after one retry"
+  }
+ ],
+ "assessments": {
+  "faa": {
+   "coverage": "sufficient",
+   "missing": [],
+   "conflicts_noticed": [],
+   "reason": "FAA passages describe pilot actions when control link is lost: reestablish link or start emergency/contingency if cannot reestablish; see-and-avoid; no model automatic behavior.",
+   "stop_reason": "model_finished",
+   "section": "faa",
+   "turns": 2,
+   "tool_calls": 0,
+   "searches": 0,
+   "searches_allowed": 2
+  },
+  "manual:DJI Matrice 30T": {
+   "coverage": "sufficient",
+   "missing": [
+    "None identified; FAA guidance on loss of control link covers reconnect attempts and emergency procedures."
+   ],
+   "conflicts_noticed": [],
+   "reason": "FAA mentions reestablishing control link and commencing contingency procedures for loss of control link; passages found adequate for the section purpose.",
+   "stop_reason": "model_finished",
+   "section": "manual:DJI Matrice 30T",
+   "turns": 3,
+   "tool_calls": 1,
+   "searches": 1,
+   "searches_allowed": 2
+  },
+  "manual:DJI Matrice 4T": {
+   "coverage": "sufficient",
+   "missing": [
+    "No major gaps; FAA AC 107-2A provides guidance on reestablishing link and emergency procedures but does not mandate any specific drone model actions."
+   ],
+   "conflicts_noticed": [],
+   "reason": "FAA guidance clearly covers actions when control link is lost (reconnect attempt, then contingency if unrecoverable).",
+   "stop_reason": "model_finished",
+   "section": "manual:DJI Matrice 4T",
+   "turns": 4,
+   "tool_calls": 2,
+   "searches": 1,
+   "searches_allowed": 3
+  },
+  "manual:Autel EVO Max 4N": {
+   "coverage": "insufficient",
+   "missing": [
+    "FAA guidance on loss of control link (loss of signal) for small UAS not covered in provided manual:Autel EVO Max 4N passages."
+   ],
+   "conflicts_noticed": [],
+   "reason": "Current evidence set from manual:Autel EVO Max 4N covers Autel-specific SLA behavior; no FAA guidance is included in this section.",
+   "stop_reason": "model_finished",
+   "section": "manual:Autel EVO Max 4N",
+   "turns": 2,
+   "tool_calls": 0,
+   "searches": 0,
+   "searches_allowed": 2
+  },
+  "manual:DJI Matrice 210 V1": {
+   "coverage": "sufficient",
+   "missing": [],
+   "conflicts_noticed": [],
+   "reason": "FAA section provides the required guidance: reestablish control link; if cannot reestablish, use emergency/contingency procedures for loss of control link.",
+   "stop_reason": "model_finished",
+   "section": "manual:DJI Matrice 210 V1",
+   "turns": 4,
+   "tool_calls": 2,
+   "searches": 1,
+   "searches_allowed": 3
+  },
+  "incident:DJI Matrice 30T": {
+   "coverage": "sufficient",
+   "missing": [
+    "none identified"
+   ],
+   "conflicts_noticed": [],
+   "reason": "FAA guidance on loss of control link is described: reestablish link; if unsuccessful, initiate emergency/contingency procedures for loss of control link.",
+   "stop_reason": "model_finished",
+   "section": "incident:DJI Matrice 30T",
+   "turns": 3,
+   "tool_calls": 1,
+   "searches": 1,
+   "searches_allowed": 3
+  },
+  "incident:DJI Matrice 4T": {
+   "coverage": "sufficient",
+   "missing": [],
+   "conflicts_noticed": [],
+   "reason": "FAA AC 107-2A covers loss of control link guidance: when the control link is lost, the pilot should ensure proper preflight and the aircraft may enter failsafe RTH if Signal Lost Action is set to RTH; the guidance supports defining expected pilot procedures for loss of signal.",
+   "stop_reason": "model_finished",
+   "section": "incident:DJI Matrice 4T",
+   "turns": 3,
+   "tool_calls": 1,
+   "searches": 1,
+   "searches_allowed": 2
+  },
+  "incident:Autel EVO Max 4N": {
+   "coverage": "sufficient",
+   "missing": [],
+   "conflicts_noticed": [],
+   "reason": "FAA guidance on loss of control link (small UAS) states to reestablish link and execute emergency/contingency procedures; incident details align with this but involve Autel-specific behavior.",
+   "stop_reason": "model_finished",
+   "section": "incident:Autel EVO Max 4N",
+   "turns": 3,
+   "tool_calls": 1,
+   "searches": 1,
+   "searches_allowed": 2
+  },
+  "incident:DJI Matrice 210 V1": {
+   "coverage": "sufficient",
+   "missing": [
+    "None identified; FAA guidance on loss of control link indicates initiating contingency procedures when link is lost, which matches the incident behavior with failsafe/RTH."
+   ],
+   "conflicts_noticed": [],
+   "reason": "FAA guidance indicates initiating loss-of-control link procedures; incident Matrice 210 V1 passages show failsafe and RTL behavior consistent with FAA guidance and the manual.",
+   "stop_reason": "model_finished",
+   "section": "incident:DJI Matrice 210 V1",
+   "turns": 4,
+   "tool_calls": 2,
+   "searches": 1,
+   "searches_allowed": 2
+  }
+ },
+ "gate_results": {
+  "C001": {
+   "claim_id": "C001",
+   "passed": true,
+   "failures": []
+  },
+  "C002": {
+   "claim_id": "C002",
+   "passed": true,
+   "failures": []
+  },
+  "C003": {
+   "claim_id": "C003",
+   "passed": true,
+   "failures": []
+  },
+  "C004": {
+   "claim_id": "C004",
+   "passed": true,
+   "failures": []
+  },
+  "C005": {
+   "claim_id": "C005",
+   "passed": true,
+   "failures": []
+  },
+  "C006": {
+   "claim_id": "C006",
+   "passed": true,
+   "failures": []
+  },
+  "C007": {
+   "claim_id": "C007",
+   "passed": true,
+   "failures": []
+  },
+  "C008": {
+   "claim_id": "C008",
+   "passed": true,
+   "failures": []
+  },
+  "C009": {
+   "claim_id": "C009",
+   "passed": true,
+   "failures": []
+  },
+  "C010": {
+   "claim_id": "C010",
+   "passed": true,
+   "failures": []
+  },
+  "C011": {
+   "claim_id": "C011",
+   "passed": true,
+   "failures": []
+  },
+  "C013": {
+   "claim_id": "C013",
+   "passed": true,
+   "failures": []
+  },
+  "C014": {
+   "claim_id": "C014",
+   "passed": true,
+   "failures": []
+  }
+ },
+ "verifications": {
+  "C001": {
+   "claim_id": "C001",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states that if the connection cannot be reestablished, start emergency or contingency procedures for loss of control link, which aligns with the claim and identifies loss of control link as the trigger.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0228"
+   ]
+  },
+  "C002": {
+   "claim_id": "C002",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage requires regain VLOS as soon as practicable and notes the remote PIC may briefly lose sight but still has see-and-avoid responsibilities, matching the claim.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0049"
+   ]
+  },
+  "C003": {
+   "claim_id": "C003",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage allows two or more certificated remote pilots transferring control only if both can maintain VLOS without LOC, which matches the claim.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0032"
+   ]
+  },
+  "C004": {
+   "claim_id": "C004",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "AC 107-2A states that when sight is lost the remote PIC retains see-and-avoid responsibilities and, if VLOS cannot be regained, should follow pre-determined procedures. The passage cites that the remote PIC may need to land, hover, or use a return-to-home sequence as examples of such procedures, which matches the claim text.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0049"
+   ]
+  },
+  "C005": {
+   "claim_id": "C005",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The passages cited describe loss of control link over people as an example hazard in risk assessment and mitigation, matching the claim.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0228"
+   ]
+  },
+  "C006": {
+   "claim_id": "C006",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage explicitly states 'Lost link and RTH occurred twice on back-to-back hops.'",
+   "supporting_ids": [
+    "asrs_dji_m30t_selected_c0002"
+   ]
+  },
+  "C007": {
+   "claim_id": "C007",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "C0002 explicitly says lost link and return to home within 10 seconds of the glitching screen.",
+   "supporting_ids": [
+    "asrs_dji_m30t_selected_c0002"
+   ]
+  },
+  "C008": {
+   "claim_id": "C008",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "C0003 describes loss of control with RTH initiated but not responding, matching the claim.",
+   "supporting_ids": [
+    "asrs_dji_m30t_selected_c0003"
+   ]
+  },
+  "C009": {
+   "claim_id": "C009",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage describes toggling the VPS sensor and subsequently regaining control, followed by landing without incident.",
+   "supporting_ids": [
+    "asrs_dji_m30t_selected_c0003"
+   ]
+  },
+  "C010": {
+   "claim_id": "C010",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "Forum passage notes flight log with strong uplink/downlink and no gradual signal drop, as stated.",
+   "supporting_ids": [
+    "forum_dji_m30t_c0001"
+   ]
+  },
+  "C011": {
+   "claim_id": "C011",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states that when communications are lost the UA would normally enter a Failsafe RTH mode and that it could not return home due to wind and its limited pitch attitude, matching both conditions in the claim.",
+   "supporting_ids": [
+    "aaib_m210_v1_poole_c0013"
+   ]
+  },
+  "C013": {
+   "claim_id": "C013",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states the UA could not overcome the wind with its limited pitch attitude, which aligns with the claim's conditions about wind and limited pitch attitude.",
+   "supporting_ids": [
+    "aaib_m210_v1_poole_c0013"
+   ]
+  },
+  "C014": {
+   "claim_id": "C014",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The passage states that when the wind limit was exceeded the pilot controller displayed 'Fly with caution, strong wind'.",
+   "supporting_ids": [
+    "aaib_m210_v1_poole_c0002"
+   ]
+  }
+ },
+ "first_draft_results": [
+  {
+   "claim_id": "C001",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C002",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C003",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C004",
+   "passes": false,
+   "gate_failures": [],
+   "verifier": "partial"
+  },
+  {
+   "claim_id": "C005",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C006",
+   "passes": false,
+   "gate_failures": [
+    "attributed"
+   ],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C007",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C008",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C009",
+   "passes": false,
+   "gate_failures": [
+    "attributed"
+   ],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C010",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C011",
+   "passes": false,
+   "gate_failures": [
+    "quote_in_source",
+    "attributed"
+   ],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C012",
+   "passes": false,
+   "gate_failures": [
+    "quote_in_source",
+    "attributed"
+   ],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C013",
+   "passes": false,
+   "gate_failures": [
+    "quote_in_source",
+    "attributed"
+   ],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C014",
+   "passes": false,
+   "gate_failures": [
+    "attributed"
+   ],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C015",
+   "passes": false,
+   "gate_failures": [
+    "quote_in_source",
+    "attributed"
+   ],
+   "verifier": "not_supported"
+  }
+ ],
+ "revisions_used": 2,
+ "reopens": 0,
+ "cost": {
+  "model_calls": 50,
+  "tokens_in": 129550,
+  "tokens_out": 37457,
+  "searches": 16,
+  "agent_searches": 7,
+  "agent_tool_calls": 19,
+  "seconds": 209.0
+ },
+ "corpus_snapshot": "4d0e3c83c9425371",
+ "chunks_sha256": "3aff778d5475cd877ed6cef54834cdaa960ccce15ebda1442215c7ca258274c6",
+ "retrieval": "hybrid_rrf",
+ "model": "@30875-fall26-openai/gpt-5-nano",
+ "reasoning_effort": "low",
+ "config": {
+  "mode": "full",
+  "max_revisions": 2,
+  "agent_base_searches_per_section": 2,
+  "agent_max_searches_per_section": 4,
+  "agent_max_tool_calls_per_section": 7,
+  "agent_max_turns_per_section": 8,
+  "agent_results_shown": 10,
+  "agent_max_searches_per_run": 8,
+  "agent_max_turns_per_run": 40,
+  "max_reopens_per_run": 1,
+  "max_searches": 40,
+  "max_model_calls": 120,
+  "top_k": 5,
+  "max_claims_per_section": 5,
+  "max_claim_words": 40,
+  "max_gaps": 6,
+  "max_short_answer_words": 120
+ },
+ "trace_path": "/content/drive/MyDrive/Agentic Unlearning Group/Project 1/processed/traces/20261103T015210-full-9423.jsonl"
+}

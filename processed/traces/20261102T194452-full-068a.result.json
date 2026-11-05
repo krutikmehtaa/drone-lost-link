@@ -1,0 +1,892 @@
+{
+ "run_id": "20261102T194452-full-068a",
+ "mode": "full",
+ "question": "How long must the remote controller signal be lost before the DJI Matrice 210 V1 starts Failsafe RTH?",
+ "status": "completed_with_gaps",
+ "stop_reason": "verified claims; gaps listed",
+ "error": null,
+ "intake": {
+  "intent": "in_scope",
+  "models": [
+   "DJI Matrice 210 V1"
+  ],
+  "focus": "Matrice 210 V1 RC signal loss failsafe RTH timer",
+  "flight_phase": null,
+  "reason": "Requesting specific timing for lost RC link triggering RTH per manuals/guidance",
+  "decided_by": "model",
+  "unsupported_named": [
+   "Matrice 210"
+  ]
+ },
+ "brief": {
+  "short_answer": "FAA guidance describes reestablishing the control link and, if that cannot be done, initiating emergency procedures for loss of control link. The DJI Matrice 210 V1 manual states that Failsafe RTH will be automatically activated if the remote controller signal is lost for more than three seconds, assuming the Home Point is recorded and the compass is functioning normally. Incident reports are unverified accounts; no usable evidence has been found in the approved collection for DJI Matrice 210 V1 incident reports. Main gap: the explicit RC signal loss timer value for Failsafe RTH in the Matrice 210 V1 manual is not provided beyond the three\u2011second example, and FAA guidance offers no timer.",
+  "sections": [
+   {
+    "section": "faa",
+    "label": "FAA guidance",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "Try to reestablish control link connection with the small unmanned aircraft; if connection cannot be reestablished, start emergency or contingency procedures for loss of control link.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0228"
+      ],
+      "quote": "Try to reestablish control link connection with the small unmanned aircraft. If connection cannot be reestablished, start emergency or contingency procedures for loss of control link.",
+      "conditions": [
+       "loss of control link",
+       "connection cannot be reestablished"
+      ],
+      "assessment": "supported",
+      "claim_id": "C001",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "If the remote PIC cannot regain VLOS, the remote PIC or person manipulating the controls should follow pre-determined procedures for the loss of VLOS.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0049"
+      ],
+      "quote": "If the remote PIC cannot regain VLOS, the remote PIC or person manipulating the controls should follow pre-determined procedures for the loss of VLOS.",
+      "conditions": [
+       "cannot regain VLOS"
+      ],
+      "assessment": "supported",
+      "claim_id": "C002",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "The remote PIC may need to land the small unmanned aircraft immediately, enter hover mode, or employ a return-to-home sequence.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0049"
+      ],
+      "quote": "the remote PIC may need to land the small unmanned aircraft immediately, enter hover mode, or employ a return-to-home sequence",
+      "conditions": [
+       "appropriate course of action",
+       "loss of control scenarios"
+      ],
+      "assessment": "supported",
+      "claim_id": "C004",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "The preflight briefing must include control link loss procedures.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0227"
+      ],
+      "quote": "The preflight briefing must include control link loss procedures.",
+      "conditions": [
+       "preflight briefing",
+       "control link loss procedures"
+      ],
+      "assessment": "supported",
+      "claim_id": "C005",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     }
+    ]
+   },
+   {
+    "section": "manual:DJI Matrice 210 V1",
+    "label": "DJI Matrice 210 V1 manual",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "The manual states, 'Failsafe RTH will be automatically activated if the remote controller signal is lost for more than three seconds,' when the Home Point was successfully recorded and the compass is functioning normally.",
+      "citations": [
+       "dji_m210_v1_manual_v14_c0037"
+      ],
+      "quote": "Failsafe RTH will be automatically activated if the remote controller signal is lost for more than three seconds",
+      "conditions": [
+       "Home Point was successfully recorded",
+       "compass is functioning normally",
+       "remote controller signal lost for more than three seconds"
+      ],
+      "assessment": "supported",
+      "claim_id": "C006",
+      "section": "manual:DJI Matrice 210 V1",
+      "tier": "manufacturer",
+      "incident_label": null
+     }
+    ]
+   },
+   {
+    "section": "incident:DJI Matrice 210 V1",
+    "label": "DJI Matrice 210 V1 incident reports",
+    "status": "no_evidence",
+    "abstain_reason": "The passages do not specify the duration of remote-control signal loss required to trigger Failsafe RTH for the DJI Matrice 210 V1.",
+    "claims": []
+   }
+  ],
+  "gaps": [
+   {
+    "kind": "conflict",
+    "origin": "synthesis",
+    "text": "Manual: failsafe RTH after >3 seconds; FAA guidance provides no timer, only general link-loss procedures.",
+    "related_claim_ids": [
+     "C006",
+     "C001"
+    ]
+   },
+   {
+    "kind": "missing",
+    "origin": "intake",
+    "related_claim_ids": [],
+    "text": "Matrice 210 is not in the approved collection, so the brief does not cover it."
+   },
+   {
+    "kind": "missing",
+    "origin": "section_abstained",
+    "related_claim_ids": [],
+    "text": "No usable evidence found in the approved collection for DJI Matrice 210 V1 incident reports."
+   },
+   {
+    "kind": "missing",
+    "origin": "revision",
+    "related_claim_ids": [],
+    "text": "The passages provide an example but do not supply a complete, standalone description of action for every hazard scenario; this constitutes a gap in supporting the full claim."
+   },
+   {
+    "kind": "missing",
+    "origin": "synthesis",
+    "text": "Explicit RC signal loss timer value for Failsafe RTH in Matrice 210 V1 manual.",
+    "related_claim_ids": [
+     "C006"
+    ]
+   }
+  ],
+  "removed_claims": [
+   {
+    "text": "Describe what will be done if the hazard occurs, including examples such as the loss of control link over people.",
+    "citations": [
+     "faa_ac_107_2a_2022_c0227"
+    ],
+    "quote": "Describe what will be done if the hazard occurs. Example: Loss of control link over people",
+    "conditions": [
+     "hazard occurs",
+     "loss of control link"
+    ],
+    "assessment": "supported_with_conditions",
+    "claim_id": "C003",
+    "section": "faa",
+    "tier": "official",
+    "incident_label": null
+   }
+  ]
+ },
+ "brief_stats": {
+  "words": 312,
+  "claims": 5,
+  "gaps": 5
+ },
+ "searches": [
+  {
+   "search_id": "S001",
+   "section": "faa",
+   "origin": "base",
+   "query": "lost link loss of control link communication remote pilot contingency procedures Matrice 210 V1 RC signal loss failsafe RTH timer",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link loss of control link communication remote pilot contingency procedures Matrice 210 V1 RC signal loss failsafe RTH timer",
+     "returned": 10,
+     "kept": 4,
+     "new": 4
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "faa_guidance"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0062",
+    "faa_ac_107_2a_2022_c0223",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0049",
+    "faa_ac_107_2a_2022_c0096",
+    "faa_ac_107_2a_2022_c0274",
+    "faa_ac_107_2a_2022_c0249",
+    "faa_ac_107_2a_2022_c0269"
+   ],
+   "kept_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0049"
+   ],
+   "new_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0049"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S002",
+   "section": "manual:DJI Matrice 210 V1",
+   "origin": "base",
+   "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect Matrice 210 V1 RC signal loss failsafe RTH timer",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect Matrice 210 V1 RC signal loss failsafe RTH timer",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "DJI Matrice 210 V1"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "dji_m210_v1_manual_v14_c0039",
+    "dji_m210_v1_manual_v14_c0037",
+    "dji_m210_v1_manual_v14_c0036",
+    "dji_m210_v1_manual_v14_c0034",
+    "dji_m210_v1_manual_v14_c0041",
+    "dji_m210_v1_manual_v14_c0033",
+    "dji_m210_v1_manual_v14_c0032",
+    "dji_m210_v1_manual_v14_c0038",
+    "dji_m210_v1_manual_v14_c0049",
+    "dji_m210_v1_manual_v14_c0035"
+   ],
+   "kept_ids": [
+    "dji_m210_v1_manual_v14_c0039",
+    "dji_m210_v1_manual_v14_c0037",
+    "dji_m210_v1_manual_v14_c0034",
+    "dji_m210_v1_manual_v14_c0041",
+    "dji_m210_v1_manual_v14_c0033"
+   ],
+   "new_ids": [
+    "dji_m210_v1_manual_v14_c0039",
+    "dji_m210_v1_manual_v14_c0037",
+    "dji_m210_v1_manual_v14_c0034",
+    "dji_m210_v1_manual_v14_c0041",
+    "dji_m210_v1_manual_v14_c0033"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S003",
+   "section": "incident:DJI Matrice 210 V1",
+   "origin": "base",
+   "query": "lost link lost control signal lost return to home flyaway Matrice 210 V1 RC signal loss failsafe RTH timer",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link lost control signal lost return to home flyaway Matrice 210 V1 RC signal loss failsafe RTH timer",
+     "returned": 11,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "aaib",
+     "model": "DJI Matrice 210 V1"
+    },
+    {
+     "source_type": "asrs",
+     "model": "DJI Matrice 210 V1"
+    },
+    {
+     "source_type": "forum",
+     "model": "DJI Matrice 210 V1"
+    },
+    {
+     "source_type": "asrs",
+     "model": "DJI Matrice 210"
+    }
+   ],
+   "backend_calls": 4,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "aaib_m210_v1_poole_c0013",
+    "aaib_m210_v1_poole_c0005",
+    "aaib_m210_v1_poole_c0008",
+    "aaib_m210_v1_poole_c0017",
+    "aaib_m210_v1_poole_c0014",
+    "aaib_m210_v1_poole_c0039",
+    "aaib_m210_v1_poole_c0020",
+    "aaib_m210_v1_poole_c0003",
+    "aaib_m210_v1_poole_c0038",
+    "aaib_m210_v1_poole_c0002",
+    "asrs_m210_1918661_c0001"
+   ],
+   "kept_ids": [
+    "aaib_m210_v1_poole_c0013",
+    "aaib_m210_v1_poole_c0005",
+    "aaib_m210_v1_poole_c0008",
+    "aaib_m210_v1_poole_c0017",
+    "aaib_m210_v1_poole_c0014"
+   ],
+   "new_ids": [
+    "aaib_m210_v1_poole_c0013",
+    "aaib_m210_v1_poole_c0005",
+    "aaib_m210_v1_poole_c0008",
+    "aaib_m210_v1_poole_c0017",
+    "aaib_m210_v1_poole_c0014"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S004",
+   "section": "manual:DJI Matrice 210 V1",
+   "origin": "agent",
+   "query": "Signal Lost for Extended Time duration before Failsafe RTH DJI Matrice 210 V1",
+   "alternate_queries": [
+    "RC signal loss duration before RTH",
+    "Signal Lost for Extended Time DJI Matrice 210 V1"
+   ],
+   "phrasing_stats": [
+    {
+     "query": "Signal Lost for Extended Time duration before Failsafe RTH DJI Matrice 210 V1",
+     "returned": 10,
+     "kept": 5,
+     "new": 2
+    },
+    {
+     "query": "RC signal loss duration before RTH",
+     "returned": 10,
+     "kept": 5,
+     "new": 2
+    },
+    {
+     "query": "Signal Lost for Extended Time DJI Matrice 210 V1",
+     "returned": 10,
+     "kept": 1,
+     "new": 0
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "DJI Matrice 210 V1"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "Need the exact duration or condition triggering Failsafe RTH when RC link is lost as described in the manual",
+   "follows_from": null,
+   "returned_ids": [
+    "dji_m210_v1_manual_v14_c0039",
+    "dji_m210_v1_manual_v14_c0037",
+    "dji_m210_v1_manual_v14_c0040",
+    "dji_m210_v1_manual_v14_c0001",
+    "dji_m210_v1_manual_v14_c0032",
+    "dji_m210_v1_manual_v14_c0041",
+    "dji_m210_v1_manual_v14_c0002",
+    "dji_m210_v1_manual_v14_c0034",
+    "dji_m210_v1_manual_v14_c0033",
+    "dji_m210_v1_manual_v14_c0144",
+    "dji_m210_v1_manual_v14_c0149",
+    "dji_m210_v1_manual_v14_c0015",
+    "dji_m210_v1_manual_v14_c0038",
+    "dji_m210_v1_manual_v14_c0157",
+    "dji_m210_v1_manual_v14_c0006",
+    "dji_m210_v1_manual_v14_c0115",
+    "dji_m210_v1_manual_v14_c0134",
+    "dji_m210_v1_manual_v14_c0007",
+    "dji_m210_v1_manual_v14_c0073",
+    "dji_m210_v1_manual_v14_c0094"
+   ],
+   "kept_ids": [
+    "dji_m210_v1_manual_v14_c0039",
+    "dji_m210_v1_manual_v14_c0037",
+    "dji_m210_v1_manual_v14_c0040",
+    "dji_m210_v1_manual_v14_c0032",
+    "dji_m210_v1_manual_v14_c0041"
+   ],
+   "new_ids": [
+    "dji_m210_v1_manual_v14_c0040",
+    "dji_m210_v1_manual_v14_c0032"
+   ],
+   "below_cutoff_ids": [
+    "dji_m210_v1_manual_v14_c0001",
+    "dji_m210_v1_manual_v14_c0002",
+    "dji_m210_v1_manual_v14_c0144",
+    "dji_m210_v1_manual_v14_c0149",
+    "dji_m210_v1_manual_v14_c0015"
+   ],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null,
+   "earned": true
+  },
+  {
+   "search_id": "S005",
+   "section": "manual:DJI Matrice 210 V1",
+   "origin": "agent",
+   "query": "DJI Matrice 210 V1 RC signal loss time before Failsafe RTH starts",
+   "alternate_queries": [
+    "Signal Lost for Extended Time",
+    "Remote Control Signal Lost duration before RTH"
+   ],
+   "phrasing_stats": [
+    {
+     "query": "DJI Matrice 210 V1 RC signal loss time before Failsafe RTH starts",
+     "returned": 10,
+     "kept": 5,
+     "new": 0
+    },
+    {
+     "query": "Signal Lost for Extended Time",
+     "returned": 10,
+     "kept": 2,
+     "new": 0
+    },
+    {
+     "query": "Remote Control Signal Lost duration before RTH",
+     "returned": 10,
+     "kept": 5,
+     "new": 0
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "DJI Matrice 210 V1"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "to find the defined duration before Failsafe RTH engages on Matrice 210 V1",
+   "follows_from": null,
+   "returned_ids": [
+    "dji_m210_v1_manual_v14_c0039",
+    "dji_m210_v1_manual_v14_c0037",
+    "dji_m210_v1_manual_v14_c0040",
+    "dji_m210_v1_manual_v14_c0034",
+    "dji_m210_v1_manual_v14_c0033",
+    "dji_m210_v1_manual_v14_c0032",
+    "dji_m210_v1_manual_v14_c0126",
+    "dji_m210_v1_manual_v14_c0041",
+    "dji_m210_v1_manual_v14_c0084",
+    "dji_m210_v1_manual_v14_c0002",
+    "dji_m210_v1_manual_v14_c0124",
+    "dji_m210_v1_manual_v14_c0153",
+    "dji_m210_v1_manual_v14_c0127",
+    "dji_m210_v1_manual_v14_c0001",
+    "dji_m210_v1_manual_v14_c0094",
+    "dji_m210_v1_manual_v14_c0020",
+    "dji_m210_v1_manual_v14_c0035",
+    "dji_m210_v1_manual_v14_c0042",
+    "dji_m210_v1_manual_v14_c0054",
+    "dji_m210_v1_manual_v14_c0016"
+   ],
+   "kept_ids": [
+    "dji_m210_v1_manual_v14_c0039",
+    "dji_m210_v1_manual_v14_c0037",
+    "dji_m210_v1_manual_v14_c0040",
+    "dji_m210_v1_manual_v14_c0034",
+    "dji_m210_v1_manual_v14_c0033"
+   ],
+   "new_ids": [],
+   "below_cutoff_ids": [
+    "dji_m210_v1_manual_v14_c0126",
+    "dji_m210_v1_manual_v14_c0084",
+    "dji_m210_v1_manual_v14_c0002",
+    "dji_m210_v1_manual_v14_c0124",
+    "dji_m210_v1_manual_v14_c0153"
+   ],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  }
+ ],
+ "decisions": [
+  {
+   "decision_id": "D001",
+   "section": "faa",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "Current FAA passages reference loss-of-control link procedures and general responsibilities but do not provide a complete, step-by-step FAA-guided pilot action sequence after control link loss.",
+   "tool": "finish_assessment",
+   "coverage": "partial",
+   "missing": [
+    "Explicit FAA guidance on piloting after loss of control link (e.g., required steps, timelines, and contingencies)",
+    "Specific actions/pilot responsibilities during and immediately after link loss",
+    "Conditions under which actions such as RTH or continue manual control are mandated",
+    "Any model-agnostic vs. model-specific restrictions (e.g., VLOS requirement during link loss)",
+    "Clear, step-by-step procedures for the pilot during loss of control link as described in FAA order AC 107-2A Appendix and related sections"
+   ],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D002",
+   "section": "manual:DJI Matrice 210 V1",
+   "action": "search",
+   "continue_or_stop": "continue",
+   "reason": "Need the exact duration or condition triggering Failsafe RTH when RC link is lost as described in the manual",
+   "tool": "document_search",
+   "searched_section": "manual:DJI Matrice 210 V1",
+   "query": "Signal Lost for Extended Time duration before Failsafe RTH DJI Matrice 210 V1",
+   "alternate_queries": [
+    "RC signal loss duration before RTH",
+    "Signal Lost for Extended Time DJI Matrice 210 V1"
+   ],
+   "follows_from": null,
+   "search_id": "S004",
+   "new_passages": 2,
+   "below_cutoff": 5,
+   "earned_search": true
+  },
+  {
+   "decision_id": "D003",
+   "section": "manual:DJI Matrice 210 V1",
+   "action": "expand",
+   "continue_or_stop": "continue",
+   "reason": "Need continuation of Failsafe RTH steps to see duration or trigger condition",
+   "tool": "expand_context",
+   "chunk_id": "dji_m210_v1_manual_v14_c0039",
+   "direction": "after",
+   "added_to_section": "manual:DJI Matrice 210 V1",
+   "new_passages": 0
+  },
+  {
+   "decision_id": "D004",
+   "section": "manual:DJI Matrice 210 V1",
+   "action": "finish_insufficient",
+   "continue_or_stop": "stop",
+   "reason": "Manual section lacks a published duration for Signal Lost for Extended Time triggering Failsafe RTH. No conflicts found.",
+   "tool": "finish_assessment",
+   "coverage": "insufficient",
+   "missing": [
+    "Explicit RC signal loss timer value (duration) for Failsafe RTH in Matrice 210 V1 manual"
+   ],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D005",
+   "section": "incident:DJI Matrice 210 V1",
+   "action": "rejected_by_code",
+   "continue_or_stop": "continue",
+   "reason": "alternate_queries: List should have at most 2 items after validation, not 3",
+   "tool": "document_search",
+   "error": "invalid_arguments"
+  },
+  {
+   "decision_id": "D006",
+   "section": "incident:DJI Matrice 210 V1",
+   "action": "search",
+   "continue_or_stop": "continue",
+   "reason": "to find the defined duration before Failsafe RTH engages on Matrice 210 V1",
+   "tool": "document_search",
+   "searched_section": "manual:DJI Matrice 210 V1",
+   "query": "DJI Matrice 210 V1 RC signal loss time before Failsafe RTH starts",
+   "alternate_queries": [
+    "Signal Lost for Extended Time",
+    "Remote Control Signal Lost duration before RTH"
+   ],
+   "follows_from": null,
+   "search_id": "S005",
+   "new_passages": 0,
+   "below_cutoff": 5,
+   "earned_search": false
+  },
+  {
+   "decision_id": "D007",
+   "section": "incident:DJI Matrice 210 V1",
+   "action": "finish_insufficient",
+   "continue_or_stop": "stop",
+   "reason": "Manual excerpt shows sequence but no numeric timer; need full manual to quote duration.",
+   "tool": "finish_assessment",
+   "coverage": "insufficient",
+   "missing": [
+    "Exact RC signal loss duration before RTH starts in Matrice 210 V1 manual."
+   ],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D008",
+   "section": "manual:DJI Matrice 210 V1",
+   "action": "rejected_by_code",
+   "continue_or_stop": "continue",
+   "reason": "agent judged the evidence insufficient, but the section has passages; drafting anyway and letting verification decide",
+   "agent_reason": "Manual section lacks a published duration for Signal Lost for Extended Time triggering Failsafe RTH. No conflicts found."
+  },
+  {
+   "decision_id": "D009",
+   "section": "incident:DJI Matrice 210 V1",
+   "action": "rejected_by_code",
+   "continue_or_stop": "continue",
+   "reason": "agent judged the evidence insufficient, but the section has passages; drafting anyway and letting verification decide",
+   "agent_reason": "Manual excerpt shows sequence but no numeric timer; need full manual to quote duration."
+  },
+  {
+   "decision_id": "D010",
+   "section": "faa",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "Existing wording is already supported by the source; rewrite to a single, concise sentence that mirrors the source verbatim.",
+   "claim_id": "C001",
+   "round": 1,
+   "new_text": "Try to reestablish control link connection with the small unmanned aircraft; if connection cannot be reestablished, start emergency or contingency procedures for loss of control link."
+  },
+  {
+   "decision_id": "D011",
+   "section": "faa",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "Rewrite to a concise, verbatim line from the cited source.",
+   "claim_id": "C002",
+   "round": 1,
+   "new_text": "If the remote PIC cannot regain VLOS, the remote PIC or person manipulating the controls should follow pre-determined procedures for the loss of VLOS."
+  },
+  {
+   "decision_id": "D012",
+   "section": "faa",
+   "action": "to_gap",
+   "continue_or_stop": "stop",
+   "reason": "The passages provide an example but do not supply a complete, standalone description of action for every hazard scenario; this constitutes a gap in supporting the full claim.",
+   "claim_id": "C003",
+   "round": 1
+  },
+  {
+   "decision_id": "D013",
+   "section": "faa",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "Provide a concise verbatim statement from the source as a single sentence.",
+   "claim_id": "C004",
+   "round": 1,
+   "new_text": "The remote PIC may need to land the small unmanned aircraft immediately, enter hover mode, or employ a return-to-home sequence."
+  },
+  {
+   "decision_id": "D014",
+   "section": "faa",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "Use exact source wording in a single sentence.",
+   "claim_id": "C005",
+   "round": 1,
+   "new_text": "The preflight briefing must include control link loss procedures."
+  }
+ ],
+ "assessments": {
+  "faa": {
+   "coverage": "partial",
+   "missing": [
+    "Explicit FAA guidance on piloting after loss of control link (e.g., required steps, timelines, and contingencies)",
+    "Specific actions/pilot responsibilities during and immediately after link loss",
+    "Conditions under which actions such as RTH or continue manual control are mandated",
+    "Any model-agnostic vs. model-specific restrictions (e.g., VLOS requirement during link loss)",
+    "Clear, step-by-step procedures for the pilot during loss of control link as described in FAA order AC 107-2A Appendix and related sections"
+   ],
+   "conflicts_noticed": [],
+   "reason": "Current FAA passages reference loss-of-control link procedures and general responsibilities but do not provide a complete, step-by-step FAA-guided pilot action sequence after control link loss.",
+   "stop_reason": "model_finished",
+   "section": "faa",
+   "turns": 1,
+   "tool_calls": 0,
+   "searches": 0,
+   "searches_allowed": 2
+  },
+  "manual:DJI Matrice 210 V1": {
+   "coverage": "insufficient",
+   "missing": [
+    "Explicit RC signal loss timer value (duration) for Failsafe RTH in Matrice 210 V1 manual"
+   ],
+   "conflicts_noticed": [],
+   "reason": "Manual section lacks a published duration for Signal Lost for Extended Time triggering Failsafe RTH. No conflicts found.",
+   "stop_reason": "model_finished",
+   "section": "manual:DJI Matrice 210 V1",
+   "turns": 4,
+   "tool_calls": 2,
+   "searches": 1,
+   "searches_allowed": 3
+  },
+  "incident:DJI Matrice 210 V1": {
+   "coverage": "insufficient",
+   "missing": [
+    "Exact RC signal loss duration before RTH starts in Matrice 210 V1 manual."
+   ],
+   "conflicts_noticed": [],
+   "reason": "Manual excerpt shows sequence but no numeric timer; need full manual to quote duration.",
+   "stop_reason": "model_finished",
+   "section": "incident:DJI Matrice 210 V1",
+   "turns": 4,
+   "tool_calls": 2,
+   "searches": 1,
+   "searches_allowed": 2
+  }
+ },
+ "gate_results": {
+  "C001": {
+   "claim_id": "C001",
+   "passed": true,
+   "failures": []
+  },
+  "C002": {
+   "claim_id": "C002",
+   "passed": true,
+   "failures": []
+  },
+  "C004": {
+   "claim_id": "C004",
+   "passed": true,
+   "failures": []
+  },
+  "C005": {
+   "claim_id": "C005",
+   "passed": true,
+   "failures": []
+  },
+  "C006": {
+   "claim_id": "C006",
+   "passed": true,
+   "failures": []
+  }
+ },
+ "verifications": {
+  "C001": {
+   "claim_id": "C001",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "Passage A (C0228) states: try to reestablish the control link and, if not reestablished, start emergency/contingency procedures for loss of control link.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0228"
+   ]
+  },
+  "C002": {
+   "claim_id": "C002",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "Passage B (C0049) states: if the remote PIC cannot regain VLOS, follow pre-determined procedures for the loss of VLOS; may include actions like landing, hover, or RTH as appropriate.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0049"
+   ]
+  },
+  "C004": {
+   "claim_id": "C004",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "Passage B (C0049) provides examples: the remote PIC may need to land immediately, enter hover mode, or employ a return-to-home sequence, which matches the claim's listed actions.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0049"
+   ]
+  },
+  "C005": {
+   "claim_id": "C005",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "Passage C (C0227) explicitly states the preflight briefing must include control link loss procedures.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0227"
+   ]
+  },
+  "C006": {
+   "claim_id": "C006",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states: 'Failsafe RTH If the Home Point was successfully recorded and the compass is functioning normally, Failsafe RTH will be automatically activated if the remote controller signal is lost for more than three seconds.' The conditions in the claim (Home Point recorded, compass functioning normally, remote signal lost >3 seconds) are all present in the passage.",
+   "supporting_ids": [
+    "dji_m210_v1_manual_v14_c0037"
+   ]
+  }
+ },
+ "first_draft_results": [
+  {
+   "claim_id": "C001",
+   "passes": false,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C002",
+   "passes": false,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C003",
+   "passes": false,
+   "gate_failures": [
+    "quote_in_source"
+   ],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C004",
+   "passes": false,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C005",
+   "passes": false,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C006",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  }
+ ],
+ "revisions_used": 1,
+ "reopens": 0,
+ "cost": {
+  "model_calls": 21,
+  "tokens_in": 50798,
+  "tokens_out": 16161,
+  "searches": 5,
+  "agent_searches": 2,
+  "agent_tool_calls": 7,
+  "seconds": 145.4
+ },
+ "corpus_snapshot": "4d0e3c83c9425371",
+ "chunks_sha256": "3aff778d5475cd877ed6cef54834cdaa960ccce15ebda1442215c7ca258274c6",
+ "retrieval": "hybrid_rrf",
+ "model": "@30875-fall26-openai/gpt-5-nano",
+ "reasoning_effort": "low",
+ "config": {
+  "mode": "full",
+  "max_revisions": 2,
+  "agent_base_searches_per_section": 2,
+  "agent_max_searches_per_section": 4,
+  "agent_max_tool_calls_per_section": 7,
+  "agent_max_turns_per_section": 8,
+  "agent_results_shown": 10,
+  "agent_max_searches_per_run": 8,
+  "agent_max_turns_per_run": 40,
+  "max_reopens_per_run": 1,
+  "max_searches": 40,
+  "max_model_calls": 120,
+  "top_k": 5,
+  "max_claims_per_section": 5,
+  "max_claim_words": 40,
+  "max_gaps": 6,
+  "max_short_answer_words": 120
+ },
+ "trace_path": "/content/drive/MyDrive/Agentic Unlearning Group/Project 1/processed/traces/20261102T194452-full-068a.jsonl"
+}

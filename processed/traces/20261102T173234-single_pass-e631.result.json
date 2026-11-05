@@ -1,0 +1,365 @@
+{
+ "run_id": "20261102T173234-single_pass-e631",
+ "mode": "single_pass",
+ "question": "How much can the Matrice 30T incident accounts in the collection be trusted?",
+ "status": "completed_with_gaps",
+ "stop_reason": "verified claims; gaps listed",
+ "error": null,
+ "intake": {
+  "intent": "in_scope",
+  "models": [
+   "DJI Matrice 30T"
+  ],
+  "focus": "",
+  "unsupported_named": [],
+  "decided_by": "code (single pass has no intake call)"
+ },
+ "brief": {
+  "short_answer": "Trust in the Matrice 30T incident accounts is mixed. Some ASRS-reported narratives provide explicit detail, suggesting higher credibility, while summary-only entries and especially an unverified forum post reduce overall trust due to limited corroboration and potential bias or confusion in the source. Overall, treat the most detailed, corroborated reports as more credible and exercise caution with unverified or sparse sources.",
+  "sections": [
+   {
+    "section": "faa",
+    "label": "FAA guidance",
+    "status": "no_evidence",
+    "abstain_reason": "no claims in the single-pass brief",
+    "claims": []
+   },
+   {
+    "section": "manual:DJI Matrice 30T",
+    "label": "DJI Matrice 30T manual",
+    "status": "no_evidence",
+    "abstain_reason": "no claims in the single-pass brief",
+    "claims": []
+   },
+   {
+    "section": "incident:DJI Matrice 30T",
+    "label": "DJI Matrice 30T incident reports",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "Some incident accounts come from ASRS with explicit narrative detail, indicating higher credibility than other sources.",
+      "citations": [
+       "asrs_dji_m30t_selected_c0002"
+      ],
+      "quote": "UAS; performing search and rescue training at 200 feet; went into a lost link and returned home within 10 seconds of the glitching screen. UAS RTH at programmed altitude without issue.",
+      "conditions": [
+       "none"
+      ],
+      "assessment": "supported",
+      "claim_id": "C001",
+      "section": "incident:DJI Matrice 30T",
+      "tier": "unverified",
+      "incident_label": "narrative_explicit"
+     },
+     {
+      "text": "Other Matrice 30T incident entries are only summarized, providing less reliable detail for evaluation.",
+      "citations": [
+       "asrs_dji_m30t_selected_c0001",
+       "asrs_dji_m30t_selected_c0003"
+      ],
+      "quote": "After I performed a preflight inspection. I turned on the UAS and the controller. I waited for a few minutes while I obtained a GPS lock. Once the lock was obtained I launched the UAS... I had 0 control and watched the UAS crash into a tree.",
+      "conditions": [
+       "summary_only"
+      ],
+      "assessment": "not_enough_evidence",
+      "claim_id": "C002",
+      "section": "incident:DJI Matrice 30T",
+      "tier": "unverified",
+      "incident_label": "summary_only"
+     },
+     {
+      "text": "An unverified forum post is included, which lacks independent verification or corroboration.",
+      "citations": [
+       "forum_dji_m30t_c0001"
+      ],
+      "quote": "A forum user described an M30T flight flown by a colleague. Without warning the aircraft entered return to home. The pilot could still see the live video but stick inputs had no effect, and the aircraft landed at its home point.",
+      "conditions": [
+       "unverified_forum"
+      ],
+      "assessment": "conflicting",
+      "claim_id": "C003",
+      "section": "incident:DJI Matrice 30T",
+      "tier": "unverified",
+      "incident_label": "unverified_forum"
+     }
+    ]
+   }
+  ],
+  "gaps": [
+   {
+    "kind": "missing",
+    "text": "No cross-source corroboration across all Matrice 30T incident accounts.",
+    "related_claim_ids": [
+     "1",
+     "2",
+     "3"
+    ],
+    "origin": "single_pass"
+   },
+   {
+    "kind": "missing",
+    "text": "Unclear timeframes and operational context for several reports (location, altitude, flight mode).",
+    "related_claim_ids": [
+     "1",
+     "2"
+    ],
+    "origin": "single_pass"
+   },
+   {
+    "kind": "missing",
+    "text": "Lack of independent verification for the forum post.",
+    "related_claim_ids": [
+     "3"
+    ],
+    "origin": "single_pass"
+   },
+   {
+    "kind": "unclear",
+    "text": " whether interference issues (cellular booster) observed in one report affected the incident outcome.",
+    "related_claim_ids": [
+     "1"
+    ],
+    "origin": "single_pass"
+   },
+   {
+    "kind": "unclear",
+    "text": " Whether RTH behavior matched expected performance for the given settings in the reports.",
+    "related_claim_ids": [
+     "1"
+    ],
+    "origin": "single_pass"
+   },
+   {
+    "kind": "missing",
+    "text": "Absence of corroborating flight logs or telemetry for all referred incidents.",
+    "related_claim_ids": [
+     "1",
+     "2",
+     "3"
+    ],
+    "origin": "single_pass"
+   }
+  ],
+  "removed_claims": []
+ },
+ "brief_stats": {
+  "words": 168,
+  "claims": 3,
+  "gaps": 6
+ },
+ "searches": [
+  {
+   "search_id": "S001",
+   "section": "faa",
+   "origin": "base",
+   "query": "lost link loss of control link communication remote pilot contingency procedures",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link loss of control link communication remote pilot contingency procedures",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "faa_guidance"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0062",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0223",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0049",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0269",
+    "faa_ac_107_2a_2022_c0189"
+   ],
+   "kept_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0049"
+   ],
+   "new_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0049"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S002",
+   "section": "manual:DJI Matrice 30T",
+   "origin": "base",
+   "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "DJI Matrice 30T"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "dji_m30t_manual_v22_c0033",
+    "dji_m30t_manual_v22_c0032",
+    "dji_m30t_manual_v22_c0070",
+    "dji_m30t_manual_v22_c0134",
+    "dji_m30t_manual_v22_c0177",
+    "dji_m30t_manual_v22_c0028",
+    "dji_m30t_manual_v22_c0069",
+    "dji_m30t_manual_v22_c0067",
+    "dji_m30t_manual_v22_c0117",
+    "dji_m30t_manual_v22_c0031"
+   ],
+   "kept_ids": [
+    "dji_m30t_manual_v22_c0033",
+    "dji_m30t_manual_v22_c0032",
+    "dji_m30t_manual_v22_c0070",
+    "dji_m30t_manual_v22_c0134",
+    "dji_m30t_manual_v22_c0177"
+   ],
+   "new_ids": [
+    "dji_m30t_manual_v22_c0033",
+    "dji_m30t_manual_v22_c0032",
+    "dji_m30t_manual_v22_c0070",
+    "dji_m30t_manual_v22_c0134",
+    "dji_m30t_manual_v22_c0177"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S003",
+   "section": "incident:DJI Matrice 30T",
+   "origin": "base",
+   "query": "lost link lost control signal lost return to home flyaway",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link lost control signal lost return to home flyaway",
+     "returned": 10,
+     "kept": 4,
+     "new": 4
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "aaib",
+     "model": "DJI Matrice 30T"
+    },
+    {
+     "source_type": "asrs",
+     "model": "DJI Matrice 30T"
+    },
+    {
+     "source_type": "forum",
+     "model": "DJI Matrice 30T"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "aaib_dji_m30t_selected_c0005",
+    "aaib_dji_m30t_selected_c0003",
+    "aaib_dji_m30t_selected_c0002",
+    "aaib_dji_m30t_selected_c0004",
+    "aaib_dji_m30t_selected_c0001",
+    "asrs_dji_m30t_selected_c0002",
+    "asrs_dji_m30t_selected_c0001",
+    "asrs_dji_m30t_selected_c0003",
+    "forum_dji_m30t_c0001",
+    "forum_dji_m30t_c0002"
+   ],
+   "kept_ids": [
+    "asrs_dji_m30t_selected_c0002",
+    "asrs_dji_m30t_selected_c0001",
+    "asrs_dji_m30t_selected_c0003",
+    "forum_dji_m30t_c0001"
+   ],
+   "new_ids": [
+    "asrs_dji_m30t_selected_c0002",
+    "asrs_dji_m30t_selected_c0001",
+    "asrs_dji_m30t_selected_c0003",
+    "forum_dji_m30t_c0001"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  }
+ ],
+ "decisions": [],
+ "assessments": {},
+ "gate_results": {
+  "C001": null,
+  "C002": null,
+  "C003": null
+ },
+ "verifications": {},
+ "first_draft_results": [],
+ "revisions_used": 0,
+ "reopens": 0,
+ "cost": {
+  "model_calls": 1,
+  "tokens_in": 3949,
+  "tokens_out": 1085,
+  "searches": 3,
+  "agent_searches": 0,
+  "agent_tool_calls": 0,
+  "seconds": 10.5
+ },
+ "corpus_snapshot": "4d0e3c83c9425371",
+ "chunks_sha256": "3aff778d5475cd877ed6cef54834cdaa960ccce15ebda1442215c7ca258274c6",
+ "retrieval": "hybrid_rrf",
+ "model": "@30875-fall26-openai/gpt-5-nano",
+ "reasoning_effort": "low",
+ "config": {
+  "mode": "single_pass",
+  "max_revisions": 2,
+  "agent_base_searches_per_section": 2,
+  "agent_max_searches_per_section": 4,
+  "agent_max_tool_calls_per_section": 7,
+  "agent_max_turns_per_section": 8,
+  "agent_results_shown": 10,
+  "agent_max_searches_per_run": 8,
+  "agent_max_turns_per_run": 40,
+  "max_reopens_per_run": 1,
+  "max_searches": 40,
+  "max_model_calls": 120,
+  "top_k": 5,
+  "max_claims_per_section": 5,
+  "max_claim_words": 40,
+  "max_gaps": 6,
+  "max_short_answer_words": 120
+ },
+ "trace_path": "/content/drive/MyDrive/Agentic Unlearning Group/Project 1/processed/traces/20261102T173234-single_pass-e631.jsonl"
+}

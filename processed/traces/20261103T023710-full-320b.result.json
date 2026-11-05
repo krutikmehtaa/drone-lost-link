@@ -1,0 +1,803 @@
+{
+ "run_id": "20261103T023710-full-320b",
+ "mode": "full",
+ "question": "What do ASRS or NTSB incident reports say about DJI Matrice 4T lost-link events?",
+ "status": "human_review_required",
+ "stop_reason": "claims still failing after the revision limit",
+ "error": null,
+ "intake": {
+  "intent": "in_scope",
+  "models": [
+   "DJI Matrice 4T"
+  ],
+  "focus": "lost-link events (DJI Matrice 4T) ASRS/NTSB",
+  "flight_phase": null,
+  "reason": "ASRS or NTSB incident reports about lost-link events and recommended pilot actions.",
+  "decided_by": "model",
+  "unsupported_named": []
+ },
+ "brief": {
+  "short_answer": "FAA guidance: if the control link is lost, attempt to reestablish the link; if unsuccessful, initiate emergency or contingency procedures for loss of control link. FAA guidance (transfer of operational control) states that transfer between certificated remote pilots requires both to maintain Visual Line of Sight without loss of control. Manuals: there is no usable evidence for DJI Matrice 4T in the approved collection. Incident reports: no usable evidence for DJI Matrice 4T incident reports (unverified accounts). Gap/conflict: explicit ASRS/NTSB incident details for DJI Matrice 4T lost-link events to compare with FAA guidance are not available, leaving open questions about step-by-step actions, thresholds, RTH triggers, and durations.",
+  "sections": [
+   {
+    "section": "faa",
+    "label": "FAA guidance",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "When the control link is lost, try to reestablish control link connection with the small unmanned aircraft; if the connection cannot be reestablished, start emergency or contingency procedures for loss of control link.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0228"
+      ],
+      "quote": "Try to reestablish control link connection with the small unmanned aircraft.",
+      "conditions": [
+       "loss of control link",
+       "if connection cannot be reestablished"
+      ],
+      "assessment": "supported_with_conditions",
+      "claim_id": "C001",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "Transfer of operational control between certificated remote pilots is allowed only if both are capable of maintaining Visual Line of Sight of the small unmanned aircraft without loss of control.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0032"
+      ],
+      "quote": "two or more certificated remote pilots transferring operational control (i.e., the remote PIC designation) to each other may do so only if they are both capable of maintaining Visual Line of Sight (VLOS) of the small unmanned aircraft without loss of control.",
+      "conditions": [
+       "transfer of control between remote pilots",
+       "both capable of maintaining VLOS without LOC"
+      ],
+      "assessment": "supported_with_conditions",
+      "claim_id": "C004",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     }
+    ]
+   },
+   {
+    "section": "manual:DJI Matrice 4T",
+    "label": "DJI Matrice 4T manual",
+    "status": "no_evidence",
+    "abstain_reason": "No passages describe ASRS or NTSB incident reports about DJI Matrice 4T lost-link events; available passages cover manufacturer guidance on Failsafe RTH and related behavior but do not include ASRS/NTSB findings.",
+    "claims": []
+   },
+   {
+    "section": "incident:DJI Matrice 4T",
+    "label": "DJI Matrice 4T incident reports",
+    "status": "no_evidence",
+    "abstain_reason": "no passage passed the relevance check",
+    "claims": []
+   }
+  ],
+  "gaps": [
+   {
+    "kind": "missing",
+    "origin": "section_abstained",
+    "related_claim_ids": [],
+    "text": "No usable evidence found in the approved collection for DJI Matrice 4T manual."
+   },
+   {
+    "kind": "missing",
+    "origin": "section_abstained",
+    "related_claim_ids": [],
+    "text": "No usable evidence found in the approved collection for DJI Matrice 4T incident reports."
+   },
+   {
+    "kind": "missing",
+    "origin": "synthesis",
+    "text": "Explicit ASRS/NTSB incident details for DJI Matrice 4T lost-link events to compare with FAA guidance.",
+    "related_claim_ids": [
+     "C001",
+     "C004"
+    ]
+   },
+   {
+    "kind": "missing",
+    "origin": "synthesis",
+    "text": "More explicit step-by-step pilot actions after loss of control link (ordered sequence, thresholds, RTH triggers, landing procedures).",
+    "related_claim_ids": [
+     "C001",
+     "C004"
+    ]
+   },
+   {
+    "kind": "missing",
+    "origin": "synthesis",
+    "text": "Specific durations or decision criteria (time before RTH, altitude constraints).",
+    "related_claim_ids": [
+     "C001",
+     "C004"
+    ]
+   },
+   {
+    "kind": "missing",
+    "origin": "synthesis",
+    "text": "Any required communications/alerts during lost-link events.",
+    "related_claim_ids": [
+     "C001",
+     "C004"
+    ]
+   }
+  ],
+  "removed_claims": [
+   {
+    "text": "AC 107-2A states: 'Discontinue flight and/or avoid further flight operations until further inspection of the control link between the ground control unit and the aircraft' when control inputs are not synchronized or delayed.",
+    "citations": [
+     "faa_ac_107_2a_2022_c0254"
+    ],
+    "quote": "Discontinue flight and/or avoid further flight operations until further inspection of the control link between the ground control unit and the aircraft.",
+    "conditions": [
+     "control inputs not synchronized or delayed"
+    ],
+    "assessment": "supported",
+    "claim_id": "C002",
+    "section": "faa",
+    "tier": "official",
+    "incident_label": null
+   },
+   {
+    "text": "AC 107-2A states: 'Ensure accurate control communications are established and reliable prior to further flight to circumvent possible loss of control resulting in a collision or flyaway' or equivalent wording.",
+    "citations": [
+     "faa_ac_107_2a_2022_c0254"
+    ],
+    "quote": "Ensure accurate control communications are established and reliable prior to further flight to circumvent possible loss of control resulting in a collision or flyaway.",
+    "conditions": [
+     "control communications reliability established"
+    ],
+    "assessment": "supported",
+    "claim_id": "C003",
+    "section": "faa",
+    "tier": "official",
+    "incident_label": null
+   },
+   {
+    "text": "AC 107-2A states: 'Describe the hazard; Describe the 'what might happen?' Example: Loss of control link over people'.",
+    "citations": [
+     "faa_ac_107_2a_2022_c0227"
+    ],
+    "quote": "Describe the hazard; Describe the 'what might happen?' Example: Loss of control link over people",
+    "conditions": [],
+    "assessment": "supported",
+    "claim_id": "C005",
+    "section": "faa",
+    "tier": "official",
+    "incident_label": null
+   }
+  ]
+ },
+ "brief_stats": {
+  "words": 245,
+  "claims": 2,
+  "gaps": 6
+ },
+ "searches": [
+  {
+   "search_id": "S001",
+   "section": "faa",
+   "origin": "base",
+   "query": "lost link loss of control link communication remote pilot contingency procedures lost-link events (DJI Matrice 4T) ASRS/NTSB",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link loss of control link communication remote pilot contingency procedures lost-link events (DJI Matrice 4T) ASRS/NTSB",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "faa_guidance"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0030",
+    "faa_ac_107_2a_2022_c0062",
+    "faa_ac_107_2a_2022_c0223",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0274",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0107",
+    "faa_ac_107_2a_2022_c0032"
+   ],
+   "kept_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0032"
+   ],
+   "new_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0032"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S002",
+   "section": "manual:DJI Matrice 4T",
+   "origin": "base",
+   "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect lost-link events (DJI Matrice 4T) ASRS/NTSB",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect lost-link events (DJI Matrice 4T) ASRS/NTSB",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "DJI Matrice 4T"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "dji_matrice4_manual_v12_c0055",
+    "dji_matrice4_manual_v12_c0065",
+    "dji_matrice4_manual_v12_c0067",
+    "dji_matrice4_manual_v12_c0054",
+    "dji_matrice4_manual_v12_c0164",
+    "dji_matrice4_manual_v12_c0095",
+    "dji_matrice4_manual_v12_c0159",
+    "dji_matrice4_manual_v12_c0099",
+    "dji_matrice4_manual_v12_c0074",
+    "dji_matrice4_manual_v12_c0063"
+   ],
+   "kept_ids": [
+    "dji_matrice4_manual_v12_c0055",
+    "dji_matrice4_manual_v12_c0065",
+    "dji_matrice4_manual_v12_c0067",
+    "dji_matrice4_manual_v12_c0054",
+    "dji_matrice4_manual_v12_c0164"
+   ],
+   "new_ids": [
+    "dji_matrice4_manual_v12_c0055",
+    "dji_matrice4_manual_v12_c0065",
+    "dji_matrice4_manual_v12_c0067",
+    "dji_matrice4_manual_v12_c0054",
+    "dji_matrice4_manual_v12_c0164"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S003",
+   "section": "incident:DJI Matrice 4T",
+   "origin": "base",
+   "query": "lost link lost control signal lost return to home flyaway lost-link events (DJI Matrice 4T) ASRS/NTSB",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link lost control signal lost return to home flyaway lost-link events (DJI Matrice 4T) ASRS/NTSB",
+     "returned": 1,
+     "kept": 0,
+     "new": 0
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "aaib",
+     "model": "DJI Matrice 4T"
+    },
+    {
+     "source_type": "asrs",
+     "model": "DJI Matrice 4T"
+    },
+    {
+     "source_type": "forum",
+     "model": "DJI Matrice 4T"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "asrs_dji_m4t_selected_c0001"
+   ],
+   "kept_ids": [],
+   "new_ids": [],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S004",
+   "section": "manual:DJI Matrice 4T",
+   "origin": "agent",
+   "query": "Signal Lost Action DJI Matrice 4T",
+   "alternate_queries": [
+    "Failsafe RTH",
+    "remote controller signal lost"
+   ],
+   "phrasing_stats": [
+    {
+     "query": "Signal Lost Action DJI Matrice 4T",
+     "returned": 10,
+     "kept": 4,
+     "new": 0
+    },
+    {
+     "query": "Failsafe RTH",
+     "returned": 10,
+     "kept": 4,
+     "new": 1
+    },
+    {
+     "query": "remote controller signal lost",
+     "returned": 10,
+     "kept": 2,
+     "new": 0
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "DJI Matrice 4T"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "to identify exact manual terminology and conditions for lost-link (signal lost) behavior in Matrice 4T manual",
+   "follows_from": null,
+   "returned_ids": [
+    "dji_matrice4_manual_v12_c0055",
+    "dji_matrice4_manual_v12_c0065",
+    "dji_matrice4_manual_v12_c0099",
+    "dji_matrice4_manual_v12_c0095",
+    "dji_matrice4_manual_v12_c0164",
+    "dji_matrice4_manual_v12_c0058",
+    "dji_matrice4_manual_v12_c0067",
+    "dji_matrice4_manual_v12_c0098",
+    "dji_matrice4_manual_v12_c0174",
+    "dji_matrice4_manual_v12_c0057",
+    "dji_matrice4_manual_v12_c0166",
+    "dji_matrice4_manual_v12_c0059",
+    "dji_matrice4_manual_v12_c0075",
+    "dji_matrice4_manual_v12_c0062",
+    "dji_matrice4_manual_v12_c0165",
+    "dji_matrice4_manual_v12_c0054",
+    "dji_matrice4_manual_v12_c0073",
+    "dji_matrice4_manual_v12_c0173",
+    "dji_matrice4_manual_v12_c0008",
+    "dji_matrice4_manual_v12_c0069",
+    "dji_matrice4_manual_v12_c0096",
+    "dji_matrice4_manual_v12_c0163",
+    "dji_matrice4_manual_v12_c0188"
+   ],
+   "kept_ids": [
+    "dji_matrice4_manual_v12_c0055",
+    "dji_matrice4_manual_v12_c0065",
+    "dji_matrice4_manual_v12_c0164",
+    "dji_matrice4_manual_v12_c0058",
+    "dji_matrice4_manual_v12_c0067"
+   ],
+   "new_ids": [
+    "dji_matrice4_manual_v12_c0058"
+   ],
+   "below_cutoff_ids": [
+    "dji_matrice4_manual_v12_c0099",
+    "dji_matrice4_manual_v12_c0095",
+    "dji_matrice4_manual_v12_c0098",
+    "dji_matrice4_manual_v12_c0174",
+    "dji_matrice4_manual_v12_c0057"
+   ],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null,
+   "earned": true
+  },
+  {
+   "search_id": "S005",
+   "section": "incident:DJI Matrice 4T",
+   "origin": "agent",
+   "query": "DJI Matrice 4T lost link incident ASRS NTSB",
+   "alternate_queries": [
+    "Matrice 4T lost remote control link incident ASRS",
+    "DJI Matrice 4T lost-link incident NTSB reports"
+   ],
+   "phrasing_stats": [
+    {
+     "query": "DJI Matrice 4T lost link incident ASRS NTSB",
+     "returned": 1,
+     "kept": 0,
+     "new": 0
+    },
+    {
+     "query": "Matrice 4T lost remote control link incident ASRS",
+     "returned": 1,
+     "kept": 0,
+     "new": 0
+    },
+    {
+     "query": "DJI Matrice 4T lost-link incident NTSB reports",
+     "returned": 1,
+     "kept": 0,
+     "new": 0
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "aaib",
+     "model": "DJI Matrice 4T"
+    },
+    {
+     "source_type": "asrs",
+     "model": "DJI Matrice 4T"
+    },
+    {
+     "source_type": "forum",
+     "model": "DJI Matrice 4T"
+    }
+   ],
+   "backend_calls": 9,
+   "reason": "to find UNVERIFIED incident reports about Matrice 4T lost-link events to compare with manual guidance.",
+   "follows_from": null,
+   "returned_ids": [
+    "asrs_dji_m4t_selected_c0001"
+   ],
+   "kept_ids": [],
+   "new_ids": [],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  }
+ ],
+ "decisions": [
+  {
+   "decision_id": "D001",
+   "section": "faa",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "FAA passages describe pilot actions after loss of control link (reestablish link, then emergency/contingency procedures) but lack detailed step-by-step piloting actions and decision criteria. Finishing assessment as sufficient per current evidence.",
+   "tool": "finish_assessment",
+   "coverage": "sufficient",
+   "missing": [
+    "More explicit step-by-step pilot actions after loss of control link (ordered sequence, thresholds, RTH triggers, landing procedures).",
+    "Specific durations or decision criteria (time before RTH, altitude constraints).",
+    "Any required communications/alerts during lost-link events."
+   ],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D002",
+   "section": "manual:DJI Matrice 4T",
+   "action": "rejected_by_code",
+   "continue_or_stop": "continue",
+   "reason": "alternate_queries: List should have at most 2 items after validation, not 3",
+   "tool": "document_search",
+   "error": "invalid_arguments"
+  },
+  {
+   "decision_id": "D003",
+   "section": "manual:DJI Matrice 4T",
+   "action": "search",
+   "continue_or_stop": "continue",
+   "reason": "to identify exact manual terminology and conditions for lost-link (signal lost) behavior in Matrice 4T manual",
+   "tool": "document_search",
+   "searched_section": "manual:DJI Matrice 4T",
+   "query": "Signal Lost Action DJI Matrice 4T",
+   "alternate_queries": [
+    "Failsafe RTH",
+    "remote controller signal lost"
+   ],
+   "follows_from": null,
+   "search_id": "S004",
+   "new_passages": 1,
+   "below_cutoff": 5,
+   "earned_search": true
+  },
+  {
+   "decision_id": "D004",
+   "section": "manual:DJI Matrice 4T",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "Manual provides explicit lost-link behavior: Failsafe RTH triggered when Signal Lost Action set to RTH; RTH path display and Advanced RTH; notes about GNSS and safety; ATTI mode possibility. Precludes need for incident section for now; incident remains empty.",
+   "tool": "finish_assessment",
+   "coverage": "sufficient",
+   "missing": [],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D005",
+   "section": "incident:DJI Matrice 4T",
+   "action": "rejected_by_code",
+   "continue_or_stop": "continue",
+   "reason": "alternate_queries: List should have at most 2 items after validation, not 3",
+   "tool": "document_search",
+   "error": "invalid_arguments"
+  },
+  {
+   "decision_id": "D006",
+   "section": "incident:DJI Matrice 4T",
+   "action": "search",
+   "continue_or_stop": "continue",
+   "reason": "to find UNVERIFIED incident reports about Matrice 4T lost-link events to compare with manual guidance.",
+   "tool": "document_search",
+   "searched_section": "incident:DJI Matrice 4T",
+   "query": "DJI Matrice 4T lost link incident ASRS NTSB",
+   "alternate_queries": [
+    "Matrice 4T lost remote control link incident ASRS",
+    "DJI Matrice 4T lost-link incident NTSB reports"
+   ],
+   "follows_from": null,
+   "search_id": "S005",
+   "new_passages": 0,
+   "below_cutoff": 0,
+   "earned_search": false
+  },
+  {
+   "decision_id": "D007",
+   "section": "incident:DJI Matrice 4T",
+   "action": "finish_insufficient",
+   "continue_or_stop": "stop",
+   "reason": "No incident reports found in the incident section to compare against the Matrice 4T manual guidance; only related manual passages about RC loss and Failsafe RTH are available.",
+   "tool": "finish_assessment",
+   "coverage": "insufficient",
+   "missing": [
+    "Explicit ASRS/NTSB incident details for DJI Matrice 4T lost-link events (or other verified incident reports) to compare with manual guidance."
+   ],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D008",
+   "section": "faa",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "quote_in_source would not be verbatim; need to restate using exact wording from the source with proper attribution and conditions.",
+   "claim_id": "C002",
+   "round": 1,
+   "new_text": "AC 107-2A states: 'Discontinue flight and/or avoid further flight operations until further inspection of the control link between the ground control unit and the aircraft' when control inputs are not synchronized or delayed."
+  },
+  {
+   "decision_id": "D009",
+   "section": "faa",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "quote_in_source; fix attribution and keep within 40 words.",
+   "claim_id": "C003",
+   "round": 1,
+   "new_text": "AC 107-2A states: 'Ensure accurate control communications are established and reliable prior to further flight to circumvent possible loss of control resulting in a collision or flyaway'."
+  },
+  {
+   "decision_id": "D010",
+   "section": "faa",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "quote_in_source; provide verbatim quote with correct attribution.",
+   "claim_id": "C005",
+   "round": 1,
+   "new_text": "AC 107-2A states: 'Describe the hazard; Describe the 'what might happen?' Example: Loss of control link over people'."
+  },
+  {
+   "decision_id": "D011",
+   "section": "faa",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "quote_in_source",
+   "claim_id": "C002",
+   "round": 2,
+   "new_text": "AC 107-2A states: 'Discontinue flight and/or avoid further flight operations until further inspection of the control link between the ground control unit and the aircraft' when control inputs are not synchronized or delayed."
+  },
+  {
+   "decision_id": "D012",
+   "section": "faa",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "quote_in_source",
+   "claim_id": "C003",
+   "round": 2,
+   "new_text": "AC 107-2A states: 'Ensure accurate control communications are established and reliable prior to further flight to circumvent possible loss of control resulting in a collision or flyaway' or equivalent wording."
+  },
+  {
+   "decision_id": "D013",
+   "section": "faa",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "quote_in_source",
+   "claim_id": "C005",
+   "round": 2,
+   "new_text": "AC 107-2A states: 'Describe the hazard; Describe the 'what might happen?' Example: Loss of control link over people'."
+  },
+  {
+   "decision_id": "D014",
+   "section": "faa",
+   "action": "drop",
+   "continue_or_stop": "stop",
+   "reason": "still failing after 2 revision rounds",
+   "claim_id": "C002",
+   "human_review": true
+  },
+  {
+   "decision_id": "D015",
+   "section": "faa",
+   "action": "drop",
+   "continue_or_stop": "stop",
+   "reason": "still failing after 2 revision rounds",
+   "claim_id": "C003",
+   "human_review": true
+  },
+  {
+   "decision_id": "D016",
+   "section": "faa",
+   "action": "drop",
+   "continue_or_stop": "stop",
+   "reason": "still failing after 2 revision rounds",
+   "claim_id": "C005",
+   "human_review": true
+  }
+ ],
+ "assessments": {
+  "faa": {
+   "coverage": "sufficient",
+   "missing": [
+    "More explicit step-by-step pilot actions after loss of control link (ordered sequence, thresholds, RTH triggers, landing procedures).",
+    "Specific durations or decision criteria (time before RTH, altitude constraints).",
+    "Any required communications/alerts during lost-link events."
+   ],
+   "conflicts_noticed": [],
+   "reason": "FAA passages describe pilot actions after loss of control link (reestablish link, then emergency/contingency procedures) but lack detailed step-by-step piloting actions and decision criteria. Finishing assessment as sufficient per current evidence.",
+   "stop_reason": "model_finished",
+   "section": "faa",
+   "turns": 2,
+   "tool_calls": 0,
+   "searches": 0,
+   "searches_allowed": 2
+  },
+  "manual:DJI Matrice 4T": {
+   "coverage": "sufficient",
+   "missing": [],
+   "conflicts_noticed": [],
+   "reason": "Manual provides explicit lost-link behavior: Failsafe RTH triggered when Signal Lost Action set to RTH; RTH path display and Advanced RTH; notes about GNSS and safety; ATTI mode possibility. Precludes need for incident section for now; incident remains empty.",
+   "stop_reason": "model_finished",
+   "section": "manual:DJI Matrice 4T",
+   "turns": 4,
+   "tool_calls": 2,
+   "searches": 1,
+   "searches_allowed": 3
+  },
+  "incident:DJI Matrice 4T": {
+   "coverage": "insufficient",
+   "missing": [
+    "Explicit ASRS/NTSB incident details for DJI Matrice 4T lost-link events (or other verified incident reports) to compare with manual guidance."
+   ],
+   "conflicts_noticed": [],
+   "reason": "No incident reports found in the incident section to compare against the Matrice 4T manual guidance; only related manual passages about RC loss and Failsafe RTH are available.",
+   "stop_reason": "model_finished",
+   "section": "incident:DJI Matrice 4T",
+   "turns": 4,
+   "tool_calls": 2,
+   "searches": 1,
+   "searches_allowed": 2
+  }
+ },
+ "gate_results": {
+  "C001": {
+   "claim_id": "C001",
+   "passed": true,
+   "failures": []
+  },
+  "C004": {
+   "claim_id": "C004",
+   "passed": true,
+   "failures": []
+  }
+ },
+ "verifications": {
+  "C001": {
+   "claim_id": "C001",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage describes trying to reestablish the control link and, if it cannot be reestablished, starting emergency or contingency procedures for loss of control link, which matches the claim and its condition 'loss of control link' and 'if connection cannot be reestablished'.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0228"
+   ]
+  },
+  "C004": {
+   "claim_id": "C004",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited section allows transfer of control between certificated remote pilots only if both can maintain Visual Line of Sight without loss of control, which directly matches the claim's conditions.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0032"
+   ]
+  }
+ },
+ "first_draft_results": [
+  {
+   "claim_id": "C001",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C002",
+   "passes": false,
+   "gate_failures": [
+    "quote_in_source"
+   ],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C003",
+   "passes": false,
+   "gate_failures": [
+    "quote_in_source"
+   ],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C004",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C005",
+   "passes": false,
+   "gate_failures": [
+    "quote_in_source"
+   ],
+   "verifier": "supported"
+  }
+ ],
+ "revisions_used": 2,
+ "reopens": 0,
+ "cost": {
+  "model_calls": 20,
+  "tokens_in": 39917,
+  "tokens_out": 14575,
+  "searches": 5,
+  "agent_searches": 2,
+  "agent_tool_calls": 7,
+  "seconds": 116.3
+ },
+ "corpus_snapshot": "4d0e3c83c9425371",
+ "chunks_sha256": "3aff778d5475cd877ed6cef54834cdaa960ccce15ebda1442215c7ca258274c6",
+ "retrieval": "hybrid_rrf",
+ "model": "@30875-fall26-openai/gpt-5-nano",
+ "reasoning_effort": "low",
+ "config": {
+  "mode": "full",
+  "max_revisions": 2,
+  "agent_base_searches_per_section": 2,
+  "agent_max_searches_per_section": 4,
+  "agent_max_tool_calls_per_section": 7,
+  "agent_max_turns_per_section": 8,
+  "agent_results_shown": 10,
+  "agent_max_searches_per_run": 8,
+  "agent_max_turns_per_run": 40,
+  "max_reopens_per_run": 1,
+  "max_searches": 40,
+  "max_model_calls": 120,
+  "top_k": 5,
+  "max_claims_per_section": 5,
+  "max_claim_words": 40,
+  "max_gaps": 6,
+  "max_short_answer_words": 120
+ },
+ "trace_path": "/content/drive/MyDrive/Agentic Unlearning Group/Project 1/processed/traces/20261103T023710-full-320b.jsonl"
+}

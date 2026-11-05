@@ -1,0 +1,253 @@
+retriever,id,section,chunk_id,rank,hit@5,hit@10,mrr
+BM25 only,Q01,manual,dji_m30t_manual_v22_c0032,2.0,True,True,0.5
+dense only,Q01,manual,dji_m30t_manual_v22_c0032,9.0,False,True,0.1111111111111111
+hybrid (BM25 + dense),Q01,manual,dji_m30t_manual_v22_c0032,2.0,True,True,0.5
+BM25 only,Q01,manual,dji_m30t_manual_v22_c0033,1.0,True,True,1.0
+dense only,Q01,manual,dji_m30t_manual_v22_c0033,12.0,False,False,0.08333333333333333
+hybrid (BM25 + dense),Q01,manual,dji_m30t_manual_v22_c0033,3.0,True,True,0.3333333333333333
+BM25 only,Q01,manual,dji_m30t_manual_v22_c0067,,False,False,0.0
+dense only,Q01,manual,dji_m30t_manual_v22_c0067,20.0,False,False,0.05
+hybrid (BM25 + dense),Q01,manual,dji_m30t_manual_v22_c0067,,False,False,0.0
+BM25 only,Q02,manual,dji_m30t_manual_v22_c0069,5.0,True,True,0.2
+dense only,Q02,manual,dji_m30t_manual_v22_c0069,,False,False,0.0
+hybrid (BM25 + dense),Q02,manual,dji_m30t_manual_v22_c0069,13.0,False,False,0.07692307692307693
+BM25 only,Q02,manual,dji_m30t_manual_v22_c0070,1.0,True,True,1.0
+dense only,Q02,manual,dji_m30t_manual_v22_c0070,4.0,True,True,0.25
+hybrid (BM25 + dense),Q02,manual,dji_m30t_manual_v22_c0070,1.0,True,True,1.0
+BM25 only,Q03,manual,dji_matrice4_manual_v12_c0055,4.0,True,True,0.25
+dense only,Q03,manual,dji_matrice4_manual_v12_c0055,2.0,True,True,0.5
+hybrid (BM25 + dense),Q03,manual,dji_matrice4_manual_v12_c0055,3.0,True,True,0.3333333333333333
+BM25 only,Q03,manual,dji_matrice4_manual_v12_c0065,2.0,True,True,0.5
+dense only,Q03,manual,dji_matrice4_manual_v12_c0065,3.0,True,True,0.3333333333333333
+hybrid (BM25 + dense),Q03,manual,dji_matrice4_manual_v12_c0065,2.0,True,True,0.5
+BM25 only,Q04,manual,dji_matrice4_manual_v12_c0066,2.0,True,True,0.5
+dense only,Q04,manual,dji_matrice4_manual_v12_c0066,12.0,False,False,0.08333333333333333
+hybrid (BM25 + dense),Q04,manual,dji_matrice4_manual_v12_c0066,4.0,True,True,0.25
+BM25 only,Q04,manual,dji_matrice4_manual_v12_c0068,5.0,True,True,0.2
+dense only,Q04,manual,dji_matrice4_manual_v12_c0068,5.0,True,True,0.2
+hybrid (BM25 + dense),Q04,manual,dji_matrice4_manual_v12_c0068,3.0,True,True,0.3333333333333333
+BM25 only,Q05,manual,autel_evo_max_manual_v130_c0107,5.0,True,True,0.2
+dense only,Q05,manual,autel_evo_max_manual_v130_c0107,2.0,True,True,0.5
+hybrid (BM25 + dense),Q05,manual,autel_evo_max_manual_v130_c0107,1.0,True,True,1.0
+BM25 only,Q05,manual,autel_evo_max_manual_v130_c0118,,False,False,0.0
+dense only,Q05,manual,autel_evo_max_manual_v130_c0118,1.0,True,True,1.0
+hybrid (BM25 + dense),Q05,manual,autel_evo_max_manual_v130_c0118,7.0,False,True,0.14285714285714285
+BM25 only,Q06,manual,autel_evo_max_manual_v130_c0101,10.0,False,True,0.1
+dense only,Q06,manual,autel_evo_max_manual_v130_c0101,9.0,False,True,0.1111111111111111
+hybrid (BM25 + dense),Q06,manual,autel_evo_max_manual_v130_c0101,3.0,True,True,0.3333333333333333
+BM25 only,Q06,manual,autel_evo_max_manual_v130_c0102,,False,False,0.0
+dense only,Q06,manual,autel_evo_max_manual_v130_c0102,,False,False,0.0
+hybrid (BM25 + dense),Q06,manual,autel_evo_max_manual_v130_c0102,,False,False,0.0
+BM25 only,Q06,manual,autel_evo_max_manual_v130_c0052,,False,False,0.0
+dense only,Q06,manual,autel_evo_max_manual_v130_c0052,,False,False,0.0
+hybrid (BM25 + dense),Q06,manual,autel_evo_max_manual_v130_c0052,,False,False,0.0
+BM25 only,Q07,manual,autel_evo_max_manual_v130_c0106,11.0,False,False,0.09090909090909091
+dense only,Q07,manual,autel_evo_max_manual_v130_c0106,7.0,False,True,0.14285714285714285
+hybrid (BM25 + dense),Q07,manual,autel_evo_max_manual_v130_c0106,3.0,True,True,0.3333333333333333
+BM25 only,Q07,manual,autel_evo_max_manual_v130_c0107,9.0,False,True,0.1111111111111111
+dense only,Q07,manual,autel_evo_max_manual_v130_c0107,1.0,True,True,1.0
+hybrid (BM25 + dense),Q07,manual,autel_evo_max_manual_v130_c0107,1.0,True,True,1.0
+BM25 only,Q07,manual,autel_evo_max_manual_v130_c0117,,False,False,0.0
+dense only,Q07,manual,autel_evo_max_manual_v130_c0117,8.0,False,True,0.125
+hybrid (BM25 + dense),Q07,manual,autel_evo_max_manual_v130_c0117,18.0,False,False,0.05555555555555555
+BM25 only,Q07,manual,autel_evo_max_manual_v130_c0118,,False,False,0.0
+dense only,Q07,manual,autel_evo_max_manual_v130_c0118,2.0,True,True,0.5
+hybrid (BM25 + dense),Q07,manual,autel_evo_max_manual_v130_c0118,9.0,False,True,0.1111111111111111
+BM25 only,Q07,incident,asrs_autel_evo_max_4n_selected_c0001,1.0,True,True,1.0
+dense only,Q07,incident,asrs_autel_evo_max_4n_selected_c0001,1.0,True,True,1.0
+hybrid (BM25 + dense),Q07,incident,asrs_autel_evo_max_4n_selected_c0001,1.0,True,True,1.0
+BM25 only,Q08,faa,faa_ac_107_2a_2022_c0035,5.0,True,True,0.2
+dense only,Q08,faa,faa_ac_107_2a_2022_c0035,13.0,False,False,0.07692307692307693
+hybrid (BM25 + dense),Q08,faa,faa_ac_107_2a_2022_c0035,3.0,True,True,0.3333333333333333
+BM25 only,Q08,faa,faa_ac_107_2a_2022_c0062,,False,False,0.0
+dense only,Q08,faa,faa_ac_107_2a_2022_c0062,10.0,False,True,0.1
+hybrid (BM25 + dense),Q08,faa,faa_ac_107_2a_2022_c0062,18.0,False,False,0.05555555555555555
+BM25 only,Q08,faa,faa_ac_107_2a_2022_c0227,1.0,True,True,1.0
+dense only,Q08,faa,faa_ac_107_2a_2022_c0227,5.0,True,True,0.2
+hybrid (BM25 + dense),Q08,faa,faa_ac_107_2a_2022_c0227,2.0,True,True,0.5
+BM25 only,Q08,faa,faa_ac_107_2a_2022_c0228,3.0,True,True,0.3333333333333333
+dense only,Q08,faa,faa_ac_107_2a_2022_c0228,1.0,True,True,1.0
+hybrid (BM25 + dense),Q08,faa,faa_ac_107_2a_2022_c0228,1.0,True,True,1.0
+BM25 only,Q09,manual,dji_m30t_manual_v22_c0032,,False,False,0.0
+dense only,Q09,manual,dji_m30t_manual_v22_c0032,,False,False,0.0
+hybrid (BM25 + dense),Q09,manual,dji_m30t_manual_v22_c0032,,False,False,0.0
+BM25 only,Q09,manual,dji_m30t_manual_v22_c0033,,False,False,0.0
+dense only,Q09,manual,dji_m30t_manual_v22_c0033,,False,False,0.0
+hybrid (BM25 + dense),Q09,manual,dji_m30t_manual_v22_c0033,,False,False,0.0
+BM25 only,Q09,manual,dji_matrice4_manual_v12_c0065,,False,False,0.0
+dense only,Q09,manual,dji_matrice4_manual_v12_c0065,,False,False,0.0
+hybrid (BM25 + dense),Q09,manual,dji_matrice4_manual_v12_c0065,,False,False,0.0
+BM25 only,Q09,manual,autel_evo_max_manual_v130_c0107,,False,False,0.0
+dense only,Q09,manual,autel_evo_max_manual_v130_c0107,15.0,False,False,0.06666666666666667
+hybrid (BM25 + dense),Q09,manual,autel_evo_max_manual_v130_c0107,,False,False,0.0
+BM25 only,Q10,manual,dji_m30t_manual_v22_c0033,14.0,False,False,0.07142857142857142
+dense only,Q10,manual,dji_m30t_manual_v22_c0033,,False,False,0.0
+hybrid (BM25 + dense),Q10,manual,dji_m30t_manual_v22_c0033,,False,False,0.0
+BM25 only,Q10,incident,asrs_dji_m30t_selected_c0002,2.0,True,True,0.5
+dense only,Q10,incident,asrs_dji_m30t_selected_c0002,1.0,True,True,1.0
+hybrid (BM25 + dense),Q10,incident,asrs_dji_m30t_selected_c0002,1.0,True,True,1.0
+BM25 only,Q10,incident,asrs_dji_m30t_selected_c0003,1.0,True,True,1.0
+dense only,Q10,incident,asrs_dji_m30t_selected_c0003,3.0,True,True,0.3333333333333333
+hybrid (BM25 + dense),Q10,incident,asrs_dji_m30t_selected_c0003,2.0,True,True,0.5
+BM25 only,Q10,incident,asrs_dji_m30t_selected_c0001,3.0,True,True,0.3333333333333333
+dense only,Q10,incident,asrs_dji_m30t_selected_c0001,2.0,True,True,0.5
+hybrid (BM25 + dense),Q10,incident,asrs_dji_m30t_selected_c0001,3.0,True,True,0.3333333333333333
+BM25 only,Q14,faa,faa_ac_107_2a_2022_c0035,5.0,True,True,0.2
+dense only,Q14,faa,faa_ac_107_2a_2022_c0035,,False,False,0.0
+hybrid (BM25 + dense),Q14,faa,faa_ac_107_2a_2022_c0035,10.0,False,True,0.1
+BM25 only,Q14,manual,dji_m30t_manual_v22_c0032,2.0,True,True,0.5
+dense only,Q14,manual,dji_m30t_manual_v22_c0032,,False,False,0.0
+hybrid (BM25 + dense),Q14,manual,dji_m30t_manual_v22_c0032,6.0,False,True,0.16666666666666666
+BM25 only,Q14,manual,dji_m30t_manual_v22_c0033,5.0,True,True,0.2
+dense only,Q14,manual,dji_m30t_manual_v22_c0033,,False,False,0.0
+hybrid (BM25 + dense),Q14,manual,dji_m30t_manual_v22_c0033,9.0,False,True,0.1111111111111111
+BM25 only,Q15,manual,autel_evo_max_manual_v130_c0107,9.0,False,True,0.1111111111111111
+dense only,Q15,manual,autel_evo_max_manual_v130_c0107,14.0,False,False,0.07142857142857142
+hybrid (BM25 + dense),Q15,manual,autel_evo_max_manual_v130_c0107,2.0,True,True,0.5
+BM25 only,Q16,manual,dji_m210_v1_manual_v14_c0037,3.0,True,True,0.3333333333333333
+dense only,Q16,manual,dji_m210_v1_manual_v14_c0037,2.0,True,True,0.5
+hybrid (BM25 + dense),Q16,manual,dji_m210_v1_manual_v14_c0037,2.0,True,True,0.5
+BM25 only,Q17,manual,dji_m210_v1_manual_v14_c0038,1.0,True,True,1.0
+dense only,Q17,manual,dji_m210_v1_manual_v14_c0038,2.0,True,True,0.5
+hybrid (BM25 + dense),Q17,manual,dji_m210_v1_manual_v14_c0038,1.0,True,True,1.0
+BM25 only,Q18,manual,dji_m210_v1_manual_v14_c0040,1.0,True,True,1.0
+dense only,Q18,manual,dji_m210_v1_manual_v14_c0040,6.0,False,True,0.16666666666666666
+hybrid (BM25 + dense),Q18,manual,dji_m210_v1_manual_v14_c0040,3.0,True,True,0.3333333333333333
+BM25 only,Q19,manual,dji_m30t_manual_v22_c0069,1.0,True,True,1.0
+dense only,Q19,manual,dji_m30t_manual_v22_c0069,4.0,True,True,0.25
+hybrid (BM25 + dense),Q19,manual,dji_m30t_manual_v22_c0069,2.0,True,True,0.5
+BM25 only,Q20,manual,dji_m30t_manual_v22_c0070,1.0,True,True,1.0
+dense only,Q20,manual,dji_m30t_manual_v22_c0070,1.0,True,True,1.0
+hybrid (BM25 + dense),Q20,manual,dji_m30t_manual_v22_c0070,1.0,True,True,1.0
+BM25 only,Q21,manual,autel_evo_max_manual_v130_c0118,,False,False,0.0
+dense only,Q21,manual,autel_evo_max_manual_v130_c0118,2.0,True,True,0.5
+hybrid (BM25 + dense),Q21,manual,autel_evo_max_manual_v130_c0118,8.0,False,True,0.125
+BM25 only,Q22,manual,autel_evo_max_manual_v130_c0106,7.0,False,True,0.14285714285714285
+dense only,Q22,manual,autel_evo_max_manual_v130_c0106,2.0,True,True,0.5
+hybrid (BM25 + dense),Q22,manual,autel_evo_max_manual_v130_c0106,1.0,True,True,1.0
+BM25 only,Q22,manual,autel_evo_max_manual_v130_c0108,16.0,False,False,0.0625
+dense only,Q22,manual,autel_evo_max_manual_v130_c0108,1.0,True,True,1.0
+hybrid (BM25 + dense),Q22,manual,autel_evo_max_manual_v130_c0108,2.0,True,True,0.5
+BM25 only,Q23,manual,autel_evo_max_manual_v130_c0106,2.0,True,True,0.5
+dense only,Q23,manual,autel_evo_max_manual_v130_c0106,2.0,True,True,0.5
+hybrid (BM25 + dense),Q23,manual,autel_evo_max_manual_v130_c0106,2.0,True,True,0.5
+BM25 only,Q24,manual,dji_matrice4_manual_v12_c0075,15.0,False,False,0.06666666666666667
+dense only,Q24,manual,dji_matrice4_manual_v12_c0075,,False,False,0.0
+hybrid (BM25 + dense),Q24,manual,dji_matrice4_manual_v12_c0075,,False,False,0.0
+BM25 only,Q25,manual,dji_matrice4_manual_v12_c0068,12.0,False,False,0.08333333333333333
+dense only,Q25,manual,dji_matrice4_manual_v12_c0068,3.0,True,True,0.3333333333333333
+hybrid (BM25 + dense),Q25,manual,dji_matrice4_manual_v12_c0068,3.0,True,True,0.3333333333333333
+BM25 only,Q26,faa,faa_ac_107_2a_2022_c0035,1.0,True,True,1.0
+dense only,Q26,faa,faa_ac_107_2a_2022_c0035,1.0,True,True,1.0
+hybrid (BM25 + dense),Q26,faa,faa_ac_107_2a_2022_c0035,1.0,True,True,1.0
+BM25 only,Q26,faa,faa_ac_107_2a_2022_c0036,7.0,False,True,0.14285714285714285
+dense only,Q26,faa,faa_ac_107_2a_2022_c0036,2.0,True,True,0.5
+hybrid (BM25 + dense),Q26,faa,faa_ac_107_2a_2022_c0036,2.0,True,True,0.5
+BM25 only,Q27,faa,faa_ac_107_2a_2022_c0035,1.0,True,True,1.0
+dense only,Q27,faa,faa_ac_107_2a_2022_c0035,3.0,True,True,0.3333333333333333
+hybrid (BM25 + dense),Q27,faa,faa_ac_107_2a_2022_c0035,1.0,True,True,1.0
+BM25 only,Q27,faa,faa_ac_107_2a_2022_c0227,,False,False,0.0
+dense only,Q27,faa,faa_ac_107_2a_2022_c0227,,False,False,0.0
+hybrid (BM25 + dense),Q27,faa,faa_ac_107_2a_2022_c0227,,False,False,0.0
+BM25 only,Q28,manual,dji_m30t_manual_v22_c0033,2.0,True,True,0.5
+dense only,Q28,manual,dji_m30t_manual_v22_c0033,2.0,True,True,0.5
+hybrid (BM25 + dense),Q28,manual,dji_m30t_manual_v22_c0033,1.0,True,True,1.0
+BM25 only,Q28,manual,dji_m210_v1_manual_v14_c0037,7.0,False,True,0.14285714285714285
+dense only,Q28,manual,dji_m210_v1_manual_v14_c0037,2.0,True,True,0.5
+hybrid (BM25 + dense),Q28,manual,dji_m210_v1_manual_v14_c0037,2.0,True,True,0.5
+BM25 only,Q29,manual,dji_m210_v1_manual_v14_c0038,10.0,False,True,0.1
+dense only,Q29,manual,dji_m210_v1_manual_v14_c0038,16.0,False,False,0.0625
+hybrid (BM25 + dense),Q29,manual,dji_m210_v1_manual_v14_c0038,9.0,False,True,0.1111111111111111
+BM25 only,Q29,manual,autel_evo_max_manual_v130_c0106,7.0,False,True,0.14285714285714285
+dense only,Q29,manual,autel_evo_max_manual_v130_c0106,2.0,True,True,0.5
+hybrid (BM25 + dense),Q29,manual,autel_evo_max_manual_v130_c0106,1.0,True,True,1.0
+BM25 only,Q30,manual,dji_m30t_manual_v22_c0031,1.0,True,True,1.0
+dense only,Q30,manual,dji_m30t_manual_v22_c0031,3.0,True,True,0.3333333333333333
+hybrid (BM25 + dense),Q30,manual,dji_m30t_manual_v22_c0031,2.0,True,True,0.5
+BM25 only,Q30,manual,dji_m30t_manual_v22_c0032,,False,False,0.0
+dense only,Q30,manual,dji_m30t_manual_v22_c0032,,False,False,0.0
+hybrid (BM25 + dense),Q30,manual,dji_m30t_manual_v22_c0032,,False,False,0.0
+BM25 only,Q30,manual,dji_matrice4_manual_v12_c0063,1.0,True,True,1.0
+dense only,Q30,manual,dji_matrice4_manual_v12_c0063,8.0,False,True,0.125
+hybrid (BM25 + dense),Q30,manual,dji_matrice4_manual_v12_c0063,3.0,True,True,0.3333333333333333
+BM25 only,Q31,manual,dji_m30t_manual_v22_c0032,,False,False,0.0
+dense only,Q31,manual,dji_m30t_manual_v22_c0032,,False,False,0.0
+hybrid (BM25 + dense),Q31,manual,dji_m30t_manual_v22_c0032,,False,False,0.0
+BM25 only,Q31,manual,dji_m30t_manual_v22_c0033,,False,False,0.0
+dense only,Q31,manual,dji_m30t_manual_v22_c0033,,False,False,0.0
+hybrid (BM25 + dense),Q31,manual,dji_m30t_manual_v22_c0033,,False,False,0.0
+BM25 only,Q31,manual,dji_matrice4_manual_v12_c0065,,False,False,0.0
+dense only,Q31,manual,dji_matrice4_manual_v12_c0065,,False,False,0.0
+hybrid (BM25 + dense),Q31,manual,dji_matrice4_manual_v12_c0065,,False,False,0.0
+BM25 only,Q31,manual,autel_evo_max_manual_v130_c0118,,False,False,0.0
+dense only,Q31,manual,autel_evo_max_manual_v130_c0118,4.0,True,True,0.25
+hybrid (BM25 + dense),Q31,manual,autel_evo_max_manual_v130_c0118,11.0,False,False,0.09090909090909091
+BM25 only,Q31,manual,dji_m210_v1_manual_v14_c0037,,False,False,0.0
+dense only,Q31,manual,dji_m210_v1_manual_v14_c0037,,False,False,0.0
+hybrid (BM25 + dense),Q31,manual,dji_m210_v1_manual_v14_c0037,,False,False,0.0
+BM25 only,Q32,manual,dji_m210_v1_manual_v14_c0037,15.0,False,False,0.06666666666666667
+dense only,Q32,manual,dji_m210_v1_manual_v14_c0037,,False,False,0.0
+hybrid (BM25 + dense),Q32,manual,dji_m210_v1_manual_v14_c0037,,False,False,0.0
+BM25 only,Q32,incident,aaib_m210_v1_poole_c0013,9.0,False,True,0.1111111111111111
+dense only,Q32,incident,aaib_m210_v1_poole_c0013,20.0,False,False,0.05
+hybrid (BM25 + dense),Q32,incident,aaib_m210_v1_poole_c0013,11.0,False,False,0.09090909090909091
+BM25 only,Q33,manual,dji_m30t_manual_v22_c0033,,False,False,0.0
+dense only,Q33,manual,dji_m30t_manual_v22_c0033,,False,False,0.0
+hybrid (BM25 + dense),Q33,manual,dji_m30t_manual_v22_c0033,,False,False,0.0
+BM25 only,Q33,incident,forum_dji_m30t_c0001,1.0,True,True,1.0
+dense only,Q33,incident,forum_dji_m30t_c0001,2.0,True,True,0.5
+hybrid (BM25 + dense),Q33,incident,forum_dji_m30t_c0001,1.0,True,True,1.0
+BM25 only,Q34,incident,asrs_m210_1918661_c0001,1.0,True,True,1.0
+dense only,Q34,incident,asrs_m210_1918661_c0001,1.0,True,True,1.0
+hybrid (BM25 + dense),Q34,incident,asrs_m210_1918661_c0001,1.0,True,True,1.0
+BM25 only,Q35,incident,aaib_m210_v1_poole_c0028,1.0,True,True,1.0
+dense only,Q35,incident,aaib_m210_v1_poole_c0028,1.0,True,True,1.0
+hybrid (BM25 + dense),Q35,incident,aaib_m210_v1_poole_c0028,1.0,True,True,1.0
+BM25 only,Q35,incident,aaib_m210_v1_poole_c0013,,False,False,0.0
+dense only,Q35,incident,aaib_m210_v1_poole_c0013,,False,False,0.0
+hybrid (BM25 + dense),Q35,incident,aaib_m210_v1_poole_c0013,,False,False,0.0
+BM25 only,Q35,incident,aaib_m210_v1_poole_c0039,,False,False,0.0
+dense only,Q35,incident,aaib_m210_v1_poole_c0039,15.0,False,False,0.06666666666666667
+hybrid (BM25 + dense),Q35,incident,aaib_m210_v1_poole_c0039,,False,False,0.0
+BM25 only,Q36,incident,asrs_dji_m30t_selected_c0002,2.0,True,True,0.5
+dense only,Q36,incident,asrs_dji_m30t_selected_c0002,3.0,True,True,0.3333333333333333
+hybrid (BM25 + dense),Q36,incident,asrs_dji_m30t_selected_c0002,3.0,True,True,0.3333333333333333
+BM25 only,Q36,incident,forum_dji_m30t_c0001,2.0,True,True,0.5
+dense only,Q36,incident,forum_dji_m30t_c0001,2.0,True,True,0.5
+hybrid (BM25 + dense),Q36,incident,forum_dji_m30t_c0001,2.0,True,True,0.5
+BM25 only,Q37,manual,autel_evo_max_manual_v130_c0102,,False,False,0.0
+dense only,Q37,manual,autel_evo_max_manual_v130_c0102,,False,False,0.0
+hybrid (BM25 + dense),Q37,manual,autel_evo_max_manual_v130_c0102,,False,False,0.0
+BM25 only,Q37,incident,asrs_autel_evo_max_4n_selected_c0001,1.0,True,True,1.0
+dense only,Q37,incident,asrs_autel_evo_max_4n_selected_c0001,1.0,True,True,1.0
+hybrid (BM25 + dense),Q37,incident,asrs_autel_evo_max_4n_selected_c0001,1.0,True,True,1.0
+BM25 only,Q38,manual,dji_m30t_manual_v22_c0031,2.0,True,True,0.5
+dense only,Q38,manual,dji_m30t_manual_v22_c0031,2.0,True,True,0.5
+hybrid (BM25 + dense),Q38,manual,dji_m30t_manual_v22_c0031,2.0,True,True,0.5
+BM25 only,Q38,manual,dji_m30t_manual_v22_c0032,,False,False,0.0
+dense only,Q38,manual,dji_m30t_manual_v22_c0032,4.0,True,True,0.25
+hybrid (BM25 + dense),Q38,manual,dji_m30t_manual_v22_c0032,8.0,False,True,0.125
+BM25 only,Q45,manual,dji_m30t_manual_v22_c0069,,False,False,0.0
+dense only,Q45,manual,dji_m30t_manual_v22_c0069,,False,False,0.0
+hybrid (BM25 + dense),Q45,manual,dji_m30t_manual_v22_c0069,,False,False,0.0
+BM25 only,Q45,manual,dji_m30t_manual_v22_c0070,,False,False,0.0
+dense only,Q45,manual,dji_m30t_manual_v22_c0070,,False,False,0.0
+hybrid (BM25 + dense),Q45,manual,dji_m30t_manual_v22_c0070,,False,False,0.0
+BM25 only,Q46,manual,dji_matrice4_manual_v12_c0065,4.0,True,True,0.25
+dense only,Q46,manual,dji_matrice4_manual_v12_c0065,,False,False,0.0
+hybrid (BM25 + dense),Q46,manual,dji_matrice4_manual_v12_c0065,11.0,False,False,0.09090909090909091
+BM25 only,Q47,faa,faa_ac_107_2a_2022_c0035,,False,False,0.0
+dense only,Q47,faa,faa_ac_107_2a_2022_c0035,,False,False,0.0
+hybrid (BM25 + dense),Q47,faa,faa_ac_107_2a_2022_c0035,,False,False,0.0
+BM25 only,Q48,manual,dji_m30t_manual_v22_c0032,6.0,False,True,0.16666666666666666
+dense only,Q48,manual,dji_m30t_manual_v22_c0032,,False,False,0.0
+hybrid (BM25 + dense),Q48,manual,dji_m30t_manual_v22_c0032,11.0,False,False,0.09090909090909091
+BM25 only,Q48,manual,dji_m30t_manual_v22_c0033,2.0,True,True,0.5
+dense only,Q48,manual,dji_m30t_manual_v22_c0033,,False,False,0.0
+hybrid (BM25 + dense),Q48,manual,dji_m30t_manual_v22_c0033,6.0,False,True,0.16666666666666666
+BM25 only,Q49,faa,faa_ac_107_2a_2022_c0062,,False,False,0.0
+dense only,Q49,faa,faa_ac_107_2a_2022_c0062,,False,False,0.0
+hybrid (BM25 + dense),Q49,faa,faa_ac_107_2a_2022_c0062,,False,False,0.0
+BM25 only,Q49,manual,dji_m30t_manual_v22_c0067,4.0,True,True,0.25
+dense only,Q49,manual,dji_m30t_manual_v22_c0067,,False,False,0.0
+hybrid (BM25 + dense),Q49,manual,dji_m30t_manual_v22_c0067,11.0,False,False,0.09090909090909091

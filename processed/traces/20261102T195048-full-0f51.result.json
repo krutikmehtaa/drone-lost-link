@@ -1,0 +1,1115 @@
+{
+ "run_id": "20261102T195048-full-0f51",
+ "mode": "full",
+ "question": "Can the Matrice 210 V1 avoid obstacles during Failsafe RTH?",
+ "status": "human_review_required",
+ "stop_reason": "claims still failing after the revision limit",
+ "error": null,
+ "intake": {
+  "intent": "in_scope",
+  "models": [
+   "DJI Matrice 210 V1"
+  ],
+  "focus": "failsafe RTH obstacle avoidance",
+  "flight_phase": null,
+  "reason": "Question about obstacle avoidance behavior during failsafe RTH on DJI Matrice 210 V1; requires guidance from manuals/reports in collection.",
+  "decided_by": "model",
+  "unsupported_named": [
+   "Matrice 210"
+  ]
+ },
+ "brief": {
+  "short_answer": "FAA guidance indicates that when a control link is lost, reestablish the link or execute emergency procedures; if VLOS cannot be regained, follow loss-of-control or loss-of-VLOS procedures, including landing, hovering, or an RTH sequence, and discontinue flight if link reliability is compromised, with preflight briefs covering loss procedures. The Matrice 210 V1 manual states the aircraft cannot avoid obstacles during Failsafe RTH if the Forward Vision System is disabled. Unverified incident reports state that, during loss of communications, the UA would enter Failsafe RTH but could not return home due to wind and limited pitch attitude, with wind at 400 ft sometimes exceeding forecast.",
+  "sections": [
+   {
+    "section": "faa",
+    "label": "FAA guidance",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "When the control link is lost, try to reestablish control link connection with the small unmanned aircraft; if connection cannot be reestablished, start emergency or contingency procedures for loss of control link.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0228"
+      ],
+      "quote": "Try to reestablish control link connection with the small unmanned aircraft.",
+      "conditions": [
+       "loss of control link",
+       "if connection cannot be reestablished"
+      ],
+      "assessment": "supported",
+      "claim_id": "C001",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "If the remote PIC cannot regain VLOS, follow pre-determined procedures for the loss of VLOS.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0049"
+      ],
+      "quote": "If the remote PIC cannot regain VLOS, the remote PIC or person manipulating the controls should follow pre-determined procedures for the loss of VLOS.",
+      "conditions": [
+       "cannot regain VLOS"
+      ],
+      "assessment": "supported",
+      "claim_id": "C002",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "If VLOS is lost, the remote PIC may need to land immediately, enter hover mode, or employ a return-to-home sequence.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0049"
+      ],
+      "quote": "The remote PIC may need to land the small unmanned aircraft immediately, enter hover mode, or employ a return-to-home sequence.",
+      "conditions": [
+       "loss of VLOS",
+       "cannot regain VLOS"
+      ],
+      "assessment": "supported",
+      "claim_id": "C003",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "If control link reliability is compromised, discontinue flight until control link is inspected and tested.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0254"
+      ],
+      "quote": "Discontinue flight and/or avoid further flight operations until further inspection and testing of the control link between the ground control unit and the aircraft.",
+      "conditions": [
+       "compromised control link reliability"
+      ],
+      "assessment": "supported",
+      "claim_id": "C004",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "Preflight briefing must include control link loss procedures.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0227"
+      ],
+      "quote": "The preflight briefing must include control link loss procedures.",
+      "conditions": [
+       "preflight briefing requirement"
+      ],
+      "assessment": "supported",
+      "claim_id": "C005",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     }
+    ]
+   },
+   {
+    "section": "manual:DJI Matrice 210 V1",
+    "label": "DJI Matrice 210 V1 manual",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "The aircraft cannot avoid obstacles during Failsafe RTH if the Forward Vision System is disabled.",
+      "citations": [
+       "dji_m210_v1_manual_v14_c0040"
+      ],
+      "quote": "The aircraft cannot avoid obstacles during Failsafe RTH if the Forward Vision System is disabled.",
+      "conditions": [
+       "Forward Vision System is disabled",
+       "Failsafe RTH in effect"
+      ],
+      "assessment": "supported",
+      "claim_id": "C007",
+      "section": "manual:DJI Matrice 210 V1",
+      "tier": "manufacturer",
+      "incident_label": null
+     }
+    ]
+   },
+   {
+    "section": "incident:DJI Matrice 210 V1",
+    "label": "DJI Matrice 210 V1 incident reports",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "The reporter states: \"When communications are lost the UA would normally enter a \u2018Failsafe RTH\u2019 mode, but it could not return home due to the wind and limited pitch attitude.\",",
+      "citations": [
+       "aaib_m210_v1_poole_c0013"
+      ],
+      "quote": "When communications are lost the UA would normally enter a \u2018Failsafe RTH\u2019 mode, but it could not return home due to the wind and limited pitch attitude.",
+      "conditions": [
+       "The UA would normally enter a Failsafe RTH mode",
+       "wind and limited pitch attitude constrain return"
+      ],
+      "assessment": "supported",
+      "claim_id": "C008",
+      "section": "incident:DJI Matrice 210 V1",
+      "tier": "official",
+      "incident_label": "investigated"
+     },
+     {
+      "text": "The reporter states: \"the UA entered RTH mode, but the UA did not start to move towards the takeoff location because it could not overcome the wind with its limited pitch attitude.\",",
+      "citations": [
+       "aaib_m210_v1_poole_c0013"
+      ],
+      "quote": "the UA entered RTH mode, but the UA did not start to move towards the takeoff location because it could not overcome the wind with its limited pitch attitude.",
+      "conditions": [
+       "RTH mode activated",
+       "could not overcome the wind due to limited pitch attitude"
+      ],
+      "assessment": "supported",
+      "claim_id": "C009",
+      "section": "incident:DJI Matrice 210 V1",
+      "tier": "official",
+      "incident_label": "investigated"
+     },
+     {
+      "text": "The reporter states: \"The wind at 400 ft was stronger than forecast and at times above the UA\u2019s restricted maximum speed so the pilot could not fly it back towards him.\",",
+      "citations": [
+       "aaib_m210_v1_poole_c0039"
+      ],
+      "quote": "The wind at 400 ft was stronger than forecast and at times above the UA\u2019s restricted maximum speed so the pilot could not fly it back towards him.",
+      "conditions": [
+       "Wind limit exceeded",
+       "pilot could not fly back"
+      ],
+      "assessment": "supported",
+      "claim_id": "C010",
+      "section": "incident:DJI Matrice 210 V1",
+      "tier": "official",
+      "incident_label": "investigated"
+     }
+    ]
+   }
+  ],
+  "gaps": [
+   {
+    "kind": "missing",
+    "origin": "intake",
+    "related_claim_ids": [],
+    "text": "Matrice 210 is not in the approved collection, so the brief does not cover it."
+   },
+   {
+    "kind": "missing",
+    "origin": "synthesis",
+    "text": "Explicit step-by-step pilot actions after loss of control link are not described in FAA guidance; e.g., when to initiate RTH, contingency modes, minimum safe altitudes, and landing procedures.",
+    "related_claim_ids": [
+     "C001",
+     "C005",
+     "C004"
+    ]
+   },
+   {
+    "kind": "missing",
+    "origin": "synthesis",
+    "text": "Model-agnostic vs model-specific guidance on how to execute loss-of-link procedures is not clarified in the evidence.",
+    "related_claim_ids": [
+     "C001",
+     "C004",
+     "C005"
+    ]
+   },
+   {
+    "kind": "unclear",
+    "origin": "synthesis",
+    "text": "Whether Matrice 210 V1 can avoid obstacles during Failsafe RTH is unclear from the evidence supplied.",
+    "related_claim_ids": [
+     "C007",
+     "C008"
+    ]
+   }
+  ],
+  "removed_claims": [
+   {
+    "text": "The aircraft can sense and actively attempt to avoid obstacles during RTH, provided that lighting conditions are adequate for the Forward Vision System.",
+    "citations": [
+     "dji_m210_v1_manual_v14_c0034"
+    ],
+    "quote": "The aircraft can sense and actively attempt to avoid obstacles during RTH, provided that lighting conditions are adequate for the Forward Vision System.",
+    "conditions": [
+     "Forward Vision System enabled",
+     "Lighting conditions adequate"
+    ],
+    "assessment": "supported_with_conditions",
+    "claim_id": "C006",
+    "section": "manual:DJI Matrice 210 V1",
+    "tier": "manufacturer",
+    "incident_label": null
+   }
+  ]
+ },
+ "brief_stats": {
+  "words": 377,
+  "claims": 9,
+  "gaps": 4
+ },
+ "searches": [
+  {
+   "search_id": "S001",
+   "section": "faa",
+   "origin": "base",
+   "query": "lost link loss of control link communication remote pilot contingency procedures failsafe RTH obstacle avoidance",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link loss of control link communication remote pilot contingency procedures failsafe RTH obstacle avoidance",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "faa_guidance"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0062",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0223",
+    "faa_ac_107_2a_2022_c0049",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0036",
+    "faa_ac_107_2a_2022_c0269",
+    "faa_ac_107_2a_2022_c0058"
+   ],
+   "kept_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0049",
+    "faa_ac_107_2a_2022_c0254"
+   ],
+   "new_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0049",
+    "faa_ac_107_2a_2022_c0254"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S002",
+   "section": "manual:DJI Matrice 210 V1",
+   "origin": "base",
+   "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect failsafe RTH obstacle avoidance",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect failsafe RTH obstacle avoidance",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "DJI Matrice 210 V1"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "dji_m210_v1_manual_v14_c0039",
+    "dji_m210_v1_manual_v14_c0037",
+    "dji_m210_v1_manual_v14_c0042",
+    "dji_m210_v1_manual_v14_c0034",
+    "dji_m210_v1_manual_v14_c0049",
+    "dji_m210_v1_manual_v14_c0038",
+    "dji_m210_v1_manual_v14_c0041",
+    "dji_m210_v1_manual_v14_c0043",
+    "dji_m210_v1_manual_v14_c0033",
+    "dji_m210_v1_manual_v14_c0032"
+   ],
+   "kept_ids": [
+    "dji_m210_v1_manual_v14_c0039",
+    "dji_m210_v1_manual_v14_c0037",
+    "dji_m210_v1_manual_v14_c0042",
+    "dji_m210_v1_manual_v14_c0034",
+    "dji_m210_v1_manual_v14_c0049"
+   ],
+   "new_ids": [
+    "dji_m210_v1_manual_v14_c0039",
+    "dji_m210_v1_manual_v14_c0037",
+    "dji_m210_v1_manual_v14_c0042",
+    "dji_m210_v1_manual_v14_c0034",
+    "dji_m210_v1_manual_v14_c0049"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S003",
+   "section": "incident:DJI Matrice 210 V1",
+   "origin": "base",
+   "query": "lost link lost control signal lost return to home flyaway failsafe RTH obstacle avoidance",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link lost control signal lost return to home flyaway failsafe RTH obstacle avoidance",
+     "returned": 11,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "aaib",
+     "model": "DJI Matrice 210 V1"
+    },
+    {
+     "source_type": "asrs",
+     "model": "DJI Matrice 210 V1"
+    },
+    {
+     "source_type": "forum",
+     "model": "DJI Matrice 210 V1"
+    },
+    {
+     "source_type": "asrs",
+     "model": "DJI Matrice 210"
+    }
+   ],
+   "backend_calls": 4,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "aaib_m210_v1_poole_c0005",
+    "aaib_m210_v1_poole_c0013",
+    "aaib_m210_v1_poole_c0006",
+    "aaib_m210_v1_poole_c0039",
+    "aaib_m210_v1_poole_c0018",
+    "aaib_m210_v1_poole_c0004",
+    "aaib_m210_v1_poole_c0002",
+    "aaib_m210_v1_poole_c0029",
+    "aaib_m210_v1_poole_c0038",
+    "aaib_m210_v1_poole_c0022",
+    "asrs_m210_1918661_c0001"
+   ],
+   "kept_ids": [
+    "aaib_m210_v1_poole_c0005",
+    "aaib_m210_v1_poole_c0013",
+    "aaib_m210_v1_poole_c0006",
+    "aaib_m210_v1_poole_c0039",
+    "aaib_m210_v1_poole_c0018"
+   ],
+   "new_ids": [
+    "aaib_m210_v1_poole_c0005",
+    "aaib_m210_v1_poole_c0013",
+    "aaib_m210_v1_poole_c0006",
+    "aaib_m210_v1_poole_c0039",
+    "aaib_m210_v1_poole_c0018"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S004",
+   "section": "faa",
+   "origin": "agent",
+   "query": "loss of control link procedures",
+   "alternate_queries": [
+    "emergency procedures for loss of control link"
+   ],
+   "phrasing_stats": [
+    {
+     "query": "loss of control link procedures",
+     "returned": 10,
+     "kept": 5,
+     "new": 0
+    },
+    {
+     "query": "emergency procedures for loss of control link",
+     "returned": 10,
+     "kept": 4,
+     "new": 0
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "faa_guidance"
+    }
+   ],
+   "backend_calls": 2,
+   "reason": "Need explicit, step-by-step FAA pilot actions after loss of control link to complete the FAA section.",
+   "follows_from": null,
+   "returned_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0231",
+    "faa_ac_107_2a_2022_c0049",
+    "faa_ac_107_2a_2022_c0062",
+    "faa_ac_107_2a_2022_c0270",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0233",
+    "faa_ac_107_2a_2022_c0041",
+    "faa_ac_107_2a_2022_c0221",
+    "faa_ac_107_2a_2022_c0240",
+    "faa_ac_107_2a_2022_c0249",
+    "faa_ac_107_2a_2022_c0269"
+   ],
+   "kept_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0049",
+    "faa_ac_107_2a_2022_c0033"
+   ],
+   "new_ids": [],
+   "below_cutoff_ids": [
+    "faa_ac_107_2a_2022_c0231",
+    "faa_ac_107_2a_2022_c0062",
+    "faa_ac_107_2a_2022_c0270",
+    "faa_ac_107_2a_2022_c0233",
+    "faa_ac_107_2a_2022_c0041"
+   ],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S005",
+   "section": "manual:DJI Matrice 210 V1",
+   "origin": "agent",
+   "query": "Failsafe RTH obstacle avoidance Matrice 210 V1",
+   "alternate_queries": [
+    "RTH obstacle avoidance DJI Matrice 210 V1",
+    "obstacle sensing during RTH Matrice 210"
+   ],
+   "phrasing_stats": [
+    {
+     "query": "Failsafe RTH obstacle avoidance Matrice 210 V1",
+     "returned": 10,
+     "kept": 5,
+     "new": 2
+    },
+    {
+     "query": "RTH obstacle avoidance DJI Matrice 210 V1",
+     "returned": 10,
+     "kept": 5,
+     "new": 2
+    },
+    {
+     "query": "obstacle sensing during RTH Matrice 210",
+     "returned": 10,
+     "kept": 5,
+     "new": 2
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "DJI Matrice 210 V1"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "verify manual statements on obstacle avoidance during Failsafe RTH and gather exact wording for citation.",
+   "follows_from": null,
+   "returned_ids": [
+    "dji_m210_v1_manual_v14_c0042",
+    "dji_m210_v1_manual_v14_c0006",
+    "dji_m210_v1_manual_v14_c0033",
+    "dji_m210_v1_manual_v14_c0001",
+    "dji_m210_v1_manual_v14_c0039",
+    "dji_m210_v1_manual_v14_c0049",
+    "dji_m210_v1_manual_v14_c0043",
+    "dji_m210_v1_manual_v14_c0093",
+    "dji_m210_v1_manual_v14_c0029",
+    "dji_m210_v1_manual_v14_c0040",
+    "dji_m210_v1_manual_v14_c0002",
+    "dji_m210_v1_manual_v14_c0026",
+    "dji_m210_v1_manual_v14_c0041",
+    "dji_m210_v1_manual_v14_c0037"
+   ],
+   "kept_ids": [
+    "dji_m210_v1_manual_v14_c0042",
+    "dji_m210_v1_manual_v14_c0006",
+    "dji_m210_v1_manual_v14_c0033",
+    "dji_m210_v1_manual_v14_c0039",
+    "dji_m210_v1_manual_v14_c0049"
+   ],
+   "new_ids": [
+    "dji_m210_v1_manual_v14_c0006",
+    "dji_m210_v1_manual_v14_c0033"
+   ],
+   "below_cutoff_ids": [
+    "dji_m210_v1_manual_v14_c0001",
+    "dji_m210_v1_manual_v14_c0043",
+    "dji_m210_v1_manual_v14_c0093",
+    "dji_m210_v1_manual_v14_c0029",
+    "dji_m210_v1_manual_v14_c0040"
+   ],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null,
+   "earned": true
+  },
+  {
+   "search_id": "S006",
+   "section": "manual:DJI Matrice 210 V1",
+   "origin": "agent",
+   "query": "Matrice 210 V1 obstacle avoidance during RTH failsafe",
+   "alternate_queries": [
+    "DJI Matrice 210 V1 obstacle avoidance RTH",
+    "Signal Lost/Failsafe obstacle avoidance DJI M210 V1"
+   ],
+   "phrasing_stats": [
+    {
+     "query": "Matrice 210 V1 obstacle avoidance during RTH failsafe",
+     "returned": 10,
+     "kept": 5,
+     "new": 2
+    },
+    {
+     "query": "DJI Matrice 210 V1 obstacle avoidance RTH",
+     "returned": 10,
+     "kept": 4,
+     "new": 1
+    },
+    {
+     "query": "Signal Lost/Failsafe obstacle avoidance DJI M210 V1",
+     "returned": 10,
+     "kept": 5,
+     "new": 2
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "DJI Matrice 210 V1"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "Need explicit statement on whether obstacle avoidance is active or used during Failsafe RTH; the incident section asks if it can avoid obstacles during Failsafe RTH.",
+   "follows_from": null,
+   "returned_ids": [
+    "dji_m210_v1_manual_v14_c0042",
+    "dji_m210_v1_manual_v14_c0001",
+    "dji_m210_v1_manual_v14_c0049",
+    "dji_m210_v1_manual_v14_c0039",
+    "dji_m210_v1_manual_v14_c0006",
+    "dji_m210_v1_manual_v14_c0040",
+    "dji_m210_v1_manual_v14_c0033",
+    "dji_m210_v1_manual_v14_c0043",
+    "dji_m210_v1_manual_v14_c0020",
+    "dji_m210_v1_manual_v14_c0002",
+    "dji_m210_v1_manual_v14_c0093",
+    "dji_m210_v1_manual_v14_c0144",
+    "dji_m210_v1_manual_v14_c0009",
+    "dji_m210_v1_manual_v14_c0041",
+    "dji_m210_v1_manual_v14_c0079",
+    "dji_m210_v1_manual_v14_c0029",
+    "dji_m210_v1_manual_v14_c0034",
+    "dji_m210_v1_manual_v14_c0129"
+   ],
+   "kept_ids": [
+    "dji_m210_v1_manual_v14_c0042",
+    "dji_m210_v1_manual_v14_c0001",
+    "dji_m210_v1_manual_v14_c0049",
+    "dji_m210_v1_manual_v14_c0039",
+    "dji_m210_v1_manual_v14_c0040"
+   ],
+   "new_ids": [
+    "dji_m210_v1_manual_v14_c0001",
+    "dji_m210_v1_manual_v14_c0040"
+   ],
+   "below_cutoff_ids": [
+    "dji_m210_v1_manual_v14_c0043",
+    "dji_m210_v1_manual_v14_c0020",
+    "dji_m210_v1_manual_v14_c0002",
+    "dji_m210_v1_manual_v14_c0093",
+    "dji_m210_v1_manual_v14_c0144"
+   ],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null,
+   "earned": true
+  }
+ ],
+ "decisions": [
+  {
+   "decision_id": "D001",
+   "section": "faa",
+   "action": "search",
+   "continue_or_stop": "continue",
+   "reason": "Need explicit, step-by-step FAA pilot actions after loss of control link to complete the FAA section.",
+   "tool": "document_search",
+   "searched_section": "faa",
+   "query": "loss of control link procedures",
+   "alternate_queries": [
+    "emergency procedures for loss of control link"
+   ],
+   "follows_from": null,
+   "search_id": "S004",
+   "new_passages": 0,
+   "below_cutoff": 5,
+   "earned_search": false
+  },
+  {
+   "decision_id": "D002",
+   "section": "faa",
+   "action": "lookup",
+   "continue_or_stop": "continue",
+   "reason": "Need more FAA guidance on explicit pilot actions after loss of control link to determine sufficiency.",
+   "tool": "citation_lookup",
+   "chunk_id": "faa_ac_107_2a_2022_c0228"
+  },
+  {
+   "decision_id": "D003",
+   "section": "faa",
+   "action": "lookup",
+   "continue_or_stop": "continue",
+   "reason": "Related to risk assessment and emergency procedures; may contain higher-level guidance.",
+   "tool": "citation_lookup",
+   "chunk_id": "faa_ac_107_2a_2022_c0227"
+  },
+  {
+   "decision_id": "D004",
+   "section": "faa",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "FAA passages provide high-level guidance to attempt reestablishment and start emergency/contingency procedures but lack concrete, actionable steps for pilots after loss of control link.",
+   "tool": "finish_assessment",
+   "coverage": "partial",
+   "missing": [
+    "Explicit, step-by-step pilot actions after loss of control link (e.g., when to initiate Return-to-Home, commanded actions, minimum safe altitudes, contingency modes, and landing procedures).",
+    "Model-agnostic vs model-specific guidance on how to execute loss-of-link procedures.",
+    "Caveats/conditions modifying actions (weather, airspace, GNSS availability) in the FAA guidance."
+   ],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D005",
+   "section": "manual:DJI Matrice 210 V1",
+   "action": "search",
+   "continue_or_stop": "continue",
+   "reason": "verify manual statements on obstacle avoidance during Failsafe RTH and gather exact wording for citation.",
+   "tool": "document_search",
+   "searched_section": "manual:DJI Matrice 210 V1",
+   "query": "Failsafe RTH obstacle avoidance Matrice 210 V1",
+   "alternate_queries": [
+    "RTH obstacle avoidance DJI Matrice 210 V1",
+    "obstacle sensing during RTH Matrice 210"
+   ],
+   "follows_from": null,
+   "search_id": "S005",
+   "new_passages": 2,
+   "below_cutoff": 5,
+   "earned_search": true
+  },
+  {
+   "decision_id": "D006",
+   "section": "manual:DJI Matrice 210 V1",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "Manual sources contain contradictory statements about obstacle avoidance during Failsafe RTH; needs resolution or citation_lookup for authoritative wording.",
+   "tool": "finish_assessment",
+   "coverage": "partial",
+   "missing": [
+    "Clarify whether obstacle avoidance is available during Failsafe RTH in Matrice 210 V1; one passage says yes (can sense/avoid with Forward Vision System) while another says cannot avoid during Failsafe (c0040)."
+   ],
+   "conflicts_noticed": [
+    "Conflict between c0033 (obstacle avoidance during RTH with Forward Vision System) and c0040 (cannot avoid obstacles during Failsafe)."
+   ]
+  },
+  {
+   "decision_id": "D007",
+   "section": "incident:DJI Matrice 210 V1",
+   "action": "search",
+   "continue_or_stop": "continue",
+   "reason": "Need explicit statement on whether obstacle avoidance is active or used during Failsafe RTH; the incident section asks if it can avoid obstacles during Failsafe RTH.",
+   "tool": "document_search",
+   "searched_section": "manual:DJI Matrice 210 V1",
+   "query": "Matrice 210 V1 obstacle avoidance during RTH failsafe",
+   "alternate_queries": [
+    "DJI Matrice 210 V1 obstacle avoidance RTH",
+    "Signal Lost/Failsafe obstacle avoidance DJI M210 V1"
+   ],
+   "follows_from": null,
+   "search_id": "S006",
+   "new_passages": 2,
+   "below_cutoff": 5,
+   "earned_search": true
+  },
+  {
+   "decision_id": "D008",
+   "section": "incident:DJI Matrice 210 V1",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "Manual provides explicit statement that obstacles cannot be avoided during Failsafe RTH if Forward Vision System is disabled. This directly answers the incident-focused question for the section.",
+   "tool": "finish_assessment",
+   "coverage": "sufficient",
+   "missing": [],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D009",
+   "section": "manual:DJI Matrice 210 V1",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "quote_in_source: minor mismatch between stated condition and explicit requirement in the source; fix by including explicit conditions from the manual",
+   "claim_id": "C006",
+   "round": 1,
+   "new_text": "The aircraft can sense and actively attempt to avoid obstacles during RTH, provided that lighting conditions are adequate for the Forward Vision System."
+  },
+  {
+   "decision_id": "D010",
+   "section": "incident:DJI Matrice 210 V1",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "attributed",
+   "claim_id": "C008",
+   "round": 1,
+   "new_text": "The reporter states: \"When communications are lost the UA would normally enter a \u2018Failsafe RTH\u2019 mode, but it could not return home due to the wind and limited pitch attitude.\","
+  },
+  {
+   "decision_id": "D011",
+   "section": "incident:DJI Matrice 210 V1",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "attributed",
+   "claim_id": "C009",
+   "round": 1,
+   "new_text": "The reporter states: \"the UA entered RTH mode, but the UA did not start to move towards the takeoff location because it could not overcome the wind with its limited pitch attitude.\","
+  },
+  {
+   "decision_id": "D012",
+   "section": "incident:DJI Matrice 210 V1",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "attributed",
+   "claim_id": "C010",
+   "round": 1,
+   "new_text": "The reporter states: \"The wind at 400 ft was stronger than forecast and at times above the UA\u2019s restricted maximum speed so the pilot could not fly it back towards him.\","
+  },
+  {
+   "decision_id": "D013",
+   "section": "manual:DJI Matrice 210 V1",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "quote_in_source",
+   "claim_id": "C006",
+   "round": 2,
+   "new_text": "The aircraft can sense and actively attempt to avoid obstacles during RTH, provided that lighting conditions are adequate for the Forward Vision System."
+  },
+  {
+   "decision_id": "D014",
+   "section": "manual:DJI Matrice 210 V1",
+   "action": "drop",
+   "continue_or_stop": "stop",
+   "reason": "still failing after 2 revision rounds",
+   "claim_id": "C006",
+   "human_review": true
+  },
+  {
+   "decision_id": "D015",
+   "section": "short_answer",
+   "action": "trimmed_by_code",
+   "continue_or_stop": "stop",
+   "reason": "short answer over the limits after one retry"
+  }
+ ],
+ "assessments": {
+  "faa": {
+   "coverage": "partial",
+   "missing": [
+    "Explicit, step-by-step pilot actions after loss of control link (e.g., when to initiate Return-to-Home, commanded actions, minimum safe altitudes, contingency modes, and landing procedures).",
+    "Model-agnostic vs model-specific guidance on how to execute loss-of-link procedures.",
+    "Caveats/conditions modifying actions (weather, airspace, GNSS availability) in the FAA guidance."
+   ],
+   "conflicts_noticed": [],
+   "reason": "FAA passages provide high-level guidance to attempt reestablishment and start emergency/contingency procedures but lack concrete, actionable steps for pilots after loss of control link.",
+   "stop_reason": "model_finished",
+   "section": "faa",
+   "turns": 5,
+   "tool_calls": 3,
+   "searches": 1,
+   "searches_allowed": 2
+  },
+  "manual:DJI Matrice 210 V1": {
+   "coverage": "partial",
+   "missing": [
+    "Clarify whether obstacle avoidance is available during Failsafe RTH in Matrice 210 V1; one passage says yes (can sense/avoid with Forward Vision System) while another says cannot avoid during Failsafe (c0040)."
+   ],
+   "conflicts_noticed": [
+    "Conflict between c0033 (obstacle avoidance during RTH with Forward Vision System) and c0040 (cannot avoid obstacles during Failsafe)."
+   ],
+   "reason": "Manual sources contain contradictory statements about obstacle avoidance during Failsafe RTH; needs resolution or citation_lookup for authoritative wording.",
+   "stop_reason": "model_finished",
+   "section": "manual:DJI Matrice 210 V1",
+   "turns": 3,
+   "tool_calls": 1,
+   "searches": 1,
+   "searches_allowed": 3
+  },
+  "incident:DJI Matrice 210 V1": {
+   "coverage": "sufficient",
+   "missing": [],
+   "conflicts_noticed": [],
+   "reason": "Manual provides explicit statement that obstacles cannot be avoided during Failsafe RTH if Forward Vision System is disabled. This directly answers the incident-focused question for the section.",
+   "stop_reason": "model_finished",
+   "section": "incident:DJI Matrice 210 V1",
+   "turns": 3,
+   "tool_calls": 1,
+   "searches": 1,
+   "searches_allowed": 3
+  }
+ },
+ "gate_results": {
+  "C001": {
+   "claim_id": "C001",
+   "passed": true,
+   "failures": []
+  },
+  "C002": {
+   "claim_id": "C002",
+   "passed": true,
+   "failures": []
+  },
+  "C003": {
+   "claim_id": "C003",
+   "passed": true,
+   "failures": []
+  },
+  "C004": {
+   "claim_id": "C004",
+   "passed": true,
+   "failures": []
+  },
+  "C005": {
+   "claim_id": "C005",
+   "passed": true,
+   "failures": []
+  },
+  "C007": {
+   "claim_id": "C007",
+   "passed": true,
+   "failures": []
+  },
+  "C008": {
+   "claim_id": "C008",
+   "passed": true,
+   "failures": []
+  },
+  "C009": {
+   "claim_id": "C009",
+   "passed": true,
+   "failures": []
+  },
+  "C010": {
+   "claim_id": "C010",
+   "passed": true,
+   "failures": []
+  }
+ },
+ "verifications": {
+  "C001": {
+   "claim_id": "C001",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage instructs to reestablish the control link and, if it cannot be reestablished, to start emergency or contingency procedures for loss of control link.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0228"
+   ]
+  },
+  "C002": {
+   "claim_id": "C002",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states that if the remote PIC cannot regain VLOS, they should follow pre-determined procedures for the loss of VLOS.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0049"
+   ]
+  },
+  "C003": {
+   "claim_id": "C003",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage indicates that when loss of VLOS occurs and cannot be regained, the remote PIC may need to land immediately, enter hover mode, or use a return-to-home sequence.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0049"
+   ]
+  },
+  "C004": {
+   "claim_id": "C004",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage requires discontinuing flight until the control link is inspected and tested when reliability is compromised, matching the claim.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0254"
+   ]
+  },
+  "C005": {
+   "claim_id": "C005",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states that the preflight briefing must include control link loss procedures.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0227"
+   ]
+  },
+  "C007": {
+   "claim_id": "C007",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states that obstacles cannot be avoided during Failsafe RTH when the Forward Vision System is disabled, which matches the claim.",
+   "supporting_ids": [
+    "dji_m210_v1_manual_v14_c0040"
+   ]
+  },
+  "C008": {
+   "claim_id": "C008",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states that when communications are lost the UA would normally enter a 'Failsafe RTH' mode and that it could not return home due to wind and limited pitch attitude, matching the reporter's quoted statement.",
+   "supporting_ids": [
+    "aaib_m210_v1_poole_c0013"
+   ]
+  },
+  "C009": {
+   "claim_id": "C009",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage describes the UA entering RTH mode and not moving toward the takeoff location because it could not overcome the wind with its limited pitch attitude, matching the reporter's statement.",
+   "supporting_ids": [
+    "aaib_m210_v1_poole_c0013"
+   ]
+  },
+  "C010": {
+   "claim_id": "C010",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states the wind at 400 ft was stronger than forecast and at times above the UA\u2019s restricted maximum speed, so the pilot could not fly it back towards him, exactly as claimed.",
+   "supporting_ids": [
+    "aaib_m210_v1_poole_c0039"
+   ]
+  }
+ },
+ "first_draft_results": [
+  {
+   "claim_id": "C001",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C002",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C003",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C004",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C005",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C006",
+   "passes": false,
+   "gate_failures": [
+    "quote_in_source"
+   ],
+   "verifier": "partial"
+  },
+  {
+   "claim_id": "C007",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C008",
+   "passes": false,
+   "gate_failures": [
+    "attributed"
+   ],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C009",
+   "passes": false,
+   "gate_failures": [
+    "attributed"
+   ],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C010",
+   "passes": false,
+   "gate_failures": [
+    "attributed"
+   ],
+   "verifier": "supported"
+  }
+ ],
+ "revisions_used": 2,
+ "reopens": 0,
+ "cost": {
+  "model_calls": 27,
+  "tokens_in": 64931,
+  "tokens_out": 23820,
+  "searches": 6,
+  "agent_searches": 3,
+  "agent_tool_calls": 8,
+  "seconds": 179.3
+ },
+ "corpus_snapshot": "4d0e3c83c9425371",
+ "chunks_sha256": "3aff778d5475cd877ed6cef54834cdaa960ccce15ebda1442215c7ca258274c6",
+ "retrieval": "hybrid_rrf",
+ "model": "@30875-fall26-openai/gpt-5-nano",
+ "reasoning_effort": "low",
+ "config": {
+  "mode": "full",
+  "max_revisions": 2,
+  "agent_base_searches_per_section": 2,
+  "agent_max_searches_per_section": 4,
+  "agent_max_tool_calls_per_section": 7,
+  "agent_max_turns_per_section": 8,
+  "agent_results_shown": 10,
+  "agent_max_searches_per_run": 8,
+  "agent_max_turns_per_run": 40,
+  "max_reopens_per_run": 1,
+  "max_searches": 40,
+  "max_model_calls": 120,
+  "top_k": 5,
+  "max_claims_per_section": 5,
+  "max_claim_words": 40,
+  "max_gaps": 6,
+  "max_short_answer_words": 120
+ },
+ "trace_path": "/content/drive/MyDrive/Agentic Unlearning Group/Project 1/processed/traces/20261102T195048-full-0f51.jsonl"
+}

@@ -1,0 +1,4 @@
+retriever,hit@5,hit@10,mrr,gold passages
+BM25 only,0.476,0.595,0.323,84
+dense only,0.464,0.548,0.284,84
+hybrid (BM25 + dense),0.512,0.619,0.354,84

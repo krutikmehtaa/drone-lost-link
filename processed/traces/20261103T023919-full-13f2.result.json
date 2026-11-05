@@ -1,0 +1,844 @@
+{
+ "run_id": "20261103T023919-full-13f2",
+ "mode": "full",
+ "question": "FAA rules require every drone to land immediately after a lost link. Does the Matrice 30T comply?",
+ "status": "completed_with_gaps",
+ "stop_reason": "verified claims; gaps listed",
+ "error": null,
+ "intake": {
+  "intent": "in_scope",
+  "models": [
+   "DJI Matrice 30T"
+  ],
+  "focus": "loss of control link and failsafe behavior",
+  "flight_phase": null,
+  "reason": "User asks whether Matrice 30T complies with FAA guidance on loss of link and what happens (return to home, hover, land) per manuals and guidance in collection.",
+  "decided_by": "model",
+  "unsupported_named": []
+ },
+ "brief": {
+  "short_answer": "FAA guidance instructs pilots to reestablish the control link and, if it cannot be reestablished, begin emergency or contingency procedures for loss of control link. The Matrice 30T manual allows action to be RTH, land, or hover when signal is lost; it also states that Failsafe RTH activates automatically after more than six seconds if RTH is set. Incident reports (unverified) describe lost-link scenarios with RTH at altitude, back-to-back losses of link with RTH, and attempts to initiate RTH without success. Gap: there is no explicit, verifiable FAA rule text requiring immediate landing after lost link; manuals describe auto-RTH timing, not an immediate landing requirement, and incident claims are unverified.\u201d}{",
+  "sections": [
+   {
+    "section": "faa",
+    "label": "FAA guidance",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "AC 107-2A states: If the control link is lost, try to reestablish the control link connection with the small unmanned aircraft; if the connection cannot be reestablished, start emergency or contingency procedures for loss of control link.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0228"
+      ],
+      "quote": "Try to reestablish control link connection with the small unmanned aircraft. If connection cannot be reestablished, start emergency or contingency procedures for loss of control link.",
+      "conditions": [
+       "control link is lost",
+       "connection cannot be reestablished"
+      ],
+      "assessment": "supported",
+      "claim_id": "C001",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "The Appendix A safety risk example includes: 'Example: Loss of control link over people' to illustrate potential hazard description during risk assessment.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0227"
+      ],
+      "quote": "Example: Loss of control link over people",
+      "conditions": [],
+      "assessment": "supported",
+      "claim_id": "C002",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     }
+    ]
+   },
+   {
+    "section": "manual:DJI Matrice 30T",
+    "label": "DJI Matrice 30T manual",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "The action of the aircraft when the remote controller signal is lost can be set to RTH, land, or hover.",
+      "citations": [
+       "dji_m30t_manual_v22_c0032",
+       "dji_m30t_manual_v22_c0033"
+      ],
+      "quote": "The action of the aircraft when the remote controller signal is lost can be set to RTH, land, or hover.",
+      "conditions": [
+       "Loss of remote controller signal",
+       "Action set to RTH/land/hover"
+      ],
+      "assessment": "supported",
+      "claim_id": "C003",
+      "section": "manual:DJI Matrice 30T",
+      "tier": "manufacturer",
+      "incident_label": null
+     },
+     {
+      "text": "If RTH is selected and the signal is lost, Failsafe RTH automatically activates after the remote controller signal is lost for more than six seconds.",
+      "citations": [
+       "dji_m30t_manual_v22_c0033"
+      ],
+      "quote": "failsafe RTH automatically activates after the remote controller signal is lost for more than six seconds.",
+      "conditions": [
+       "RTH as the selected action",
+       "signal lost more than six seconds"
+      ],
+      "assessment": "supported",
+      "claim_id": "C004",
+      "section": "manual:DJI Matrice 30T",
+      "tier": "manufacturer",
+      "incident_label": null
+     },
+     {
+      "text": "If the signal is lost and RTH is active, the aircraft will remain in RTH even if the remote controller signal is restored.",
+      "citations": [
+       "dji_m30t_manual_v22_c0033"
+      ],
+      "quote": "The aircraft will remain in RTH even if the remote controller signal is restored.",
+      "conditions": [
+       "RTH active",
+       "signal restoration occurs"
+      ],
+      "assessment": "supported",
+      "claim_id": "C005",
+      "section": "manual:DJI Matrice 30T",
+      "tier": "manufacturer",
+      "incident_label": null
+     },
+     {
+      "text": "If RTH is canceled, the Intelligent Battery may not have enough power for the aircraft to land safely, which may lead to the aircraft crashing or being lost.",
+      "citations": [
+       "dji_m30t_manual_v22_c0032"
+      ],
+      "quote": "If RTH is canceled following the warning, the Intelligent Battery may not have enough power for the aircraft to land safely, which may lead to the aircraft crashing or being lost.",
+      "conditions": [
+       "RTH canceled",
+       "insufficient battery power"
+      ],
+      "assessment": "supported",
+      "claim_id": "C006",
+      "section": "manual:DJI Matrice 30T",
+      "tier": "manufacturer",
+      "incident_label": null
+     }
+    ]
+   },
+   {
+    "section": "incident:DJI Matrice 30T",
+    "label": "DJI Matrice 30T incident reports",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "The reporter states: \"went into a lost link and returned home within 10 seconds of the glitching screen,\" indicating a lost link with RTH at programmed altitude without issue.",
+      "citations": [
+       "asrs_dji_m30t_selected_c0002"
+      ],
+      "quote": "went into a lost link and returned home within 10 seconds of the glitching screen.",
+      "conditions": [
+       "lost link",
+       "RTH at programmed altitude without issue"
+      ],
+      "assessment": "supported",
+      "claim_id": "C007",
+      "section": "incident:DJI Matrice 30T",
+      "tier": "unverified",
+      "incident_label": "narrative_explicit"
+     },
+     {
+      "text": "The ASRS reporter says: 'Lost link and RTH occurred twice on back-to-back hops'.",
+      "citations": [
+       "asrs_dji_m30t_selected_c0002"
+      ],
+      "quote": "Lost link and RTH occurred twice on back-to-back hops.",
+      "conditions": [],
+      "assessment": "supported",
+      "claim_id": "C008",
+      "section": "incident:DJI Matrice 30T",
+      "tier": "unverified",
+      "incident_label": "narrative_explicit"
+     },
+     {
+      "text": "The ASRS reporter says: 'I attempted to place the drone into RTH without success; the RTH initiated but did not respond'.",
+      "citations": [
+       "asrs_dji_m30t_selected_c0003"
+      ],
+      "quote": "I attempted to place the drone into RTH without success; the RTH initiated but did not respond",
+      "conditions": [],
+      "assessment": "supported",
+      "claim_id": "C009",
+      "section": "incident:DJI Matrice 30T",
+      "tier": "unverified",
+      "incident_label": "summary_only"
+     }
+    ]
+   }
+  ],
+  "gaps": [
+   {
+    "kind": "conflict",
+    "origin": "synthesis",
+    "text": "FAA guidance says reestablish control; if not, follow emergency procedures. The Matrice 30T manual describes auto RTH after six seconds of lost signal.",
+    "related_claim_ids": [
+     "C001",
+     "C004"
+    ]
+   },
+   {
+    "kind": "conflict",
+    "origin": "synthesis",
+    "text": "Incident reports claim lost link with RTH at altitude; official/manual describe auto RTH after delay, not immediate RTH.",
+    "related_claim_ids": [
+     "C007",
+     "C004"
+    ]
+   },
+   {
+    "kind": "missing",
+    "origin": "synthesis",
+    "text": "Explicit FAA rule text on lost-link landing requirements is not provided in the sources.",
+    "related_claim_ids": [
+     "C001"
+    ]
+   }
+  ],
+  "removed_claims": []
+ },
+ "brief_stats": {
+  "words": 383,
+  "claims": 9,
+  "gaps": 3
+ },
+ "searches": [
+  {
+   "search_id": "S001",
+   "section": "faa",
+   "origin": "base",
+   "query": "lost link loss of control link communication remote pilot contingency procedures loss of control link and failsafe behavior",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link loss of control link communication remote pilot contingency procedures loss of control link and failsafe behavior",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "faa_guidance"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0062",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0223",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0189",
+    "faa_ac_107_2a_2022_c0269",
+    "faa_ac_107_2a_2022_c0233"
+   ],
+   "kept_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0032"
+   ],
+   "new_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0032"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S002",
+   "section": "manual:DJI Matrice 30T",
+   "origin": "base",
+   "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect loss of control link and failsafe behavior",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect loss of control link and failsafe behavior",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "DJI Matrice 30T"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "dji_m30t_manual_v22_c0033",
+    "dji_m30t_manual_v22_c0032",
+    "dji_m30t_manual_v22_c0070",
+    "dji_m30t_manual_v22_c0134",
+    "dji_m30t_manual_v22_c0177",
+    "dji_m30t_manual_v22_c0028",
+    "dji_m30t_manual_v22_c0069",
+    "dji_m30t_manual_v22_c0067",
+    "dji_m30t_manual_v22_c0035",
+    "dji_m30t_manual_v22_c0117"
+   ],
+   "kept_ids": [
+    "dji_m30t_manual_v22_c0033",
+    "dji_m30t_manual_v22_c0032",
+    "dji_m30t_manual_v22_c0070",
+    "dji_m30t_manual_v22_c0134",
+    "dji_m30t_manual_v22_c0177"
+   ],
+   "new_ids": [
+    "dji_m30t_manual_v22_c0033",
+    "dji_m30t_manual_v22_c0032",
+    "dji_m30t_manual_v22_c0070",
+    "dji_m30t_manual_v22_c0134",
+    "dji_m30t_manual_v22_c0177"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S003",
+   "section": "incident:DJI Matrice 30T",
+   "origin": "base",
+   "query": "lost link lost control signal lost return to home flyaway loss of control link and failsafe behavior",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link lost control signal lost return to home flyaway loss of control link and failsafe behavior",
+     "returned": 10,
+     "kept": 4,
+     "new": 4
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "aaib",
+     "model": "DJI Matrice 30T"
+    },
+    {
+     "source_type": "asrs",
+     "model": "DJI Matrice 30T"
+    },
+    {
+     "source_type": "forum",
+     "model": "DJI Matrice 30T"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "aaib_dji_m30t_selected_c0005",
+    "aaib_dji_m30t_selected_c0003",
+    "aaib_dji_m30t_selected_c0002",
+    "aaib_dji_m30t_selected_c0004",
+    "aaib_dji_m30t_selected_c0001",
+    "asrs_dji_m30t_selected_c0002",
+    "asrs_dji_m30t_selected_c0003",
+    "asrs_dji_m30t_selected_c0001",
+    "forum_dji_m30t_c0001",
+    "forum_dji_m30t_c0002"
+   ],
+   "kept_ids": [
+    "asrs_dji_m30t_selected_c0002",
+    "asrs_dji_m30t_selected_c0003",
+    "asrs_dji_m30t_selected_c0001",
+    "forum_dji_m30t_c0001"
+   ],
+   "new_ids": [
+    "asrs_dji_m30t_selected_c0002",
+    "asrs_dji_m30t_selected_c0003",
+    "asrs_dji_m30t_selected_c0001",
+    "forum_dji_m30t_c0001"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S004",
+   "section": "faa",
+   "origin": "agent",
+   "query": "loss of control link guidance pilot actions FAA",
+   "alternate_queries": [
+    "Signal Lost Action FAA",
+    "loss of control link procedures drone FAA"
+   ],
+   "phrasing_stats": [
+    {
+     "query": "loss of control link guidance pilot actions FAA",
+     "returned": 10,
+     "kept": 5,
+     "new": 2
+    },
+    {
+     "query": "Signal Lost Action FAA",
+     "returned": 10,
+     "kept": 1,
+     "new": 1
+    },
+    {
+     "query": "loss of control link procedures drone FAA",
+     "returned": 10,
+     "kept": 5,
+     "new": 2
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "faa_guidance"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "to find explicit post-link-loss pilot actions and contingencies in FAA guidance.",
+   "follows_from": null,
+   "returned_ids": [
+    "faa_ac_107_2a_2022_c0179",
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0181",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0195",
+    "faa_ac_107_2a_2022_c0025",
+    "faa_ac_107_2a_2022_c0180",
+    "faa_ac_107_2a_2022_c0026",
+    "faa_ac_107_2a_2022_c0062",
+    "faa_ac_107_2a_2022_c0032",
+    "faa_ac_107_2a_2022_c0008",
+    "faa_ac_107_2a_2022_c0029",
+    "faa_ac_107_2a_2022_c0064",
+    "faa_ac_107_2a_2022_c0188",
+    "faa_ac_107_2a_2022_c0175",
+    "faa_ac_107_2a_2022_c0190",
+    "faa_ac_107_2a_2022_c0183",
+    "faa_ac_107_2a_2022_c0194",
+    "faa_ac_107_2a_2022_c0020",
+    "faa_ac_107_2a_2022_c0028",
+    "faa_ac_107_2a_2022_c0140"
+   ],
+   "kept_ids": [
+    "faa_ac_107_2a_2022_c0179",
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0025"
+   ],
+   "new_ids": [
+    "faa_ac_107_2a_2022_c0179",
+    "faa_ac_107_2a_2022_c0025"
+   ],
+   "below_cutoff_ids": [
+    "faa_ac_107_2a_2022_c0181",
+    "faa_ac_107_2a_2022_c0195",
+    "faa_ac_107_2a_2022_c0180",
+    "faa_ac_107_2a_2022_c0026",
+    "faa_ac_107_2a_2022_c0062"
+   ],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null,
+   "earned": true
+  }
+ ],
+ "decisions": [
+  {
+   "decision_id": "D001",
+   "section": "faa",
+   "action": "search",
+   "continue_or_stop": "continue",
+   "reason": "to find explicit post-link-loss pilot actions and contingencies in FAA guidance.",
+   "tool": "document_search",
+   "searched_section": "faa",
+   "query": "loss of control link guidance pilot actions FAA",
+   "alternate_queries": [
+    "Signal Lost Action FAA",
+    "loss of control link procedures drone FAA"
+   ],
+   "follows_from": null,
+   "search_id": "S004",
+   "new_passages": 2,
+   "below_cutoff": 5,
+   "earned_search": true
+  },
+  {
+   "decision_id": "D002",
+   "section": "faa",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "FAA passages provide only high-level guidance to reestablish link and start contingency procedures; lacks detailed pilot action steps.",
+   "tool": "finish_assessment",
+   "coverage": "partial",
+   "missing": [
+    "Explicit, step-by-step pilot actions after loss of control link (time/distance thresholds, actions like RTH, hover, land, or maintain position)",
+    "Conditions that trigger/limit contingency procedures (GNSS status, battery, altitude, airspace)",
+    "Any model-specific behavior or automatic actions (auto-RTH, auto-landing) and required communications during contingency"
+   ],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D003",
+   "section": "manual:DJI Matrice 30T",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "Manual describes configurable Signal Lost Action (RTH, land, hover) and conditions for RTH and auto-landing, which suffices to answer how Matrice 30T handles lost-link behavior per its manual.",
+   "tool": "finish_assessment",
+   "coverage": "sufficient",
+   "missing": [
+    "none"
+   ],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D004",
+   "section": "incident:DJI Matrice 30T",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "Based on available incident and manual passages, no explicit FAA mandate to land immediately after loss of control link is present; evidence shows Signal Lost Action options (RTH/land/hover) and examples of RTH use, but cannot confirm FAA compliance without FAA rule text.",
+   "tool": "finish_assessment",
+   "coverage": "partial",
+   "missing": [
+    "explicit FAA rule text within the provided sources; direct FAA guidance on lost-control link landing requirements to compare with DJI manual and incident reports."
+   ],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D005",
+   "section": "faa",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "verbatim quote and proper attribution; include correct conditions; within 40 words",
+   "claim_id": "C001",
+   "round": 1,
+   "new_text": "AC 107-2A states: If the control link is lost, try to reestablish the control link connection with the small unmanned aircraft; if the connection cannot be reestablished, start emergency or contingency procedures for loss of control link."
+  },
+  {
+   "decision_id": "D006",
+   "section": "manual:DJI Matrice 30T",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "The original claim asserts follow-through of chosen action; the manuals only state options, not guaranteed execution.",
+   "claim_id": "C003",
+   "round": 1,
+   "new_text": "The action of the aircraft when the remote controller signal is lost can be set to RTH, land, or hover."
+  },
+  {
+   "decision_id": "D007",
+   "section": "incident:DJI Matrice 30T",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "attributed",
+   "claim_id": "C007",
+   "round": 1,
+   "new_text": "The reporter states that a lost link occurred and the UAS lost link and returned home within 10 seconds of the glitching screen, with RTH at a programmed altitude without issue."
+  },
+  {
+   "decision_id": "D008",
+   "section": "incident:DJI Matrice 30T",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "verbatim quote preserved and properly attributed",
+   "claim_id": "C007",
+   "round": 2,
+   "new_text": "The reporter states: \"went into a lost link and returned home within 10 seconds of the glitching screen,\" indicating a lost link with RTH at programmed altitude without issue."
+  }
+ ],
+ "assessments": {
+  "faa": {
+   "coverage": "partial",
+   "missing": [
+    "Explicit, step-by-step pilot actions after loss of control link (time/distance thresholds, actions like RTH, hover, land, or maintain position)",
+    "Conditions that trigger/limit contingency procedures (GNSS status, battery, altitude, airspace)",
+    "Any model-specific behavior or automatic actions (auto-RTH, auto-landing) and required communications during contingency"
+   ],
+   "conflicts_noticed": [],
+   "reason": "FAA passages provide only high-level guidance to reestablish link and start contingency procedures; lacks detailed pilot action steps.",
+   "stop_reason": "model_finished",
+   "section": "faa",
+   "turns": 3,
+   "tool_calls": 1,
+   "searches": 1,
+   "searches_allowed": 3
+  },
+  "manual:DJI Matrice 30T": {
+   "coverage": "sufficient",
+   "missing": [
+    "none"
+   ],
+   "conflicts_noticed": [],
+   "reason": "Manual describes configurable Signal Lost Action (RTH, land, hover) and conditions for RTH and auto-landing, which suffices to answer how Matrice 30T handles lost-link behavior per its manual.",
+   "stop_reason": "model_finished",
+   "section": "manual:DJI Matrice 30T",
+   "turns": 2,
+   "tool_calls": 0,
+   "searches": 0,
+   "searches_allowed": 2
+  },
+  "incident:DJI Matrice 30T": {
+   "coverage": "partial",
+   "missing": [
+    "explicit FAA rule text within the provided sources; direct FAA guidance on lost-control link landing requirements to compare with DJI manual and incident reports."
+   ],
+   "conflicts_noticed": [],
+   "reason": "Based on available incident and manual passages, no explicit FAA mandate to land immediately after loss of control link is present; evidence shows Signal Lost Action options (RTH/land/hover) and examples of RTH use, but cannot confirm FAA compliance without FAA rule text.",
+   "stop_reason": "model_finished",
+   "section": "incident:DJI Matrice 30T",
+   "turns": 2,
+   "tool_calls": 0,
+   "searches": 0,
+   "searches_allowed": 2
+  }
+ },
+ "gate_results": {
+  "C001": {
+   "claim_id": "C001",
+   "passed": true,
+   "failures": []
+  },
+  "C002": {
+   "claim_id": "C002",
+   "passed": true,
+   "failures": []
+  },
+  "C003": {
+   "claim_id": "C003",
+   "passed": true,
+   "failures": []
+  },
+  "C004": {
+   "claim_id": "C004",
+   "passed": true,
+   "failures": []
+  },
+  "C005": {
+   "claim_id": "C005",
+   "passed": true,
+   "failures": []
+  },
+  "C006": {
+   "claim_id": "C006",
+   "passed": true,
+   "failures": []
+  },
+  "C007": {
+   "claim_id": "C007",
+   "passed": true,
+   "failures": []
+  },
+  "C008": {
+   "claim_id": "C008",
+   "passed": true,
+   "failures": []
+  },
+  "C009": {
+   "claim_id": "C009",
+   "passed": true,
+   "failures": []
+  }
+ },
+ "verifications": {
+  "C001": {
+   "claim_id": "C001",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage describes performing reestablishment of the control link and, if it cannot be reestablished, starting emergency or contingency procedures for loss of control link, which matches the claim's statements and conditions.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0228"
+   ]
+  },
+  "C002": {
+   "claim_id": "C002",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "Appendix A includes the exact phrasing 'Example: Loss of control link over people' as part of the risk assessment example.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0227"
+   ]
+  },
+  "C003": {
+   "claim_id": "C003",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The passages state that the action when the remote controller signal is lost can be set to RTH, land, or hover in the Signal Lost Action settings.",
+   "supporting_ids": [
+    "dji_m30t_manual_v22_c0032",
+    "dji_m30t_manual_v22_c0033"
+   ]
+  },
+  "C004": {
+   "claim_id": "C004",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The manual states that if RTH is selected and the signal is lost, Failsafe RTH automatically activates after more than six seconds.",
+   "supporting_ids": [
+    "dji_m30t_manual_v22_c0033"
+   ]
+  },
+  "C005": {
+   "claim_id": "C005",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The manual states that the aircraft will remain in RTH even if the remote controller signal is restored.",
+   "supporting_ids": [
+    "dji_m30t_manual_v22_c0033"
+   ]
+  },
+  "C006": {
+   "claim_id": "C006",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The manual states that if RTH is canceled, the Intelligent Battery may not have enough power for the aircraft to land safely, which may lead to crashing or being lost.",
+   "supporting_ids": [
+    "dji_m30t_manual_v22_c0032"
+   ]
+  },
+  "C007": {
+   "claim_id": "C007",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states the UAS went into a lost link and returned home within 10 seconds of the glitching screen and that RTH occurred at the programmed altitude without issue, matching the claim's conditions.",
+   "supporting_ids": [
+    "asrs_dji_m30t_selected_c0002"
+   ]
+  },
+  "C008": {
+   "claim_id": "C008",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage includes the exact line that the ASRS reporter states: 'Lost link and RTH occurred twice on back-to-back hops'.",
+   "supporting_ids": [
+    "asrs_dji_m30t_selected_c0002"
+   ]
+  },
+  "C009": {
+   "claim_id": "C009",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage describes attempting to place the drone into RTH without success; the RTH initiated but did not respond, matching the claim.",
+   "supporting_ids": [
+    "asrs_dji_m30t_selected_c0003"
+   ]
+  }
+ },
+ "first_draft_results": [
+  {
+   "claim_id": "C001",
+   "passes": false,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C002",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C003",
+   "passes": false,
+   "gate_failures": [],
+   "verifier": "partial"
+  },
+  {
+   "claim_id": "C004",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C005",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C006",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C007",
+   "passes": false,
+   "gate_failures": [
+    "attributed"
+   ],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C008",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C009",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  }
+ ],
+ "revisions_used": 2,
+ "reopens": 0,
+ "cost": {
+  "model_calls": 24,
+  "tokens_in": 44100,
+  "tokens_out": 22757,
+  "searches": 4,
+  "agent_searches": 1,
+  "agent_tool_calls": 4,
+  "seconds": 164.9
+ },
+ "corpus_snapshot": "4d0e3c83c9425371",
+ "chunks_sha256": "3aff778d5475cd877ed6cef54834cdaa960ccce15ebda1442215c7ca258274c6",
+ "retrieval": "hybrid_rrf",
+ "model": "@30875-fall26-openai/gpt-5-nano",
+ "reasoning_effort": "low",
+ "config": {
+  "mode": "full",
+  "max_revisions": 2,
+  "agent_base_searches_per_section": 2,
+  "agent_max_searches_per_section": 4,
+  "agent_max_tool_calls_per_section": 7,
+  "agent_max_turns_per_section": 8,
+  "agent_results_shown": 10,
+  "agent_max_searches_per_run": 8,
+  "agent_max_turns_per_run": 40,
+  "max_reopens_per_run": 1,
+  "max_searches": 40,
+  "max_model_calls": 120,
+  "top_k": 5,
+  "max_claims_per_section": 5,
+  "max_claim_words": 40,
+  "max_gaps": 6,
+  "max_short_answer_words": 120
+ },
+ "trace_path": "/content/drive/MyDrive/Agentic Unlearning Group/Project 1/processed/traces/20261103T023919-full-13f2.jsonl"
+}

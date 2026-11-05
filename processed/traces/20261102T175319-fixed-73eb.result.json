@@ -1,0 +1,610 @@
+{
+ "run_id": "20261102T175319-fixed-73eb",
+ "mode": "fixed",
+ "question": "How does the Autel EVO Max 4N choose its altitude when it returns home?",
+ "status": "human_review_required",
+ "stop_reason": "claims still failing after the revision limit",
+ "error": null,
+ "intake": {
+  "intent": "in_scope",
+  "models": [
+   "Autel EVO Max 4N"
+  ],
+  "focus": "RTH altitude selection",
+  "flight_phase": null,
+  "reason": "Question asks how the Autel EVO Max 4N chooses its altitude during return-to-home, which is covered in manuals/guidance for that model.",
+  "decided_by": "model",
+  "unsupported_named": []
+ },
+ "brief": {
+  "short_answer": "FAA guidance emphasizes reestablishing the control link and, if unavailable, initiating emergency/contingency procedures, with a mandate that the remote PIC can change routing or altitude during automated flight. The Autel EVO Max 4N manual claims: if horizontal distance \u2264 10 m, return at current altitude; if 10\u201325 m, ascend to 20 m before returning (if already below 20 m). Incident reports provide no usable evidence from the approved collection. The main gap is a conflict: FAA guidance on changing routing/altitude contrasts with the manual\u2019s return-at-current-altitude rule within 10 m, and there is no verified evidence for altitudes when returning from distances >25 m; interaction with loss-of-control guidance remains unclear.",
+  "sections": [
+   {
+    "section": "faa",
+    "label": "FAA guidance",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "FAA AC 107-2A states: \"Try to reestablish control link connection with the small unmanned aircraft.\"",
+      "citations": [
+       "faa_ac_107_2a_2022_c0228"
+      ],
+      "quote": "Try to reestablish control link connection with the small unmanned aircraft.",
+      "conditions": [],
+      "assessment": "supported",
+      "claim_id": "C001",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "FAA AC 107-2A states: \"If connection cannot be reestablished, start emergency or contingency procedures for loss of control link.\"",
+      "citations": [
+       "faa_ac_107_2a_2022_c0228"
+      ],
+      "quote": "If connection cannot be reestablished, start emergency or contingency procedures for loss of control link.",
+      "conditions": [],
+      "assessment": "supported",
+      "claim_id": "C002",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "FAA Appendix A notes: \"Example: Loss of control link over people.\"",
+      "citations": [
+       "faa_ac_107_2a_2022_c0227"
+      ],
+      "quote": "Example: Loss of control link over people",
+      "conditions": [],
+      "assessment": "supported",
+      "claim_id": "C003",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "FAA AC 107-2A states: \"During automated flight, the remote PIC must have the ability to change routing/altitude or command the aircraft to land immediately.\"",
+      "citations": [
+       "faa_ac_107_2a_2022_c0036"
+      ],
+      "quote": "During automated flight, the remote PIC must have the ability to change routing/altitude or command the aircraft to land immediately.",
+      "conditions": [],
+      "assessment": "supported",
+      "claim_id": "C005",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     }
+    ]
+   },
+   {
+    "section": "manual:Autel EVO Max 4N",
+    "label": "Autel EVO Max 4N manual",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "If Horizontal Distance \u2264 10 m, the drone returns at its current flight altitude.",
+      "citations": [
+       "autel_evo_max_manual_v130_c0106"
+      ],
+      "quote": "The drone returns at its current flight altitude.",
+      "conditions": [
+       "Horizontal Distance \u2264 10 m"
+      ],
+      "assessment": "supported",
+      "claim_id": "C006",
+      "section": "manual:Autel EVO Max 4N",
+      "tier": "manufacturer",
+      "incident_label": null
+     },
+     {
+      "text": "For 10 < Distance \u2264 25 m, if the current flight altitude is below 20 m, the drone will ascend to 20 m before returning.",
+      "citations": [
+       "autel_evo_max_manual_v130_c0106"
+      ],
+      "quote": "If the current flight altitude is below 20 m, the drone will ascend to 20 m before returning.",
+      "conditions": [
+       "10 < Distance \u2264 25 m",
+       "current flight altitude < 20 m"
+      ],
+      "assessment": "supported",
+      "claim_id": "C007",
+      "section": "manual:Autel EVO Max 4N",
+      "tier": "manufacturer",
+      "incident_label": null
+     }
+    ]
+   },
+   {
+    "section": "incident:Autel EVO Max 4N",
+    "label": "Autel EVO Max 4N incident reports",
+    "status": "no_evidence",
+    "abstain_reason": "No passage describes how RTH altitude is chosen; the provided ASRS summary_only record states loss of control and failed RTH but does not specify altitude selection.",
+    "claims": []
+   }
+  ],
+  "gaps": [
+   {
+    "kind": "conflict",
+    "origin": "synthesis",
+    "text": "FAA guidance requires the ability to change routing/altitude during automated flight, conflicting with the Autel manual which returns at current altitude if within 10 m horizontal distance.",
+    "related_claim_ids": [
+     "C005",
+     "C006"
+    ]
+   },
+   {
+    "kind": "missing",
+    "origin": "section_abstained",
+    "related_claim_ids": [],
+    "text": "No usable evidence found in the approved collection for Autel EVO Max 4N incident reports."
+   },
+   {
+    "kind": "missing",
+    "origin": "synthesis",
+    "text": "No verified evidence on the altitude behavior when the drone returns from distances greater than 25 m.",
+    "related_claim_ids": []
+   },
+   {
+    "kind": "unclear",
+    "origin": "synthesis",
+    "text": "Unclear how altitude during return home interacts with scenarios described in loss-of-control guidance.",
+    "related_claim_ids": [
+     "C003",
+     "C005"
+    ]
+   }
+  ],
+  "removed_claims": [
+   {
+    "text": "AC 107-2A states: 'The remote PIC must retain the ability to direct the small unmanned aircraft'.",
+    "citations": [
+     "faa_ac_107_2a_2022_c0036"
+    ],
+    "quote": "The remote PIC must retain the ability to direct the small unmanned aircraft",
+    "conditions": [],
+    "assessment": "supported",
+    "claim_id": "C004",
+    "section": "faa",
+    "tier": "official",
+    "incident_label": null
+   },
+   {
+    "text": "For 10 < Distance \u2264 25 m, if the current altitude is above 20 m, the drone will return at the current altitude.",
+    "citations": [
+     "autel_evo_max_manual_v130_c0106"
+    ],
+    "quote": "If the current altitude is above 20 m, it will return at the current altitude.",
+    "conditions": [
+     "10 < Distance \u2264 25 m",
+     "current altitude > 20 m"
+    ],
+    "assessment": "supported_with_conditions",
+    "claim_id": "C008",
+    "section": "manual:Autel EVO Max 4N",
+    "tier": "manufacturer",
+    "incident_label": null
+   }
+  ]
+ },
+ "brief_stats": {
+  "words": 289,
+  "claims": 6,
+  "gaps": 4
+ },
+ "searches": [
+  {
+   "search_id": "S001",
+   "section": "faa",
+   "origin": "base",
+   "query": "lost link loss of control link communication remote pilot contingency procedures RTH altitude selection",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link loss of control link communication remote pilot contingency procedures RTH altitude selection",
+     "returned": 10,
+     "kept": 4,
+     "new": 4
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "faa_guidance"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0062",
+    "faa_ac_107_2a_2022_c0269",
+    "faa_ac_107_2a_2022_c0223",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0217",
+    "faa_ac_107_2a_2022_c0274",
+    "faa_ac_107_2a_2022_c0067",
+    "faa_ac_107_2a_2022_c0036"
+   ],
+   "kept_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0036"
+   ],
+   "new_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0036"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S002",
+   "section": "manual:Autel EVO Max 4N",
+   "origin": "base",
+   "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect RTH altitude selection",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect RTH altitude selection",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "Autel EVO Max 4N"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "autel_evo_max_manual_v130_c0118",
+    "autel_evo_max_manual_v130_c0107",
+    "autel_evo_max_manual_v130_c0106",
+    "autel_evo_max_manual_v130_c0183",
+    "autel_evo_max_manual_v130_c0117",
+    "autel_evo_max_manual_v130_c0102",
+    "autel_evo_max_manual_v130_c0166",
+    "autel_evo_max_manual_v130_c0101",
+    "autel_evo_max_manual_v130_c0103",
+    "autel_evo_max_manual_v130_c0165"
+   ],
+   "kept_ids": [
+    "autel_evo_max_manual_v130_c0118",
+    "autel_evo_max_manual_v130_c0107",
+    "autel_evo_max_manual_v130_c0106",
+    "autel_evo_max_manual_v130_c0183",
+    "autel_evo_max_manual_v130_c0117"
+   ],
+   "new_ids": [
+    "autel_evo_max_manual_v130_c0118",
+    "autel_evo_max_manual_v130_c0107",
+    "autel_evo_max_manual_v130_c0106",
+    "autel_evo_max_manual_v130_c0183",
+    "autel_evo_max_manual_v130_c0117"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S003",
+   "section": "incident:Autel EVO Max 4N",
+   "origin": "base",
+   "query": "lost link lost control signal lost return to home flyaway RTH altitude selection",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link lost control signal lost return to home flyaway RTH altitude selection",
+     "returned": 1,
+     "kept": 1,
+     "new": 1
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "aaib",
+     "model": "Autel EVO Max 4N"
+    },
+    {
+     "source_type": "asrs",
+     "model": "Autel EVO Max 4N"
+    },
+    {
+     "source_type": "forum",
+     "model": "Autel EVO Max 4N"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "asrs_autel_evo_max_4n_selected_c0001"
+   ],
+   "kept_ids": [
+    "asrs_autel_evo_max_4n_selected_c0001"
+   ],
+   "new_ids": [
+    "asrs_autel_evo_max_4n_selected_c0001"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  }
+ ],
+ "decisions": [
+  {
+   "decision_id": "D001",
+   "section": "faa",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "quote_in_source and attribution issues: need verbatim source quote attributed to AC 107-2A (FAA guidance) without implying a manual or reporter.",
+   "claim_id": "C004",
+   "round": 1,
+   "new_text": "AC 107-2A states: 'The remote PIC must retain the ability to direct the small unmanned aircraft'."
+  },
+  {
+   "decision_id": "D002",
+   "section": "manual:Autel EVO Max 4N",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "Ensure verbatim quote matches source and include condition Horizontal Distance \u226410 m.",
+   "claim_id": "C006",
+   "round": 1,
+   "new_text": "If Horizontal Distance \u2264 10 m, the drone returns at its current flight altitude."
+  },
+  {
+   "decision_id": "D003",
+   "section": "manual:Autel EVO Max 4N",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "Include the 10 < Distance \u2264 25 m condition and ensure verbatim quote.",
+   "claim_id": "C007",
+   "round": 1,
+   "new_text": "For 10 < Distance \u2264 25 m, if the current flight altitude is below 20 m, the drone will ascend to 20 m before returning."
+  },
+  {
+   "decision_id": "D004",
+   "section": "manual:Autel EVO Max 4N",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "quote_in_source: provide exact verbatim quote with the word 'drone'.",
+   "claim_id": "C008",
+   "round": 1,
+   "new_text": "For 10 < Distance \u2264 25 m, if the current flight altitude is above 20 m, the drone will return at the current altitude."
+  },
+  {
+   "decision_id": "D005",
+   "section": "faa",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "quote_in_source resolved by attributing to AC 107-2A and using exact phrase from the cited passage",
+   "claim_id": "C004",
+   "round": 2,
+   "new_text": "AC 107-2A states: 'The remote PIC must retain the ability to direct the small unmanned aircraft'."
+  },
+  {
+   "decision_id": "D006",
+   "section": "manual:Autel EVO Max 4N",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "quote_in_source",
+   "claim_id": "C008",
+   "round": 2,
+   "new_text": "For 10 < Distance \u2264 25 m, if the current altitude is above 20 m, the drone will return at the current altitude."
+  },
+  {
+   "decision_id": "D007",
+   "section": "faa",
+   "action": "drop",
+   "continue_or_stop": "stop",
+   "reason": "still failing after 2 revision rounds",
+   "claim_id": "C004",
+   "human_review": true
+  },
+  {
+   "decision_id": "D008",
+   "section": "manual:Autel EVO Max 4N",
+   "action": "drop",
+   "continue_or_stop": "stop",
+   "reason": "still failing after 2 revision rounds",
+   "claim_id": "C008",
+   "human_review": true
+  }
+ ],
+ "assessments": {},
+ "gate_results": {
+  "C001": {
+   "claim_id": "C001",
+   "passed": true,
+   "failures": []
+  },
+  "C002": {
+   "claim_id": "C002",
+   "passed": true,
+   "failures": []
+  },
+  "C003": {
+   "claim_id": "C003",
+   "passed": true,
+   "failures": []
+  },
+  "C005": {
+   "claim_id": "C005",
+   "passed": true,
+   "failures": []
+  },
+  "C006": {
+   "claim_id": "C006",
+   "passed": true,
+   "failures": []
+  },
+  "C007": {
+   "claim_id": "C007",
+   "passed": true,
+   "failures": []
+  }
+ },
+ "verifications": {
+  "C001": {
+   "claim_id": "C001",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage contains the exact wording 'Try to reestablish control link connection with the small unmanned aircraft.'",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0228"
+   ]
+  },
+  "C002": {
+   "claim_id": "C002",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states 'If connection cannot be reestablished, start emergency or contingency procedures for loss of control link.'",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0228"
+   ]
+  },
+  "C003": {
+   "claim_id": "C003",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "Appendix A citation includes 'Example: Loss of control link over people.'",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0227"
+   ]
+  },
+  "C005": {
+   "claim_id": "C005",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited text contains 'During automated flight, the remote PIC must have the ability to change routing/altitude or command the aircraft to land immediately.'",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0036"
+   ]
+  },
+  "C006": {
+   "claim_id": "C006",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states that for Horizontal Distance \u2264 10 m, the drone returns at its current flight altitude.",
+   "supporting_ids": [
+    "autel_evo_max_manual_v130_c0106"
+   ]
+  },
+  "C007": {
+   "claim_id": "C007",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states that for 10 < Distance \u2264 25 m, if the current flight altitude is below 20 m, the drone ascends to 20 m before returning.",
+   "supporting_ids": [
+    "autel_evo_max_manual_v130_c0106"
+   ]
+  }
+ },
+ "first_draft_results": [
+  {
+   "claim_id": "C001",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C002",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C003",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C004",
+   "passes": false,
+   "gate_failures": [
+    "quote_in_source",
+    "attributed"
+   ],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C005",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C006",
+   "passes": false,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C007",
+   "passes": false,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C008",
+   "passes": false,
+   "gate_failures": [
+    "quote_in_source"
+   ],
+   "verifier": "supported"
+  }
+ ],
+ "revisions_used": 2,
+ "reopens": 0,
+ "cost": {
+  "model_calls": 17,
+  "tokens_in": 20403,
+  "tokens_out": 16874,
+  "searches": 3,
+  "agent_searches": 0,
+  "agent_tool_calls": 0,
+  "seconds": 128.2
+ },
+ "corpus_snapshot": "4d0e3c83c9425371",
+ "chunks_sha256": "3aff778d5475cd877ed6cef54834cdaa960ccce15ebda1442215c7ca258274c6",
+ "retrieval": "hybrid_rrf",
+ "model": "@30875-fall26-openai/gpt-5-nano",
+ "reasoning_effort": "low",
+ "config": {
+  "mode": "fixed",
+  "max_revisions": 2,
+  "agent_base_searches_per_section": 2,
+  "agent_max_searches_per_section": 4,
+  "agent_max_tool_calls_per_section": 7,
+  "agent_max_turns_per_section": 8,
+  "agent_results_shown": 10,
+  "agent_max_searches_per_run": 8,
+  "agent_max_turns_per_run": 40,
+  "max_reopens_per_run": 1,
+  "max_searches": 40,
+  "max_model_calls": 120,
+  "top_k": 5,
+  "max_claims_per_section": 5,
+  "max_claim_words": 40,
+  "max_gaps": 6,
+  "max_short_answer_words": 120
+ },
+ "trace_path": "/content/drive/MyDrive/Agentic Unlearning Group/Project 1/processed/traces/20261102T175319-fixed-73eb.jsonl"
+}

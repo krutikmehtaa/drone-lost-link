@@ -1,0 +1,758 @@
+{
+ "run_id": "20261102T210100-full-61f5",
+ "mode": "full",
+ "question": "Which firmware update fixed lost-link problems on the DJI Matrice 30T?",
+ "status": "completed_with_gaps",
+ "stop_reason": "verified claims; gaps listed",
+ "error": null,
+ "intake": {
+  "intent": "in_scope",
+  "models": [
+   "DJI Matrice 30T"
+  ],
+  "focus": "lost-link firmware update Matrice 30T",
+  "flight_phase": null,
+  "reason": "Question seeks guidance from manuals/incident reports about lost-link and relevant firmware fixes for the Matrice 30T.",
+  "decided_by": "model",
+  "unsupported_named": []
+ },
+ "brief": {
+  "short_answer": "FAA guidance indicates starting emergency or contingency procedures when the control link cannot be reestablished, and to describe actions if the hazard occurs including attempting to reestablish the control link; and if the remote PIC cannot regain VLOS, follow pre-determined loss of VLOS procedures. There is no usable evidence for DJI Matrice 30T in the manuals. Incident reports (unverified accounts) describe a lost-link event with RTH in response to a screen glitch and back-to-back area hops. The main gap is that explicit firmware versions addressing lost-link for the DJI Matrice 30T are not identified in official sources, with no official release notes or DJI advisories stating a fix.",
+  "sections": [
+   {
+    "section": "faa",
+    "label": "FAA guidance",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "When the control link cannot be reestablished after loss of signal, start emergency or contingency procedures for loss of control link.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0228"
+      ],
+      "quote": "If connection cannot be reestablished, start emergency or contingency procedures for loss of control link.",
+      "conditions": [
+       "connection cannot be reestablished",
+       "loss of control link"
+      ],
+      "assessment": "supported",
+      "claim_id": "C001",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "If a hazard occurs, Describe what will be done if the hazard occurs, including attempting to reestablish the control link.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0227"
+      ],
+      "quote": "Describe what will be done if the hazard occurs.",
+      "conditions": [
+       "hazard occurs"
+      ],
+      "assessment": "supported",
+      "claim_id": "C002",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     },
+     {
+      "text": "If the remote PIC cannot regain VLOS, the remote PIC or person manipulating the controls should follow pre-determined procedures for the loss of VLOS.",
+      "citations": [
+       "faa_ac_107_2a_2022_c0049"
+      ],
+      "quote": "If the remote PIC cannot regain VLOS, the remote PIC or person manipulating the controls should follow pre-determined procedures for the loss of VLOS.",
+      "conditions": [
+       "cannot regain VLOS"
+      ],
+      "assessment": "supported",
+      "claim_id": "C003",
+      "section": "faa",
+      "tier": "official",
+      "incident_label": null
+     }
+    ]
+   },
+   {
+    "section": "manual:DJI Matrice 30T",
+    "label": "DJI Matrice 30T manual",
+    "status": "no_evidence",
+    "abstain_reason": "No passage describes a firmware update that fixed lost-link problems for the DJI Matrice 30T.",
+    "claims": []
+   },
+   {
+    "section": "incident:DJI Matrice 30T",
+    "label": "DJI Matrice 30T incident reports",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "The reporter states: \"went into a lost link and returned home within 10 seconds of the glitching screen,\" with RTH at programmed altitude and back-to-back hops in the area (two UAS in the vicinity).",
+      "citations": [
+       "asrs_dji_m30t_selected_c0002"
+      ],
+      "quote": "went into a lost link and returned home within 10 seconds of the glitching screen",
+      "conditions": [
+       "lost link occurs",
+       "RTH at programmed altitude without issue",
+       "two UAS were flying in the general area (approx 500 feet apart)",
+       "lost link and RTH occurred twice on back-to-back hops"
+      ],
+      "assessment": "supported",
+      "claim_id": "C004",
+      "section": "incident:DJI Matrice 30T",
+      "tier": "unverified",
+      "incident_label": "narrative_explicit"
+     }
+    ]
+   }
+  ],
+  "gaps": [
+   {
+    "kind": "missing",
+    "origin": "section_abstained",
+    "related_claim_ids": [],
+    "text": "No usable evidence found in the approved collection for DJI Matrice 30T manual."
+   },
+   {
+    "kind": "missing",
+    "origin": "synthesis",
+    "text": "Explicit firmware version addressing lost-link for the DJI Matrice 30T is not identified in official sources.",
+    "related_claim_ids": [
+     "C004"
+    ]
+   },
+   {
+    "kind": "missing",
+    "origin": "synthesis",
+    "text": "No official release notes or DJI advisories state a firmware version fixes lost-link on the M30T.",
+    "related_claim_ids": [
+     "C004"
+    ]
+   }
+  ],
+  "removed_claims": []
+ },
+ "brief_stats": {
+  "words": 252,
+  "claims": 4,
+  "gaps": 3
+ },
+ "searches": [
+  {
+   "search_id": "S001",
+   "section": "faa",
+   "origin": "base",
+   "query": "lost link loss of control link communication remote pilot contingency procedures lost-link firmware update Matrice 30T",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link loss of control link communication remote pilot contingency procedures lost-link firmware update Matrice 30T",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "faa_guidance"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0062",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0223",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0049",
+    "faa_ac_107_2a_2022_c0274",
+    "faa_ac_107_2a_2022_c0249",
+    "faa_ac_107_2a_2022_c0269"
+   ],
+   "kept_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0049"
+   ],
+   "new_ids": [
+    "faa_ac_107_2a_2022_c0228",
+    "faa_ac_107_2a_2022_c0227",
+    "faa_ac_107_2a_2022_c0033",
+    "faa_ac_107_2a_2022_c0254",
+    "faa_ac_107_2a_2022_c0049"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S002",
+   "section": "manual:DJI Matrice 30T",
+   "origin": "base",
+   "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect lost-link firmware update Matrice 30T",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect lost-link firmware update Matrice 30T",
+     "returned": 10,
+     "kept": 4,
+     "new": 4
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "DJI Matrice 30T"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "dji_m30t_manual_v22_c0033",
+    "dji_m30t_manual_v22_c0223",
+    "dji_m30t_manual_v22_c0220",
+    "dji_m30t_manual_v22_c0134",
+    "dji_m30t_manual_v22_c0224",
+    "dji_m30t_manual_v22_c0163",
+    "dji_m30t_manual_v22_c0177",
+    "dji_m30t_manual_v22_c0222",
+    "dji_m30t_manual_v22_c0032",
+    "dji_m30t_manual_v22_c0117"
+   ],
+   "kept_ids": [
+    "dji_m30t_manual_v22_c0033",
+    "dji_m30t_manual_v22_c0134",
+    "dji_m30t_manual_v22_c0177",
+    "dji_m30t_manual_v22_c0032"
+   ],
+   "new_ids": [
+    "dji_m30t_manual_v22_c0033",
+    "dji_m30t_manual_v22_c0134",
+    "dji_m30t_manual_v22_c0177",
+    "dji_m30t_manual_v22_c0032"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S003",
+   "section": "incident:DJI Matrice 30T",
+   "origin": "base",
+   "query": "lost link lost control signal lost return to home flyaway lost-link firmware update Matrice 30T",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "lost link lost control signal lost return to home flyaway lost-link firmware update Matrice 30T",
+     "returned": 10,
+     "kept": 4,
+     "new": 4
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "aaib",
+     "model": "DJI Matrice 30T"
+    },
+    {
+     "source_type": "asrs",
+     "model": "DJI Matrice 30T"
+    },
+    {
+     "source_type": "forum",
+     "model": "DJI Matrice 30T"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "aaib_dji_m30t_selected_c0005",
+    "aaib_dji_m30t_selected_c0003",
+    "aaib_dji_m30t_selected_c0002",
+    "aaib_dji_m30t_selected_c0004",
+    "aaib_dji_m30t_selected_c0001",
+    "asrs_dji_m30t_selected_c0002",
+    "asrs_dji_m30t_selected_c0001",
+    "asrs_dji_m30t_selected_c0003",
+    "forum_dji_m30t_c0001",
+    "forum_dji_m30t_c0002"
+   ],
+   "kept_ids": [
+    "asrs_dji_m30t_selected_c0002",
+    "asrs_dji_m30t_selected_c0001",
+    "asrs_dji_m30t_selected_c0003",
+    "forum_dji_m30t_c0001"
+   ],
+   "new_ids": [
+    "asrs_dji_m30t_selected_c0002",
+    "asrs_dji_m30t_selected_c0001",
+    "asrs_dji_m30t_selected_c0003",
+    "forum_dji_m30t_c0001"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  },
+  {
+   "search_id": "S004",
+   "section": "manual:DJI Matrice 30T",
+   "origin": "agent",
+   "query": "firmware update fixed lost-link Matrice 30T",
+   "alternate_queries": [
+    "lost-link firmware update DJI M30T",
+    "firmware fix signal loss M30T"
+   ],
+   "phrasing_stats": [
+    {
+     "query": "firmware update fixed lost-link Matrice 30T",
+     "returned": 10,
+     "kept": 2,
+     "new": 2
+    },
+    {
+     "query": "lost-link firmware update DJI M30T",
+     "returned": 10,
+     "kept": 2,
+     "new": 2
+    },
+    {
+     "query": "firmware fix signal loss M30T",
+     "returned": 10,
+     "kept": 4,
+     "new": 4
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "DJI Matrice 30T"
+    }
+   ],
+   "backend_calls": 3,
+   "reason": "User asks which firmware update fixed lost-link problems on DJI Matrice 30T; look for firmware changelog or release notes related to lost-link issues in the official manual/firmware docs.",
+   "follows_from": null,
+   "returned_ids": [
+    "dji_m30t_manual_v22_c0224",
+    "dji_m30t_manual_v22_c0223",
+    "dji_m30t_manual_v22_c0219",
+    "dji_m30t_manual_v22_c0220",
+    "dji_m30t_manual_v22_c0222",
+    "dji_m30t_manual_v22_c0245",
+    "dji_m30t_manual_v22_c0162",
+    "dji_m30t_manual_v22_c0221",
+    "dji_m30t_manual_v22_c0215",
+    "dji_m30t_manual_v22_c0072",
+    "dji_m30t_manual_v22_c0163",
+    "dji_m30t_manual_v22_c0244",
+    "dji_m30t_manual_v22_c0091",
+    "dji_m30t_manual_v22_c0035",
+    "dji_m30t_manual_v22_c0112"
+   ],
+   "kept_ids": [
+    "dji_m30t_manual_v22_c0224",
+    "dji_m30t_manual_v22_c0223",
+    "dji_m30t_manual_v22_c0244",
+    "dji_m30t_manual_v22_c0035"
+   ],
+   "new_ids": [
+    "dji_m30t_manual_v22_c0224",
+    "dji_m30t_manual_v22_c0223",
+    "dji_m30t_manual_v22_c0244",
+    "dji_m30t_manual_v22_c0035"
+   ],
+   "below_cutoff_ids": [
+    "dji_m30t_manual_v22_c0219",
+    "dji_m30t_manual_v22_c0220",
+    "dji_m30t_manual_v22_c0222",
+    "dji_m30t_manual_v22_c0245",
+    "dji_m30t_manual_v22_c0162",
+    "dji_m30t_manual_v22_c0221"
+   ],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null,
+   "earned": true
+  },
+  {
+   "search_id": "S005",
+   "section": "incident:DJI Matrice 30T",
+   "origin": "agent",
+   "query": "firmware update fixed lost-link Matrice 30T",
+   "alternate_queries": [
+    "lost-link firmware update Matrice 30T",
+    "Matrice 30T signal loss firmware update"
+   ],
+   "phrasing_stats": [
+    {
+     "query": "firmware update fixed lost-link Matrice 30T",
+     "returned": 10,
+     "kept": 4,
+     "new": 0
+    },
+    {
+     "query": "lost-link firmware update Matrice 30T",
+     "returned": 10,
+     "kept": 4,
+     "new": 0
+    },
+    {
+     "query": "Matrice 30T signal loss firmware update",
+     "returned": 10,
+     "kept": 4,
+     "new": 0
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "aaib",
+     "model": "DJI Matrice 30T"
+    },
+    {
+     "source_type": "asrs",
+     "model": "DJI Matrice 30T"
+    },
+    {
+     "source_type": "forum",
+     "model": "DJI Matrice 30T"
+    }
+   ],
+   "backend_calls": 9,
+   "reason": "Need to determine if any firmware update address lost-link issues for DJI M30T; current incident passages do not mention a fix.",
+   "follows_from": null,
+   "returned_ids": [
+    "aaib_dji_m30t_selected_c0005",
+    "aaib_dji_m30t_selected_c0002",
+    "aaib_dji_m30t_selected_c0004",
+    "aaib_dji_m30t_selected_c0003",
+    "aaib_dji_m30t_selected_c0001",
+    "asrs_dji_m30t_selected_c0002",
+    "asrs_dji_m30t_selected_c0001",
+    "asrs_dji_m30t_selected_c0003",
+    "forum_dji_m30t_c0001",
+    "forum_dji_m30t_c0002"
+   ],
+   "kept_ids": [
+    "asrs_dji_m30t_selected_c0002",
+    "asrs_dji_m30t_selected_c0001",
+    "asrs_dji_m30t_selected_c0003",
+    "forum_dji_m30t_c0001"
+   ],
+   "new_ids": [],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  }
+ ],
+ "decisions": [
+  {
+   "decision_id": "D001",
+   "section": "faa",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "FAA passages discuss describing reestablishment attempts and emergency/contingency procedures but do not provide a complete, step-by-step PILOT action plan after control link loss.",
+   "tool": "finish_assessment",
+   "coverage": "partial",
+   "missing": [
+    "Explicit step-by-step pilot actions after loss of control link (e.g., when to initiate RTH, what to do if GNSS or home point data unavailable, minimum altitude for RTH, time/signal loss thresholds).",
+    "Rules for when to perform contingency procedures (e.g., outage duration, distance thresholds).",
+    "Any model-specific control settings or mentions of automatic behaviors are not in the cited FAA text; need FAA guidance for piloting expectations during loss of link."
+   ],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D002",
+   "section": "manual:DJI Matrice 30T",
+   "action": "rejected_by_code",
+   "continue_or_stop": "continue",
+   "reason": "alternate_queries: List should have at most 2 items after validation, not 3",
+   "tool": "document_search",
+   "error": "invalid_arguments"
+  },
+  {
+   "decision_id": "D003",
+   "section": "manual:DJI Matrice 30T",
+   "action": "search",
+   "continue_or_stop": "continue",
+   "reason": "User asks which firmware update fixed lost-link problems on DJI Matrice 30T; look for firmware changelog or release notes related to lost-link issues in the official manual/firmware docs.",
+   "tool": "document_search",
+   "searched_section": "manual:DJI Matrice 30T",
+   "query": "firmware update fixed lost-link Matrice 30T",
+   "alternate_queries": [
+    "lost-link firmware update DJI M30T",
+    "firmware fix signal loss M30T"
+   ],
+   "follows_from": null,
+   "search_id": "S004",
+   "new_passages": 4,
+   "below_cutoff": 6,
+   "earned_search": true
+  },
+  {
+   "decision_id": "D004",
+   "section": "manual:DJI Matrice 30T",
+   "action": "finish_insufficient",
+   "continue_or_stop": "stop",
+   "reason": "Manual section lacks firmware release notes or version-specific fixes for lost-link; existing passages discuss actions on loss of signal but not a specific firmware fix.",
+   "tool": "finish_assessment",
+   "coverage": "insufficient",
+   "missing": [
+    "explicit firmware version addressing lost-link for M30T",
+    "release notes or changelog mentioning lost-link fixes for M30T"
+   ],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D005",
+   "section": "incident:DJI Matrice 30T",
+   "action": "search",
+   "continue_or_stop": "continue",
+   "reason": "Need to determine if any firmware update address lost-link issues for DJI M30T; current incident passages do not mention a fix.",
+   "tool": "document_search",
+   "searched_section": "incident:DJI Matrice 30T",
+   "query": "firmware update fixed lost-link Matrice 30T",
+   "alternate_queries": [
+    "lost-link firmware update Matrice 30T",
+    "Matrice 30T signal loss firmware update"
+   ],
+   "follows_from": null,
+   "search_id": "S005",
+   "new_passages": 0,
+   "below_cutoff": 0,
+   "earned_search": false
+  },
+  {
+   "decision_id": "D006",
+   "section": "incident:DJI Matrice 30T",
+   "action": "finish_insufficient",
+   "continue_or_stop": "stop",
+   "reason": "Current incident passages do not identify a firmware update that fixes lost-link issues; no official release note found yet.",
+   "tool": "finish_assessment",
+   "coverage": "insufficient",
+   "missing": [
+    "Official firmware release notes or DJI advisories explicitly stating a firmware version that fixes lost-link (signal loss) on the DJI Matrice 30T.",
+    "Any official references to a firmware update addressing lost-link incidents for the M30T."
+   ],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D007",
+   "section": "manual:DJI Matrice 30T",
+   "action": "rejected_by_code",
+   "continue_or_stop": "continue",
+   "reason": "agent judged the evidence insufficient, but the section has passages; drafting anyway and letting verification decide",
+   "agent_reason": "Manual section lacks firmware release notes or version-specific fixes for lost-link; existing passages discuss actions on loss of signal but not a specific firmware fix."
+  },
+  {
+   "decision_id": "D008",
+   "section": "incident:DJI Matrice 30T",
+   "action": "rejected_by_code",
+   "continue_or_stop": "continue",
+   "reason": "agent judged the evidence insufficient, but the section has passages; drafting anyway and letting verification decide",
+   "agent_reason": "Current incident passages do not identify a firmware update that fixes lost-link issues; no official release note found yet."
+  },
+  {
+   "decision_id": "D009",
+   "section": "incident:DJI Matrice 30T",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "The attribution must start with 'The reporter states' per how_to_attribute; include the exact verbatim quote, correct citation, and condition in a single sentence under 40 words.",
+   "claim_id": "C004",
+   "round": 1,
+   "new_text": "The reporter states: 'went into a lost link and returned home within 10 seconds of the glitching screen' (asrs_dji_m30t_selected_c0002); condition: lost link occurs."
+  },
+  {
+   "decision_id": "D010",
+   "section": "incident:DJI Matrice 30T",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "The quote is verbatim and the passage contains additional conditions that must be included; the rewrite will preserve the exact quote and add all stated conditions.",
+   "claim_id": "C004",
+   "round": 2,
+   "new_text": "The reporter states: \"went into a lost link and returned home within 10 seconds of the glitching screen,\" with RTH at programmed altitude and back-to-back hops in the area (two UAS in the vicinity)."
+  }
+ ],
+ "assessments": {
+  "faa": {
+   "coverage": "partial",
+   "missing": [
+    "Explicit step-by-step pilot actions after loss of control link (e.g., when to initiate RTH, what to do if GNSS or home point data unavailable, minimum altitude for RTH, time/signal loss thresholds).",
+    "Rules for when to perform contingency procedures (e.g., outage duration, distance thresholds).",
+    "Any model-specific control settings or mentions of automatic behaviors are not in the cited FAA text; need FAA guidance for piloting expectations during loss of link."
+   ],
+   "conflicts_noticed": [],
+   "reason": "FAA passages discuss describing reestablishment attempts and emergency/contingency procedures but do not provide a complete, step-by-step PILOT action plan after control link loss.",
+   "stop_reason": "model_finished",
+   "section": "faa",
+   "turns": 1,
+   "tool_calls": 0,
+   "searches": 0,
+   "searches_allowed": 2
+  },
+  "manual:DJI Matrice 30T": {
+   "coverage": "insufficient",
+   "missing": [
+    "explicit firmware version addressing lost-link for M30T",
+    "release notes or changelog mentioning lost-link fixes for M30T"
+   ],
+   "conflicts_noticed": [],
+   "reason": "Manual section lacks firmware release notes or version-specific fixes for lost-link; existing passages discuss actions on loss of signal but not a specific firmware fix.",
+   "stop_reason": "model_finished",
+   "section": "manual:DJI Matrice 30T",
+   "turns": 4,
+   "tool_calls": 2,
+   "searches": 1,
+   "searches_allowed": 3
+  },
+  "incident:DJI Matrice 30T": {
+   "coverage": "insufficient",
+   "missing": [
+    "Official firmware release notes or DJI advisories explicitly stating a firmware version that fixes lost-link (signal loss) on the DJI Matrice 30T.",
+    "Any official references to a firmware update addressing lost-link incidents for the M30T."
+   ],
+   "conflicts_noticed": [],
+   "reason": "Current incident passages do not identify a firmware update that fixes lost-link issues; no official release note found yet.",
+   "stop_reason": "model_finished",
+   "section": "incident:DJI Matrice 30T",
+   "turns": 3,
+   "tool_calls": 1,
+   "searches": 1,
+   "searches_allowed": 2
+  }
+ },
+ "gate_results": {
+  "C001": {
+   "claim_id": "C001",
+   "passed": true,
+   "failures": []
+  },
+  "C002": {
+   "claim_id": "C002",
+   "passed": true,
+   "failures": []
+  },
+  "C003": {
+   "claim_id": "C003",
+   "passed": true,
+   "failures": []
+  },
+  "C004": {
+   "claim_id": "C004",
+   "passed": true,
+   "failures": []
+  }
+ },
+ "verifications": {
+  "C001": {
+   "claim_id": "C001",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states: if the connection cannot be reestablished, start emergency or contingency procedures for loss of control link, which matches the claim.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0228"
+   ]
+  },
+  "C002": {
+   "claim_id": "C002",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage includes the directive to describe what might happen and to include attempting to reestablish the control link, i.e., describing hazard response and reestablishing the link as part of risk mitigation.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0227"
+   ]
+  },
+  "C003": {
+   "claim_id": "C003",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage says that if the remote PIC cannot regain VLOS, they should follow pre-determined procedures for the loss of VLOS, which matches the claim.",
+   "supporting_ids": [
+    "faa_ac_107_2a_2022_c0049"
+   ]
+  },
+  "C004": {
+   "claim_id": "C004",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "The cited passage states: lost link and return home within 10 seconds, RTH at programmed altitude without issue, two UAS in the general area (~500 ft apart), and lost link + RTH occurred twice on back-to-back hops, matching all conditions in the claim.",
+   "supporting_ids": [
+    "asrs_dji_m30t_selected_c0002"
+   ]
+  }
+ },
+ "first_draft_results": [
+  {
+   "claim_id": "C001",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C002",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C003",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C004",
+   "passes": false,
+   "gate_failures": [
+    "attributed"
+   ],
+   "verifier": "supported"
+  }
+ ],
+ "revisions_used": 2,
+ "reopens": 0,
+ "cost": {
+  "model_calls": 20,
+  "tokens_in": 39669,
+  "tokens_out": 13658,
+  "searches": 5,
+  "agent_searches": 2,
+  "agent_tool_calls": 6,
+  "seconds": 124.1
+ },
+ "corpus_snapshot": "4d0e3c83c9425371",
+ "chunks_sha256": "3aff778d5475cd877ed6cef54834cdaa960ccce15ebda1442215c7ca258274c6",
+ "retrieval": "hybrid_rrf",
+ "model": "@30875-fall26-openai/gpt-5-nano",
+ "reasoning_effort": "low",
+ "config": {
+  "mode": "full",
+  "max_revisions": 2,
+  "agent_base_searches_per_section": 2,
+  "agent_max_searches_per_section": 4,
+  "agent_max_tool_calls_per_section": 7,
+  "agent_max_turns_per_section": 8,
+  "agent_results_shown": 10,
+  "agent_max_searches_per_run": 8,
+  "agent_max_turns_per_run": 40,
+  "max_reopens_per_run": 1,
+  "max_searches": 40,
+  "max_model_calls": 120,
+  "top_k": 5,
+  "max_claims_per_section": 5,
+  "max_claim_words": 40,
+  "max_gaps": 6,
+  "max_short_answer_words": 120
+ },
+ "trace_path": "/content/drive/MyDrive/Agentic Unlearning Group/Project 1/processed/traces/20261102T210100-full-61f5.jsonl"
+}
