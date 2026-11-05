@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import os
+import base64
 from pathlib import Path
 
 import streamlit as st
@@ -32,7 +33,9 @@ html, body {font-family: 'DM Sans', Arial, sans-serif; color:#111817;}
 [data-testid="stAppViewContainer"] {background:#fafaf7;}
 [data-testid="stHeader"] {background:#fafaf7;}
 [data-testid="stSidebar"] {background:#f3f4f0; border-right:1px solid #d7dbd7;}
-[data-testid="stSidebar"] * {font-family:'DM Sans', Arial, sans-serif;}
+[data-testid="stSidebar"] {overflow-x:hidden;}
+[data-testid="stSidebar"] [data-testid="stSidebarContent"] {overflow-x:hidden; overflow-y:hidden;}
+[data-testid="stSidebarCollapseButton"], [data-testid="collapsedControl"] {display:none;}
 .block-container {padding-top:1.25rem; padding-bottom:3rem; max-width:1500px;}
 h1,h2,h3 {letter-spacing:-.04em; color:#111817;}
 h1 {font-size:clamp(2.8rem,5vw,5.4rem)!important; line-height:1.02!important; font-weight:600!important;}
@@ -46,6 +49,7 @@ hr {border-color:#d7dbd7;}
 .st-key-hero-visual {background-color:#fff; background-image:linear-gradient(45deg,#edf0eb 1px,transparent 1px),
   linear-gradient(-45deg,#edf0eb 1px,transparent 1px); background-size:42px 42px;
   border:1px solid #d7dbd7; padding:1rem; margin:.6rem 0 1.6rem;}
+.hero-image {display:block; width:100%; height:auto;}
 .status {font-family:'IBM Plex Mono',monospace; font-size:.72rem; letter-spacing:.04em;
   display:inline-block; padding:.32rem .6rem; border:1px solid #9ca9a3; margin:.35rem 0 .7rem;}
 .status-review {background:#f7ead7; border-color:#bd9157;}
@@ -213,23 +217,11 @@ with st.sidebar:
         st.session_state.turns = []
         st.session_state.active_citation = None
         st.rerun()
-    mode_label = st.radio("Workflow", list(MODE_LABELS.values()), index=0)
-    mode = next(key for key, value in MODE_LABELS.items() if value == mode_label)
-    live_ready = bool(app_secret("OPENAI_API_KEY")) and app_secret("ENABLE_LIVE_RUNS").lower() == "true"
-    run_kind = st.radio("Run", ["Recorded example", "Live workflow"], index=0,
-                        help="Recorded examples replay saved real runs. A live run requires an enabled course API key.")
-    if run_kind == "Live workflow" and not live_ready:
-        st.info("Live runs are not enabled on this deployment. Recorded examples remain available.")
-    st.divider()
-    st.markdown('<div class="eyebrow">Example questions</div>', unsafe_allow_html=True)
-    demo_labels = ["Manual versus incident", "No failure-rate evidence", "Matrice 30T signal loss"]
-    for label, question in zip(demo_labels, DEMO_QUESTIONS):
-        if st.button(label, key=f"demo-{label}", use_container_width=True):
-            st.session_state.pending_question = question
     st.divider()
     st.caption(f"Corpus snapshot · {report['corpus_snapshot']}")
     st.caption(f"{report['source_count']} sources · {report['chunk_count']} passages")
     st.caption("Educational research prototype. Verify source conditions before operational use.")
+    st.caption("Drone and company names are used only for education and research, not marketing or monetization. No manufacturer endorses this project.")
 
 if not st.session_state.turns:
     hero_left, hero_right = st.columns([1.05, 1], gap="large", vertical_alignment="center")
@@ -240,10 +232,12 @@ if not st.session_state.turns:
                     'Read the answer, inspect each source, and see why the agent searched again or stopped.</div>',
                     unsafe_allow_html=True)
         st.write("")
-        st.caption("Try an example in the sidebar, or enter your own question below.")
+        st.caption("Choose a saved example below, or ask your own question.")
     with hero_right:
         with st.container(key="hero-visual"):
-            st.image(str(ASSET), use_container_width=True)
+            image_data = base64.b64encode(ASSET.read_bytes()).decode("ascii")
+            st.markdown(f'<img class="hero-image" src="data:image/png;base64,{image_data}" alt="Monochrome illustration of a drone">',
+                        unsafe_allow_html=True)
 else:
     conversation, evidence = st.columns([1.65, 1], gap="large")
     with conversation:
@@ -284,27 +278,36 @@ else:
             st.download_button("Download trace JSON", json.dumps(run, indent=2),
                                file_name="drone-lost-link-run.json", mime="application/json")
 
+if not st.session_state.turns:
+    st.markdown('<div class="eyebrow">Try a saved example</div>', unsafe_allow_html=True)
+    labels = ["Manual versus incident", "No failure-rate evidence", "Matrice 30T signal loss"]
+    for column, label, example in zip(st.columns(3, gap="small"), labels, DEMO_QUESTIONS):
+        with column:
+            if st.button(label, key=f"demo-{label}", use_container_width=True):
+                st.session_state.pending_example = example
+
 question = st.chat_input("Ask about a lost link, a model, or a reported incident")
-pending = st.session_state.pop("pending_question", None) or question
+example = st.session_state.pop("pending_example", None)
+pending = example or question
 if pending:
     pending = pending.strip()
     if len(pending) > 500:
         st.warning("Please keep the question under 500 characters.")
-    elif run_kind == "Recorded example":
-        result = saved_run(str(PROJECT_ROOT), pending, mode, report["corpus_snapshot"], chunks_hash)
+    elif example:
+        result = saved_run(str(PROJECT_ROOT), pending, "full", report["corpus_snapshot"], chunks_hash)
         if result is None:
-            st.warning("No saved run matches that exact question. Select an example, or enable a live workflow run.")
+            st.warning("The saved example does not match the current corpus snapshot.")
         else:
             st.session_state.turns.append({"question": pending, "result": result, "live": False})
             st.session_state.active_citation = None
             st.rerun()
-    elif not live_ready:
-        st.warning("Live runs are not enabled on this deployment.")
+    elif not app_secret("OPENAI_API_KEY"):
+        st.warning("Live questions need a course API key. Add OPENAI_API_KEY to your local Streamlit secrets, then try again.")
     else:
         with st.status("Searching and checking the evidence…", expanded=True):
             engine = runtime()
             engine.configure_live_client(app_secret("OPENAI_API_KEY"))
-            result = engine.run_workflow(pending, config=engine.Config(mode=mode, max_model_calls=40))
+            result = engine.run_workflow(pending, config=engine.Config(mode="full", max_model_calls=40))
             st.write(f"Run finished: {STATUS_LABELS.get(result.get('status'), result.get('status'))}")
         st.session_state.turns.append({"question": pending, "result": result, "live": True})
         st.session_state.active_citation = None
