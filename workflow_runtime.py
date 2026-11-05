@@ -1308,6 +1308,20 @@ def repeats_verified(state: RunState, claim: Claim) -> Optional[Claim]:
                  if other.claim_id != claim.claim_id and other.section == claim.section and passes(state, other)
                  and len(other.quote.split()) >= 5 and any(clean_quote(other.quote) in m for m in mine)), None)
 
+def drop_repeated_claims(state: RunState):
+    """Remove a claim worded like an earlier claim in its section (drafted twice, or two failing claims rewritten
+    into the same sentence). Nothing is lost, so it is not a removed claim or a gap."""
+    # ponytail: exact wording only; add a similarity check if reworded duplicates show up in traces
+    for section in state.sections:
+        seen = set()
+        for c in list(state.drafts.get(section, {}).get('claims', [])):
+            key = clean_quote(c.text)
+            if key in seen:
+                replace_claim(state, c.claim_id)
+                state.decide(section, 'drop_repeat', 'same wording as another claim in this section', 'stop',
+                             claim_id=c.claim_id, text=c.text)
+            seen.add(key)
+
 def revise(state: RunState):
     """Up to max_revisions rounds. Claims still failing after the last round are removed for human review."""
     cfg = state.config
@@ -1573,6 +1587,7 @@ def run_workflow(question: str, models: Optional[list[str]] = None, config: Conf
                                       'gate_failures': state.gate_results[c.claim_id]['failures'],
                                       'verifier': state.verifications[c.claim_id].status} for c in state.all_claims()]
         revise(state)
+        drop_repeated_claims(state)
         synthesize_gaps(state)
         write_short_answer(state)
         return finish_run(state, started)

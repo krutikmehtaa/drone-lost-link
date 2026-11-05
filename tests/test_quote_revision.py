@@ -104,6 +104,22 @@ class QuoteRevisionTests(unittest.TestCase):
         self.assertIn("drop_repeat", [d["action"] for d in state.decisions])
         self.assertFalse(state.gaps)
 
+    def test_identically_worded_claims_are_kept_once(self):
+        section = "manual:DJI Matrice 30T"
+        text = "The aircraft cannot avoid obstacles during failsafe RTH when there is insufficient light."
+        make = lambda cid, text_: workflow.Claim(text=text_, citations=["x"], quote="x", conditions=[],
+                                                 assessment="supported", claim_id=cid, section=section,
+                                                 tier="manufacturer")
+        state = workflow.RunState("What happens in low light?", workflow.Config(), workflow.FakeLLM({}))
+        state.sections = [section]
+        state.drafts[section] = {"status": "drafted", "abstain_reason": None, "claims": [
+            make("C001", text), make("C002", "The RTH altitude is related to the Home Point."), make("C003", text.lower())]}
+        with tempfile.TemporaryDirectory() as temp:
+            state.trace_path = Path(temp) / "trace.jsonl"
+            workflow.drop_repeated_claims(state)
+        self.assertEqual([c.claim_id for c in state.all_claims()], ["C001", "C002"])
+        self.assertFalse(state.removed_claims or state.gaps)
+
     def test_echoed_conditions_do_not_fail_a_supported_claim(self):
         claim = workflow.Claim(text="When the remote controller signal is lost, it can be set to RTH, land, or hover.",
                                citations=["dji_m30t_manual_v22_c0032"], quote="can be set to RTH, land, or hover",
