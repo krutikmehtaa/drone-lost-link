@@ -118,7 +118,7 @@ class IntakeOut(BaseModel):
 class ClaimDraft(BaseModel):
     text: str
     citations: list[str]          # chunk_ids
-    quote: str                    # verbatim span from a cited passage
+    quote: str                    # sentence ids like 'chunk_id#4'; make_claim swaps in the exact passage text
     conditions: list[str]         # e.g. "if Signal Lost Action is set to RTH"
     assessment: Literal['supported', 'supported_with_conditions', 'conflicting', 'not_enough_evidence']
 
@@ -994,8 +994,10 @@ DRAFT_INSTRUCTIONS = """You draft ONE section of a drone lost-link evidence brie
   behavior and what the aircraft or pilot does. Never a fragment (e.g. "Only then will the drone ..." or
   "If the connection is lost."). At most 5 claims. Keep the facts most directly about lost-link behavior;
   prefer conditions over background; merge closely related facts from the same passage.
-- Every claim cites chunk_ids from the passages and copies a VERBATIM quote (an exact span of 5-30 words)
-  from a cited passage.
+- Every claim cites chunk_ids from the passages. Each passage's text is split into numbered sentences [1], [2], ...
+  For quote, give the id of the sentence(s) that state the claim as chunk_id#n, e.g. "dji_m30t_manual_v22_c0070#4"
+  (for consecutive sentences: "dji_m30t_manual_v22_c0070#4 dji_m30t_manual_v22_c0070#5"). Never copy the words
+  yourself: code copies the exact sentence. citations lists chunk_ids only, without #n.
 - List every condition the quote states (e.g. "if the Signal Lost Action is set to RTH") in conditions,
   and keep those conditions in the claim text.
 - Attribute every claim: FAA -> "AC 107-2A states ..."; manuals -> "The manual states ...";
@@ -1022,14 +1024,56 @@ def no_evidence(state: RunState, section: str, reason: str):
                        'text': f'No usable evidence found in the approved collection for {section_label(section)}.'})
     state.log('draft', section=section, status='no_evidence', reason=reason)
 
+SENTENCE_BREAK_RE = re.compile(r'(?<=[.!?])\s+|\s*\u2022\s*')   # after . ! ? and at bullets
+
+def passage_sentences(text: str) -> list[tuple[int, int]]:
+    """(start, end) of each sentence in a passage, so code can copy exact text by sentence number."""
+    spans, start = [], 0
+    for m in SENTENCE_BREAK_RE.finditer(text):
+        if text[start:m.start()].strip():
+            spans.append((start, m.start()))
+        start = m.end()
+    if text[start:].strip():
+        spans.append((start, len(text)))
+    return spans
+
+def numbered(text: str) -> str:
+    """The passage as the model sees it: '[1] First sentence. [2] Second sentence.'"""
+    return ' '.join(f'[{n}] {text[a:b]}' for n, (a, b) in enumerate(passage_sentences(text), 1))
+
+def unnumbered(text: str) -> str:
+    """Undo numbered(), for the scripted offline models that quote words directly."""
+    return re.sub(r'\[\d+\] ', '', text)
+
+QUOTE_ID_RE = re.compile(r'([A-Za-z0-9_-]+_c\d{4})?#(\d+)')
+
+def resolve_quote(quote: str, citations: list[str]) -> str:
+    """Sentence ids such as 'dji_m30t_manual_v22_c0070#4' (or '#4' with one citation) become the exact passage text
+    from the first to the last sentence named. Anything else is kept as written, and the gate's verbatim check decides."""
+    ids = QUOTE_ID_RE.findall(quote)
+    chunk_ids = {c or (citations[0] if len(citations) == 1 else '') for c, _ in ids}
+    if not ids or len(chunk_ids) != 1 or next(iter(chunk_ids)) not in SEARCH.by_id:
+        return quote
+    text = SEARCH.by_id[chunk_ids.pop()]['text']
+    spans = passage_sentences(text)
+    numbers = sorted(int(n) for _, n in ids)
+    if not 1 <= numbers[0] <= numbers[-1] <= len(spans):
+        return quote
+    return text[spans[numbers[0] - 1][0]:spans[numbers[-1] - 1][1]]
+
 def make_claim(state: RunState, section: str, draft: ClaimDraft, claim_id: str) -> Claim:
-    """Code, not the model, sets the section, source tier and incident label."""
+    """Code, not the model, sets the section, source tier, incident label and the exact quote text.
+    gpt-5-nano often writes sentence ids into citations ('chunk_id#3') and leaves quote empty: the id is split off the
+    citation and used as the quote."""
+    citations = list(dict.fromkeys(c.split('#')[0].strip() for c in draft.citations))
+    quote = draft.quote if draft.quote.strip() else ' '.join(c for c in draft.citations if '#' in c)
     pool = state.pools.get(section, {})
-    labels = [pool[c]['incident_label'] for c in draft.citations if c in pool and pool[c].get('incident_label')]
-    cited = [pool[c] for c in draft.citations if c in pool]
+    labels = [pool[c]['incident_label'] for c in citations if c in pool and pool[c].get('incident_label')]
+    cited = [pool[c] for c in citations if c in pool]
     investigated = bool(cited) and all(p['source_id'] == 'aaib_m210_v1_poole' for p in cited)
     tier = 'official' if investigated else SECTION_TIER[section_kind(section)]
-    return Claim(**draft.model_dump(), claim_id=claim_id, section=section,
+    data = {**draft.model_dump(), 'citations': citations, 'quote': resolve_quote(quote, citations)}
+    return Claim(**data, claim_id=claim_id, section=section,
                  tier=tier, incident_label=labels[0] if labels else None)
 
 def draft_section(state: RunState, section: str):
@@ -1047,7 +1091,7 @@ def draft_section(state: RunState, section: str):
 
     payload = {'section': section_label(section), 'tier': SECTION_TIER[section_kind(section)],
                'passages': [{'chunk_id': p['chunk_id'], 'locator': p['locator'],
-                             'incident_label': p.get('incident_label'), 'source_type': p['source_type'], 'source_id': p['source_id'], 'url': p['url'], 'text': p['text']} for p in pool.values()]}
+                             'incident_label': p.get('incident_label'), 'source_type': p['source_type'], 'source_id': p['source_id'], 'url': p['url'], 'text': numbered(p['text'])} for p in pool.values()]}
     if section_kind(section) != 'faa':
         # As in the evidence agent: the FAA section is drafted from its own purpose (pilot procedures),
         # so a question about one model's incidents cannot make the drafter skip real FAA guidance.
@@ -1080,6 +1124,7 @@ def fake_draft(payload):
     """Quotes the first 12 words of up to 2 passages. Asks for 6 claims for the EVO manual to test the limit."""
     n = 6 if payload['section'] == 'Autel EVO Max 4N manual' else 2
     passages = (payload['passages'] * 6)[:n] if n == 6 else payload['passages'][:n]
+    passages = [{**p, 'text': unnumbered(p['text'])} for p in passages]
     claims = [{'text': f"The source states that {' '.join(p['text'].split()[:12])}.", 'citations': [p['chunk_id']],
                'quote': ' '.join(p['text'].split()[:12]), 'conditions': [], 'assessment': 'supported'}
               for p in passages]
@@ -1192,20 +1237,19 @@ def claim(cid, section, text, cites, quote, conditions=()):
 # Notebook cell 44
 REVISE_INSTRUCTIONS = """You fix claims in a drone lost-link evidence brief that failed citation verification.
 For EACH failing claim choose one action from allowed_actions:
-- rewrite: give new_claim, using only the supplied passages. Fix every listed problem: copy a verbatim quote,
+- rewrite: give new_claim, using only the supplied passages. Fix every listed problem: give the quote as sentence id(s) chunk_id#n,
   cite the right chunk_ids, list and include the conditions, attribute the claim exactly as how_to_attribute
   says, and keep it to one sentence of at most 40 words.
 - drop: the claim adds nothing the section needs.
 - to_gap: the passages cannot support the point; reason is a gap statement for the brief (at most 40 words).
 - reopen_section (only if allowed): the needed evidence is missing from the passages and one targeted search
   could find it; reason says what to search for.
-Problem names: quote_in_source (quote is not verbatim), in_section_pool (cites a passage outside this section),
+Problem names: quote_in_source (the quote ids do not point to a sentence in a cited passage), in_section_pool (cites a passage outside this section),
 source_matches (wrong source or model), attributed (follow how_to_attribute: only incident claims mention a
 reporter, and FAA claims never say "the manual"), conditions_kept (the quote has a condition the claim leaves
 out), too_long (over 40 words).
 Use only what the passages say; do not add people, roles or details they do not state.
-If a claim already failed in an earlier round, do not resubmit the same quote: find the exact wording in the
-passages, or choose drop or to_gap. If a claim adds an unsupported condition but its quoted sentence is
+If a claim already failed in an earlier round, do not resubmit the same quote: give the id of the sentence that states it, or choose drop or to_gap. If a claim adds an unsupported condition but its quoted sentence is
 supported, remove the extra condition and keep the narrower quoted statement before choosing to_gap."""
 
 HOW_TO_ATTRIBUTE = {
@@ -1228,7 +1272,7 @@ def revise_section(state: RunState, section: str, failing: list[Claim], round_no
     payload = {'section': section_label(section), 'tier': SECTION_TIER[section_kind(section)], 'round': round_no,
                'how_to_attribute': HOW_TO_ATTRIBUTE[section_kind(section)], 'allowed_actions': actions,
                'passages': [{'chunk_id': p['chunk_id'], 'locator': p['locator'], 'source_type': p['source_type'],
-                             'incident_label': p.get('incident_label'), 'text': p['text']}
+                             'incident_label': p.get('incident_label'), 'text': numbered(p['text'])}
                             for p in state.pools.get(section, {}).values()],
                'failing_claims': [{'claim_id': c.claim_id, 'text': c.text, 'citations': c.citations, 'quote': c.quote,
                                    'conditions': c.conditions,
@@ -1388,7 +1432,7 @@ def scenario(mode, revise_handler, verify_status='supported'):
 def fix_quote(action='rewrite'):
     """A scripted reviser that rewrites each failing claim with a verbatim quote."""
     def handler(p):
-        quote = plain_span(p['passages'][0]['text'])
+        quote = plain_span(unnumbered(p['passages'][0]['text']))
         return {'decisions': [{'claim_id': c['claim_id'], 'action': action, 'reason': 'use the exact wording',
                                'new_claim': {'text': f'The manual states that {quote}.', 'citations': [p['passages'][0]['chunk_id']],
                                              'quote': quote, 'conditions': [], 'assessment': 'supported'}}
@@ -1642,8 +1686,8 @@ def offline_llm() -> FakeLLM:
     def draft(p):
         lead = {'official': 'AC 107-2A states that', 'manufacturer': 'The manual states that',
                 'unverified': 'The reporter states that'}[p['tier']]
-        return {'claims': [{'text': f"{lead} {quote_from(x['text'])}.", 'citations': [x['chunk_id']],
-                            'quote': quote_from(x['text']), 'conditions': [], 'assessment': 'supported'}
+        return {'claims': [{'text': f"{lead} {quote_from(unnumbered(x['text']))}.", 'citations': [x['chunk_id']],
+                            'quote': quote_from(unnumbered(x['text'])), 'conditions': [], 'assessment': 'supported'}
                            for x in p['passages'][:2]], 'abstain_reason': None}
 
     return FakeLLM({

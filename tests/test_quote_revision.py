@@ -104,6 +104,25 @@ class QuoteRevisionTests(unittest.TestCase):
         self.assertIn("drop_repeat", [d["action"] for d in state.decisions])
         self.assertFalse(state.gaps)
 
+    def test_sentence_id_quote_becomes_exact_text_and_passes_the_gate(self):
+        section, chunk_id = "manual:DJI Matrice 30T", "dji_m30t_manual_v22_c0070"
+        text = workflow.SEARCH.by_id[chunk_id]["text"]
+        n = next(k for k, (a, b) in enumerate(workflow.passage_sentences(text), 1) if "cannot avoid obstacles" in text[a:b])
+        self.assertIn(f"[{n}] The aircraft cannot avoid obstacles", workflow.numbered(text))
+        state = SimpleNamespace(config=workflow.Config(), pools={section: {chunk_id: workflow.SEARCH.by_id[chunk_id]}})
+        draft = workflow.ClaimDraft(text="The manual states the aircraft cannot avoid obstacles during failsafe RTH "
+                                         "when there is insufficient light.", citations=[chunk_id],
+                                    quote=f"{chunk_id}#{n}", conditions=["insufficient light"], assessment="supported")
+        claim = workflow.make_claim(state, section, draft, "C001")
+        self.assertEqual(claim.quote, "The aircraft cannot avoid obstacles during failsafe RTH when there is insufficient light.")
+        self.assertTrue(workflow.gate(state, claim)["passed"])
+        self.assertEqual(workflow.resolve_quote("the drone always lands", [chunk_id]), "the drone always lands")
+        # The model often puts the sentence id in citations and leaves quote empty.
+        misplaced = workflow.make_claim(state, section, draft.model_copy(update={"citations": [f"{chunk_id}#{n}"],
+                                                                                  "quote": ""}), "C002")
+        self.assertEqual((misplaced.citations, misplaced.quote), ([chunk_id], claim.quote))
+        self.assertTrue(workflow.gate(state, misplaced)["passed"])
+
     def test_identically_worded_claims_are_kept_once(self):
         section = "manual:DJI Matrice 30T"
         text = "The aircraft cannot avoid obstacles during failsafe RTH when there is insufficient light."
