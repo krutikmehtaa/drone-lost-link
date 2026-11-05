@@ -70,36 +70,51 @@ class QuoteRevisionTests(unittest.TestCase):
         self.assertIn("rewrite_quote_only", [decision["action"] for decision in state.decisions])
 
 
-    def test_reviser_sees_claims_that_already_passed(self):
+    def test_repeat_of_verified_claim_is_dropped_in_code(self):
         section = "manual:DJI Matrice 30T"
         chunk_id = "dji_m30t_manual_v22_c0070"
         quote = "The aircraft cannot avoid obstacles during failsafe RTH when there is insufficient light."
-        make = lambda cid, text: workflow.Claim(text=text, citations=[chunk_id], quote=quote, conditions=[],
-                                                assessment="supported", claim_id=cid, section=section,
-                                                tier="manufacturer")
-        good, repeat = make("C001", f"The manual states that {quote}"), make("C002", "It cannot avoid obstacles.")
-        seen = {}
+        make = lambda cid, text, quote_: workflow.Claim(text=text, citations=[chunk_id], quote=quote_, conditions=[],
+                                                        assessment="supported", claim_id=cid, section=section,
+                                                        tier="manufacturer")
+        good = make("C001", f"The manual states that {quote}", quote)
+        repeat = make("C002", f"If the remote controller signal is lost, {quote[0].lower() + quote[1:]}",
+                      "cannot bypass obstacles in low light")
+        different = make("C003", "The manual states the RTH altitude is fixed.", "the RTH altitude is fixed")
+        seen = []
 
         def revise(payload):
-            seen.update(payload)
-            return {"decisions": [{"claim_id": "C002", "action": "drop", "reason": "repeats C001",
-                                   "new_claim": None}]}
+            seen.extend(c["claim_id"] for c in payload["failing_claims"])
+            return {"decisions": [{"claim_id": "C003", "action": "drop", "reason": "not supported", "new_claim": None}]}
 
         state = workflow.RunState("What happens in low light?", workflow.Config(), workflow.FakeLLM({"revise": revise}))
         state.sections = [section]
         state.pools[section] = {chunk_id: workflow.SEARCH.by_id[chunk_id]}
-        state.drafts[section] = {"status": "drafted", "claims": [good, repeat], "abstain_reason": None}
-        for claim_, status in ((good, "supported"), (repeat, "partial")):
-            state.gate_results[claim_.claim_id] = {"passed": True, "failures": []}
+        state.drafts[section] = {"status": "drafted", "claims": [good, repeat, different], "abstain_reason": None}
+        for claim_, status in ((good, "supported"), (repeat, "partial"), (different, "not_supported")):
+            state.gate_results[claim_.claim_id] = {"passed": claim_ is good, "failures": [] if claim_ is good else ["quote_in_source"]}
             state.verifications[claim_.claim_id] = workflow.Verification(
                 claim_id=claim_.claim_id, status=status, missing_conditions=[], rationale="scripted",
                 supporting_ids=[chunk_id])
         with tempfile.TemporaryDirectory() as temp:
             state.trace_path = Path(temp) / "trace.jsonl"
-            workflow.revise_section(state, section, [repeat], 1, allow_reopen=False)
-        self.assertEqual(seen["verified_claims"], [{"claim_id": "C001", "text": good.text}])
+            workflow.revise(state)
+        self.assertEqual(seen, ["C003"])                       # the repeat never reaches the model
         self.assertEqual([c.claim_id for c in state.all_claims()], ["C001"])
+        self.assertIn("drop_repeat", [d["action"] for d in state.decisions])
         self.assertFalse(state.gaps)
+
+    def test_echoed_conditions_do_not_fail_a_supported_claim(self):
+        claim = workflow.Claim(text="When the remote controller signal is lost, it can be set to RTH, land, or hover.",
+                               citations=["dji_m30t_manual_v22_c0032"], quote="can be set to RTH, land, or hover",
+                               conditions=["Loss of remote controller signal"], assessment="supported",
+                               claim_id="C001", section="manual:DJI Matrice 30T", tier="manufacturer")
+        for missing, expected in ((["loss of remote controller signal"], True), (["Home Point recorded"], False)):
+            state = SimpleNamespace(gate_results={"C001": {"passed": True, "failures": []}},
+                                    verifications={"C001": workflow.Verification(
+                                        claim_id="C001", status="supported", missing_conditions=missing,
+                                        rationale="scripted", supporting_ids=[])})
+            self.assertIs(workflow.passes(state, claim), expected, missing)
 
 
 if __name__ == "__main__":

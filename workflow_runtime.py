@@ -1171,9 +1171,12 @@ def verify_claims(state: RunState, claims: list[Claim]):
              'missing_conditions': state.verifications[c.claim_id].missing_conditions} for c in group])
 
 def passes(state: RunState, claim: Claim) -> bool:
-    """A claim passes only if every gate check passes AND the verifier says fully supported."""
+    """A claim passes only if every gate check passes AND the verifier says fully supported.
+    A 'missing' condition that the claim itself already lists is the verifier echoing the claim, so it is ignored."""
     g, v = state.gate_results.get(claim.claim_id), state.verifications.get(claim.claim_id)
-    return bool(g and g['passed'] and v and v.status == 'supported' and not v.missing_conditions)
+    listed = {normalize(c) for c in claim.conditions}
+    missing = [m for m in v.missing_conditions if normalize(m) not in listed] if v else []
+    return bool(g and g['passed'] and v and v.status == 'supported' and not missing)
 
 def plain_span(text, n=10):
     """The first n-word span with no condition words, for claims that should pass."""
@@ -1203,9 +1206,7 @@ out), too_long (over 40 words).
 Use only what the passages say; do not add people, roles or details they do not state.
 If a claim already failed in an earlier round, do not resubmit the same quote: find the exact wording in the
 passages, or choose drop or to_gap. If a claim adds an unsupported condition but its quoted sentence is
-supported, remove the extra condition and keep the narrower quoted statement before choosing to_gap.
-verified_claims are this section's claims that already passed. If a failing claim repeats one of them, choose
-drop. A to_gap reason must never contradict a verified claim."""
+supported, remove the extra condition and keep the narrower quoted statement before choosing to_gap."""
 
 HOW_TO_ATTRIBUTE = {
     'faa': 'Write it as what AC 107-2A (FAA guidance) states. Never call it a manual or mention a reporter.',
@@ -1229,8 +1230,6 @@ def revise_section(state: RunState, section: str, failing: list[Claim], round_no
                'passages': [{'chunk_id': p['chunk_id'], 'locator': p['locator'], 'source_type': p['source_type'],
                              'incident_label': p.get('incident_label'), 'text': p['text']}
                             for p in state.pools.get(section, {}).values()],
-               'verified_claims': [{'claim_id': c.claim_id, 'text': c.text}
-                                   for c in state.drafts.get(section, {}).get('claims', []) if passes(state, c)],
                'failing_claims': [{'claim_id': c.claim_id, 'text': c.text, 'citations': c.citations, 'quote': c.quote,
                                    'conditions': c.conditions,
                                    'problems': ['too_long' if f == 'within_length' else f
@@ -1302,6 +1301,13 @@ def quote_only_rewrite(state: RunState, claim: Claim) -> Optional[Claim]:
         return None
     return claim.model_copy(update={'text': text, 'conditions': []})
 
+def repeats_verified(state: RunState, claim: Claim) -> Optional[Claim]:
+    """A claim in the same section that already passed and whose quoted sentence this claim repeats, if any."""
+    mine = (normalize(claim.text), clean_quote(claim.quote))
+    return next((other for other in state.all_claims()
+                 if other.claim_id != claim.claim_id and other.section == claim.section and passes(state, other)
+                 and len(other.quote.split()) >= 5 and any(clean_quote(other.quote) in m for m in mine)), None)
+
 def revise(state: RunState):
     """Up to max_revisions rounds. Claims still failing after the last round are removed for human review."""
     cfg = state.config
@@ -1316,6 +1322,12 @@ def revise(state: RunState):
             group = [c for c in failing if c.section == section]
             remaining = []
             for claim in group:
+                twin = repeats_verified(state, claim)
+                if twin is not None:          # nothing is lost, so it is not a removed claim or a gap
+                    replace_claim(state, claim.claim_id)
+                    state.decide(section, 'drop_repeat', f'repeats verified claim {twin.claim_id}', 'stop',
+                                 claim_id=claim.claim_id, round=round_no, text=claim.text)
+                    continue
                 narrower = quote_only_rewrite(state, claim)
                 if narrower is None:
                     remaining.append(claim)
