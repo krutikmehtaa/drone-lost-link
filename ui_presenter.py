@@ -72,11 +72,6 @@ def answer_text(run: dict, *, recorded: bool = False) -> str:
         return ("The available documents do not establish a lost-link failure rate for this model. "
                 "A rate needs both a verified failure count and total flight hours; this collection does not provide them.")
     sentences = re.split(r"(?<=[.!?])\s+", summary)
-    if source_scope(run.get("question", "")) == ("manual",):
-        for index, sentence in enumerate(sentences):
-            if "manual" in sentence.lower() or MODEL_NAME.search(sentence):
-                sentences = sentences[index:]
-                break
     relevant = [s for s in sentences if not s.lower().startswith(("faa guidance", "from faa guidance", "also per ac"))
                 and not s.lower().startswith(("gaps", "the main gap"))]
     if not any(word in question for word in ("incident", "report", "evidence", "compare", "conflict")):

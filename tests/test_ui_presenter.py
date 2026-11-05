@@ -27,6 +27,12 @@ class PresenterTests(unittest.TestCase):
         self.assertIn("do not establish", answer_text(run))
         self.assertIn("do not establish", answer_text({"question": DEMO_QUESTIONS[1]}, recorded=True))
 
+    def test_manual_answer_keeps_a_first_sentence_without_the_word_manual(self):
+        run = {"question": "What does the Matrice 30T manual say about altitude and obstacles during Failsafe RTH?",
+               "brief": {"short_answer": "The RTH altitude must be higher than any obstacle in the area. "
+                                         "The manual notes a default RTH altitude of 100 m.", "gaps": []}}
+        self.assertTrue(answer_text(run).startswith("The RTH altitude must be higher"))
+
     def test_review_note_explains_dropped_claim(self):
         run = {"status": "human_review_required",
                "question": "When can it not avoid obstacles?",
