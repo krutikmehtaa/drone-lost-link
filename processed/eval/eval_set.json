@@ -46,7 +46,7 @@
         "citation_verify"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "dji_m30t_manual_v22_c0032",
         "dji_m30t_manual_v22_c0033",
@@ -90,7 +90,7 @@
         "citation_verify"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "dji_m30t_manual_v22_c0069",
         "dji_m30t_manual_v22_c0070"
@@ -133,7 +133,7 @@
         "citation_verify"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "dji_matrice4_manual_v12_c0055",
         "dji_matrice4_manual_v12_c0065"
@@ -180,7 +180,7 @@
         "citation_verify"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "dji_matrice4_manual_v12_c0066",
         "dji_matrice4_manual_v12_c0068"
@@ -227,7 +227,7 @@
         "citation_verify"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "autel_evo_max_manual_v130_c0107",
         "autel_evo_max_manual_v130_c0118"
@@ -278,7 +278,7 @@
         "citation_verify"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "autel_evo_max_manual_v130_c0101",
         "autel_evo_max_manual_v130_c0102",
@@ -341,7 +341,7 @@
         "document_search",
         "citation_verify"
       ],
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "autel_evo_max_manual_v130_c0106",
         "autel_evo_max_manual_v130_c0107",
@@ -397,7 +397,7 @@
         "citation_verify"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "faa_ac_107_2a_2022_c0035",
         "faa_ac_107_2a_2022_c0062",
@@ -454,7 +454,7 @@
         "citation_verify"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "dji_m30t_manual_v22_c0032",
         "dji_m30t_manual_v22_c0033",
@@ -522,7 +522,7 @@
         "citation_verify"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "dji_m30t_manual_v22_c0033",
         "asrs_dji_m30t_selected_c0002",
@@ -551,7 +551,7 @@
       "tools": [
         "document_search"
       ],
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": []
     },
     {
@@ -568,10 +568,6 @@
         [
           "The brief says the corpus has no lost-link incident reports for the Matrice 4T, instead of borrowing Matrice 30T reports.",
           ""
-        ],
-        [
-          "The one Matrice 4T ASRS report is about underestimating the return time and a self-landing, not a lost link.",
-          ""
         ]
       ],
       "conflicts": [],
@@ -579,7 +575,7 @@
         "document_search"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": []
     },
     {
@@ -601,7 +597,7 @@
       "conflicts": [],
       "tools": [],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": []
     },
     {
@@ -646,7 +642,7 @@
         "citation_verify"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "faa_ac_107_2a_2022_c0035",
         "dji_m30t_manual_v22_c0032",
@@ -686,7 +682,7 @@
         "citation_verify"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "autel_evo_max_manual_v130_c0107"
       ]
@@ -728,7 +724,7 @@
         "citation_verify"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "dji_m210_v1_manual_v14_c0037"
       ]
@@ -766,7 +762,7 @@
         "citation_verify"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "dji_m210_v1_manual_v14_c0038"
       ]
@@ -804,7 +800,7 @@
         "citation_verify"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "dji_m210_v1_manual_v14_c0040"
       ]
@@ -842,7 +838,7 @@
         "citation_verify"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "dji_m30t_manual_v22_c0069"
       ]
@@ -880,7 +876,7 @@
         "citation_verify"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "dji_m30t_manual_v22_c0070"
       ]
@@ -922,7 +918,7 @@
         "citation_verify"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "autel_evo_max_manual_v130_c0118"
       ]
@@ -972,7 +968,7 @@
         "citation_verify"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "autel_evo_max_manual_v130_c0106",
         "autel_evo_max_manual_v130_c0108"
@@ -1007,7 +1003,7 @@
         "citation_verify"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "autel_evo_max_manual_v130_c0106"
       ]
@@ -1032,7 +1028,7 @@
       "facts": [
         [
           "After losing the remote controller signal it flies Original Route RTH.",
-          ""
+          "when lighting and environment are unsuitable for the vision system"
         ],
         [
           "Preset RTH runs once the signal is restored.",
@@ -1040,7 +1036,7 @@
         ],
         [
           "It can bypass GEO zones and brakes and hovers if there is an obstacle.",
-          ""
+          "when lighting and environment are unsuitable for the vision system"
         ]
       ],
       "conflicts": [],
@@ -1049,7 +1045,7 @@
         "citation_verify"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "dji_matrice4_manual_v12_c0075"
       ]
@@ -1095,7 +1091,7 @@
         "citation_verify"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "dji_matrice4_manual_v12_c0068"
       ]
@@ -1131,7 +1127,7 @@
         "citation_verify"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "faa_ac_107_2a_2022_c0035",
         "faa_ac_107_2a_2022_c0036"
@@ -1176,7 +1172,7 @@
         "citation_verify"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "faa_ac_107_2a_2022_c0035",
         "faa_ac_107_2a_2022_c0227"
@@ -1225,7 +1221,7 @@
         "citation_verify"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "dji_m30t_manual_v22_c0033",
         "dji_m210_v1_manual_v14_c0037"
@@ -1274,7 +1270,7 @@
         "citation_verify"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "dji_m210_v1_manual_v14_c0038",
         "autel_evo_max_manual_v130_c0106"
@@ -1319,7 +1315,7 @@
         "citation_verify"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "dji_m30t_manual_v22_c0031",
         "dji_m30t_manual_v22_c0032",
@@ -1385,7 +1381,7 @@
         "citation_verify"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "dji_m30t_manual_v22_c0032",
         "dji_m30t_manual_v22_c0033",
@@ -1419,6 +1415,14 @@
         [
           "aaib_m210_v1_poole",
           "could not overcome the wind"
+        ],
+        [
+          "aaib_m210_v1_poole",
+          "unable to avoid the wall of a house"
+        ],
+        [
+          "aaib_m210_v1_poole",
+          "does not state that the aircraft"
         ]
       ],
       "facts": [
@@ -1450,10 +1454,12 @@
         "document_search",
         "citation_verify"
       ],
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "dji_m210_v1_manual_v14_c0037",
-        "aaib_m210_v1_poole_c0013"
+        "aaib_m210_v1_poole_c0013",
+        "aaib_m210_v1_poole_c0030",
+        "aaib_m210_v1_poole_c0016"
       ]
     },
     {
@@ -1508,7 +1514,7 @@
         "citation_verify"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "dji_m30t_manual_v22_c0033",
         "forum_dji_m30t_c0001"
@@ -1551,7 +1557,7 @@
         "citation_verify"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "asrs_m210_1918661_c0001"
       ]
@@ -1601,7 +1607,7 @@
         "citation_verify"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "aaib_m210_v1_poole_c0028",
         "aaib_m210_v1_poole_c0013",
@@ -1623,6 +1629,14 @@
         [
           "asrs_dji_m30t_selected",
           "returned home within 10 seconds of the glitching screen"
+        ],
+        [
+          "asrs_dji_m30t_selected",
+          "crash into a tree"
+        ],
+        [
+          "asrs_dji_m30t_selected",
+          "the RTH initiated but did not respond"
         ],
         [
           "forum_dji_m30t",
@@ -1649,9 +1663,11 @@
         "citation_verify"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "asrs_dji_m30t_selected_c0002",
+        "asrs_dji_m30t_selected_c0001",
+        "asrs_dji_m30t_selected_c0003",
         "forum_dji_m30t_c0001"
       ]
     },
@@ -1697,7 +1713,7 @@
         "citation_verify"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "autel_evo_max_manual_v130_c0102",
         "asrs_autel_evo_max_4n_selected_c0001"
@@ -1740,7 +1756,7 @@
         "citation_verify"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "dji_m30t_manual_v22_c0031",
         "dji_m30t_manual_v22_c0032"
@@ -1767,7 +1783,7 @@
         "document_search"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": []
     },
     {
@@ -1791,7 +1807,7 @@
         "document_search"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": []
     },
     {
@@ -1819,7 +1835,7 @@
         "document_search"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": []
     },
     {
@@ -1843,7 +1859,7 @@
         "document_search"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": []
     },
     {
@@ -1865,7 +1881,7 @@
       "conflicts": [],
       "tools": [],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": []
     },
     {
@@ -1887,7 +1903,7 @@
       "conflicts": [],
       "tools": [],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": []
     },
     {
@@ -1923,7 +1939,7 @@
         "citation_verify"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "dji_m30t_manual_v22_c0069",
         "dji_m30t_manual_v22_c0070"
@@ -1948,7 +1964,7 @@
       ],
       "facts": [
         [
-          "The ASRS report is about underestimating the return time and a self-landing, not a lost link.",
+          "The brief does not treat any Matrice 4T incident report as evidence of a lost link.",
           ""
         ],
         [
@@ -1962,7 +1978,7 @@
         "citation_verify"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "dji_matrice4_manual_v12_c0065"
       ]
@@ -2002,7 +2018,7 @@
         "citation_verify"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "faa_ac_107_2a_2022_c0035"
       ]
@@ -2040,7 +2056,7 @@
         "citation_verify"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "dji_m30t_manual_v22_c0032",
         "dji_m30t_manual_v22_c0033"
@@ -2088,7 +2104,7 @@
         "citation_verify"
       ],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": [
         "faa_ac_107_2a_2022_c0062",
         "dji_m30t_manual_v22_c0067"
@@ -2111,7 +2127,7 @@
       "conflicts": [],
       "tools": [],
       "demo": false,
-      "checked": false,
+      "checked": true,
       "relevant_chunk_ids": []
     }
   ]

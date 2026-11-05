@@ -191,6 +191,12 @@ hybrid (BM25 + dense),Q32,manual,dji_m210_v1_manual_v14_c0037,,False,False,0.0
 BM25 only,Q32,incident,aaib_m210_v1_poole_c0013,9.0,False,True,0.1111111111111111
 dense only,Q32,incident,aaib_m210_v1_poole_c0013,20.0,False,False,0.05
 hybrid (BM25 + dense),Q32,incident,aaib_m210_v1_poole_c0013,11.0,False,False,0.09090909090909091
+BM25 only,Q32,incident,aaib_m210_v1_poole_c0030,19.0,False,False,0.05263157894736842
+dense only,Q32,incident,aaib_m210_v1_poole_c0030,8.0,False,True,0.125
+hybrid (BM25 + dense),Q32,incident,aaib_m210_v1_poole_c0030,10.0,False,True,0.1
+BM25 only,Q32,incident,aaib_m210_v1_poole_c0016,3.0,True,True,0.3333333333333333
+dense only,Q32,incident,aaib_m210_v1_poole_c0016,,False,False,0.0
+hybrid (BM25 + dense),Q32,incident,aaib_m210_v1_poole_c0016,16.0,False,False,0.0625
 BM25 only,Q33,manual,dji_m30t_manual_v22_c0033,,False,False,0.0
 dense only,Q33,manual,dji_m30t_manual_v22_c0033,,False,False,0.0
 hybrid (BM25 + dense),Q33,manual,dji_m30t_manual_v22_c0033,,False,False,0.0
@@ -212,6 +218,12 @@ hybrid (BM25 + dense),Q35,incident,aaib_m210_v1_poole_c0039,,False,False,0.0
 BM25 only,Q36,incident,asrs_dji_m30t_selected_c0002,2.0,True,True,0.5
 dense only,Q36,incident,asrs_dji_m30t_selected_c0002,3.0,True,True,0.3333333333333333
 hybrid (BM25 + dense),Q36,incident,asrs_dji_m30t_selected_c0002,3.0,True,True,0.3333333333333333
+BM25 only,Q36,incident,asrs_dji_m30t_selected_c0001,3.0,True,True,0.3333333333333333
+dense only,Q36,incident,asrs_dji_m30t_selected_c0001,2.0,True,True,0.5
+hybrid (BM25 + dense),Q36,incident,asrs_dji_m30t_selected_c0001,2.0,True,True,0.5
+BM25 only,Q36,incident,asrs_dji_m30t_selected_c0003,1.0,True,True,1.0
+dense only,Q36,incident,asrs_dji_m30t_selected_c0003,1.0,True,True,1.0
+hybrid (BM25 + dense),Q36,incident,asrs_dji_m30t_selected_c0003,1.0,True,True,1.0
 BM25 only,Q36,incident,forum_dji_m30t_c0001,2.0,True,True,0.5
 dense only,Q36,incident,forum_dji_m30t_c0001,2.0,True,True,0.5
 hybrid (BM25 + dense),Q36,incident,forum_dji_m30t_c0001,2.0,True,True,0.5
