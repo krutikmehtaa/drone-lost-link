@@ -1,0 +1,371 @@
+{
+ "run_id": "20261105T023848-full-e8e0",
+ "mode": "full",
+ "question": "Under what conditions does the DJI Matrice 30T start Failsafe Return to Home after losing the remote controller signal, and when might it be unable to avoid obstacles?",
+ "status": "human_review_required",
+ "stop_reason": "claims still failing after the revision limit",
+ "error": null,
+ "intake": {
+  "intent": "in_scope",
+  "models": [
+   "DJI Matrice 30T"
+  ],
+  "focus": "Matrice 30T lost-link Failsafe RTH and obstacle avoidance",
+  "flight_phase": null,
+  "reason": "Question asks for guidance from manuals/incident reports about lost-link behavior (Failsafe RTH) and obstacle avoidance limits for the DJI Matrice 30T.",
+  "decided_by": "model",
+  "unsupported_named": []
+ },
+ "brief": {
+  "short_answer": "On RC loss, the aircraft starts RTH using Advanced RTH per the RTH settings, and it will remain in RTH even if the RC signal returns. The RTH altitude should be set higher than any obstacle, and if RTH is canceled after the warning, the Intelligent Battery may not have enough power to land safely. The manual does not specify conditions under which Failsafe RTH would fail to avoid obstacles after RC loss.",
+  "sections": [
+   {
+    "section": "manual:DJI Matrice 30T",
+    "label": "DJI Matrice 30T manual",
+    "status": "drafted",
+    "abstain_reason": null,
+    "claims": [
+     {
+      "text": "If RTH is canceled following the warning, the Intelligent Battery may not have enough power for the aircraft to land safely.",
+      "citations": [
+       "dji_m30t_manual_v22_c0032"
+      ],
+      "quote": "If RTH is canceled following the warning, the Intelligent Battery may not have enough power for the aircraft to land safely",
+      "conditions": [
+       "RTH canceled after warning"
+      ],
+      "assessment": "supported",
+      "claim_id": "C002",
+      "section": "manual:DJI Matrice 30T",
+      "tier": "manufacturer",
+      "incident_label": null
+     },
+     {
+      "text": "The aircraft will start RTH using Advanced RTH according to the RTH settings.",
+      "citations": [
+       "dji_m30t_manual_v22_c0033"
+      ],
+      "quote": "The aircraft will start RTH using Advanced RTH according to the RTH settings",
+      "conditions": [
+       "RTH is initiated and settings specify Advanced RTH"
+      ],
+      "assessment": "supported",
+      "claim_id": "C003",
+      "section": "manual:DJI Matrice 30T",
+      "tier": "manufacturer",
+      "incident_label": null
+     },
+     {
+      "text": "The aircraft will remain in RTH even if the remote controller signal is restored.",
+      "citations": [
+       "dji_m30t_manual_v22_c0033"
+      ],
+      "quote": "The aircraft will remain in RTH even if the remote controller signal is restored",
+      "conditions": [
+       "RTH active and RC signal restored"
+      ],
+      "assessment": "supported",
+      "claim_id": "C004",
+      "section": "manual:DJI Matrice 30T",
+      "tier": "manufacturer",
+      "incident_label": null
+     },
+     {
+      "text": "The RTH altitude is related to the Home Point, and the RTH altitude should be higher than any obstacle in the area.",
+      "citations": [
+       "dji_m30t_manual_v22_c0070"
+      ],
+      "quote": "The RTH altitude is related to the Home Point. Make sure the RTH altitude is higher than any obstacle in the area",
+      "conditions": [
+       "RTH altitude set relative to Home Point",
+       "Altitude greater than obstacles"
+      ],
+      "assessment": "supported",
+      "claim_id": "C005",
+      "section": "manual:DJI Matrice 30T",
+      "tier": "manufacturer",
+      "incident_label": null
+     }
+    ]
+   }
+  ],
+  "gaps": [
+   {
+    "kind": "unclear",
+    "origin": "synthesis",
+    "text": "The manual does not specify under which circumstances Failsafe RTH would fail to avoid obstacles after RC loss.",
+    "related_claim_ids": [
+     "C003",
+     "C005"
+    ]
+   }
+  ],
+  "removed_claims": [
+   {
+    "text": "The manual states that \"The action of the aircraft when the remote controller signal is lost can be set to RTH, land, or hover\" with the condition that Signal Lost Action is set to RTH/land/hover.",
+    "citations": [
+     "dji_m30t_manual_v22_c0033"
+    ],
+    "quote": "The action of the aircraft when the remote controller signal is lost can be set to RTH, land, or hover",
+    "conditions": [
+     "Signal Lost Action is set to RTH/land/hover"
+    ],
+    "assessment": "supported",
+    "claim_id": "C001",
+    "section": "manual:DJI Matrice 30T",
+    "tier": "manufacturer",
+    "incident_label": null
+   }
+  ]
+ },
+ "brief_stats": {
+  "words": 161,
+  "claims": 4,
+  "gaps": 1
+ },
+ "searches": [
+  {
+   "search_id": "S001",
+   "section": "manual:DJI Matrice 30T",
+   "origin": "base",
+   "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect Matrice 30T lost-link Failsafe RTH and obstacle avoidance",
+   "alternate_queries": [],
+   "phrasing_stats": [
+    {
+     "query": "remote controller signal lost failsafe return to home signal lost action hover land reconnect Matrice 30T lost-link Failsafe RTH and obstacle avoidance",
+     "returned": 10,
+     "kept": 5,
+     "new": 5
+    }
+   ],
+   "filters": [
+    {
+     "source_type": "manufacturer",
+     "model": "DJI Matrice 30T"
+    }
+   ],
+   "backend_calls": 1,
+   "reason": "",
+   "follows_from": null,
+   "returned_ids": [
+    "dji_m30t_manual_v22_c0033",
+    "dji_m30t_manual_v22_c0070",
+    "dji_m30t_manual_v22_c0032",
+    "dji_m30t_manual_v22_c0069",
+    "dji_m30t_manual_v22_c0028",
+    "dji_m30t_manual_v22_c0134",
+    "dji_m30t_manual_v22_c0044",
+    "dji_m30t_manual_v22_c0067",
+    "dji_m30t_manual_v22_c0030",
+    "dji_m30t_manual_v22_c0179"
+   ],
+   "kept_ids": [
+    "dji_m30t_manual_v22_c0033",
+    "dji_m30t_manual_v22_c0070",
+    "dji_m30t_manual_v22_c0032",
+    "dji_m30t_manual_v22_c0069",
+    "dji_m30t_manual_v22_c0028"
+   ],
+   "new_ids": [
+    "dji_m30t_manual_v22_c0033",
+    "dji_m30t_manual_v22_c0070",
+    "dji_m30t_manual_v22_c0032",
+    "dji_m30t_manual_v22_c0069",
+    "dji_m30t_manual_v22_c0028"
+   ],
+   "below_cutoff_ids": [],
+   "promoted_ids": [],
+   "context_ids": [],
+   "error": null
+  }
+ ],
+ "decisions": [
+  {
+   "decision_id": "D001",
+   "section": "manual:DJI Matrice 30T",
+   "action": "finish_sufficient",
+   "continue_or_stop": "stop",
+   "reason": "The provided manual passages describe conditions triggering Failsafe RTH (Signal Lost Action set to RTH, Home Point recorded, compass functioning, RC signal lost >6 seconds) and note obstacle avoidance limitations during RTH if lighting is insufficient, plus guidance to raise RTH altitude. These cover the asked questions.",
+   "tool": "finish_assessment",
+   "coverage": "sufficient",
+   "missing": [],
+   "conflicts_noticed": []
+  },
+  {
+   "decision_id": "D002",
+   "section": "manual:DJI Matrice 30T",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "quote_in_source resolved by using exact verbatim quote and proper citation",
+   "claim_id": "C001",
+   "round": 1,
+   "new_text": "The manual states that \"The action of the aircraft when the remote controller signal is lost can be set to RTH, land, or hover\""
+  },
+  {
+   "decision_id": "D003",
+   "section": "manual:DJI Matrice 30T",
+   "action": "rewrite",
+   "continue_or_stop": "continue",
+   "reason": "quote is present but needs exact attribution and explicit conditions as in-source",
+   "claim_id": "C001",
+   "round": 2,
+   "new_text": "The manual states that \"The action of the aircraft when the remote controller signal is lost can be set to RTH, land, or hover\" with the condition that Signal Lost Action is set to RTH/land/hover."
+  },
+  {
+   "decision_id": "D004",
+   "section": "manual:DJI Matrice 30T",
+   "action": "drop",
+   "continue_or_stop": "stop",
+   "reason": "still failing after 2 revision rounds",
+   "claim_id": "C001",
+   "human_review": true
+  }
+ ],
+ "assessments": {
+  "manual:DJI Matrice 30T": {
+   "coverage": "sufficient",
+   "missing": [],
+   "conflicts_noticed": [],
+   "reason": "The provided manual passages describe conditions triggering Failsafe RTH (Signal Lost Action set to RTH, Home Point recorded, compass functioning, RC signal lost >6 seconds) and note obstacle avoidance limitations during RTH if lighting is insufficient, plus guidance to raise RTH altitude. These cover the asked questions.",
+   "stop_reason": "model_finished",
+   "section": "manual:DJI Matrice 30T",
+   "turns": 2,
+   "tool_calls": 0,
+   "searches": 0,
+   "searches_allowed": 2
+  }
+ },
+ "gate_results": {
+  "C002": {
+   "claim_id": "C002",
+   "passed": true,
+   "failures": []
+  },
+  "C003": {
+   "claim_id": "C003",
+   "passed": true,
+   "failures": []
+  },
+  "C004": {
+   "claim_id": "C004",
+   "passed": true,
+   "failures": []
+  },
+  "C005": {
+   "claim_id": "C005",
+   "passed": true,
+   "failures": []
+  }
+ },
+ "verifications": {
+  "C002": {
+   "claim_id": "C002",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "Passage states that if RTH is canceled after a warning, the Intelligent Battery may not have enough power to land safely.",
+   "supporting_ids": [
+    "dji_m30t_manual_v22_c0032"
+   ]
+  },
+  "C003": {
+   "claim_id": "C003",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "Passage explicitly says the aircraft will start RTH using Advanced RTH according to the RTH settings.",
+   "supporting_ids": [
+    "dji_m30t_manual_v22_c0033"
+   ]
+  },
+  "C004": {
+   "claim_id": "C004",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "Passage states the aircraft will remain in RTH even if the RC signal is restored.",
+   "supporting_ids": [
+    "dji_m30t_manual_v22_c0033"
+   ]
+  },
+  "C005": {
+   "claim_id": "C005",
+   "status": "supported",
+   "missing_conditions": [],
+   "rationale": "Passage notes that the RTH altitude is related to the Home Point and should be higher than any obstacle.",
+   "supporting_ids": [
+    "dji_m30t_manual_v22_c0070"
+   ]
+  }
+ },
+ "first_draft_results": [
+  {
+   "claim_id": "C001",
+   "passes": false,
+   "gate_failures": [
+    "quote_in_source"
+   ],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C002",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C003",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C004",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  },
+  {
+   "claim_id": "C005",
+   "passes": true,
+   "gate_failures": [],
+   "verifier": "supported"
+  }
+ ],
+ "revisions_used": 2,
+ "reopens": 0,
+ "cost": {
+  "model_calls": 11,
+  "tokens_in": 15019,
+  "tokens_out": 7855,
+  "searches": 1,
+  "agent_searches": 0,
+  "agent_tool_calls": 1,
+  "seconds": 61.6
+ },
+ "corpus_snapshot": "4d0e3c83c9425371",
+ "chunks_sha256": "3aff778d5475cd877ed6cef54834cdaa960ccce15ebda1442215c7ca258274c6",
+ "retrieval": "hybrid_rrf",
+ "model": "@30875-fall26-openai/gpt-5-nano",
+ "reasoning_effort": "low",
+ "config": {
+  "mode": "full",
+  "source_kinds": [
+   "manual"
+  ],
+  "max_revisions": 2,
+  "agent_base_searches_per_section": 2,
+  "agent_max_searches_per_section": 4,
+  "agent_max_tool_calls_per_section": 7,
+  "agent_max_turns_per_section": 8,
+  "agent_results_shown": 10,
+  "agent_max_searches_per_run": 8,
+  "agent_max_turns_per_run": 40,
+  "max_reopens_per_run": 1,
+  "max_searches": 40,
+  "max_model_calls": 40,
+  "top_k": 5,
+  "max_claims_per_section": 5,
+  "max_claim_words": 40,
+  "max_gaps": 6,
+  "max_short_answer_words": 90
+ },
+ "trace_path": "C:\\Important\\Master's\\drone-lost-link\\processed\\traces\\20261105T023848-full-e8e0.jsonl"
+}
