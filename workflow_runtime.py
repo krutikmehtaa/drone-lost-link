@@ -808,7 +808,7 @@ The collection holds FAA AC 107-2A, manuals for the DJI Matrice 30T, Matrice 4T,
   control link or signal loss, and what the aircraft or pilot does (return to home, hover, land, reconnect).
 - out_of_scope: anything else, such as buying advice or unrelated topics.
 - unsupported_model: the question is only about drone models that are not in the collection.
-models: the supported models the question names (empty list means all three).
+models: the supported models the question names (empty list means all supported models).
 focus: a short search phrase for the specific behavior asked about.
 flight_phase: only if the question names one."""
 
