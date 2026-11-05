@@ -800,7 +800,7 @@ MODEL_PATTERNS = {
 
 OTHER_DRONES_RE = re.compile(
     r'mavic|phantom|\bmini\s*\d|inspire|skydio|parrot|anafi|avata|agras|'
-    r'matrice\s*(300|350|200|210|600)|\bm(300|350|200|210)\b|evo\s*(ii|2|lite|nano)\b|autel\s*alpha', re.IGNORECASE)
+    r'matrice\s*(300|350|200|600)|\bm(300|350|200)\b|evo\s*(ii|2|lite|nano)\b|autel\s*alpha', re.IGNORECASE)
 
 INTAKE_INSTRUCTIONS = """You route questions for a drone lost-link evidence brief.
 The collection holds FAA AC 107-2A, manuals for the DJI Matrice 30T, Matrice 4T, Autel EVO Max 4N and historical DJI Matrice 210 V1, plus AAIB, NASA ASRS and community accounts. AAIB record-only, ASRS and community accounts are not verified findings.

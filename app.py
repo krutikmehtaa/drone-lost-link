@@ -35,6 +35,10 @@ html, body {font-family: 'DM Sans', Arial, sans-serif; color:#111817;}
 [data-testid="stSidebar"] {background:#f3f4f0; border-right:1px solid #d7dbd7;}
 [data-testid="stSidebar"] {overflow-x:hidden;}
 [data-testid="stSidebar"] [data-testid="stSidebarContent"] {overflow-x:hidden; overflow-y:hidden;}
+[data-testid="stSidebar"] [data-testid="stVerticalBlock"] {gap:.55rem;}
+[data-testid="stSidebar"] [data-testid="stButton"] button {height:auto; min-height:3.7rem;
+  padding:.42rem .55rem; line-height:1.25; font-size:.84rem; white-space:normal; text-align:left;}
+[data-testid="stSidebar"] [data-testid="stButton"] button p {text-align:left;}
 [data-testid="stSidebarCollapseButton"], [data-testid="collapsedControl"] {display:none;}
 .block-container {padding-top:1.25rem; padding-bottom:3rem; max-width:1500px;}
 h1,h2,h3 {letter-spacing:-.04em; color:#111817;}
@@ -212,11 +216,11 @@ st.markdown('<div class="brand">◈ &nbsp; LOST LINK <span style="font-weight:40
             unsafe_allow_html=True)
 
 with st.sidebar:
-    st.markdown('<div class="eyebrow">Research workspace</div>', unsafe_allow_html=True)
-    if st.button("＋ New question", use_container_width=True):
-        st.session_state.turns = []
-        st.session_state.active_citation = None
-        st.rerun()
+    st.markdown('<div class="eyebrow">Saved example briefs</div>', unsafe_allow_html=True)
+    st.caption("Open a saved answer and inspect its sources.")
+    for index, example in enumerate(DEMO_QUESTIONS):
+        if st.button(example, key=f"demo-{index}", use_container_width=True):
+            st.session_state.pending_example = example
     st.divider()
     st.caption(f"Corpus snapshot · {report['corpus_snapshot']}")
     st.caption(f"{report['source_count']} sources · {report['chunk_count']} passages")
@@ -232,7 +236,7 @@ if not st.session_state.turns:
                     'Read the answer, inspect each source, and see why the agent searched again or stopped.</div>',
                     unsafe_allow_html=True)
         st.write("")
-        st.caption("Choose a saved example below, or ask your own question.")
+        st.caption("Choose a saved question on the left, or ask your own below.")
     with hero_right:
         with st.container(key="hero-visual"):
             image_data = base64.b64encode(ASSET.read_bytes()).decode("ascii")
@@ -277,14 +281,6 @@ else:
             st.write(f"Run time: {run.get('cost', {}).get('seconds', 0)} s")
             st.download_button("Download trace JSON", json.dumps(run, indent=2),
                                file_name="drone-lost-link-run.json", mime="application/json")
-
-if not st.session_state.turns:
-    st.markdown('<div class="eyebrow">Try a saved example</div>', unsafe_allow_html=True)
-    labels = ["Manual versus incident", "No failure-rate evidence", "Matrice 30T signal loss"]
-    for column, label, example in zip(st.columns(3, gap="small"), labels, DEMO_QUESTIONS):
-        with column:
-            if st.button(label, key=f"demo-{label}", use_container_width=True):
-                st.session_state.pending_example = example
 
 question = st.chat_input("Ask about a lost link, a model, or a reported incident")
 example = st.session_state.pop("pending_example", None)

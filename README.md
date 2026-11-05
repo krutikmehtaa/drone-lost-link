@@ -6,7 +6,7 @@ manufacturer manuals, and reported incidents; drafts cited claims; checks those
 claims; and returns a brief with gaps or a human-review status when needed.
 
 The Streamlit app provides the required input, tool-use, and output demonstration.
-The three prompt buttons replay real saved runs from the frozen corpus. Questions
+The three questions in the sidebar replay real saved runs from the frozen corpus. Questions
 typed into the chat run the adaptive workflow when a course API key is configured.
 
 ## Run the app locally
@@ -15,7 +15,7 @@ Use Python 3.12 or a currently supported Python release:
 
 1. Install the packages in `requirements.txt`.
 2. Run `python -m streamlit run app.py` from the project root.
-3. Click a saved example beside the chat box, or type a question for a live run.
+3. Click a saved example in the sidebar, or type a question for a live run.
    The saved brief includes a comparison of fixed and adaptive runs when both exist.
 4. Click a citation to read its exact indexed passage and source locator.
 
