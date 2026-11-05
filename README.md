@@ -8,6 +8,9 @@ claims; and returns a brief with gaps or a human-review status when needed.
 The Streamlit app provides the required input, tool-use, and output demonstration.
 The three questions in the sidebar replay real saved runs from the frozen corpus. Questions
 typed into the chat run the adaptive workflow when a course API key is configured.
+New question starts another chat; Recents keeps the four most recent chats in the current browser session.
+The saved examples have short editorial summaries drawn from their verified claims;
+the original brief and trace remain available for inspection and download.
 
 ## Run the app locally
 
@@ -18,6 +21,12 @@ Use Python 3.12 or a currently supported Python release:
 3. Click a saved example in the sidebar, or type a question for a live run.
    The saved brief includes a comparison of fixed and adaptive runs when both exist.
 4. Click a citation to read its exact indexed passage and source locator.
+
+For a question specifically about a model's manual behavior, the live app searches
+that manual first. Questions about guidance, incidents, or disagreements use all
+three source tiers. The saved evaluation runs retain their original full scope.
+Chats remain in the current Streamlit browser session; closing or refreshing that
+session may clear Recents. The downloaded brief and trace can be kept separately.
 
 The app checks that `processed/chunks.jsonl` matches the frozen corpus report.
 Recorded examples work without an API key. Only questions with a saved matching

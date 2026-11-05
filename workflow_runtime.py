@@ -52,6 +52,7 @@ TRACE_DIR = OUTPUT_ROOT / 'traces'
 @dataclass(frozen=True)
 class Config:
     mode: str = 'full'                      # 'full' (agent) or 'fixed' (baseline)
+    source_kinds: Optional[tuple[str, ...]] = None  # None compares all source tiers
     max_revisions: int = 2
     # ---- Evidence agent, per section ----
     agent_base_searches_per_section: int = 2    # searches the agent starts with
@@ -70,7 +71,7 @@ class Config:
     max_claims_per_section: int = 5
     max_claim_words: int = 40
     max_gaps: int = 6
-    max_short_answer_words: int = 120
+    max_short_answer_words: int = 90
 
 
 # Notebook cell 26
@@ -834,6 +835,8 @@ def run_intake(state: RunState, models: Optional[list[str]] = None) -> dict:
 
     if intake['intent'] == 'in_scope':
         state.sections = plan_sections(intake['models'])
+        if state.config.source_kinds is not None:
+            state.sections = [s for s in state.sections if section_kind(s) in state.config.source_kinds]
     state.intake = intake
     state.log('intake', **intake)
     return intake
@@ -1347,9 +1350,9 @@ sections, and both claim ids go in related_claim_ids. Never list a possible or h
 "could"); if unsure, use unclear. Return at most `slots` items and do not repeat `already_listed`."""
 
 SHORT_ANSWER_INSTRUCTIONS = """Write the short answer of a drone lost-link evidence brief from the verified claims only.
-3 to 5 sentences, at most 120 words, in this order: FAA guidance, then the manuals, then incident reports
-(say they are unverified accounts), then the main gap or conflict. Every fact must come from a claim; the gaps are
-open questions, not facts. If a section has no claims, say there is no usable evidence for it. No citations."""
+2 to 4 plain-language sentences, at most 90 words. Answer the question directly; lead with the model behavior and its conditions.
+Mention FAA guidance or incident accounts only when they answer the question; label incident accounts unverified. Every fact must come from a claim; the gaps are
+open questions, not facts. If part of the question has no supported claim, say so plainly. No citations."""
 
 NO_EVIDENCE_ANSWER = ('No claim in this brief passed citation verification. The approved collection may not cover '
                       'this question, or its evidence was too thin to state safely. See the gaps for what is missing.')
@@ -1415,7 +1418,7 @@ def write_short_answer(state: RunState):
 
     def problems_of(text):
         n_sentences, n_words = len(split_sentences(text)), word_count(text)
-        return ([f'{n_sentences} sentences; use 3 to 5'] if not 3 <= n_sentences <= 5 else []) + \
+        return ([f'{n_sentences} sentences; use 2 to 4'] if not 2 <= n_sentences <= 4 else []) + \
                ([f'{n_words} words; the limit is {cfg.max_short_answer_words}'] if n_words > cfg.max_short_answer_words else [])
 
     try:
@@ -1426,7 +1429,7 @@ def write_short_answer(state: RunState):
                                         {**payload, 'feedback': problems}, ShortAnswerOut).short_answer
         if problems_of(text):                             # still too long: keep whole sentences that fit
             kept = []
-            for sentence in split_sentences(text)[:5]:
+            for sentence in split_sentences(text)[:4]:
                 if word_count(' '.join(kept + [sentence])) > cfg.max_short_answer_words:
                     break
                 kept.append(sentence)

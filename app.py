@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import os
 import base64
+from uuid import uuid4
 from pathlib import Path
 
 import streamlit as st
@@ -13,6 +14,7 @@ from ui_data import (
     DEMO_QUESTIONS, MODE_LABELS, SOURCE_LABELS, STATUS_LABELS,
     brief_markdown, cited_passages, find_saved_run, load_corpus,
 )
+from ui_presenter import answer_text, contextualize_question, followup_question, review_note, source_scope
 
 
 APP_ROOT = Path(__file__).resolve().parent
@@ -86,9 +88,13 @@ def saved_run(root: str, question: str, mode: str, snapshot: str, index_hash: st
 
 
 @st.cache_resource(show_spinner="Loading the search model…")
-def runtime():
-    import workflow_runtime
-    return workflow_runtime
+def runtime(module_mtime_ns: int):
+    import importlib
+    import sys
+
+    if "workflow_runtime" in sys.modules:
+        return importlib.reload(sys.modules["workflow_runtime"])
+    return importlib.import_module("workflow_runtime")
 
 
 def app_secret(name: str) -> str:
@@ -111,42 +117,56 @@ def status_class(status: str) -> str:
     return "status-failed"
 
 
-def show_brief(run: dict, chunks: dict[str, dict], run_index: int) -> None:
+def show_brief(run: dict, chunks: dict[str, dict], chat_id: str, run_index: int,
+               recorded: bool) -> None:
     status = run.get("status", "")
-    label = STATUS_LABELS.get(status, status.replace("_", " ").title())
-    st.markdown(f'<span class="status {status_class(status)}">{label}</span>', unsafe_allow_html=True)
-    answer = run.get("brief", {}).get("short_answer") or "The available documents do not support a short answer."
-    st.markdown('<div class="eyebrow">Short answer</div>', unsafe_allow_html=True)
-    st.markdown(f'<div class="answer">{escape_html(answer)}</div>', unsafe_allow_html=True)
-    st.write("")
+    st.markdown('<div class="eyebrow">Answer</div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="answer">{escape_html(answer_text(run, recorded=recorded))}</div>',
+                unsafe_allow_html=True)
+    note = review_note(run)
+    if note:
+        st.warning("**What needs a human check:** " + note)
+        followup = followup_question(run)
+        if followup:
+            st.caption(f"A useful narrower question: “{followup}”")
+    elif status == "completed_with_gaps":
+        st.caption("The answer is based on supported claims; some other parts of the collection remain incomplete.")
+    elif status == "abstained":
+        st.caption("The available collection does not support this request.")
 
-    for section_index, section in enumerate(run.get("brief", {}).get("sections", [])):
-        claims = section.get("claims", [])
-        if not claims:
-            continue
-        st.subheader(section.get("label") or section.get("section", "Evidence"))
-        for claim_index, claim in enumerate(claims):
-            st.write(claim.get("text", ""))
-            conditions = claim.get("conditions") or []
-            if conditions:
-                st.caption("Condition: " + "; ".join(conditions))
-            verification = run.get("verifications", {}).get(claim.get("claim_id"), {})
-            if verification:
-                st.caption("Citation check: " + verification.get("status", "not checked").replace("_", " "))
-            for cite_index, chunk_id in enumerate(claim.get("citations", [])):
-                chunk = chunks.get(chunk_id)
-                if chunk:
-                    label = f"{SOURCE_LABELS.get(chunk.get('source_type'), chunk.get('source_type', 'Source'))} · {chunk.get('locator', '')}"
-                    if st.button(label, key=f"cite-{run_index}-{section_index}-{claim_index}-{cite_index}"):
-                        st.session_state.active_citation = chunk_id
-            st.divider()
-
-    gaps = run.get("brief", {}).get("gaps", [])
-    if gaps:
-        st.subheader("Gaps and conflicts")
-        for gap in gaps:
-            st.write(f"**{gap.get('kind', 'Gap').replace('_', ' ').title()}** · {gap.get('text', '')}")
-    st.caption("This brief describes the saved evidence. Reported incidents are not verified findings or flight instructions.")
+    rate_question = "failure rate" in run.get("question", "").lower()
+    st.markdown('<div class="eyebrow">Background sources checked</div>' if rate_question
+                else '<div class="eyebrow">Sources</div>', unsafe_allow_html=True)
+    if rate_question:
+        st.caption("None of the cited passages gives a failure count and flight-hour denominator for this model.")
+    passages = cited_passages(run, chunks)
+    if source_scope(run.get("question", "")) == ("manual",):
+        passages = [item for item in passages if item.get("source_type") == "manufacturer"]
+    grouped_passages = {}
+    for item in passages:
+        location = (item.get("source_id"), item.get("locator"))
+        grouped_passages.setdefault(location, []).append(item)
+    groups = list(grouped_passages.values())
+    if not groups:
+        st.write("No source passage was cited for an answer.")
+    else:
+        priority = {"manufacturer": 0, "aaib": 1, "asrs": 2, "forum": 3, "faa_guidance": 4}
+        groups.sort(key=lambda group: priority.get(group[0].get("source_type"), 5))
+        for index, group in enumerate(groups[:6]):
+            chunk = group[0]
+            label = (f"{SOURCE_LABELS.get(chunk.get('source_type'), 'Source')} · "
+                     f"{chunk.get('title', 'Document')} · {chunk.get('locator', '')}")
+            if st.button(label, key=f"source-{chat_id}-{run_index}-{index}"):
+                st.session_state.active_citation = [item["chunk_id"] for item in group]
+        if len(groups) > 6:
+            with st.expander(f"Show {len(groups) - 6} more source locations"):
+                for index, group in enumerate(groups[6:], start=6):
+                    chunk = group[0]
+                    label = (f"{SOURCE_LABELS.get(chunk.get('source_type'), 'Source')} · "
+                             f"{chunk.get('title', 'Document')} · {chunk.get('locator', '')}")
+                    if st.button(label, key=f"source-{chat_id}-{run_index}-{index}"):
+                        st.session_state.active_citation = [item["chunk_id"] for item in group]
+    st.caption("Reported incidents and community accounts are not verified findings or flight instructions.")
 
 
 def escape_html(text: str) -> str:
@@ -156,13 +176,16 @@ def escape_html(text: str) -> str:
 
 def show_activity(run: dict, chunks: dict[str, dict]) -> None:
     selected = st.session_state.get("active_citation")
-    if selected in chunks:
-        chunk = chunks[selected]
+    selected_ids = selected if isinstance(selected, list) else [selected]
+    if any(chunk_id in chunks for chunk_id in selected_ids):
+        chunk = chunks[next(chunk_id for chunk_id in selected_ids if chunk_id in chunks)]
         st.markdown('<div class="eyebrow">Selected citation</div>', unsafe_allow_html=True)
         st.markdown(f"### {chunk.get('title', 'Source')}")
         st.caption(f"{SOURCE_LABELS.get(chunk.get('source_type'), chunk.get('source_type', 'Source'))} · "
                    f"{chunk.get('model') or 'General'} · {chunk.get('locator', '')}")
-        st.write(chunk.get("text", ""))
+        for chunk_id in selected_ids:
+            if chunk_id in chunks:
+                st.write(chunks[chunk_id].get("text", ""))
         if chunk.get("url", "").startswith("https://"):
             st.link_button("Open original source ↗", chunk["url"])
         st.divider()
@@ -185,20 +208,23 @@ def show_activity(run: dict, chunks: dict[str, dict]) -> None:
             if item.get("reason"):
                 st.caption("Why: " + item["reason"])
             st.caption(f"{len(item.get('returned_ids', []))} found · {len(item.get('kept_ids', []))} kept")
-    with st.expander("Agent decisions", expanded=bool(decisions)):
+    with st.expander("Agent decisions"):
         if not decisions:
             st.write("The fixed workflow followed its preset steps.")
         for step in decisions:
             st.markdown(f"**{step.get('action', 'decision').replace('_', ' ').title()}** · "
                         f"{step.get('section', '')}")
             st.caption(step.get("reason") or step.get("continue_or_stop", ""))
-    with st.expander("Source list"):
-        passages = cited_passages(run, chunks)
-        if not passages:
-            st.write("No source passage was cited.")
-        for passage in passages:
-            st.write(f"**{passage.get('title', '')}** · {passage.get('locator', '')}")
-            st.caption(SOURCE_LABELS.get(passage.get("source_type"), passage.get("source_type", "")))
+    with st.expander("Tool calls"):
+        st.write(f"Document searches: {len(searches)}")
+        st.write(f"Agent tool calls: {run.get('cost', {}).get('agent_tool_calls', 0)}")
+        st.write(f"Model calls: {run.get('cost', {}).get('model_calls', 0)}")
+        st.write(f"Citation checks: {len(verifications)}")
+    gaps = run.get("brief", {}).get("gaps", [])
+    if gaps:
+        with st.expander("Unresolved evidence"):
+            for gap in gaps:
+                st.write(f"**{gap.get('kind', 'Gap').replace('_', ' ').title()}** · {gap.get('text', '')}")
 
 
 try:
@@ -207,27 +233,67 @@ except (OSError, ValueError, json.JSONDecodeError) as exc:
     st.error(f"The saved corpus could not be loaded: {exc}")
     st.stop()
 
-if "turns" not in st.session_state:
-    st.session_state.turns = []
+if "chats" not in st.session_state:
+    chat_id = uuid4().hex[:10]
+    prior_turns = st.session_state.get("turns", [])
+    title = prior_turns[0]["question"] if prior_turns else "New question"
+    st.session_state.chats = {chat_id: {"title": title, "turns": prior_turns}}
+    st.session_state.active_chat_id = chat_id
+if st.session_state.get("active_chat_id") not in st.session_state.chats:
+    st.session_state.active_chat_id = next(reversed(st.session_state.chats))
 if "active_citation" not in st.session_state:
+    st.session_state.active_citation = None
+
+
+def make_chat() -> str:
+    chat_id = uuid4().hex[:10]
+    st.session_state.chats[chat_id] = {"title": "New question", "turns": []}
+    st.session_state.active_chat_id = chat_id
+    st.session_state.active_citation = None
+    return chat_id
+
+
+def remember_turn(question: str, result: dict, live: bool) -> None:
+    chat_id = st.session_state.active_chat_id
+    chat = st.session_state.chats.pop(chat_id)
+    if not chat["turns"]:
+        chat["title"] = question
+    chat["turns"].append({"question": question, "result": result, "live": live})
+    st.session_state.chats[chat_id] = chat
     st.session_state.active_citation = None
 
 st.markdown('<div class="brand">◈ &nbsp; LOST LINK <span style="font-weight:400">/ EVIDENCE RESEARCH</span></div>',
             unsafe_allow_html=True)
 
 with st.sidebar:
-    st.markdown('<div class="eyebrow">Saved example briefs</div>', unsafe_allow_html=True)
-    st.caption("Open a saved answer and inspect its sources.")
-    for index, example in enumerate(DEMO_QUESTIONS):
-        if st.button(example, key=f"demo-{index}", use_container_width=True):
-            st.session_state.pending_example = example
+    if st.button("＋ New question", use_container_width=True):
+        make_chat()
+        st.rerun()
+    recent = [(chat_id, chat) for chat_id, chat in reversed(list(st.session_state.chats.items()))
+              if chat["turns"]]
+    if recent:
+        st.markdown('<div class="eyebrow">Recents</div>', unsafe_allow_html=True)
+        for chat_id, chat in recent[:4]:
+            title = chat["title"]
+            label = title[:35] + ("…" if len(title) > 35 else "")
+            if st.button(label, key=f"recent-{chat_id}", help=title, use_container_width=True):
+                st.session_state.active_chat_id = chat_id
+                st.session_state.active_citation = None
+                st.rerun()
+    with st.expander("Example Questions", expanded=not recent):
+        for index, example in enumerate(DEMO_QUESTIONS):
+            if st.button(example, key=f"demo-{index}", use_container_width=True):
+                make_chat()
+                st.session_state.pending_example = example
     st.divider()
     st.caption(f"Corpus snapshot · {report['corpus_snapshot']}")
     st.caption(f"{report['source_count']} sources · {report['chunk_count']} passages")
-    st.caption("Educational research prototype. Verify source conditions before operational use.")
-    st.caption("Drone and company names are used only for education and research, not marketing or monetization. No manufacturer endorses this project.")
+    st.caption("Educational research only. Drone and company names imply no endorsement; this project is not for marketing, monetization, or flight guidance.")
 
-if not st.session_state.turns:
+active_chat = st.session_state.chats[st.session_state.active_chat_id]
+turns = active_chat["turns"]
+
+if not turns:
     hero_left, hero_right = st.columns([1.05, 1], gap="large", vertical_alignment="center")
     with hero_left:
         st.markdown('<div class="eyebrow">Evidence-grounded drone research</div>', unsafe_allow_html=True)
@@ -236,7 +302,7 @@ if not st.session_state.turns:
                     'Read the answer, inspect each source, and see why the agent searched again or stopped.</div>',
                     unsafe_allow_html=True)
         st.write("")
-        st.caption("Choose a saved question on the left, or ask your own below.")
+        st.caption("Choose an example question on the left, or ask your own below.")
     with hero_right:
         with st.container(key="hero-visual"):
             image_data = base64.b64encode(ASSET.read_bytes()).decode("ascii")
@@ -245,17 +311,17 @@ if not st.session_state.turns:
 else:
     conversation, evidence = st.columns([1.65, 1], gap="large")
     with conversation:
-        for run_index, turn in enumerate(st.session_state.turns):
+        for run_index, turn in enumerate(turns):
             with st.chat_message("user"):
                 st.write(turn["question"])
             with st.chat_message("assistant"):
-                st.caption(f"{MODE_LABELS.get(turn['result'].get('mode'), turn['result'].get('mode'))} · "
-                           f"{'Live run' if turn['live'] else 'Recorded run'}")
-                show_brief(turn["result"], chunks, run_index)
-        current = st.session_state.turns[-1]["result"]
+                st.caption("Live research" if turn["live"] else "Saved example")
+                show_brief(turn["result"], chunks, st.session_state.active_chat_id, run_index,
+                           recorded=not turn["live"])
+        current = turns[-1]["result"]
         st.download_button("Download brief", brief_markdown(current, chunks),
                            file_name="drone-lost-link-brief.md", mime="text/markdown")
-        if not st.session_state.turns[-1]["live"]:
+        if not turns[-1]["live"]:
             other_mode = "fixed" if current.get("mode") == "full" else "full"
             other = saved_run(str(PROJECT_ROOT), current["question"], other_mode,
                               report["corpus_snapshot"], chunks_hash)
@@ -271,9 +337,13 @@ else:
                                    f"{item.get('cost', {}).get('model_calls', 0)} model calls")
     with evidence:
         st.subheader("Evidence trail")
-        show_activity(st.session_state.turns[-1]["result"], chunks)
-        run = st.session_state.turns[-1]["result"]
+        show_activity(turns[-1]["result"], chunks)
+        run = turns[-1]["result"]
         with st.expander("Run details"):
+            st.write(f"Workflow: {MODE_LABELS.get(run.get('mode'), run.get('mode'))}")
+            st.write(f"Status: {STATUS_LABELS.get(run.get('status'), run.get('status'))}")
+            kinds = run.get("config", {}).get("source_kinds")
+            st.write(f"Sources searched: {'manual only' if kinds == ['manual'] or kinds == ('manual',) else 'FAA, manuals, and incident accounts'}")
             st.write(f"Stop reason: {run.get('stop_reason', '')}")
             st.write(f"Corpus snapshot: {run.get('corpus_snapshot', '')}")
             st.write(f"Model calls: {run.get('cost', {}).get('model_calls', 0)}")
@@ -294,17 +364,24 @@ if pending:
         if result is None:
             st.warning("The saved example does not match the current corpus snapshot.")
         else:
-            st.session_state.turns.append({"question": pending, "result": result, "live": False})
-            st.session_state.active_citation = None
+            remember_turn(pending, result, live=False)
             st.rerun()
     elif not app_secret("OPENAI_API_KEY"):
         st.warning("Live questions need a course API key. Add OPENAI_API_KEY to your local Streamlit secrets, then try again.")
     else:
         with st.status("Searching and checking the evidence…", expanded=True):
-            engine = runtime()
+            engine = runtime((APP_ROOT / "workflow_runtime.py").stat().st_mtime_ns)
             engine.configure_live_client(app_secret("OPENAI_API_KEY"))
-            result = engine.run_workflow(pending, config=engine.Config(mode="full", max_model_calls=40))
+            research_question = contextualize_question(pending, turns[-1] if turns else None)
+            kinds = source_scope(research_question)
+            if research_question != pending:
+                st.write(f"Using the model from this chat: {research_question}")
+            if kinds:
+                st.write("This question asks about documented model behavior, so the agent is checking the manual.")
+            else:
+                st.write("This question calls for a cross-source brief, so the agent is checking guidance, manuals, and reports.")
+            result = engine.run_workflow(research_question, config=engine.Config(
+                mode="full", source_kinds=kinds, max_model_calls=40))
             st.write(f"Run finished: {STATUS_LABELS.get(result.get('status'), result.get('status'))}")
-        st.session_state.turns.append({"question": pending, "result": result, "live": True})
-        st.session_state.active_citation = None
+        remember_turn(pending, result, live=True)
         st.rerun()
