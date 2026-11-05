@@ -1001,6 +1001,9 @@ DRAFT_INSTRUCTIONS = """You draft ONE section of a drone lost-link evidence brie
 - Attribute every claim: FAA -> "AC 107-2A states ..."; manuals -> "The manual states ...";
   incident evidence -> name its source: "AAIB found ..." for a full investigation, "AAIB records ..." for a record-only entry, "The ASRS reporter says ...", or "A forum participant says ...". Record-only, ASRS and forum accounts are not verified findings. The ASRS Matrice 210 version is unknown; do not call it a V1 event.
 - Use only what the passages say. Do not add people, roles, causes or details the passage does not state.
+- Do not add a condition merely because it appears in the question. For example, a manual sentence about
+  obstacle avoidance during failsafe RTH in low light supports that narrower statement by itself; do not
+  attach remote-controller loss unless the cited passage states that connection.
 - Incident reports: a claim is "supported" when the report says it, even though the report itself is unverified.
   If a report is labeled summary_only, its narrative never says the link was lost: describe only what the
   reporter says happened (e.g. loss of control) and never state as fact that the link was lost.
@@ -1199,7 +1202,8 @@ reporter, and FAA claims never say "the manual"), conditions_kept (the quote has
 out), too_long (over 40 words).
 Use only what the passages say; do not add people, roles or details they do not state.
 If a claim already failed in an earlier round, do not resubmit the same quote: find the exact wording in the
-passages, or choose drop or to_gap."""
+passages, or choose drop or to_gap. If a claim adds an unsupported condition but its quoted sentence is
+supported, remove the extra condition and keep the narrower quoted statement before choosing to_gap."""
 
 HOW_TO_ATTRIBUTE = {
     'faa': 'Write it as what AC 107-2A (FAA guidance) states. Never call it a manual or mention a reporter.',
@@ -1274,6 +1278,23 @@ def revise_section(state: RunState, section: str, failing: list[Claim], round_no
             state.decide(section, 'to_gap', d.reason, 'stop', claim_id=c.claim_id, round=round_no)
     return changed
 
+def quote_only_rewrite(state: RunState, claim: Claim) -> Optional[Claim]:
+    """For a partial manual claim, keep its verified quote without the added condition."""
+    if section_kind(claim.section) != 'manual' or state.gate_results.get(claim.claim_id, {}).get('failures'):
+        return None
+    verdict = state.verifications.get(claim.claim_id)
+    if not verdict or verdict.status != 'partial' or not claim.quote.strip():
+        return None
+    pool = state.pools.get(claim.section, {})
+    if not any(chunk_id in pool and clean_quote(claim.quote) in normalize(pool[chunk_id]['text'])
+               for chunk_id in claim.citations):
+        return None
+    quoted = claim.quote.strip().rstrip('.')
+    text = f"The manual states that {quoted[0].lower() + quoted[1:]}."
+    if word_count(text) > state.config.max_claim_words:
+        return None
+    return claim.model_copy(update={'text': text, 'conditions': []})
+
 def revise(state: RunState):
     """Up to max_revisions rounds. Claims still failing after the last round are removed for human review."""
     cfg = state.config
@@ -1286,9 +1307,19 @@ def revise(state: RunState):
         changed = []
         for section in state.sections:
             group = [c for c in failing if c.section == section]
-            if group:
+            remaining = []
+            for claim in group:
+                narrower = quote_only_rewrite(state, claim)
+                if narrower is None:
+                    remaining.append(claim)
+                else:
+                    replace_claim(state, claim.claim_id, narrower)
+                    changed.append(narrower)
+                    state.decide(section, 'rewrite_quote_only', 'removed an unsupported added condition; kept the cited manual sentence',
+                                 'continue', claim_id=claim.claim_id, round=round_no)
+            if remaining:
                 allow_reopen = cfg.mode == 'full' and state.reopens < cfg.max_reopens_per_run
-                changed += revise_section(state, section, group, round_no, allow_reopen)
+                changed += revise_section(state, section, remaining, round_no, allow_reopen)
         verify_claims(state, changed)
     for c in [c for c in state.all_claims() if not passes(state, c)]:
         replace_claim(state, c.claim_id)
