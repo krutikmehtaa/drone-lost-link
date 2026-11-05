@@ -16,7 +16,8 @@ MANUAL_TOPIC = re.compile(
     re.IGNORECASE,
 )
 CROSS_SOURCE = re.compile(
-    r"\b(?:faa|regulat\w*|incident\w*|report\w*|account\w*|compare\w*|across|conflict\w*|evidence)\b",
+    r"\b(?:faa|regulat\w*|incident\w*|report\w*|account\w*|compare\w*|across|conflict\w*|evidence|"
+    r"aaib|asrs|ntsb|accident\w*|crash\w*|forum\w*|investigat\w*|fly-?away\w*)\b",
     re.IGNORECASE,
 )
 

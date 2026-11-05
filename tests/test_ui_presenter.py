@@ -12,6 +12,8 @@ class PresenterTests(unittest.TestCase):
                     "Return to Home, and when can it not avoid obstacles?")
         self.assertEqual(source_scope(question), ("manual",))
         self.assertIsNone(source_scope("Do the DJI Matrice 30T manual and incident reports agree about RTH?"))
+        self.assertIsNone(source_scope("In the AAIB Poole accident, did the Matrice 210 V1 return home after "
+                                       "losing its link as the manual describes?"))
 
     def test_short_followup_keeps_one_model(self):
         previous = {"result": {"intake": {"models": ["DJI Matrice 30T"]}}}
