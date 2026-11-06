@@ -1,86 +1,83 @@
 # Drone Lost-Link Evidence Research
 
-This project compares a fixed evidence workflow with an adaptive agent. A user asks a
-question about a supported drone model. The workflow searches FAA guidance,
-manufacturer manuals, and reported incidents; drafts cited claims; checks those
-claims; and returns a brief with gaps or a human-review status when needed.
+This project answers questions about drone control-link loss using a fixed collection of FAA guidance, manufacturer manuals, and incident accounts. It compares a fixed evidence workflow with an adaptive agent that can search again when the first passages are incomplete or conflicting. Both workflows draft cited claims, check them against the sources, and report gaps when the collection cannot support an answer.
 
-The Streamlit app provides the required input, tool-use, and output demonstration.
-The three questions in the sidebar replay real saved runs from the frozen corpus. Questions
-typed into the chat run the adaptive workflow when a course API key is configured.
-New question starts another chat; Recents keeps the four most recent chats in the current browser session.
-The saved examples have short editorial summaries drawn from their verified claims;
-the original brief and trace remain available for inspection and download.
+The [Streamlit demo](https://drone-lost-link.streamlit.app/) shows the question, answer, cited passages, searches, agent decisions, and run details. This is an educational research prototype, not flight guidance.
+
+## What you need
+
+- Python 3.12 or another currently supported Python release
+- The files in this repository, including `corpus/` and `processed/`
+- Internet access for the first download of the public MiniLM embedding model
+- A course API key **only** for new live questions or live notebook evaluation; saved examples work without one
+
+Python package dependencies are listed in [requirements.txt](requirements.txt). The main packages are Streamlit, OpenAI, Pydantic, pandas, sentence-transformers, pypdf, and requests.
 
 ## Run the app locally
 
-Use Python 3.12 or a currently supported Python release:
+From a terminal, run:
 
-1. Install the packages in `requirements.txt`.
-2. Run `python -m streamlit run app.py` from the project root.
-3. Click a saved example in the sidebar, or type a question for a live run.
-   The saved brief includes a comparison of fixed and adaptive runs when both exist.
-4. Click a citation to read its exact indexed passage and source locator.
+```bash
+git clone https://github.com/krutikmehtaa/drone-lost-link.git
+cd drone-lost-link
+python -m pip install -r requirements.txt
+python -m streamlit run app.py
+```
 
-For a question specifically about a model's manual behavior, the live app searches
-that manual first. Questions about guidance, incidents, or disagreements use all
-three source tiers. The saved evaluation runs retain their original full scope.
-Chats remain in the current Streamlit browser session; closing or refreshing that
-session may clear Recents. The downloaded brief and trace can be kept separately.
+Open the local address Streamlit prints, usually `http://localhost:8501`. Choose one of the three **Example Questions** in the sidebar to replay a saved run. These work without a key. Click a source in the answer to read its exact indexed passage; expand **Searches and passages**, **Agent decisions**, **Tool calls**, and **Run details** to inspect the workflow. **New question** starts another chat; **Recents** keeps up to four chats in the current browser session.
 
-The app checks that `processed/chunks.jsonl` matches the frozen corpus report.
-Recorded examples work without an API key. Only questions with a saved matching
-run can be replayed; other questions require live mode.
+The app checks that `processed/chunks.jsonl` matches `processed/corpus_validation_report.json`. Keep these files together. A saved example is available only when its run matches this corpus snapshot. Browser-session chats are temporary; use the download buttons if you want to keep a brief or trace.
 
-## Optional live runs
+### Ask a new question
 
-Set `OPENAI_API_KEY` in your local environment or in
-`.streamlit/secrets.toml` (excluded from Git). For example:
+New questions run the adaptive workflow and need the course API key. Set `OPENAI_API_KEY` in your environment or in a local `.streamlit/secrets.toml` file:
 
 ```toml
 OPENAI_API_KEY = "your-course-key"
 ```
 
-Restart Streamlit after adding the secret. Typed questions then run live without
-a mode switch. The adaptive workflow starts with a focused search and decides
-whether to search further. It uses the course Portkey
-gateway and GPT-5 nano, as configured in the notebook. Keep the key out of
-GitHub. Live runs have a 40-model-call ceiling and save their traces under
-`processed/traces/` in the running environment.
+Restart the app after setting the key. The app sends model calls through the course Portkey gateway and uses GPT-5 nano. It searches the relevant manual for a clearly manual-focused question; questions about guidance, incidents, or disagreements search across source tiers. Live runs have a 40-model-call ceiling and write traces to `processed/traces/` in the environment running the app. Hosted file storage may be temporary, so download any trace you need from the UI. The key file is ignored by Git; do not commit credentials.
 
-The app loads the local MiniLM search model when the first live run starts.
-This may take time or require a model download. The saved-run interface remains
-available when live mode is disabled.
+## Reproduce the notebook workflow
 
-## Project files
+The editable notebook is [notebooks/drone_lost_link.ipynb](notebooks/drone_lost_link.ipynb). It was built for **Google Colab** and starts by mounting Google Drive. To run it:
 
-- `notebooks/drone_lost_link.ipynb`: the team's workflow and evaluation notebook.
-- `scripts/`: corpus preparation, indexing, and retrieval.
-- `corpus/`: frozen source collection and manifest.
-- `processed/`: passage index, embeddings, evaluations, and saved traces.
-- `app.py` and `ui_data.py`: the user interface and saved-run loader.
-- `workflow_runtime.py`: importable copy of the notebook's workflow definitions.
-- `scripts/export_workflow.py`: refreshes `workflow_runtime.py` after notebook
-  workflow code changes, without editing the original notebook.
-- `tests/test_ui_data.py`: checks snapshot matching and citation resolution.
+1. Put a copy of this project folder in your Google Drive, or add a Drive shortcut to the shared project folder. Keep `corpus/`, `scripts/`, `notebooks/`, and `processed/` inside the same project folder.
+2. Open `notebooks/drone_lost_link.ipynb` in Colab. Its first code cell looks for `MyDrive/Project 1` or `MyDrive/Agentic Unlearning Group/Project 1`. If your folder is elsewhere, change `possible_roots` in that cell to its actual Drive location.
+3. Run the cells in order. The notebook installs its Colab packages, screens the raw ASRS export, validates the manifest, builds the passage index and local MiniLM embeddings, checks retrieval, and defines the fixed and adaptive workflows.
+4. In the workflow setup cell, set `RUN_LIVE = False` to exercise the notebook without model calls. This uses scripted outputs and **does not** reproduce the published model evaluation. For real model runs, add `OPENAI_API_KEY` to **Colab Secrets**, enable notebook access to it, and set `RUN_LIVE = True`. The key is read from Colab Secrets; do not paste it into a notebook cell.
+5. In evaluation section **E8**, set `RUN_IDS` to a short list such as `['Q01', 'Q07']` for a trial, or leave it as `None` for all 50 labeled questions. Run through **E9** to score and inspect the results. A full live evaluation makes many model calls and may take substantial time and course credit.
 
-## Rebuild the workflow module
+The notebook writes the frozen corpus report, passages, and embeddings to `processed/`; labeled questions, run records, scores, and retrieval tests go to `processed/eval/`; detailed per-run traces go to `processed/traces/`. The repository includes the saved results used in the project report. Evaluation section E8 **reuses completed saved runs** for the same question IDs. To measure new workflow code rather than replay cached runs, work in a copy of the project and clear that copy's saved `runs_*.jsonl` files before E8. Because model runs are nondeterministic, a new evaluation can give different numbers.
 
-After changing workflow sections in the notebook, run
-`python scripts/export_workflow.py` from the project root. Then run the local
-tests and check one fixed and one adaptive example before redeploying.
+Key saved files:
 
-## Deploy
+| File | Purpose |
+| --- | --- |
+| `corpus/corpus_manifest.csv` | Approved sources and their metadata |
+| `processed/corpus_validation_report.json` | Corpus snapshot, source counts, and screening counts |
+| `processed/chunks.jsonl` | Searchable passages with source and page locators |
+| `processed/eval/eval_set.json` | The 50 labeled evaluation questions |
+| `processed/eval/retrieval_summary.csv` | BM25, MiniLM, and hybrid search comparison |
+| `processed/eval/scores_summary.csv` | Single-pass, fixed, and adaptive summary scores |
+| `processed/eval/runs_*.jsonl` | Saved evaluation run records |
+| `processed/traces/*.result.json` and matching `*.jsonl` | Full run result and step-by-step trace |
 
-Connect this repository to Streamlit Community Cloud and select `app.py` as
-the entrypoint. The root `requirements.txt` supplies dependencies. Add
-secrets in Streamlit's app settings if live mode is needed. The default
-recorded demo requires no hosted API key.
+## Change the workflow or check the code
 
-This is an educational research prototype. ASRS and forum records are
-unverified accounts. A gap in this collection does not establish that an
-incident never occurred, and the brief is not operational flight guidance.
+The notebook is the editable workflow source. The app imports `workflow_runtime.py`, which is generated from the notebook's workflow cells. After editing those cells, refresh the app module and run the local checks:
 
-The repository's MIT license covers the team's code. The FAA, AAIB, DJI,
-Autel, and other source documents in `corpus/` retain their own rights;
-their inclusion is for source review and does not relicense them.
+```bash
+python scripts/export_workflow.py
+python -m unittest discover -s tests
+```
+
+Then start the app and check a saved fixed/adaptive comparison and one live question before redeploying. Saved evaluation scores do not automatically update when workflow code changes; rerun the evaluation if you want new measured results.
+
+## Deploy the demo
+
+In Streamlit Community Cloud, connect this GitHub repository and choose `app.py` as the entrypoint. The root `requirements.txt` supplies dependencies. Saved examples need no hosted key. For live questions, add `OPENAI_API_KEY` in the app's secret settings. The first live run may download the public MiniLM model.
+
+## Scope and source rights
+
+The supported models are DJI Matrice 30T, DJI Matrice 4T, DJI Matrice 210 V1, and Autel EVO Max 4N. The app searches the frozen corpus rather than the live web. ASRS and forum records are unverified accounts; a missing incident in this collection does not show that no incident occurred. The repository's MIT license covers the team's code. FAA, AAIB, DJI, Autel, and other source documents in `corpus/` retain their own rights.
